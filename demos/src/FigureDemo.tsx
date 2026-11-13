@@ -107,7 +107,7 @@ export function FigureDemo() {
                 <div className="bn-screen" style={{ background: '#fff' }}>
                   <div className="bn-top"><span className="bn-brand" style={{ fontSize: 22 }}><Ico n="muscle" s={32} />{t('Arm raise')}</span><span className="bn-chip"><Roll>{`${s.reps}/3`}</Roll></span></div>
                   <div style={{ position: 'absolute', left: 16, right: 16, top: 134, height: 520, borderRadius: 24, background: '#eef3f8', overflow: 'hidden', display: 'grid', placeItems: 'center' }}>
-                    <Figure w={346} run={s.run} t0={s.t0} mirror skeleton />
+                    <Figure w={346} run={s.run} t0={s.t0} skeleton />{/* not mirrored: the phone shows the figure the same way round as the figure beside it, which is what people expect to see */}
                     <div className="bn-fchip" data-on={!!s.chip || undefined} key={s.chip}>{s.chip}</div>
                   </div>
                   <div className="bn-lock" style={{ top: 672, left: 16, right: 16, height: 52 }}><Ico n="lock" />{t('Stays on your device')}</div>
