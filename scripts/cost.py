@@ -41,9 +41,7 @@ def cost_section(lang):
 
     stats = "".join([
         stat("pdays", T("Practice days a month", "每月練習日數"), pdays),
-        stat("mins_month", T("Guided minutes a month", "每月有指引嘅分鐘數"), mins),
         stat("per_day", T("Premium cost per practice day", "完整版每個練習日嘅費用"), f"{cur}{per_day:.2f}"),
-        stat("between", T("Practice days between visits", "兩次覆診之間嘅練習日數"), _num(between) if between else "-"),
     ])
     prem_price = f'{price_text(lang)} {T("a month", "每月")}'
     free = [T("Speaking levels 1 to 3", "說話第 1 至 3 級"), T("Eight starter exercises", "八個入門運動"), T("Easy brain games", "簡單腦力遊戲")]
@@ -59,23 +57,20 @@ def cost_section(lang):
     word = T("Count your practice days.", "數下你嘅練習日數。").split(" ")
     h2 = " ".join(word)
     return f"""<section class="sec sec--wash" id="cost"><div class="wrap">
-<div class="open"><h2 class="display display--ink rv-word">{h2}</h2><p class="kicker rv">{T('Move the sliders. Your numbers stay in your browser.', '拉動滑桿。你輸入嘅數字只留喺瀏覽器。')}</p></div>
+<div class="open"><h2 class="display display--ink rv-word">{h2}</h2></div>
 <div class="cb" data-cost data-cur="{cur}" data-price="{amount}" data-trial="{trial}" data-weeks="{WEEKS:.4f}" data-notset="{T('Not set', '未設定')}" data-lang="{lang}">
 <form class="cb-form" aria-label="{T('Count your practice days.', '數下你嘅練習日數。')}">{sliders}</form>
 <div class="cb-res">
 <dl class="cb-stats">{stats}</dl>
 <div class="cb-chart" data-chart>
-<h3>{T('Two different things', '兩樣唔同嘅嘢')}</h3>
 <p class="cb-hint" data-hint>{T('Add what a visit costs you to see the bars.', '輸入每次覆診嘅費用，就睇到兩條棒。')}</p>
 <div class="cb-bars" data-bars hidden>
 <div class="cb-bar"><span>{T('One visit: what you pay', '一次覆診：你要俾嘅')}</span><div class="cb-track"><i data-bar="visit"></i></div><b data-val="visit"></b></div>
 <div class="cb-bar cb-bar--pro"><span>{T('A month of Premium', '完整版一個月')}</span><div class="cb-track"><i data-bar="prem"></i></div><b data-val="prem">{cur}{amount}</b></div>
-<p class="note">{T('A visit is time with your therapist. Premium is a month of practice at home. They are not the same thing.', '覆診係同治療師相處嘅時間。完整版係喺屋企練習一個月。兩者唔同。')}</p>
 </div></div></div>
 </div>
-<div class="cb-tbl"><table><caption class="sr">{T('Free plan', '免費版')} / {T('Premium', '完整版')} / {T('Therapy visit', '治療覆診')}</caption><thead>{thead}</thead><tbody>{tbody}</tbody></table></div>
 <p class="cb-line">{T('Bonet is for practice between visits. It does not replace your therapist.', '哥基健動係喺覆診之間練習用。佢唔會取代你嘅治療師。')}</p>
-<p class="note">{T('A month counts as 4.3 weeks.', '一個月當 4.3 個星期計。')} <a href="/compare.html#cost-sources">{T('About the numbers', '關於呢啲數字')}</a></p>
+<p class="note"><a href="/compare.html#cost-sources">{T('About the numbers', '關於呢啲數字')}</a></p>
 </div></section>
 """
 

@@ -286,5 +286,11 @@
  "Bonet is for practice between visits. It does not replace your therapist.": "Bonetは受診と受診の間の練習のためのものです。セラピストの代わりにはなりません。",
  "About the numbers": "数字について",
  "A month counts as 4.3 weeks.": "1か月は4.3週として計算します。",
- "Practice between visits": "受診の合間に練習"
+ "Practice between visits": "受診の合間に練習",
+ "No. Bonet is a practice tool for home. It does not diagnose or treat anything.": "いいえ。Bonetは、おうちで使う練習の道具です。診断も治療もしません。",
+ "No. Video is processed on your device and is never uploaded or recorded.": "いいえ。映像は端末の中だけで処理され、アップロードも録画もされません。",
+ "Eight languages: English, Chinese, Japanese, Spanish, German and French.": "8言語：英語、中国語、日本語、スペイン語、ドイツ語、フランス語。",
+ "More answers": "ほかの答えを見る",
+ "Video in English": "動画は英語です",
+ "Free covers the basics. Premium is {price} a month, with 7 days free.": "無料プランでも基本は使えます。Premiumは月額{price}で、7日間は無料です。"
 }

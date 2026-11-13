@@ -286,5 +286,11 @@
  "Bonet is for practice between visits. It does not replace your therapist.": "Bonet 用于两次看诊之间的练习，不能取代你的治疗师。",
  "About the numbers": "关于这些数字",
  "A month counts as 4.3 weeks.": "一个月按 4.3 周计算。",
- "Practice between visits": "两次看诊之间练习"
+ "Practice between visits": "两次看诊之间练习",
+ "No. Bonet is a practice tool for home. It does not diagnose or treat anything.": "不是。哥基健动是在家使用的练习工具，不会诊断或治疗任何病情。",
+ "No. Video is processed on your device and is never uploaded or recorded.": "不会。视频只在你的设备上处理，不会上传或录制。",
+ "Eight languages: English, Chinese, Japanese, Spanish, German and French.": "八种语言：英文、中文、日文、西班牙文、德文和法文。",
+ "More answers": "更多答案",
+ "Video in English": "视频为英文",
+ "Free covers the basics. Premium is {price} a month, with 7 days free.": "免费版有基本功能。Premium 每月 {price}，可免费试用 7 天。"
 }

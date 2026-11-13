@@ -180,29 +180,19 @@ def compare_full(lang):
 
 
 def faq_items(lang):
+    """Four short answers for the home page; the full set is on /faq. Each ends with a link there."""
     t = mk(lang)
+    pre = "" if LANGS[lang]["path"] == "/" else LANGS[lang]["path"].rstrip("/")
+    more = f' <a href="{pre}/faq">{t("More answers", "更多答案")}</a>'
     return [
         (t("Is Bonet a medical device or a therapy?", "哥基健動係醫療器材或者治療嗎？"),
-         t("No. Bonet is a practice tool for home. It does not diagnose, treat or monitor any condition, and no medical regulator has reviewed it. Ask your therapist or doctor what suits you, and stop if you feel pain or unwell.",
-           "唔係。哥基健動係喺屋企用嘅練習工具，唔會診斷、治療或者監測任何病況，亦未有任何醫療監管機構審閱。請先問你嘅治療師或者醫生邊啲適合你，感到痛或者唔舒服就要即刻停。")),
+         t("No. Bonet is a practice tool for home. It does not diagnose or treat anything.", "唔係。哥基健動係喺屋企用嘅練習工具，唔會診斷或者治療任何嘢。") + more),
         (t("Does my camera video get uploaded?", "我嘅鏡頭影像會唔會被上載？"),
-         t("No. Camera video is processed on your own device and is never uploaded or recorded. For speaking practice, your voice is turned into text on your device where possible. Otherwise it goes to Apple or a speech service only to be turned into text, and we do not keep the audio. The details are on the privacy and safety page.",
-           "唔會。鏡頭影像只喺你自己部機處理，唔會上載或者錄低。說話練習方面，聲音盡量喺你部機轉成文字；如果做唔到，會傳去 Apple 或者語音服務轉成文字，我哋唔會保存錄音。詳情請睇「私隱與安全」頁。")),
-        (t("What do I need to start?", "開始之前要準備啲乜？"),
-         t("A phone, tablet or computer with a camera, and a microphone for speaking practice. Bonet runs in your browser at app.bonet.care today. An iPhone and iPad app is coming soon.",
-           "一部有鏡頭嘅手機、平板或者電腦；說話練習需要咪高峰。而家喺瀏覽器打開 app.bonet.care 就用到，iPhone 同 iPad 版本即將推出。")),
+         t("No. Video is processed on your device and is never uploaded or recorded.", "唔會。影像只喺你部機處理，唔會上載或者錄低。") + more),
         (t("Which languages does it speak?", "支援邊幾種語言？"),
-         t(f"{NUM_WORD[LANG_COUNT]}: English, Chinese (Cantonese, and Mandarin in Traditional and Simplified), Japanese, Spanish, German and French. The text, the prompts and the speaking practice follow the language you pick.",
-           f"{NUM_YUE[LANG_COUNT]}種：英文、中文（廣東話，同繁體、簡體華語）、日文、西班牙文、德文同法文。文字、提示同說話練習都跟你揀嘅語言。")),
+         t(f"{NUM_WORD[LANG_COUNT]} languages: English, Chinese, Japanese, Spanish, German and French.", f"{NUM_YUE[LANG_COUNT]}種語言：英文、中文、日文、西班牙文、德文同法文。") + more),
         (t("What is free, and what is Premium?", "免費同完整版有咩分別？"),
-         t("Free gives you speaking levels 1 to 3, eight starter exercises, easy brain games, seven days of progress and a two-week report. Premium is {price} a month with 7 days free. It opens every speaking level, all exercises and plans of your own, harder brain games, a full month of progress and longer reports. You can cancel in Settings.",
-           "免費版包括說話第 1 至 3 級、八個入門運動、簡單腦力遊戲、七日進度同兩星期報告。完整版每月 {price}，可免費試用 7 日，解鎖全部說話級別、全部運動同自訂計劃、較難嘅腦力遊戲、整個月進度同更長嘅報告。可以喺設定入面取消。")),
-        (t("Can my carer, family or therapist see what I did?", "我嘅照顧者、家人或者治療師睇唔睇到我做過啲乜？"),
-         t("Bonet makes a one-page practice report that you can print, save as a PDF or share. Nobody else gets access to your account. Family and carers can also help set the app up for you. Bonet does not replace therapy. It helps you practise between visits and shows what you did.",
-           "哥基健動可以製作一頁練習報告，你可以列印、儲存做 PDF 或者分享。其他人唔會自動可以睇你嘅帳戶。家人同照顧者亦可以幫你設定。哥基健動並非取代治療；佢幫你喺覆診之間練習，同埋顯示你做過啲乜。")),
-        (t("Who makes Bonet?", "邊個製作哥基健動？"),
-         t(f"Bonet is made by Coglix Labs Inc. Questions? Email <a href=\"mailto:{MAIL}\">{MAIL}</a>.",
-           f"哥基健動由 Coglix Labs Inc. 製作。有問題可以電郵 <a href=\"mailto:{MAIL}\">{MAIL}</a>。")),
+         t("Free covers the basics. Premium is {price} a month, with 7 days free.", "免費版有基本功能。完整版每月 {price}，可免費試用 7 日。") + more),
     ]
 
 
@@ -236,6 +226,7 @@ def home(lang):
     h += header(lang)
     price = price_text(lang)
     vid = video_for(lang)
+    vnote = f'<p class="vnote">{T("Video in English", "影片係英文")}</p>' if lang != "en" and vid["src"].endswith("-en.mp4") else ""
 
     pq_on = "practice_quality" not in parts.FLAGS_OFF
 
@@ -280,9 +271,7 @@ def home(lang):
 <section class="hero"><div class="wrap hero-grid">
 <div class="hero-copy">
 <h1>{h1}</h1>
-<p class="lede">{T('Move, speak and think a little every day. Bonet tracks every session and shows what to work on next.', '每日做少少運動、說話同腦力。哥基健動會記錄每次練習，仲話你知下一步練咩。')}</p>
 <div class="cta-row"><a class="btn btn--lg" href="{APP}/">{T('Start free', '免費開始')}</a><a class="btn btn--2 btn--lg" href="#how">{T('See how it works', '睇下點用')}</a></div>
-<p class="note">{T('Free to start. Premium is {price} a month, with 7 days free.', '免費開始。完整版每月 {price}，可免費試用 7 日。').replace('{price}', price)}</p>
 </div>
 <div class="hero-art" data-ss-fill>
 <span class="fl" style="left:4%;top:8%;width:3.2rem;--k:18" data-par><img src="/img/icons/star.webp" width="128" height="128" alt=""></span>
@@ -290,46 +279,35 @@ def home(lang):
 {demo('hero', T('Animated preview: tap Start on the Today path, the camera counts three arm raises, Great set, and the step is ticked.', '動畫預覽：喺「今日」路徑撳開始，鏡頭數三下舉手，完成一組，然後打咗剔。'))}
 </div></div></section>
 
-<section class="sec" id="why"><div class="wrap">
-<div class="pos">
-<div class="rv"><h3>{T('All in one', '一個 app 包晒')}</h3><p>{T('Movement, speaking and brain games share one daily plan.', '運動、說話同腦力遊戲，共用一個每日計劃。')}</p></div>
-<div class="rv" style="--rd:.1s"><h3>{T('Fun to keep up', '易堅持，好好玩')}</h3><p>{T('A daily path, a streak, a weekly league and a corgi to dress up.', '每日路徑、連續練習、每週聯賽，仲有隻可以換衫嘅柯基。')}</p></div>
-<div class="rv"><h3>{T('Feedback as you go', '練習時即時回饋')}</h3><p>{T('Rep counts, hints for words and tips for next time.', '次數、字詞提示，同下次嘅小提示。')}</p></div>
-<div class="rv" style="--rd:.1s"><h3>{T('Progress you can see', '睇得到嘅進度')}</h3><p>{T('Trends, and a one-page report to share.', '趨勢，同一頁可以分享嘅報告。')}</p></div>
-</div></div></section>
-
 <section class="sec sec--wash" id="how"><div class="wrap">
 <div class="feat">
 <div class="feat-copy">{word(T('Move', '運動'), 'muscle')}
-<p class="kicker rv">{T('The camera counts your reps.', '鏡頭幫你數次數。')}</p>
-{pts(T('A 3D guide first', '先睇立體示範'), T('Small tips as you go', '一路有小提示'), T('Video stays on your device', '影像只留喺你部機'))}</div>
+<p class="kicker rv">{T('The camera counts your reps.', '鏡頭幫你數次數。')}</p></div>
 <div class="feat-art">{card('move', T('Animated preview of the exercise screen counting 1, 2, 3 reps beside a 3D guide.', '動畫預覽：運動畫面一邊有立體示範，一邊數 1、2、3 下。'))}</div>
 </div>
 
 <div class="feat feat--flip">
 <div class="feat-copy">{word(T('Speak', '說話'), 'speak')}
 <p class="kicker rv">{T('Hints start small and grow, one step at a time.', '提示由細開始，一步一步加大。')}</p>
-{pts(T('Sentences and words, level by level', '一級一級砌句子、讀詞語'), T('See words heard, pace and pauses', '睇到聽到嘅詞語、速度、停頓'), T(f'{NUM_WORD[LANG_COUNT]} languages', f'{NUM_YUE[LANG_COUNT]}種語言'))}
 <div class="card-demo rv-tilt" style="max-width:420px;margin-top:.6rem">{demo('hint', T('Animated preview: tapping Give me a hint shows three hints, one after another.', '動畫預覽：撳「俾啲提示」，三個提示逐個出現。'))}</div></div>
 <div class="feat-art">{card('speak', T('Animated preview: word tiles move into place to build a sentence and Great! appears.', '動畫預覽：詞語磚砌成句子，然後出現「好呀！」。'))}</div>
 </div>
 
 <div class="feat">
 <div class="feat-copy">{word(T('Think', '腦力'), 'brain', 'display--or')}
-<p class="kicker rv">{T('Short games for memory and attention.', '訓練記憶同專注嘅短遊戲。')}</p>
-{pts(T('A few minutes at a time', '一次幾分鐘'))}</div>
+<p class="kicker rv">{T('Short games for memory and attention.', '訓練記憶同專注嘅短遊戲。')}</p></div>
 <div class="feat-art">{card('brain', T('Animated preview: two cards flip and match in a pairs game.', '動畫預覽：配對遊戲入面兩張牌翻開並且配成一對。'))}</div>
 </div>
 </div></section>
 
 {pq}
 <section class="sec"><div class="wrap">
-<div class="open">{word(T('Also on a big screen', '大螢幕都用得'), 'globe', 'display--ink')}<p class="kicker rv">{T('Runs in your browser. Nothing to install.', '喺瀏覽器行，唔使安裝。')}</p></div>
+<div class="open">{word(T('Also on a big screen', '大螢幕都用得'), 'globe', 'display--ink')}</div>
 <div class="card-demo rv-tilt card-demo--wide" data-ss-fill>{demo('web', T('Animated preview of Bonet in a browser: the Move tab, an exercise started, and three reps counted.', '動畫預覽：喺瀏覽器用哥基健動，打開運動版、開始一個運動、數咗三下。'))}</div>
 </div></section>
 
 <section class="sec sec--blue"><div class="wrap">
-<div class="open">{word(T('Big. Calm. Easy.', '大字。清晰。簡單。'), 'sun')}<p class="kicker rv">{T('Large text, one big button, your language.', '大字、一個大掣、你嘅語言。')}</p></div>
+<div class="open">{word(T('Big. Calm. Easy.', '大字。清晰。簡單。'), 'sun')}</div>
 <div class="duo">
 <div class="rv-tilt"><div class="card-demo" data-ss-fill>{demo('simple', T('Animated preview: turning on Simple mode changes a busy list into one big Start button.', '動畫預覽：開啟簡單模式，一堆選項變成一個大大嘅開始掣。'))}</div><div class="tcap"><h3>{T('Simple mode', '簡單模式')}</h3></div></div>
 <div class="rv-tilt"><div class="card-demo" data-ss-fill>{demo('lang', T(f'Animated preview: a greeting changes through {NUM_WORD[LANG_COUNT].lower()} languages.', f'動畫預覽：問候語轉換{NUM_YUE[LANG_COUNT]}種語言。'))}</div><div class="tcap"><h3>{T(f'{NUM_WORD[LANG_COUNT]} languages', f'{NUM_YUE[LANG_COUNT]}種語言')}</h3></div></div>
@@ -338,16 +316,15 @@ def home(lang):
 <section class="sec"><div class="wrap">
 <div class="open">{word(T('Come back tomorrow.', '聽日再嚟。'), 'fire', 'display--ink')}</div>
 <div class="trio">
-<div class="rv-tilt"><div class="card-demo" data-ss-fill>{demo('streak', T('Animated preview: a streak calendar where a saver covers a missed day.', '動畫預覽：連續練習日曆，保護盾補返漏咗嗰日。'))}</div><div class="tcap"><h3>{T('Keep your streak', '保持連續練習')}</h3><p>{T('A saver covers a missed day.', '保護盾可以補返漏咗嗰日。')}</p></div></div>
-<div class="rv-tilt"><div class="card-demo" data-ss-fill>{demo('league', T('Animated preview: a weekly league where your row climbs after practice.', '動畫預覽：每週聯賽，練習後你嘅名次上升。'))}</div><div class="tcap"><h3>{T('Weekly league', '每週聯賽')}</h3><p>{T('Climb a friendly table.', '喺輕鬆嘅排行榜上升。')}</p></div></div>
-<div class="rv-tilt"><div class="card-demo" data-ss-fill data-wardrobe>{demo('wardrobe', T('Animated preview: Bonet the corgi trying on a bandana, a bow tie, a cap and a crown.', '動畫預覽：朱古力試戴頸巾、領結、棒球帽同小皇冠。'))}</div><div class="tcap"><h3>{T('Dress up Bonet', '幫朱古力換衫')}</h3><p>{T('Outfits unlock as your streak grows.', '連續練習愈耐，愈多衫解鎖。')}</p></div></div>
+<div class="rv-tilt"><div class="card-demo" data-ss-fill>{demo('streak', T('Animated preview: a streak calendar where a saver covers a missed day.', '動畫預覽：連續練習日曆，保護盾補返漏咗嗰日。'))}</div><div class="tcap"><h3>{T('Keep your streak', '保持連續練習')}</h3></div></div>
+<div class="rv-tilt"><div class="card-demo" data-ss-fill>{demo('league', T('Animated preview: a weekly league where your row climbs after practice.', '動畫預覽：每週聯賽，練習後你嘅名次上升。'))}</div><div class="tcap"><h3>{T('Weekly league', '每週聯賽')}</h3></div></div>
+<div class="rv-tilt"><div class="card-demo" data-ss-fill data-wardrobe>{demo('wardrobe', T('Animated preview: Bonet the corgi trying on a bandana, a bow tie, a cap and a crown.', '動畫預覽：朱古力試戴頸巾、領結、棒球帽同小皇冠。'))}</div><div class="tcap"><h3>{T('Dress up Bonet', '幫朱古力換衫')}</h3></div></div>
 </div></div></section>
 
 <section class="sec sec--wash"><div class="wrap">
 <div class="feat">
 <div class="feat-copy"><h2 class="display rv-word">{T('Progress you can see.', '睇得到嘅進度。')}</h2>
-<p class="kicker rv">{T('Share a one-page report with your therapist or family.', '一頁報告，可以俾治療師或者家人睇。')}</p>
-<p class="note">{T('Bonet does not replace therapy. It helps you practise between visits and shows what you did.', '哥基健動並非取代治療。佢幫你喺覆診之間練習，同埋顯示你做過啲乜。')}</p></div>
+<p class="kicker rv">{T('Share a one-page report with your therapist or family.', '一頁報告，可以俾治療師或者家人睇。')}</p></div>
 <div class="feat-art"><div class="card-demo rv-tilt" data-ss-fill>{demo('progress', T('Animated preview: a weekly progress chart drawing in.', '動畫預覽：每週進度圖表逐條畫出。'))}</div>
 <div class="paper rv" aria-hidden="true"><img src="/img/mascot/point.webp" width="512" height="512" alt=""><h4>{T('Home practice report', '居家練習報告')}</h4><small>{T('Last 2 weeks', '最近 2 星期')}</small>
 <div class="bars rv-bars">{''.join(f'<i style="height:{x}%;--i:{n}"></i>' for n, x in enumerate([45, 70, 30, 85, 60, 95, 75]))}</div><div class="ln"></div><div class="ln m"></div><div class="ln s"></div></div></div>
@@ -365,15 +342,15 @@ def home(lang):
 <div class="open"><h2 class="rv">{T('Bonet in 50 seconds', '五十秒睇晒哥基健動')}</h2></div>
 <button type="button" class="player rv-tilt" data-video="{vid["src"]}"{vid["vtt"]} data-lang="{LANGS[lang]["name"]}" aria-label="{T('Play the demo video', '播放示範影片')}"><img src="{vid["poster"]}" width="1280" height="720" alt="" loading="lazy"><span class="play" aria-hidden="true"></span></button>
 <noscript><p class="vnote"><a href="{vid["src"]}">{T('Open the demo video', '開啟示範影片')}</a></p></noscript>
-<p class="vnote">{T('Spoken guide in English.', '影片旁白係英文。')}</p>
+{vnote}
 </div></section>
 
 {cost_section(lang)}
 <section class="sec" id="plans"><div class="wrap">
 <div class="open"><h2 class="display display--ink rv-word">{T('Start free.', '免費開始。')}</h2></div>
 <div class="plans">
-<div class="plan rv"><h3>{T('Free plan', '免費版')}</h3><div class="price">{T('Free', '免費')}</div>{li(free)}<a class="btn btn--2" href="{APP}/">{T('Start free', '免費開始')}</a></div>
-<div class="plan plan--pro rv" style="--rd:.1s"><h3>{T('Premium', '完整版')}</h3><div class="price">{price_html(lang, T('a month', '每月'))}</div><p class="trial">{T('7 days free', '免費試用 7 日')}</p>{li(prem)}<a class="btn" href="{APP}/">{T('Start 7 days free', '免費試用 7 日')}</a></div>
+<div class="plan rv"><h3>{T('Free plan', '免費版')}</h3><div class="price">{T('Free', '免費')}</div><a class="btn btn--2" href="{APP}/">{T('Start free', '免費開始')}</a></div>
+<div class="plan plan--pro rv" style="--rd:.1s"><h3>{T('Premium', '完整版')}</h3><div class="price">{price_html(lang, T('a month', '每月'))}</div><p class="trial">{T('7 days free', '免費試用 7 日')}</p><a class="btn" href="{APP}/">{T('Start 7 days free', '免費試用 7 日')}</a></div>
 </div>
 <p class="vnote">{T('7 days free, then billed monthly. Cancel in Settings.', '免費試用 7 日，之後按月收費。可以喺設定取消。')}{hk}</p>
 </div></section>
