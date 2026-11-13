@@ -97,7 +97,7 @@ def dedupe_sources():
     for r in CMP["rows"]:
         for c, v in r["cells"].items():
             u = v.get("src")
-            if u and u not in seen:
+            if u and u.startswith("http") and u not in seen:
                 seen.add(u)
                 out.append((c, u))
     return out
