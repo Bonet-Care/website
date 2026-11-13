@@ -6,29 +6,19 @@ It is plain static HTML and CSS. There is no framework and no build step for dep
 
 ## Layout
 
-- `index.html`, `zh/index.html`: home page (English, Traditional Chinese). Generated, do not edit by hand.
-- `scripts/build-home.py`: the copy (both languages) and the layout for the home page.
-- `partials/head-en.html`, `partials/head-zh.html`: SEO tags, JSON-LD and Google Analytics for the home pages.
-- `css/site.css`: styles for the home page.
-- `css/tailwind.css`: pre-built Tailwind CSS for the legal, science, therapist and blog pages. Built once, committed (see below).
-- `privacy.html`, `terms.html`, `compliance.html` (Privacy and safety), `science.html`, `therapist.html`, `blog/`: content pages.
-- `rehab.html`, `speech.html`: tiny redirect pages to the matching screens in the app.
-- `_headers`, `_redirects`: Cloudflare Pages security headers and redirects.
-- `img/`: logo, partner logos, social share images (`og-en.png`, `og-zh.png`, 1200x630).
+- `scripts/build-site.py`: builds every page (`python3 scripts/build-site.py`; `--strict` fails on a missing translation; `--export` writes `strings/source.json`; `--without practice_quality` leaves out the hexagon sections). Python 3, no packages (Pillow only for the one-off asset scripts).
+- `scripts/home.py` (home page template; English text with a Cantonese gloss), `scripts/parts.py` (languages, header, language menu, footer, prices), `scripts/competitors.json` (verified comparison facts, November 2026).
+- `strings/<lang>.json`: English string to that language, for zh-hant, zh-hans, ja, es, de, fr. Cantonese (`yue`) text sits in the template next to the English. A new string in `home.py` needs an entry in every file or `--strict` fails.
+- `content/prices.json`: every price on every page (`checkout_matches` controls the "charged in Hong Kong dollars" note). `content/flags.json`: `practice_quality_live`. `content/*.html`: inner page text; `content/blog/`: posts (EN, and zhhant for two).
+- `demos/`: React and Stageshow kit source for the animated phone demos. `cd demos && npm install && npm run build` writes `js/demos.js` and `css/demos.css` (committed; Cloudflare needs no build).
+- `css/site.css`, `js/site.js` (language menu, sprite player, scroll entrances), `js/boot.js`, `js/gtag-init.js`.
+- `img/mascot/anim/`, `img/figure/`: Blender sprite sheets (see `scripts/mascot/README.md`, `scripts/mascot/figure/README.md`). `media/demo/bonet-demo-<lang>.mp4|jpg|vtt`: per-language video, chosen at build time from the files present (English fallback; keep each under 24 MB).
+- `index.html`, `zh-hant/`, `yue/`, `zh-hans/`, `ja/`, `es/`, `de/`, `fr/`, inner pages, `blog/`: generated, committed.
+- `_headers`, `_redirects`: Cloudflare Pages headers (strict CSP, no inline script) and redirects (`/zh` to `/zh-hant/`).
 
 ## Editing
 
-Home page copy or layout: edit `scripts/build-home.py`, then run
-
-    python3 scripts/build-home.py
-
-and commit the regenerated `index.html` and `zh/index.html`. Python 3 only, no packages.
-
-Other pages are edited directly. If you add new Tailwind classes to them, rebuild the CSS:
-
-    npx tailwindcss@3.4.17 -c tailwind.config.js -i css/tailwind.src.css -o css/tailwind.css --minify
-
-To preview locally: `python3 -m http.server 8000` and open http://localhost:8000/.
+Change copy in `scripts/home.py` or `content/`, run `python3 scripts/build-site.py --strict`, commit the generated files. Preview: `python3 -m http.server 8000`.
 
 ## How it deploys
 

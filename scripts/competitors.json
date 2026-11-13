@@ -1,0 +1,344 @@
+{
+ "asOf": "November 2026",
+ "fetchedOn": "2026-11-13",
+ "columns": [
+  "Constant Therapy",
+  "Tactus Therapy",
+  "Lingraphica TalkPath",
+  "Flint Rehab",
+  "Exercise video or paper handout"
+ ],
+ "rows": [
+  {
+   "key": "movement",
+   "label": "Movement practice with camera-based rep counting",
+   "cells": {
+    "Constant Therapy": {
+     "v": "not offered as far as we can tell",
+     "note": "Pages cover speech, language, cognition only",
+     "src": "https://constanttherapyhealth.com/constant-therapy/"
+    },
+    "Tactus Therapy": {
+     "v": "not offered as far as we can tell",
+     "note": "Listed apps are language, speech, cognition, swallowing",
+     "src": "https://tactustherapy.com/apps/"
+    },
+    "Lingraphica TalkPath": {
+     "v": "not offered as far as we can tell",
+     "note": "Page lists language and cognitive exercises only",
+     "src": "https://lingraphica.com/talkpath-therapy-aphasia-app/"
+    },
+    "Flint Rehab": {
+     "v": "partly",
+     "note": "FitMi counts reps with sensor pucks, no camera",
+     "src": "https://www.flintrehab.com/frequently-asked-questions/"
+    },
+    "Exercise video or paper handout": {
+     "v": "partly",
+     "note": "Shows exercises; nothing counts reps or checks form",
+     "src": "not applicable (generic comparison, no vendor)"
+    }
+   }
+  },
+  {
+   "key": "speaking",
+   "label": "Speaking practice",
+   "cells": {
+    "Constant Therapy": {
+     "v": "yes",
+     "note": "Speech exercises listed beside language and cognition",
+     "src": "https://constanttherapyhealth.com/constant-therapy/"
+    },
+    "Tactus Therapy": {
+     "v": "partly",
+     "note": "Separate apraxia and conversation apps; scoring of speech unverified",
+     "src": "https://tactustherapy.com/apps/"
+    },
+    "Lingraphica TalkPath": {
+     "v": "partly",
+     "note": "Speaking tasks; iPad playback of own recording, self-review",
+     "src": "https://lingraphica.com/talkpath-therapy-aphasia-app/"
+    },
+    "Flint Rehab": {
+     "v": "partly",
+     "note": "CT app lists speech exercises; voice scoring not described",
+     "src": "https://flintrehab.com/product/speech-therapy"
+    },
+    "Exercise video or paper handout": {
+     "v": "partly",
+     "note": "Can list speech exercises; no feedback or hints",
+     "src": "not applicable (generic comparison, no vendor)"
+    }
+   }
+  },
+  {
+   "key": "cognitive",
+   "label": "Cognitive games / exercises",
+   "cells": {
+    "Constant Therapy": {
+     "v": "yes",
+     "note": "Cognitive skills exercises, adaptive difficulty",
+     "src": "https://constanttherapyhealth.com/constant-therapy/"
+    },
+    "Tactus Therapy": {
+     "v": "partly",
+     "note": "Few cognition apps, e.g. visual attention, spaced retrieval",
+     "src": "https://tactustherapy.com/apps/"
+    },
+    "Lingraphica TalkPath": {
+     "v": "yes",
+     "note": "Over 13,500 language and cognitive exercises",
+     "src": "https://lingraphica.com/talkpath-therapy-aphasia-app/"
+    },
+    "Flint Rehab": {
+     "v": "yes",
+     "note": "CT app covers attention, memory and math",
+     "src": "https://flintrehab.com/product/speech-therapy"
+    },
+    "Exercise video or paper handout": {
+     "v": "partly",
+     "note": "Paper puzzles or worksheets possible; no adaptation",
+     "src": "not applicable (generic comparison, no vendor)"
+    }
+   }
+  },
+  {
+   "key": "dailyPlan",
+   "label": "One daily plan across movement, speaking and brain practice",
+   "cells": {
+    "Constant Therapy": {
+     "v": "partly",
+     "note": "Homework plan in Tasks tab; speech and cognition only",
+     "src": "https://constanttherapyhealth.com/constant-therapy/for-patients/faqs/"
+    },
+    "Tactus Therapy": {
+     "v": "not offered as far as we can tell",
+     "note": "Separate paid apps; no combined plan described",
+     "src": "https://tactustherapy.com/apps/"
+    },
+    "Lingraphica TalkPath": {
+     "v": "unverified",
+     "note": "Page silent on plans; app store listing not readable",
+     "src": "https://lingraphica.com/talkpath-therapy-aphasia-app/"
+    },
+    "Flint Rehab": {
+     "v": "not offered as far as we can tell",
+     "note": "Devices and CT app sold separately; no joint plan described",
+     "src": "https://www.flintrehab.com/"
+    },
+    "Exercise video or paper handout": {
+     "v": "partly",
+     "note": "A written weekly sheet can combine all three",
+     "src": "not applicable (generic comparison, no vendor)"
+    }
+   }
+  },
+  {
+   "key": "gameElements",
+   "label": "Game elements (streaks, leagues, mascot, rewards)",
+   "cells": {
+    "Constant Therapy": {
+     "v": "not offered as far as we can tell",
+     "note": "Product page and FAQ mention no streaks or rewards",
+     "src": "https://constanttherapyhealth.com/constant-therapy/for-patients/faqs/"
+    },
+    "Tactus Therapy": {
+     "v": "not offered as far as we can tell",
+     "note": "Page describes no streaks, leagues or rewards",
+     "src": "https://tactustherapy.com/apps/"
+    },
+    "Lingraphica TalkPath": {
+     "v": "not offered as far as we can tell",
+     "note": "Page mentions no game elements",
+     "src": "https://lingraphica.com/talkpath-therapy-aphasia-app/"
+    },
+    "Flint Rehab": {
+     "v": "partly",
+     "note": "MusicGlove is a music game; no streaks or leagues described",
+     "src": "https://www.flintrehab.com/"
+    },
+    "Exercise video or paper handout": {
+     "v": "no",
+     "note": "None",
+     "src": "not applicable (generic comparison, no vendor)"
+    }
+   }
+  },
+  {
+   "key": "report",
+   "label": "Report to share with a therapist or family; clinician dashboard",
+   "cells": {
+    "Constant Therapy": {
+     "v": "yes",
+     "note": "Reports tab, emailed reports, therapist can be linked",
+     "src": "https://constanttherapyhealth.com/constant-therapy/for-patients/faqs/"
+    },
+    "Tactus Therapy": {
+     "v": "yes",
+     "note": "Apps create automatic reports; clinician dashboard not described",
+     "src": "https://tactustherapy.com/app/language"
+    },
+    "Lingraphica TalkPath": {
+     "v": "unverified",
+     "note": "Page silent on reports; app store listing not readable",
+     "src": "https://lingraphica.com/talkpath-therapy-aphasia-app/"
+    },
+    "Flint Rehab": {
+     "v": "partly",
+     "note": "CT app reports, clinician can be added; FitMi sharing not stated",
+     "src": "https://flintrehab.com/product/speech-therapy"
+    },
+    "Exercise video or paper handout": {
+     "v": "no",
+     "note": "Paper log kept by hand at best",
+     "src": "not applicable (generic comparison, no vendor)"
+    }
+   }
+  },
+  {
+   "key": "languages",
+   "label": "Languages offered (Cantonese or Chinese?)",
+   "cells": {
+    "Constant Therapy": {
+     "v": "partly",
+     "note": "English and Spanish; no Chinese found",
+     "src": "https://constanttherapyhealth.com/constant-therapy/for-patients/faqs/"
+    },
+    "Tactus Therapy": {
+     "v": "partly",
+     "note": "English, Spanish, French, German; no Chinese found",
+     "src": "https://tactustherapy.com/app/language"
+    },
+    "Lingraphica TalkPath": {
+     "v": "unverified",
+     "note": "Site in English and Spanish; exercise languages not stated",
+     "src": "https://lingraphica.com/talkpath-therapy-aphasia-app/"
+    },
+    "Flint Rehab": {
+     "v": "unverified",
+     "note": "Product pages state no languages",
+     "src": "https://flintrehab.com/product/speech-therapy"
+    },
+    "Exercise video or paper handout": {
+     "v": "partly",
+     "note": "Any language the author writes it in",
+     "src": "not applicable (generic comparison, no vendor)"
+    }
+   }
+  },
+  {
+   "key": "platforms",
+   "label": "Where it runs",
+   "cells": {
+    "Constant Therapy": {
+     "v": "yes",
+     "note": "Browser, iOS, Android, Chromebook, Kindle Fire",
+     "src": "https://constanttherapyhealth.com/constant-therapy/for-patients/faqs/"
+    },
+    "Tactus Therapy": {
+     "v": "partly",
+     "note": "iOS and Android apps; browser version not mentioned",
+     "src": "https://tactustherapy.com/apps/"
+    },
+    "Lingraphica TalkPath": {
+     "v": "partly",
+     "note": "Web and iPad app; Android not mentioned",
+     "src": "https://lingraphica.com/talkpath-therapy-aphasia-app/"
+    },
+    "Flint Rehab": {
+     "v": "partly",
+     "note": "FitMi needs Mac/PC with USB or Flint tablet; CT app on phones and web",
+     "src": "https://www.flintrehab.com/product/fitmi/"
+    },
+    "Exercise video or paper handout": {
+     "v": "yes",
+     "note": "Paper, or any screen that plays video",
+     "src": "not applicable (generic comparison, no vendor)"
+    }
+   }
+  },
+  {
+   "key": "price",
+   "label": "Price to start (page prices, Nov 2026)",
+   "cells": {
+    "Constant Therapy": {
+     "v": "partly",
+     "note": "$29.99 per month; first two weeks free; currency not named",
+     "src": "https://constanttherapyhealth.com/constant-therapy/pricing/"
+    },
+    "Tactus Therapy": {
+     "v": "partly",
+     "note": "One-time US$89.99 Language 4-in-1; free Lite apps; no subscription",
+     "src": "https://tactustherapy.com/apps/"
+    },
+    "Lingraphica TalkPath": {
+     "v": "yes",
+     "note": "Free account and exercises",
+     "src": "https://lingraphica.com/talkpath-therapy-aphasia-app/"
+    },
+    "Flint Rehab": {
+     "v": "partly",
+     "note": "CT app $29.99/month; FitMi $399; currency not named",
+     "src": "https://www.flintrehab.com/"
+    },
+    "Exercise video or paper handout": {
+     "v": "partly",
+     "note": "Often free from a clinic; printing cost only",
+     "src": "not applicable (generic comparison, no vendor)"
+    }
+   }
+  }
+ ],
+ "othersDoBetter": [
+  {
+   "text": "Constant Therapy reports a fully remote Phase II trial of its app against standard care in post-stroke aphasia (company-run).",
+   "src": "https://constanttherapyhealth.com/science/"
+  },
+  {
+   "text": "Constant Therapy holds FDA Breakthrough Device designation (April 2020) for its speech app; this is review priority, not marketing authorization.",
+   "src": "https://constanttherapyhealth.com/science/"
+  },
+  {
+   "text": "Constant Therapy has a separate Clinician App and clinician-built home programs; Bonet's report is a one-page share only.",
+   "src": "https://constanttherapyhealth.com/science/technology/"
+  },
+  {
+   "text": "Tactus offers 19 single-purpose apps by a certified SLP, with a cueing hierarchy and your own photos, bought once.",
+   "src": "https://tactustherapy.com/apps/"
+  },
+  {
+   "text": "TalkPath is free and lists over 13,500 exercises, far more than Bonet.",
+   "src": "https://lingraphica.com/talkpath-therapy-aphasia-app/"
+  },
+  {
+   "text": "Flint FitMi is an FDA-listed device with 4 published studies on FitMi and MusicGlove, including one randomised trial on FitMi.",
+   "src": "https://www.flintrehab.com/clinical-evidence/"
+  },
+  {
+   "text": "Flint sells a remote program where a licensed therapist builds the plan and reviews data monthly ($99/month).",
+   "src": "https://www.flintrehab.com/"
+  },
+  {
+   "text": "Years in market: not stated on the vendor pages we read, so no claim is made either way.",
+   "src": "https://constanttherapyhealth.com/constant-therapy/"
+  }
+ ],
+ "unverified": [
+  "Lingraphica TalkPath: dailyPlan, report, languages (official page silent; App Store listing returned HTTP 429)",
+  "Flint Rehab: languages (no page states them)",
+  "Tactus: whether speaking apps score voice; browser version",
+  "Constant Therapy / Flint: price currency not named on page (USD assumed only by US shipping, not stated)",
+  "Not fetched (HTTP 429/404): App Store listings for Constant Therapy and TalkPath; Google Play listings not checked"
+ ],
+ "differencesFromNotes": [
+  "Constant Therapy now has a pricing page: $29.99/month with a two-week free trial (notes found no price).",
+  "Constant Therapy FAQ lists English (US, India) and Spanish (US); main page adds UK and Australian English.",
+  "Flint page counts disagree: home page says 10,000+ exercises, CT product page says 500,000+ (notes only had 500,000+).",
+  "Flint home page labels it 'CT Speech & Cognitive App' but no Flint page says it is Constant Therapy; still unverified.",
+  "MintPad and RehaBoard not found on any Flint page; only FitMi, MusicGlove, Flex AFO, CT app, Remote Neuro Recovery.",
+  "FitMi uses sensor pucks, not a camera, and its FAQ says it cannot run on iPads.",
+  "TalkPath page does not mention clinician plans or reports; notes took those from the App Store listing, which could not be re-read.",
+  "Tactus Language Therapy 4-in-1 still US$89.99; other apps $9.99 to $29.99; one-time, no subscription.",
+  "Constant Therapy Breakthrough Device designation is on its own site; notes did not record it."
+ ]
+}

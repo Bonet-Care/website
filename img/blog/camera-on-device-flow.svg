@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 360" role="img" aria-label="Diagram: camera picture, body points and rep count stay on the device; only results go to your account">
+  <rect width="720" height="360" fill="#ffffff"/>
+  <g font-family="Nunito, system-ui, sans-serif">
+    <rect x="10" y="40" width="480" height="250" rx="22" fill="#e8f7ea" stroke="#3cb44b" stroke-width="3" stroke-dasharray="10 6"/>
+    <text x="30" y="72" font-size="20" font-weight="800" fill="#2b8a37">On this device</text>
+    <!-- box 1 -->
+    <rect x="30" y="95" width="130" height="150" rx="14" fill="#ffffff" stroke="#1b2330" stroke-width="2"/>
+    <text x="95" y="120" font-size="17" font-weight="800" fill="#1b2330" text-anchor="middle">Camera</text>
+    <text x="95" y="140" font-size="17" font-weight="800" fill="#1b2330" text-anchor="middle">picture</text>
+    <circle cx="95" cy="168" r="9" fill="#ffc23d"/>
+    <path d="M95 178 V212 M95 188 L76 202 M95 188 L114 202 M95 212 L80 236 M95 212 L110 236" stroke="#6b7484" stroke-width="5" stroke-linecap="round" fill="none"/>
+    <!-- box 2 -->
+    <rect x="180" y="95" width="130" height="150" rx="14" fill="#ffffff" stroke="#1b2330" stroke-width="2"/>
+    <text x="245" y="120" font-size="17" font-weight="800" fill="#1b2330" text-anchor="middle">33 body</text>
+    <text x="245" y="140" font-size="17" font-weight="800" fill="#1b2330" text-anchor="middle">points</text>
+    <g fill="#1f8ae6">
+      <circle cx="245" cy="168" r="6"/><circle cx="245" cy="190" r="5"/><circle cx="226" cy="198" r="5"/><circle cx="264" cy="198" r="5"/>
+      <circle cx="245" cy="214" r="5"/><circle cx="230" cy="236" r="5"/><circle cx="260" cy="236" r="5"/>
+    </g>
+    <path d="M245 168 V190 M245 190 L226 198 M245 190 L264 198 M245 190 V214 M245 214 L230 236 M245 214 L260 236" stroke="#1f8ae6" stroke-width="2" fill="none"/>
+    <!-- box 3 -->
+    <rect x="330" y="95" width="140" height="150" rx="14" fill="#ffffff" stroke="#1b2330" stroke-width="2"/>
+    <text x="400" y="120" font-size="17" font-weight="800" fill="#1b2330" text-anchor="middle">Rep counter</text>
+    <text x="400" y="195" font-size="56" font-weight="900" fill="#2b8a37" text-anchor="middle">8</text>
+    <!-- arrows inside -->
+    <path d="M162 170 H178 M312 170 H328" stroke="#1b2330" stroke-width="3" fill="none"/>
+    <path d="M172 163 L180 170 L172 177 M322 163 L330 170 L322 177" stroke="#1b2330" stroke-width="3" fill="none"/>
+    <text x="250" y="272" font-size="17" font-weight="700" fill="#1b2330" text-anchor="middle">Video is not recorded or uploaded</text>
+    <!-- out -->
+    <path d="M492 170 H545" stroke="#f28c28" stroke-width="4" fill="none"/>
+    <path d="M534 160 L546 170 L534 180" stroke="#f28c28" stroke-width="4" fill="none"/>
+    <text x="518" y="150" font-size="16" font-weight="800" fill="#c2640f" text-anchor="middle">results</text>
+    <rect x="550" y="95" width="160" height="150" rx="14" fill="#fff1e2" stroke="#f28c28" stroke-width="2"/>
+    <text x="630" y="130" font-size="18" font-weight="800" fill="#1b2330" text-anchor="middle">Your account</text>
+    <text x="630" y="170" font-size="17" font-weight="700" fill="#1b2330" text-anchor="middle">reps, scores,</text>
+    <text x="630" y="192" font-size="17" font-weight="700" fill="#1b2330" text-anchor="middle">date and time</text>
+    <text x="360" y="332" font-size="16" font-weight="700" fill="#6b7484" text-anchor="middle">Only the numbers from a session are saved.</text>
+  </g>
+</svg>

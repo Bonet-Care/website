@@ -3,3 +3,7 @@
 /app            https://app.bonet.care/        301
 /app/           https://app.bonet.care/        301
 /app/*          https://app.bonet.care/:splat  301
+
+# Old Cantonese/Chinese home page
+/zh        /zh-hant/  301
+/zh/       /zh-hant/  301

@@ -1,359 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bonet by Coglix Labs Inc.: privacy and safety</title>
-    <meta name="description" content="Plain statements about what Bonet stores, what stays on your device, and what the app is and is not. A practice tool, not a medical device.">
-    <link rel="canonical" href="https://bonet.care/compliance.html">
-    <link rel="icon" type="image/x-icon" href="/favicon.ico">
-    <link rel="stylesheet" href="css/tailwind.css">
-    <style>
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', system-ui, sans-serif;
-        }
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Privacy, safety and what to know before you start | Bonet</title>
+<meta name="description" content="Plain answers on privacy and safety: what stays on your device, what is stored, who processes speech, and what to know before you practise.">
+<meta name="theme-color" content="#1f8ae6">
+<script src="/js/boot.js"></script>
+<link rel="canonical" href="https://bonet.care/compliance.html">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/img/favicon-32.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta property="og:site_name" content="Bonet">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Privacy, safety and what to know before you start | Bonet">
+<meta property="og:description" content="Plain answers on privacy and safety: what stays on your device, what is stored, who processes speech, and what to know before you practise.">
+<meta property="og:url" content="https://bonet.care/compliance.html">
+<meta property="og:image" content="https://bonet.care/img/og-en.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Privacy, safety and what to know before you start | Bonet">
+<meta name="twitter:description" content="Plain answers on privacy and safety: what stays on your device, what is stored, who processes speech, and what to know before you practise.">
+<meta name="twitter:image" content="https://bonet.care/img/og-en.png">
+<link rel="preload" href="/fonts/nunito-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/css/site.css">
 
-        .nav-glass {
-            background: rgba(255, 255, 255, 0.6);
-            backdrop-filter: blur(40px) saturate(1.8);
-            -webkit-backdrop-filter: blur(40px) saturate(1.8);
-            border: 1px solid rgba(255, 255, 255, 0.5);
-            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.04);
-        }
-
-        .glass-card {
-            background: rgba(255, 255, 255, 0.5);
-            backdrop-filter: blur(24px) saturate(1.6);
-            -webkit-backdrop-filter: blur(24px) saturate(1.6);
-            border: 1px solid rgba(255, 255, 255, 0.6);
-            border-radius: 24px;
-            box-shadow:
-                0 8px 32px rgba(70, 119, 172, 0.08),
-                0 2px 8px rgba(0, 0, 0, 0.04),
-                inset 0 1px 0 rgba(255, 255, 255, 0.5);
-        }
-
-        table {
-            width: 100%;
-            border-collapse: collapse;
-        }
-
-        th {
-            text-align: left;
-            font-size: 11px;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            color: #9AA7C1;
-            padding: 8px 12px;
-            border-bottom: 1px solid rgba(189, 197, 212, 0.3);
-        }
-
-        td {
-            font-size: 13px;
-            color: #657FB1;
-            padding: 10px 12px;
-            border-bottom: 1px solid rgba(189, 197, 212, 0.15);
-            vertical-align: top;
-        }
-
-        tr:last-child td {
-            border-bottom: none;
-        }
-
-        @keyframes fade-up {
-            from {
-                opacity: 0;
-                transform: translateY(24px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .fade-up {
-            animation: fade-up 0.7s ease-out forwards;
-        }
-
-        @media print {
-            body {
-                background: white !important;
-            }
-
-            .no-print {
-                display: none !important;
-            }
-
-            .nav-glass,
-            nav {
-                display: none !important;
-            }
-
-            .glass-card {
-                background: white !important;
-                backdrop-filter: none !important;
-                box-shadow: none !important;
-                border: 1px solid #e5e7eb !important;
-            }
-
-            footer {
-                display: none !important;
-            }
-
-            .fade-up {
-                opacity: 1 !important;
-                transform: none !important;
-                animation: none !important;
-            }
-
-            section {
-                padding-top: 24px !important;
-            }
-        }
-
-        /* ── Dark mode ── */
-        body.dark {
-            background: linear-gradient(180deg, #0f1724 0%, #162039 50%, #0f1724 100%) !important;
-        }
-
-        body.dark [style*="color: #162039"] {
-            color: #FFFFFF !important;
-        }
-
-        body.dark [style*="color: #657FB1"] {
-            color: #9AA7C1 !important;
-        }
-
-        body.dark [style*="color: #9AA7C1"] {
-            color: #BDC5D4 !important;
-        }
-
-        body.dark [style*="color: #8587B7"] {
-            color: #A5A7D7 !important;
-        }
-
-        body.dark [style*="color: #4677AC"] {
-            color: #7BB3E0 !important;
-        }
-
-        body.dark [style*="background: rgba(70, 119, 172, 0.05)"] {
-            background: rgba(70, 119, 172, 0.15) !important;
-            border-color: rgba(70, 119, 172, 0.3) !important;
-        }
-
-        body.dark .text-brand-700 {
-            color: #BDC5D4 !important;
-        }
-
-        body.dark .text-brand-400 {
-            color: #9AA7C1 !important;
-        }
-
-        body.dark .text-brand-300 {
-            color: #A5A7D7 !important;
-        }
-
-        body.dark .text-brand-500 {
-            color: #7BB3E0 !important;
-        }
-
-        body.dark .nav-glass {
-            background: rgba(15, 23, 36, 0.75) !important;
-            border-color: rgba(255, 255, 255, 0.08) !important;
-        }
-
-        body.dark .glass-card {
-            background: rgba(22, 32, 57, 0.55) !important;
-            border-color: rgba(255, 255, 255, 0.08) !important;
-        }
-
-        body.dark .glass-card:hover {
-            background: rgba(22, 32, 57, 0.75) !important;
-        }
-
-        body.dark footer {
-            border-color: rgba(255, 255, 255, 0.08) !important;
-        }
-
-        body.dark footer [style*="border-top"] {
-            border-color: rgba(255, 255, 255, 0.08) !important;
-        }
-
-        body.dark th,
-        body.dark td {
-            border-color: rgba(255, 255, 255, 0.08) !important;
-        }
-
-        /* ── Large font mode ── */
-        html.large-font {
-            font-size: 125%;
-        }
-    </style>
-    <!-- same typeface as the home page -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&display=swap">
-    <style>body, body :not(i):not(svg):not(svg *):not([class*="fa-"]) { font-family: "Geist", -apple-system, BlinkMacSystemFont, "PingFang TC", "Noto Sans TC", sans-serif !important; }</style>
+<meta name="x-title-zh" content="私隱、安全同開始前要知 | 哥基健動">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-WMQD9MWHJN"></script>
+<script defer src="/js/gtag-init.js"></script>
 </head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="hdr"><div class="wrap">
+<a class="brand" href="/" aria-label="Bonet"><img src="/img/mascot/head.webp" width="512" height="512" alt="">Bonet</a>
+<nav class="nav" aria-label="Main"><a href="/#how">Practice</a><a href="/science.html">How it works</a><a href="/#plans">Plans</a><a href="/#faq">FAQ</a></nav>
+<details class="langmenu"><summary aria-label="Language"><img src="/img/icons/globe.webp" width="128" height="128" alt=""><span>English</span></summary><ul><li><button type="button" data-setlang="en" lang="en" aria-current="true">English</button></li><li><a href="/zh-hant/" hreflang="zh-Hant" lang="zh-Hant">繁體中文</a></li><li><button type="button" data-setlang="yue" lang="yue-Hant-HK">廣東話</button></li><li><a href="/zh-hans/" hreflang="zh-Hans" lang="zh-Hans">简体中文</a></li><li><a href="/ja/" hreflang="ja" lang="ja">日本語</a></li><li><a href="/es/" hreflang="es" lang="es">Español</a></li><li><a href="/de/" hreflang="de" lang="de">Deutsch</a></li><li><a href="/fr/" hreflang="fr" lang="fr">Français</a></li></ul></details>
+<button type="button" class="tsize" data-textsize aria-pressed="false" title="Bigger text" aria-label="Bigger text">A+</button>
+<a class="signin" href="https://app.bonet.care/">Sign in</a>
+<a class="btn btn--sm" href="https://app.bonet.care/">Start free</a>
+</div></header>
+<main id="main" class="doc-wrap"><div class="wrap"><div class="doc">
 
-<body class="antialiased"
-    style="background: linear-gradient(180deg, #E9F1F7 0%, #dce4ed 50%, #E9F1F7 100%); min-height: 100vh;">
-
-    <!-- ── Navigation ── -->
-    <nav class="fixed top-6 left-1/2 -translate-x-1/2 z-50 no-print">
-        <div class="nav-glass rounded-full px-2 py-2 flex items-center gap-1">
-            <a href="index.html" class="flex items-center gap-1.5 px-2 mr-1">
-                <img src="img/coglix-logo.jpg" alt="Coglix Labs" class="h-6 w-6 rounded-full object-cover" fetchpriority="high">
-                <span class="text-sm font-bold" style="color: #162039;">Bonet</span>
-                <span class="text-xs font-normal" style="color: #8587B7;">by Coglix Labs</span>
-            </a>
-            <div class="w-px h-5 bg-brand-200/50"></div>
-            <a href="index.html"
-                class="px-4 py-2 rounded-full text-sm font-medium text-brand-400 hover:text-brand-700 hover:bg-white/50 transition-all"
-                data-en="Home" data-zh="首頁">Home</a>
-            <a href="privacy.html"
-                class="px-4 py-2 rounded-full text-sm font-medium text-brand-400 hover:text-brand-700 hover:bg-white/50 transition-all"
-                data-en="Privacy" data-zh="隱私">Privacy</a>
-            <a href="terms.html"
-                class="px-4 py-2 rounded-full text-sm font-medium text-brand-400 hover:text-brand-700 hover:bg-white/50 transition-all"
-                data-en="Terms" data-zh="條款">Terms</a>
-            <a href="compliance.html"
-                class="px-4 py-2 rounded-full text-sm font-medium text-brand-700 hover:text-brand-900 hover:bg-white/50 transition-all"
-                data-en="Privacy &amp; safety" data-zh="私隱與安全">Privacy &amp; safety</a>
-            <div class="w-px h-5 bg-brand-200/50 mx-1"></div>
-            <div class="flex items-center">
-                <button onclick="setLang('en')" id="lang-en"
-                    class="px-3 py-1.5 rounded-full text-sm font-medium transition-all text-white"
-                    style="background: rgba(30,58,95,0.7); backdrop-filter: blur(8px);">EN</button>
-                <button onclick="setLang('zh')" id="lang-zh"
-                    class="px-3 py-1.5 rounded-full text-sm font-medium transition-all text-brand-300 hover:text-brand-500">ZH</button>
-            </div>
-            <div class="w-px h-5 bg-brand-200/50 mx-1"></div>
-            <button onclick="toggleDarkMode()" id="dark-mode-btn"
-                class="w-8 h-8 rounded-full flex items-center justify-center transition-all text-brand-300 hover:text-brand-500 hover:bg-white/30"
-                title="Dark Mode">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
-                    stroke-linecap="round">
-                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
-                </svg>
-            </button>
-            <button onclick="toggleLargeFont()" id="large-font-btn"
-                class="w-8 h-8 rounded-full flex items-center justify-center text-xs font-bold transition-all text-brand-300 hover:text-brand-500 hover:bg-white/30"
-                title="Large Font">A+</button>
+    <div>
+        <div>
+<div><h1 data-en="Privacy and safety" data-zh="私隱與安全">Privacy and safety</h1><p data-en="Bonet by Coglix Labs Inc. · Last updated: November 2026" data-zh="哥基健動 Coglix Labs · 最後更新：2026 年 11 月">Bonet by Coglix Labs Inc. · Last updated: November 2026</p></div>
+<section><h2 data-en="Not a medical device" data-zh="並非醫療器材">Not a medical device</h2>
+<p data-en="Bonet is a practice tool, not a medical device, and does not diagnose or treat any condition. Ask your therapist or doctor before starting." data-zh="哥基健動是練習工具，並非醫療器材，亦不會診斷或治療任何病況。開始之前，請先諮詢你的治療師或醫生。">Bonet is a practice tool, not a medical device, and does not diagnose or treat any condition. Ask your therapist or doctor before starting.</p>
+<ul><li data-en="It gives practice guidance and a record of what you did. Camera and microphone measurements are estimates for practice, not medical measurements." data-zh="它提供練習指引和你練習內容的記錄。鏡頭和咪高峰的測量只是練習用的估算，並非醫療測量。">It gives practice guidance and a record of what you did. Camera and microphone measurements are estimates for practice, not medical measurements.</li><li data-en="It has not been tested in a clinical trial and has not been reviewed or cleared by any medical regulator." data-zh="它未經臨床試驗測試，亦未經任何醫療監管機構審查或批准。">It has not been tested in a clinical trial and has not been reviewed or cleared by any medical regulator.</li><li data-en="Stop if you feel pain, dizziness or unwell. Practise in a clear space, seated if you are unsteady, and with someone nearby if you need support." data-zh="如感到疼痛、頭暈或不適，請立即停止。請在空曠的地方練習，如果站立不穩請坐著練習，有需要時請有人在旁。">Stop if you feel pain, dizziness or unwell. Practise in a clear space, seated if you are unsteady, and with someone nearby if you need support.</li></ul></section>
+<section><h2 data-en="What stays on your device" data-zh="哪些資料留在你的裝置上">What stays on your device</h2>
+<ul><li data-en="Camera video. It is processed on your device to find body and hand positions. It is not recorded and not uploaded." data-zh="鏡頭影像。影像在你的裝置上處理，用來辨識身體和手部位置，不會錄影，也不會上載。">Camera video. It is processed on your device to find body and hand positions. It is not recorded and not uploaded.</li><li data-en="Microphone audio. We do not save it. See the speech note below for where it may be processed." data-zh="咪高峰的聲音。我們不會保存。聲音可能在何處處理，請見下面的語音說明。">Microphone audio. We do not save it. See the speech note below for where it may be processed.</li></ul></section>
+<section><h2 data-en="What we store" data-zh="我們儲存哪些資料">What we store</h2>
+<p data-en="When you create an account, we store your email address and display name. When you practise, we store the results: which exercise, when, how long, reps, scores, range-of-motion estimates, speaking prompts with the text the app recognised and its scores, and brain-game results. We also store your settings, goals and subscription status." data-zh="當你建立帳戶，我們會儲存你的電郵地址和顯示名稱。當你練習時，我們會儲存結果：哪個練習、時間、時長、次數、分數、活動幅度估算、說話練習的題目、應用程式辨識出的文字及分數，以及腦力遊戲結果。我們亦會儲存你的設定、目標和訂閱狀態。">When you create an account, we store your email address and display name. When you practise, we store the results: which exercise, when, how long, reps, scores, range-of-motion estimates, speaking prompts with the text the app recognised and its scores, and brain-game results. We also store your settings, goals and subscription status.</p>
+<p data-en="This data is kept in a cloud database (Supabase). It is encrypted in transit (TLS) and encrypted at rest by the database provider. Row-level security rules mean each account can only read and change its own rows." data-zh="這些資料存放在雲端資料庫（Supabase）。傳輸時以 TLS 加密，儲存時由資料庫供應商加密。列級安全規則令每個帳戶只能讀取和修改自己的資料。">This data is kept in a cloud database (Supabase). It is encrypted in transit (TLS) and encrypted at rest by the database provider. Row-level security rules mean each account can only read and change its own rows.</p>
+<p data-en="We do not use end-to-end encryption. This means we, and our hosting provider, are technically able to access stored data." data-zh="我們沒有採用端對端加密。這表示我們和主機供應商在技術上可以存取已儲存的資料。">We do not use end-to-end encryption. This means we, and our hosting provider, are technically able to access stored data.</p></section>
+<section><h2 data-en="Speech practice" data-zh="說話練習">Speech practice</h2>
+<ul><li data-en="iOS app: speech is recognised with Apple speech recognition, on your device where your device supports the language. Otherwise Apple may process the audio under its own privacy terms." data-zh="iOS 應用程式：語音以 Apple 語音辨識處理，如你的裝置支援該語言，會在裝置上辨識；否則 Apple 可能按其私隱條款處理聲音。">iOS app: speech is recognised with Apple speech recognition, on your device where your device supports the language. Otherwise Apple may process the audio under its own privacy terms.</li><li data-en="Web: English can be recognised on your device. Cantonese audio may be sent through our server to a cloud speech service (Google Cloud Speech-to-Text) to be turned into text." data-zh="網頁版：英語可在你的裝置上辨識。粵語聲音可能經我們的伺服器傳送到雲端語音服務（Google Cloud Speech-to-Text）轉成文字。">Web: English can be recognised on your device. Cantonese audio may be sent through our server to a cloud speech service (Google Cloud Speech-to-Text) to be turned into text.</li><li data-en="We do not keep the audio. We keep the recognised text and the score." data-zh="我們不保存聲音，只保存辨識出的文字和分數。">We do not keep the audio. We keep the recognised text and the score.</li></ul></section>
+<section><h2 data-en="What we do not have" data-zh="我們沒有的東西">What we do not have</h2>
+<p data-en="We hold no security or privacy certification, and we have not been audited against HIPAA, ISO 27001, SOC 2 or any similar standard. We do not sign Business Associate Agreements. Bonet is not meant to be used by healthcare organisations to hold patient records." data-zh="我們沒有任何安全或私隱認證，亦未曾按 HIPAA、ISO 27001、SOC 2 或同類標準接受審核。我們不簽署商業夥伴協議（BAA）。哥基健動不是供醫療機構存放病人紀錄之用。">We hold no security or privacy certification, and we have not been audited against HIPAA, ISO 27001, SOC 2 or any similar standard. We do not sign Business Associate Agreements. Bonet is not meant to be used by healthcare organisations to hold patient records.</p></section>
+<section><h2 data-en="Your choices" data-zh="你的選擇">Your choices</h2>
+<ul><li data-en="Delete your account and all your practice history yourself in Settings in the app." data-zh="你可以在應用程式的「設定」中自行刪除帳戶及全部練習記錄。">Delete your account and all your practice history yourself in Settings in the app.</li><li data-en="For access to, or correction of, your data, email <a href='mailto:privacy@coglixlabs.com'>privacy@coglixlabs.com</a>." data-zh="如需查閱或更正你的資料，請電郵 <a href='mailto:privacy@coglixlabs.com'>privacy@coglixlabs.com</a>。">For access to, or correction of, your data, email <a href="mailto:privacy@coglixlabs.com">privacy@coglixlabs.com</a>.</li></ul>
+<p data-en="Read the full <a href='privacy.html'>Privacy Policy</a> and <a href='terms.html'>Terms</a>." data-zh="詳情請閱讀完整的<a href='privacy.html'>私隱政策</a>和<a href='terms.html'>條款</a>。">Read the full <a href="/privacy.html">Privacy Policy</a> and <a href="/terms.html">Terms</a>.</p></section>
         </div>
-    </nav>
+    </div>
+    
+</div></div></main>
+<footer class="ftr"><div class="wrap">
+<div class="ftr-pup"><button type="button" class="pupbtn" data-sprite="sleep" data-hover="wiggle" aria-label="Bonet says hello"><span class="sprite" data-clip="sleep" data-rest="sleep" aria-hidden="true"></span></button></div>
+<nav aria-label="Footer"><a href="/privacy.html">Privacy</a><a href="/terms.html">Terms</a><a href="/compliance.html">Privacy and safety</a><a href="/science.html">How it works</a><a href="/therapist.html">For therapists</a><a href="/blog/">Blog</a><a href="mailto:hello@coglixlabs.com">Contact</a></nav>
+<nav class="ftr-langs" aria-label="Language"><a href="/" hreflang="en" lang="en">English</a><a href="/zh-hant/" hreflang="zh-Hant" lang="zh-Hant">繁體中文</a><a href="/yue/" hreflang="yue-Hant-HK" lang="yue-Hant-HK">廣東話</a><a href="/zh-hans/" hreflang="zh-Hans" lang="zh-Hans">简体中文</a><a href="/ja/" hreflang="ja" lang="ja">日本語</a><a href="/es/" hreflang="es" lang="es">Español</a><a href="/de/" hreflang="de" lang="de">Deutsch</a><a href="/fr/" hreflang="fr" lang="fr">Français</a></nav>
+<p>&copy; 2026 Coglix Labs Inc.</p>
+</div></footer>
+<script defer src="/js/site.js"></script>
 
-    <!-- ── Content ── -->
-    <section class="pt-32 pb-24 px-6">
-        <div class="max-w-4xl mx-auto">
-<div class="text-center mb-12 fade-up" style="opacity: 0;"><h1 class="text-4xl md:text-5xl font-bold mb-3" style="color: #162039;" data-en="Privacy and safety" data-zh="私隱與安全">Privacy and safety</h1><p class="text-base" style="color: #9AA7C1;" data-en="Bonet by Coglix Labs Inc. · Last updated: November 2026" data-zh="哥基健動 Coglix Labs · 最後更新：2026 年 11 月">Bonet by Coglix Labs Inc. · Last updated: November 2026</p></div>
-<div class="glass-card p-8 mb-8 fade-up" style="opacity: 0; animation-delay: 0.1s;"><h2 class="text-xl font-bold mb-3" style="color: #162039;" data-en="Not a medical device" data-zh="並非醫療器材">Not a medical device</h2>
-<p class="text-sm leading-relaxed mb-3" style="color: #657FB1;" data-en="Bonet is a practice tool, not a medical device, and does not diagnose or treat any condition. Ask your therapist or doctor before starting." data-zh="哥基健動是練習工具，並非醫療器材，亦不會診斷或治療任何病況。開始之前，請先諮詢你的治療師或醫生。">Bonet is a practice tool, not a medical device, and does not diagnose or treat any condition. Ask your therapist or doctor before starting.</p>
-<ul class="text-sm leading-relaxed mb-3 list-disc pl-6 space-y-1" style="color: #657FB1;"><li class="" data-en="It gives practice guidance and a record of what you did. Camera and microphone measurements are estimates for practice, not medical measurements." data-zh="它提供練習指引和你練習內容的記錄。鏡頭和咪高峰的測量只是練習用的估算，並非醫療測量。">It gives practice guidance and a record of what you did. Camera and microphone measurements are estimates for practice, not medical measurements.</li><li class="" data-en="It has not been tested in a clinical trial and has not been reviewed or cleared by any medical regulator." data-zh="它未經臨床試驗測試，亦未經任何醫療監管機構審查或批准。">It has not been tested in a clinical trial and has not been reviewed or cleared by any medical regulator.</li><li class="" data-en="Stop if you feel pain, dizziness or unwell. Practise in a clear space, seated if you are unsteady, and with someone nearby if you need support." data-zh="如感到疼痛、頭暈或不適，請立即停止。請在空曠的地方練習，如果站立不穩請坐著練習，有需要時請有人在旁。">Stop if you feel pain, dizziness or unwell. Practise in a clear space, seated if you are unsteady, and with someone nearby if you need support.</li></ul></div>
-<div class="glass-card p-8 mb-8 fade-up" style="opacity: 0; animation-delay: 0.14s;"><h2 class="text-xl font-bold mb-3" style="color: #162039;" data-en="What stays on your device" data-zh="哪些資料留在你的裝置上">What stays on your device</h2>
-<ul class="text-sm leading-relaxed mb-3 list-disc pl-6 space-y-1" style="color: #657FB1;"><li class="" data-en="Camera video. It is processed on your device to find body and hand positions. It is not recorded and not uploaded." data-zh="鏡頭影像。影像在你的裝置上處理，用來辨識身體和手部位置，不會錄影，也不會上載。">Camera video. It is processed on your device to find body and hand positions. It is not recorded and not uploaded.</li><li class="" data-en="Microphone audio. We do not save it. See the speech note below for where it may be processed." data-zh="咪高峰的聲音。我們不會保存。聲音可能在何處處理，請見下面的語音說明。">Microphone audio. We do not save it. See the speech note below for where it may be processed.</li></ul></div>
-<div class="glass-card p-8 mb-8 fade-up" style="opacity: 0; animation-delay: 0.18s;"><h2 class="text-xl font-bold mb-3" style="color: #162039;" data-en="What we store" data-zh="我們儲存哪些資料">What we store</h2>
-<p class="text-sm leading-relaxed mb-3" style="color: #657FB1;" data-en="When you create an account, we store your email address and display name. When you practise, we store the results: which exercise, when, how long, reps, scores, range-of-motion estimates, speaking prompts with the text the app recognised and its scores, and brain-game results. We also store your settings, goals and subscription status." data-zh="當你建立帳戶，我們會儲存你的電郵地址和顯示名稱。當你練習時，我們會儲存結果：哪個練習、時間、時長、次數、分數、活動幅度估算、說話練習的題目、應用程式辨識出的文字及分數，以及腦力遊戲結果。我們亦會儲存你的設定、目標和訂閱狀態。">When you create an account, we store your email address and display name. When you practise, we store the results: which exercise, when, how long, reps, scores, range-of-motion estimates, speaking prompts with the text the app recognised and its scores, and brain-game results. We also store your settings, goals and subscription status.</p>
-<p class="text-sm leading-relaxed mb-3" style="color: #657FB1;" data-en="This data is kept in a cloud database (Supabase). It is encrypted in transit (TLS) and encrypted at rest by the database provider. Row-level security rules mean each account can only read and change its own rows." data-zh="這些資料存放在雲端資料庫（Supabase）。傳輸時以 TLS 加密，儲存時由資料庫供應商加密。列級安全規則令每個帳戶只能讀取和修改自己的資料。">This data is kept in a cloud database (Supabase). It is encrypted in transit (TLS) and encrypted at rest by the database provider. Row-level security rules mean each account can only read and change its own rows.</p>
-<p class="text-sm leading-relaxed mb-3" style="color: #657FB1;" data-en="We do not use end-to-end encryption. This means we, and our hosting provider, are technically able to access stored data." data-zh="我們沒有採用端對端加密。這表示我們和主機供應商在技術上可以存取已儲存的資料。">We do not use end-to-end encryption. This means we, and our hosting provider, are technically able to access stored data.</p></div>
-<div class="glass-card p-8 mb-8 fade-up" style="opacity: 0; animation-delay: 0.22s;"><h2 class="text-xl font-bold mb-3" style="color: #162039;" data-en="Speech practice" data-zh="說話練習">Speech practice</h2>
-<ul class="text-sm leading-relaxed mb-3 list-disc pl-6 space-y-1" style="color: #657FB1;"><li class="" data-en="iOS app: speech is recognised with Apple speech recognition, on your device where your device supports the language. Otherwise Apple may process the audio under its own privacy terms." data-zh="iOS 應用程式：語音以 Apple 語音辨識處理，如你的裝置支援該語言，會在裝置上辨識；否則 Apple 可能按其私隱條款處理聲音。">iOS app: speech is recognised with Apple speech recognition, on your device where your device supports the language. Otherwise Apple may process the audio under its own privacy terms.</li><li class="" data-en="Web: English can be recognised on your device. Cantonese audio may be sent through our server to a cloud speech service (Google Cloud Speech-to-Text) to be turned into text." data-zh="網頁版：英語可在你的裝置上辨識。粵語聲音可能經我們的伺服器傳送到雲端語音服務（Google Cloud Speech-to-Text）轉成文字。">Web: English can be recognised on your device. Cantonese audio may be sent through our server to a cloud speech service (Google Cloud Speech-to-Text) to be turned into text.</li><li class="" data-en="We do not keep the audio. We keep the recognised text and the score." data-zh="我們不保存聲音，只保存辨識出的文字和分數。">We do not keep the audio. We keep the recognised text and the score.</li></ul></div>
-<div class="glass-card p-8 mb-8 fade-up" style="opacity: 0; animation-delay: 0.26s;"><h2 class="text-xl font-bold mb-3" style="color: #162039;" data-en="What we do not have" data-zh="我們沒有的東西">What we do not have</h2>
-<p class="text-sm leading-relaxed mb-3" style="color: #657FB1;" data-en="We hold no security or privacy certification, and we have not been audited against HIPAA, ISO 27001, SOC 2 or any similar standard. We do not sign Business Associate Agreements. Bonet is not meant to be used by healthcare organisations to hold patient records." data-zh="我們沒有任何安全或私隱認證，亦未曾按 HIPAA、ISO 27001、SOC 2 或同類標準接受審核。我們不簽署商業夥伴協議（BAA）。哥基健動不是供醫療機構存放病人紀錄之用。">We hold no security or privacy certification, and we have not been audited against HIPAA, ISO 27001, SOC 2 or any similar standard. We do not sign Business Associate Agreements. Bonet is not meant to be used by healthcare organisations to hold patient records.</p></div>
-<div class="glass-card p-8 mb-8 fade-up" style="opacity: 0; animation-delay: 0.3s;"><h2 class="text-xl font-bold mb-3" style="color: #162039;" data-en="Your choices" data-zh="你的選擇">Your choices</h2>
-<ul class="text-sm leading-relaxed mb-3 list-disc pl-6 space-y-1" style="color: #657FB1;"><li class="" data-en="Delete your account and all your practice history yourself in Settings in the app." data-zh="你可以在應用程式的「設定」中自行刪除帳戶及全部練習記錄。">Delete your account and all your practice history yourself in Settings in the app.</li><li class="" data-en="For access to, or correction of, your data, email <a href='mailto:privacy@coglixlabs.com' class='text-brand-500 hover:underline'>privacy@coglixlabs.com</a>." data-zh="如需查閱或更正你的資料，請電郵 <a href='mailto:privacy@coglixlabs.com' class='text-brand-500 hover:underline'>privacy@coglixlabs.com</a>。">For access to, or correction of, your data, email <a href='mailto:privacy@coglixlabs.com' class='text-brand-500 hover:underline'>privacy@coglixlabs.com</a>.</li></ul>
-<p class="text-sm leading-relaxed mb-3" style="color: #657FB1;" data-en="Read the full <a href='privacy.html' class='text-brand-500 hover:underline'>Privacy Policy</a> and <a href='terms.html' class='text-brand-500 hover:underline'>Terms</a>." data-zh="詳情請閱讀完整的<a href='privacy.html' class='text-brand-500 hover:underline'>私隱政策</a>和<a href='terms.html' class='text-brand-500 hover:underline'>條款</a>。">Read the full <a href='privacy.html' class='text-brand-500 hover:underline'>Privacy Policy</a> and <a href='terms.html' class='text-brand-500 hover:underline'>Terms</a>.</p></div>
-        </div>
-    </section>
-
-    <footer class="py-12 px-6 no-print" style="border-top: 1px solid rgba(189, 197, 212, 0.3);">
-        <div class="max-w-6xl mx-auto">
-            <div class="pt-4 flex flex-col md:flex-row justify-between items-center gap-4">
-                <p class="text-sm" style="color: #9AA7C1;">&copy; 2026 Coglix Labs Inc.</p>
-                <div class="flex gap-6 text-sm" style="color: #9AA7C1;">
-                    <a href="terms.html" class="hover:text-brand-700 transition-colors" data-en="Terms"
-                        data-zh="條款">Terms</a>
-                    <a href="privacy.html" class="hover:text-brand-700 transition-colors" data-en="Privacy"
-                        data-zh="隱私">Privacy</a>
-                    <a href="compliance.html" class="hover:text-brand-700 transition-colors" data-en="Privacy &amp; safety"
-                        data-zh="私隱與安全">Privacy &amp; safety</a>
-                    <a href="index.html" class="hover:text-brand-700 transition-colors" data-en="Home"
-                        data-zh="首頁">Home</a>
-                </div>
-            </div>
-        </div>
-    </footer>
-
-    <script>
-        let currentLang = 'en';
-        let isDarkMode = false;
-        let isLargeFont = false;
-
-        function toggleDarkMode() {
-            isDarkMode = !isDarkMode;
-            localStorage.setItem('isDarkMode', isDarkMode);
-            document.body.classList.toggle('dark', isDarkMode);
-            const btn = document.getElementById('dark-mode-btn');
-            btn.style.background = isDarkMode ? 'rgba(30,58,95,0.7)' : 'transparent';
-            btn.style.backdropFilter = isDarkMode ? 'blur(8px)' : 'none';
-            btn.style.color = isDarkMode ? '#FFFFFF' : '';
-        }
-
-        function toggleLargeFont() {
-            isLargeFont = !isLargeFont;
-            localStorage.setItem('isLargeFont', isLargeFont);
-            document.documentElement.classList.toggle('large-font', isLargeFont);
-            const btn = document.getElementById('large-font-btn');
-            btn.style.background = isLargeFont ? 'rgba(30,58,95,0.7)' : 'transparent';
-            btn.style.backdropFilter = isLargeFont ? 'blur(8px)' : 'none';
-            btn.style.color = isLargeFont ? '#FFFFFF' : '';
-        }
-
-        function setLang(lang) {
-            currentLang = lang;
-            localStorage.setItem('preferredLang', lang);
-            document.getElementById('lang-en').className = lang === 'en'
-                ? 'px-3 py-1.5 rounded-full text-sm font-medium transition-all text-white'
-                : 'px-3 py-1.5 rounded-full text-sm font-medium transition-all text-brand-300 hover:text-brand-500';
-            document.getElementById('lang-zh').className = lang === 'zh'
-                ? 'px-3 py-1.5 rounded-full text-sm font-medium transition-all text-white'
-                : 'px-3 py-1.5 rounded-full text-sm font-medium transition-all text-brand-300 hover:text-brand-500';
-            document.getElementById('lang-en').style.background = lang === 'en' ? 'rgba(30,58,95,0.7)' : 'transparent';
-            document.getElementById('lang-zh').style.background = lang === 'zh' ? 'rgba(30,58,95,0.7)' : 'transparent';
-            document.querySelectorAll('[data-en]').forEach(el => {
-                el.innerHTML = lang === 'en' ? el.dataset.en : el.dataset.zh;
-            });
-            document.documentElement.lang = lang === 'en' ? 'en' : 'zh-TW';
-            document.title = lang === 'en'
-                ? 'Bonet by Coglix Labs Inc.: privacy and safety'
-                : '私隱與安全 | Bonet';
-        }
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.opacity = '1';
-                    observer.unobserve(entry.target);
-                }
-            });
-        }, { threshold: 0.1 });
-        document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
-
-        // ── Auto-load Language & Mode ──
-        document.addEventListener('DOMContentLoaded', () => {
-            const savedLang = localStorage.getItem('preferredLang');
-            if (savedLang && savedLang !== currentLang) {
-                setLang(savedLang);
-            }
-
-            const savedDark = localStorage.getItem('isDarkMode');
-            if (savedDark === 'true' && !isDarkMode) toggleDarkMode();
-
-            const savedFont = localStorage.getItem('isLargeFont');
-            if (savedFont === 'true' && !isLargeFont) toggleLargeFont();
-        });
-    </script>
 </body>
-
 </html>

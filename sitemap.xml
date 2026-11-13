@@ -1,54 +1,144 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
-
-  <!-- English Homepage -->
   <url>
     <loc>https://bonet.care/</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://bonet.care/"/>
-    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://bonet.care/zh/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://bonet.care/zh-hant/"/>
+    <xhtml:link rel="alternate" hreflang="yue-Hant-HK" href="https://bonet.care/yue/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://bonet.care/zh-hans/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://bonet.care/ja/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://bonet.care/es/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://bonet.care/de/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://bonet.care/fr/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://bonet.care/"/>
     <lastmod>2026-11-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
-
-  <!-- Chinese Homepage -->
   <url>
-    <loc>https://bonet.care/zh/</loc>
+    <loc>https://bonet.care/zh-hant/</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://bonet.care/"/>
-    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://bonet.care/zh/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://bonet.care/zh-hant/"/>
+    <xhtml:link rel="alternate" hreflang="yue-Hant-HK" href="https://bonet.care/yue/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://bonet.care/zh-hans/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://bonet.care/ja/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://bonet.care/es/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://bonet.care/de/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://bonet.care/fr/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://bonet.care/"/>
     <lastmod>2026-11-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
-
-  <!-- Science / Research -->
+  <url>
+    <loc>https://bonet.care/yue/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://bonet.care/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://bonet.care/zh-hant/"/>
+    <xhtml:link rel="alternate" hreflang="yue-Hant-HK" href="https://bonet.care/yue/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://bonet.care/zh-hans/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://bonet.care/ja/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://bonet.care/es/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://bonet.care/de/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://bonet.care/fr/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://bonet.care/"/>
+    <lastmod>2026-11-13</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://bonet.care/zh-hans/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://bonet.care/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://bonet.care/zh-hant/"/>
+    <xhtml:link rel="alternate" hreflang="yue-Hant-HK" href="https://bonet.care/yue/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://bonet.care/zh-hans/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://bonet.care/ja/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://bonet.care/es/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://bonet.care/de/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://bonet.care/fr/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://bonet.care/"/>
+    <lastmod>2026-11-13</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://bonet.care/ja/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://bonet.care/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://bonet.care/zh-hant/"/>
+    <xhtml:link rel="alternate" hreflang="yue-Hant-HK" href="https://bonet.care/yue/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://bonet.care/zh-hans/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://bonet.care/ja/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://bonet.care/es/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://bonet.care/de/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://bonet.care/fr/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://bonet.care/"/>
+    <lastmod>2026-11-13</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://bonet.care/es/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://bonet.care/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://bonet.care/zh-hant/"/>
+    <xhtml:link rel="alternate" hreflang="yue-Hant-HK" href="https://bonet.care/yue/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://bonet.care/zh-hans/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://bonet.care/ja/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://bonet.care/es/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://bonet.care/de/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://bonet.care/fr/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://bonet.care/"/>
+    <lastmod>2026-11-13</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://bonet.care/de/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://bonet.care/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://bonet.care/zh-hant/"/>
+    <xhtml:link rel="alternate" hreflang="yue-Hant-HK" href="https://bonet.care/yue/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://bonet.care/zh-hans/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://bonet.care/ja/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://bonet.care/es/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://bonet.care/de/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://bonet.care/fr/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://bonet.care/"/>
+    <lastmod>2026-11-13</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://bonet.care/fr/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://bonet.care/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://bonet.care/zh-hant/"/>
+    <xhtml:link rel="alternate" hreflang="yue-Hant-HK" href="https://bonet.care/yue/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://bonet.care/zh-hans/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://bonet.care/ja/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://bonet.care/es/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://bonet.care/de/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://bonet.care/fr/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://bonet.care/"/>
+    <lastmod>2026-11-13</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
   <url>
     <loc>https://bonet.care/science.html</loc>
     <lastmod>2026-11-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
-
-  <!-- Therapist page -->
   <url>
     <loc>https://bonet.care/therapist.html</loc>
     <lastmod>2026-11-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
-
-  <!-- Compliance -->
   <url>
     <loc>https://bonet.care/compliance.html</loc>
     <lastmod>2026-11-13</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
+    <priority>0.6</priority>
   </url>
-
-  <!-- Blog -->
   <url>
     <loc>https://bonet.care/blog/</loc>
     <lastmod>2026-11-13</lastmod>
@@ -56,26 +146,73 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://bonet.care/blog/introducing-bonet.html</loc>
+    <loc>https://bonet.care/zh-hant/blog/</loc>
     <lastmod>2026-11-13</lastmod>
-    <changefreq>never</changefreq>
+    <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
-
-  <!-- Privacy Policy -->
+  <url>
+    <loc>https://bonet.care/blog/introducing-bonet.html</loc>
+    <lastmod>2026-11-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://bonet.care/compare.html</loc>
+    <lastmod>2026-11-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
   <url>
     <loc>https://bonet.care/privacy.html</loc>
     <lastmod>2026-11-13</lastmod>
-    <changefreq>yearly</changefreq>
+    <changefreq>monthly</changefreq>
     <priority>0.3</priority>
   </url>
-
-  <!-- Terms -->
   <url>
     <loc>https://bonet.care/terms.html</loc>
     <lastmod>2026-11-13</lastmod>
-    <changefreq>yearly</changefreq>
+    <changefreq>monthly</changefreq>
     <priority>0.3</priority>
   </url>
-
+  <url>
+    <loc>https://bonet.care/blog/spaced-practice.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://bonet.care/blog/spaced-practice.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://bonet.care/zh-hant/blog/spaced-practice.html"/>
+    <lastmod>2026-11-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://bonet.care/zh-hant/blog/spaced-practice.html</loc>
+    <lastmod>2026-11-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://bonet.care/blog/hint-ladder.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://bonet.care/blog/hint-ladder.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://bonet.care/zh-hant/blog/hint-ladder.html"/>
+    <lastmod>2026-11-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://bonet.care/zh-hant/blog/hint-ladder.html</loc>
+    <lastmod>2026-11-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://bonet.care/blog/camera-on-device.html</loc>
+    <lastmod>2026-11-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://bonet.care/blog/designed-for-older-adults.html</loc>
+    <lastmod>2026-11-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
 </urlset>

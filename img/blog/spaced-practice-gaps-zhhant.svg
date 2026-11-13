@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 300" role="img" font-family="Nunito, system-ui, 'Noto Sans TC', 'PingFang HK', sans-serif">
+<rect width="720" height="300" fill="#ffffff"/>
+<line x1="60" y1="110" x2="660" y2="110" stroke="#e5e7eb" stroke-width="4"/>
+<circle cx="60" cy="110" r="24" fill="#e7f3fe" stroke="#1f8ae6" stroke-width="4"/>
+<text x="60" y="117" font-size="20" font-weight="800" fill="#1b2330" text-anchor="middle">0</text>
+<text x="60" y="178" font-size="16" font-weight="700" fill="#1b2330" text-anchor="middle">學習中</text>
+<circle cx="180" cy="110" r="24" fill="#e7f3fe" stroke="#1f8ae6" stroke-width="4"/>
+<text x="180" y="117" font-size="20" font-weight="800" fill="#1b2330" text-anchor="middle">1</text>
+<text x="180" y="178" font-size="16" font-weight="700" fill="#1b2330" text-anchor="middle">學習中</text>
+<circle cx="300" cy="110" r="24" fill="#e8f7ea" stroke="#2b8a37" stroke-width="4"/>
+<text x="300" y="117" font-size="20" font-weight="800" fill="#1b2330" text-anchor="middle">4</text>
+<text x="300" y="178" font-size="16" font-weight="700" fill="#1b2330" text-anchor="middle">熟</text>
+<circle cx="420" cy="110" r="24" fill="#fff7df" stroke="#f28c28" stroke-width="4"/>
+<text x="420" y="117" font-size="20" font-weight="800" fill="#1b2330" text-anchor="middle">11</text>
+<text x="420" y="178" font-size="16" font-weight="700" fill="#1b2330" text-anchor="middle">很熟</text>
+<circle cx="540" cy="110" r="24" fill="#fff7df" stroke="#f28c28" stroke-width="4"/>
+<text x="540" y="117" font-size="20" font-weight="800" fill="#1b2330" text-anchor="middle">25</text>
+<text x="540" y="178" font-size="16" font-weight="700" fill="#1b2330" text-anchor="middle">很熟</text>
+<circle cx="660" cy="110" r="24" fill="#fff7df" stroke="#f28c28" stroke-width="4"/>
+<text x="660" y="117" font-size="20" font-weight="800" fill="#1b2330" text-anchor="middle">55</text>
+<text x="660" y="178" font-size="16" font-weight="700" fill="#1b2330" text-anchor="middle">很熟</text>
+<rect x="80.0" y="46" width="80" height="32" rx="16" fill="#e8f7ea"/>
+<text x="120.0" y="69" font-size="17" font-weight="800" fill="#2b8a37" text-anchor="middle">1 日</text>
+<rect x="200.0" y="46" width="80" height="32" rx="16" fill="#e8f7ea"/>
+<text x="240.0" y="69" font-size="17" font-weight="800" fill="#2b8a37" text-anchor="middle">3 日</text>
+<rect x="320.0" y="46" width="80" height="32" rx="16" fill="#e8f7ea"/>
+<text x="360.0" y="69" font-size="17" font-weight="800" fill="#2b8a37" text-anchor="middle">7 日</text>
+<rect x="440.0" y="46" width="80" height="32" rx="16" fill="#e8f7ea"/>
+<text x="480.0" y="69" font-size="17" font-weight="800" fill="#2b8a37" text-anchor="middle">14 日</text>
+<rect x="560.0" y="46" width="80" height="32" rx="16" fill="#e8f7ea"/>
+<text x="600.0" y="69" font-size="17" font-weight="800" fill="#2b8a37" text-anchor="middle">30 日</text>
+<text x="20" y="225" font-size="17" fill="#6b7484">練習日：0, 1, 4, 11, 25, 55</text>
+<text x="20" y="260" font-size="17" fill="#6b7484">全部獨立答對的情況，示意圖</text>
+</svg>

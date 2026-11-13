@@ -1,0 +1,4 @@
+{
+ "_comment": "Build-time switches. practice_quality_live=false hides the hexagon hero moment, the How-it-went section and the table row until the app feature ships.",
+ "practice_quality_live": true
+}

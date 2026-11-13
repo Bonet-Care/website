@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How the camera counts your reps, and why your video never leaves the device | Bonet</title>
+<meta name="description" content="How Bonet finds body points with your camera on the device, turns them into a rep count, and where that count is only an estimate.">
+<meta name="theme-color" content="#1f8ae6">
+<script src="/js/boot.js"></script>
+<link rel="canonical" href="https://bonet.care/blog/camera-on-device.html">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/img/favicon-32.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta property="og:site_name" content="Bonet">
+<meta property="og:type" content="website">
+<meta property="og:title" content="How the camera counts your reps, and why your video never leaves the device | Bonet">
+<meta property="og:description" content="How Bonet finds body points with your camera on the device, turns them into a rep count, and where that count is only an estimate.">
+<meta property="og:url" content="https://bonet.care/blog/camera-on-device.html">
+<meta property="og:image" content="https://bonet.care/img/og-en.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="How the camera counts your reps, and why your video never leaves the device | Bonet">
+<meta name="twitter:description" content="How Bonet finds body points with your camera on the device, turns them into a rep count, and where that count is only an estimate.">
+<meta name="twitter:image" content="https://bonet.care/img/og-en.png">
+<link rel="preload" href="/fonts/nunito-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/css/site.css">
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-WMQD9MWHJN"></script>
+<script defer src="/js/gtag-init.js"></script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="hdr"><div class="wrap">
+<a class="brand" href="/" aria-label="Bonet"><img src="/img/mascot/head.webp" width="512" height="512" alt="">Bonet</a>
+<nav class="nav" aria-label="Main"><a href="/#how">Practice</a><a href="/science.html">How it works</a><a href="/#plans">Plans</a><a href="/#faq">FAQ</a></nav>
+<details class="langmenu"><summary aria-label="Language"><img src="/img/icons/globe.webp" width="128" height="128" alt=""><span>English</span></summary><ul><li><a href="/blog/camera-on-device.html" hreflang="en" lang="en" aria-current="true">English</a></li><li><a href="/blog/camera-on-device.html" hreflang="zh-Hant" lang="zh-Hant">繁體中文</a></li><li><a href="/yue/" hreflang="yue-Hant-HK" lang="yue-Hant-HK">廣東話</a></li><li><a href="/zh-hans/" hreflang="zh-Hans" lang="zh-Hans">简体中文</a></li><li><a href="/ja/" hreflang="ja" lang="ja">日本語</a></li><li><a href="/es/" hreflang="es" lang="es">Español</a></li><li><a href="/de/" hreflang="de" lang="de">Deutsch</a></li><li><a href="/fr/" hreflang="fr" lang="fr">Français</a></li></ul></details>
+<button type="button" class="tsize" data-textsize aria-pressed="false" title="Bigger text" aria-label="Bigger text">A+</button>
+<a class="signin" href="https://app.bonet.care/">Sign in</a>
+<a class="btn btn--sm" href="https://app.bonet.care/">Start free</a>
+</div></header>
+<main id="main" class="doc-wrap"><div class="wrap"><div class="doc"><a class="back" href="/blog/">&larr; Back to the blog</a>
+<div class="doc-top"><p class="meta">November 2026 · 7 min read · The Bonet team</p><h1>How the camera counts your reps, and why your video never leaves the device</h1><p>The camera picture is read on your phone or tablet. Only the numbers from a session are saved.</p></div>
+<article class="post">
+<p>When you open a Move exercise, Bonet shows a short looping guide of the movement first, so you see the shape of one repetition before you try it. Then the camera turns on, you do the movement, and a count goes up on the screen. Between your arm lifting and that number changing there are three steps, and all three run on the device in your hands.</p>
+<h2>What runs on the device</h2>
+<p>Each camera frame goes to a pose model. We use MediaPipe's pose landmarker, which is built on BlazePose, a network its authors designed for phones. They report more than 30 frames per second on a Pixel 2 and 33 body points for one person <a href="#r1">(Bazarevsky et al., 2020)</a>. Hand exercises use a separate hand model. The frames are read in the browser or app and then dropped. As our <a href="/compliance.html">privacy and safety page</a> says, camera video is not recorded and not uploaded.</p>
+<p>Two details are easy to miss. The model file itself is downloaded when the camera screen first opens, so the app needs a connection once for that. And speech practice is a different matter: on the web, Cantonese audio may pass through our server for recognition. The camera never does.</p>
+<figure><img src="/img/blog/camera-on-device-flow.svg" alt="Diagram: camera picture, body points and rep counter sit inside a box labelled on this device; an arrow carries results to your account" width="720" height="360" loading="lazy"><figcaption>What stays on the device and what is saved. Schematic, not data.</figcaption></figure>
+<h2>From body points to a count</h2>
+<p>Each exercise watches one measure, such as the angle at the elbow or how high the wrist sits compared with the shoulder. The value is smoothed with a moving average, so a single jittery frame does not move it. A small state machine then follows the movement through four states: neutral, progress, holding and cooldown. A rep is counted when the value passes the target and, for exercises with a hold, stays there for the set time. The value then has to come back down before the next rep can start.</p>
+<figure><img src="/img/blog/camera-on-device-counter.svg" alt="Schematic of a measured value rising above a target line twice, giving two counted reps, then a third rise that stays under the target and is not counted" width="720" height="360" loading="lazy"><figcaption>A rep counter with a threshold. Schematic, not data.</figcaption></figure>
+<p>Distance matters more than you might expect. For several hand exercises the thresholds are in picture units, so a hand held too far away looks like a smaller movement. We ask for about 30 to 40 cm there. The screen also says things like "Move back so I can see your whole body" when the points it needs are missing. Each exercise only asks to see the body parts it uses, so a phone propped on a table can still count an arm exercise.</p>
+<h2>What the camera cannot know</h2>
+<p>On 12 November 2026 we audited the counting by replaying our demo clips and synthetic skeletons through the real pose model and scoring code. No real people were tested, so these are findings about the code, and they are weak evidence about you. Some exercises count reliably. For a group of others, the resting value already sits above the target, so the counter can add reps while you stand still. A few have targets at the edge of what a front camera can measure and often fail to count. Forward leaning and trunk twists barely change a front view, so those movements cannot be judged well from the front at all.</p>
+<p>We have not changed any target yet. The thresholds are clinical choices, and we want a physiotherapist to decide them. What we did fix were plain bugs: counting froze when the hips were out of frame even for arm exercises, one exercise never counted a finished hold, and one failed camera frame could stop tracking until you reloaded the page.</p>
+<p>The wider literature points the same way. One study compared a webcam method with marker-based motion capture in 25 healthy adults. Agreement was good for many joints and lowest for shoulder and elbow flexion, which the authors tie to reduced sensitivity at the top of the movement <a href="#r2">(Wang et al., 2023)</a>. That is one small study of healthy adults, and it says nothing direct about our app or about older people. Camera height, tilt, distance, clothing and light also change the angle. So we compare you only with yourself, on the same chair with the phone in the same place, and we leave out sessions where tracking was poor.</p>
+<p>A rep count and a range-of-motion figure from Bonet are practice estimates. They are not clinical measurements, and the app is not a medical device.</p>
+<h2>Why we count at all</h2>
+<p>Repetition and task-specific practice are among the principles of experience-dependent plasticity that Kleim and Jones (2008) set out as considerations for rehabilitation <a href="#r3">(Kleim &amp; Jones, 2008)</a>. They are a framework for therapists to weigh, and we read them that way. We count because a number gives you something to aim for and a record of what you did, and that is all we claim. We do not claim that counting reps improves strength, movement or recovery. How much to do, and which exercises suit you, belong to your own doctor or physiotherapist.</p>
+<h2>Pacing and safety</h2>
+<p>The first week of a plan is shorter than the minutes you ask for. After that it grows by at most one activity a week, and only if you managed most of your days. After a break it gets lighter again. These amounts are our own design choices.</p>
+<p>The safety rules in the planner are also ours and are still waiting for a physiotherapist to confirm them. A person who says they exercise seated is never given a standing exercise. Someone who needs a helper beside them is not offered the single-leg stand. People aged 80 and over who stand are not offered that one or a second balance exercise. The plan card carries one standing line: if anything hurts or you feel dizzy, stop and ask your doctor or physiotherapist. Practise in a clear space, seated if you are unsteady, with someone nearby if you need support.</p>
+<h2>References</h2>
+<ol class="refs">
+<li id="r1">Bazarevsky, V., Grishchenko, I., Raveendran, K., Zhu, T., Zhang, F., &amp; Grundmann, M. (2020). BlazePose: On-device real-time body pose tracking. <em>arXiv</em>:2006.10204. <a href="https://arxiv.org/abs/2006.10204">https://arxiv.org/abs/2006.10204</a> <em>(verified by us in November 2026: abstract only)</em></li>
+<li id="r2">Wang, X. M., Smith, D. T., &amp; Zhu, Q. (2023). A webcam-based machine learning approach for three-dimensional range of motion evaluation. <em>arXiv</em>:2310.07322. <a href="https://arxiv.org/abs/2310.07322">https://arxiv.org/abs/2310.07322</a> <em>(verified by us in November 2026: abstract only)</em></li>
+<li id="r3">Kleim, J. A., &amp; Jones, T. A. (2008). Principles of experience-dependent neural plasticity: implications for rehabilitation after brain damage. <em>Journal of Speech, Language, and Hearing Research</em>, 51(1), S225-S239. <a href="https://pubmed.ncbi.nlm.nih.gov/18230848/">https://pubmed.ncbi.nlm.nih.gov/18230848/</a> <em>(abstract only; the list of principles comes from a secondary summary)</em></li>
+</ol>
+</article>
+
+</div></div></main>
+<footer class="ftr"><div class="wrap">
+<div class="ftr-pup"><button type="button" class="pupbtn" data-sprite="sleep" data-hover="wiggle" aria-label="Bonet says hello"><span class="sprite" data-clip="sleep" data-rest="sleep" aria-hidden="true"></span></button></div>
+<nav aria-label="Footer"><a href="/privacy.html">Privacy</a><a href="/terms.html">Terms</a><a href="/compliance.html">Privacy and safety</a><a href="/science.html">How it works</a><a href="/therapist.html">For therapists</a><a href="/blog/">Blog</a><a href="mailto:hello@coglixlabs.com">Contact</a></nav>
+<nav class="ftr-langs" aria-label="Language"><a href="/blog/camera-on-device.html" hreflang="en" lang="en">English</a><a href="/blog/camera-on-device.html" hreflang="zh-Hant" lang="zh-Hant">繁體中文</a><a href="/yue/" hreflang="yue-Hant-HK" lang="yue-Hant-HK">廣東話</a><a href="/zh-hans/" hreflang="zh-Hans" lang="zh-Hans">简体中文</a><a href="/ja/" hreflang="ja" lang="ja">日本語</a><a href="/es/" hreflang="es" lang="es">Español</a><a href="/de/" hreflang="de" lang="de">Deutsch</a><a href="/fr/" hreflang="fr" lang="fr">Français</a></nav>
+<p>&copy; 2026 Coglix Labs Inc.</p>
+</div></footer>
+<script defer src="/js/site.js"></script>
+
+</body>
+</html>

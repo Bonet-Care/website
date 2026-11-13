@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 380" role="img" font-family="Nunito, system-ui, 'Noto Sans TC', 'PingFang HK', sans-serif">
+<rect width="720" height="380" fill="#ffffff"/>
+<rect x="40" y="240" width="130" height="60" rx="8" fill="#e8f7ea" stroke="#3cb44b" stroke-width="3"/>
+<text x="105.0" y="270" font-size="24" font-weight="800" fill="#1b2330" text-anchor="middle">1</text>
+<text x="105.0" y="294" font-size="17" font-weight="700" fill="#1b2330" text-anchor="middle">再聽一次</text>
+<rect x="174" y="200" width="130" height="100" rx="8" fill="#e7f3fe" stroke="#1f8ae6" stroke-width="3"/>
+<text x="239.0" y="230" font-size="24" font-weight="800" fill="#1b2330" text-anchor="middle">2</text>
+<text x="239.0" y="254" font-size="17" font-weight="700" fill="#1b2330" text-anchor="middle">第一個音</text>
+<rect x="308" y="160" width="130" height="140" rx="8" fill="#fff7df" stroke="#ffc23d" stroke-width="3"/>
+<text x="373.0" y="190" font-size="24" font-weight="800" fill="#1b2330" text-anchor="middle">3</text>
+<text x="373.0" y="214" font-size="17" font-weight="700" fill="#1b2330" text-anchor="middle">意思提示</text>
+<rect x="442" y="120" width="130" height="180" rx="8" fill="#fff1e2" stroke="#f28c28" stroke-width="3"/>
+<text x="507.0" y="150" font-size="24" font-weight="800" fill="#1b2330" text-anchor="middle">4</text>
+<text x="507.0" y="174" font-size="17" font-weight="700" fill="#1b2330" text-anchor="middle">看到字</text>
+<rect x="576" y="80" width="130" height="220" rx="8" fill="#fff1e2" stroke="#f28c28" stroke-width="3"/>
+<text x="641.0" y="110" font-size="24" font-weight="800" fill="#1b2330" text-anchor="middle">5</text>
+<text x="641.0" y="134" font-size="17" font-weight="700" fill="#1b2330" text-anchor="middle">聽完</text>
+<text x="641.0" y="156" font-size="17" font-weight="700" fill="#1b2330" text-anchor="middle">一起讀</text>
+<line x1="40" y1="330" x2="690" y2="330" stroke="#6b7484" stroke-width="3"/>
+<polygon points="690,322 704,330 690,338" fill="#6b7484"/>
+<text x="40" y="364" font-size="18" font-weight="700" fill="#6b7484">少許幫助</text>
+<text x="704" y="364" font-size="18" font-weight="700" fill="#6b7484" text-anchor="end">很多幫助</text>
+</svg>

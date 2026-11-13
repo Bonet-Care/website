@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 360" role="img" aria-label="Schematic of a measured value rising above a target line twice, counting two reps, and a third rise that stays under the target and is not counted">
+  <rect width="720" height="360" fill="#ffffff"/>
+  <g font-family="Nunito, system-ui, sans-serif">
+    <text x="60" y="30" font-size="18" font-weight="800" fill="#1b2330">Measured value, for example how far the arm is raised</text>
+    <rect x="60" y="50" width="640" height="80" fill="#e8f7ea"/>
+    <path d="M60 50 V260 H700" stroke="#6b7484" stroke-width="2" fill="none"/>
+    <path d="M60 130 H700" stroke="#2b8a37" stroke-width="3" stroke-dasharray="10 6" fill="none"/>
+    <text x="68" y="154" font-size="17" font-weight="800" fill="#2b8a37">target</text>
+    <path d="M60 240 C120 240 130 70 200 70 C270 70 270 240 330 240 C390 240 400 70 460 70 C520 70 520 240 580 240 C630 240 640 175 690 175" stroke="#1f8ae6" stroke-width="5" fill="none" stroke-linecap="round"/>
+    <circle cx="200" cy="70" r="8" fill="#3cb44b"/>
+    <circle cx="460" cy="70" r="8" fill="#3cb44b"/>
+    <text x="200" y="45" font-size="18" font-weight="800" fill="#2b8a37" text-anchor="middle">rep 1</text>
+    <text x="460" y="45" font-size="18" font-weight="800" fill="#2b8a37" text-anchor="middle">rep 2</text>
+    <circle cx="690" cy="175" r="8" fill="#f28c28"/>
+    <text x="620" y="106" font-size="17" font-weight="800" fill="#c2640f" text-anchor="middle">short of the target:</text>
+    <text x="620" y="198" font-size="17" font-weight="800" fill="#c2640f" text-anchor="middle">no rep counted</text>
+    <text x="380" y="292" font-size="17" font-weight="700" fill="#1b2330" text-anchor="middle">A rep counts when the value passes the target, then comes back down.</text>
+    <text x="380" y="320" font-size="17" font-weight="700" fill="#6b7484" text-anchor="middle">time</text>
+  </g>
+</svg>

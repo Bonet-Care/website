@@ -1,0 +1,22 @@
+{
+  "requires_feature": "practice_quality",
+  "_comment": "Copy for the practice-quality section and table row. Hold from deploy until the app feature ships (build with: python3 scripts/build-site.py --without practice_quality). Wording rule: practice quality, how your practice went, tips. Not a clinical assessment, not a measure of recovery, not medical advice. 'Inspired by what therapists look for' only; not built or validated by clinicians.",
+  "h2": ["How it went.", "做得點。"],
+  "kicker": ["After each activity, see how your practice went and get a tip for next time.", "每次練習之後，睇下今次做得點，仲有下次嘅小提示。"],
+  "move_h": ["Move: how you did each exercise", "運動：每個動作做得點"],
+  "move_p": ["The camera looks at how the movement went, inspired by what therapists look for: how far it went, pace, steadiness, left and right balance, hold time and how much of the set you finished. A six-sided chart shows today's shape with last time behind it.", "鏡頭會睇動作做得點，參考治療師會留意嘅地方：幅度、速度、穩定、左右平衡、維持時間，同埋做完幾多組。六角形圖表顯示今次嘅形狀，上次嘅疊喺後面。"],
+  "speak_h": ["Speak: how the words came out", "說話：字詞講得點"],
+  "speak_p": ["The same idea for speaking: words heard, saying it without hints, pace, pauses, time to start and consistency across the session.", "說話都係同一個諗法：聽到嘅詞語、唔使提示講得出、速度、停頓、開口要幾耐，同成節練習嘅穩定度。"],
+  "tips_h": ["Then a tip for next time", "跟住係下次嘅小提示"],
+  "tips_p": ["Bonet gives one or two friendly tips, such as \"Lift a little higher on your left side\" or \"Take a breath before long sentences\". The daily plan adapts to them.", "朱古力會俾一兩個友善嘅提示，例如「左手再舉高少少」或者「講長句之前先吸啖氣」。每日計劃會跟住調整。"],
+  "caveat": ["These are automatic measures of home practice and general practice tips. They are not a clinical assessment or medical advice.", "呢啲係喺屋企練習嘅自動量度同一般練習提示，並非臨床評估或者醫療建議。"],
+  "row_label": ["Practice-quality breakdown with next-step tips", "練習質素分析，仲有下一步提示"],
+  "row_bonet": ["Six-axis breakdown for Move and Speak, with tips", "運動同說話都有六個面向嘅分析，仲有提示"],
+  "row_cells": {
+    "Constant Therapy": ["partly", "Reports cover accuracy, speed and cues; difficulty adapts", "報告有準確度、速度同提示；難度會調整"],
+    "Tactus Therapy": ["partly", "Some apps email accuracy and time reports", "部分 app 會電郵準確度同時間報告"],
+    "Lingraphica TalkPath": ["unverified", "Activity reports mentioned; contents not confirmed", "有提到活動報告；內容未能確認"],
+    "Flint Rehab": ["partly", "Reps against best score; no range or tempo breakdown", "次數對比最佳成績；冇幅度或速度分析"],
+    "Exercise video or paper handout": ["no", "None", "冇"]
+  }
+}

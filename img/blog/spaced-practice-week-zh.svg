@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 360" role="img" font-family="Nunito, system-ui, 'Noto Sans TC', 'PingFang HK', sans-serif">
+<rect width="720" height="360" fill="#ffffff"/>
+<text x="222" y="40" font-size="18" font-weight="700" fill="#6b7484" text-anchor="middle">週一</text>
+<text x="292" y="40" font-size="18" font-weight="700" fill="#6b7484" text-anchor="middle">週二</text>
+<text x="362" y="40" font-size="18" font-weight="700" fill="#6b7484" text-anchor="middle">週三</text>
+<text x="432" y="40" font-size="18" font-weight="700" fill="#6b7484" text-anchor="middle">週四</text>
+<text x="502" y="40" font-size="18" font-weight="700" fill="#6b7484" text-anchor="middle">週五</text>
+<text x="572" y="40" font-size="18" font-weight="700" fill="#6b7484" text-anchor="middle">週六</text>
+<text x="642" y="40" font-size="18" font-weight="700" fill="#6b7484" text-anchor="middle">週日</text>
+<line x1="190" y1="300" x2="700" y2="300" stroke="#e5e7eb" stroke-width="2"/>
+<text x="20" y="150" font-size="20" font-weight="800" fill="#1b2330">一星期一次</text>
+<rect x="620" y="86" width="44" height="84" rx="6" fill="#f28c28"/>
+<line x1="190" y1="172" x2="700" y2="172" stroke="#e5e7eb" stroke-width="2"/>
+<text x="20" y="270" font-size="20" font-weight="800" fill="#1b2330">每日一點</text>
+<rect x="200" y="278" width="44" height="12" rx="4" fill="#3cb44b"/>
+<rect x="270" y="278" width="44" height="12" rx="4" fill="#3cb44b"/>
+<rect x="340" y="278" width="44" height="12" rx="4" fill="#3cb44b"/>
+<rect x="410" y="278" width="44" height="12" rx="4" fill="#3cb44b"/>
+<rect x="480" y="278" width="44" height="12" rx="4" fill="#3cb44b"/>
+<rect x="550" y="278" width="44" height="12" rx="4" fill="#3cb44b"/>
+<rect x="620" y="278" width="44" height="12" rx="4" fill="#3cb44b"/>
+<text x="20" y="338" font-size="17" fill="#6b7484">兩行用嘅總時間一樣（示意）</text>
+</svg>

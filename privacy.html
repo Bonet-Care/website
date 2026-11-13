@@ -1,301 +1,88 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bonet Privacy Policy</title>
-    <meta name="description" content="What the Bonet app and this website collect, what stays on your device, who else receives data, and how to delete your account.">
-    <link rel="canonical" href="https://bonet.care/privacy.html">
-    <link rel="icon" type="image/x-icon" href="/favicon.ico">
-    <link rel="stylesheet" href="css/tailwind.css">
-    <style>
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', system-ui, sans-serif;
-        }
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bonet Privacy Policy</title>
+<meta name="description" content="What the Bonet app and this website collect, what stays on your device, who else receives data, and how to delete your account.">
+<meta name="theme-color" content="#1f8ae6">
+<script src="/js/boot.js"></script>
+<link rel="canonical" href="https://bonet.care/privacy.html">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/img/favicon-32.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta property="og:site_name" content="Bonet">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Bonet Privacy Policy">
+<meta property="og:description" content="What the Bonet app and this website collect, what stays on your device, who else receives data, and how to delete your account.">
+<meta property="og:url" content="https://bonet.care/privacy.html">
+<meta property="og:image" content="https://bonet.care/img/og-en.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Bonet Privacy Policy">
+<meta name="twitter:description" content="What the Bonet app and this website collect, what stays on your device, who else receives data, and how to delete your account.">
+<meta name="twitter:image" content="https://bonet.care/img/og-en.png">
+<link rel="preload" href="/fonts/nunito-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/css/site.css">
 
-        .nav-glass {
-            background: rgba(255, 255, 255, 0.6);
-            backdrop-filter: blur(40px) saturate(1.8);
-            -webkit-backdrop-filter: blur(40px) saturate(1.8);
-            border: 1px solid rgba(255, 255, 255, 0.5);
-            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.04);
-        }
-
-        .glass-card {
-            background: rgba(255, 255, 255, 0.5);
-            backdrop-filter: blur(24px) saturate(1.6);
-            -webkit-backdrop-filter: blur(24px) saturate(1.6);
-            border: 1px solid rgba(255, 255, 255, 0.6);
-            border-radius: 24px;
-            box-shadow:
-                0 8px 32px rgba(70, 119, 172, 0.08),
-                0 2px 8px rgba(0, 0, 0, 0.04),
-                inset 0 1px 0 rgba(255, 255, 255, 0.5);
-        }
-
-        @keyframes fade-up {
-            from {
-                opacity: 0;
-                transform: translateY(24px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .fade-up {
-            animation: fade-up 0.7s ease-out forwards;
-        }
-
-        /* ── Dark mode ── */
-        body.dark {
-            background: linear-gradient(180deg, #0f1724 0%, #162039 50%, #0f1724 100%) !important;
-        }
-
-        body.dark [style*="color: #162039"] {
-            color: #FFFFFF !important;
-        }
-
-        body.dark [style*="color: #657FB1"] {
-            color: #9AA7C1 !important;
-        }
-
-        body.dark [style*="color: #9AA7C1"] {
-            color: #BDC5D4 !important;
-        }
-
-        body.dark [style*="color: #8587B7"] {
-            color: #A5A7D7 !important;
-        }
-
-        body.dark [style*="color: #4677AC"] {
-            color: #7BB3E0 !important;
-        }
-
-        body.dark [style*="background: rgba(70, 119, 172, 0.05)"] {
-            background: rgba(70, 119, 172, 0.15) !important;
-            border-color: rgba(70, 119, 172, 0.3) !important;
-        }
-
-        body.dark .text-brand-700 {
-            color: #BDC5D4 !important;
-        }
-
-        body.dark .text-brand-400 {
-            color: #9AA7C1 !important;
-        }
-
-        body.dark .text-brand-300 {
-            color: #A5A7D7 !important;
-        }
-
-        body.dark .text-brand-500 {
-            color: #7BB3E0 !important;
-        }
-
-        body.dark .nav-glass {
-            background: rgba(15, 23, 36, 0.75) !important;
-            border-color: rgba(255, 255, 255, 0.08) !important;
-        }
-
-        body.dark .glass-card {
-            background: rgba(22, 32, 57, 0.55) !important;
-            border-color: rgba(255, 255, 255, 0.08) !important;
-        }
-
-        body.dark .glass-card:hover {
-            background: rgba(22, 32, 57, 0.75) !important;
-        }
-
-        body.dark footer {
-            border-color: rgba(255, 255, 255, 0.08) !important;
-        }
-
-        body.dark footer [style*="border-top"] {
-            border-color: rgba(255, 255, 255, 0.08) !important;
-        }
-
-        body.dark th,
-        body.dark td {
-            border-color: rgba(255, 255, 255, 0.08) !important;
-        }
-
-        /* ── Large font mode ── */
-        html.large-font {
-            font-size: 125%;
-        }
-    </style>
-    <!-- same typeface as the home page -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&display=swap">
-    <style>body, body :not(i):not(svg):not(svg *):not([class*="fa-"]) { font-family: "Geist", -apple-system, BlinkMacSystemFont, "PingFang TC", "Noto Sans TC", sans-serif !important; }</style>
+<meta name="x-title-zh" content="私隱政策 | 哥基健動">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-WMQD9MWHJN"></script>
+<script defer src="/js/gtag-init.js"></script>
 </head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="hdr"><div class="wrap">
+<a class="brand" href="/" aria-label="Bonet"><img src="/img/mascot/head.webp" width="512" height="512" alt="">Bonet</a>
+<nav class="nav" aria-label="Main"><a href="/#how">Practice</a><a href="/science.html">How it works</a><a href="/#plans">Plans</a><a href="/#faq">FAQ</a></nav>
+<details class="langmenu"><summary aria-label="Language"><img src="/img/icons/globe.webp" width="128" height="128" alt=""><span>English</span></summary><ul><li><button type="button" data-setlang="en" lang="en" aria-current="true">English</button></li><li><a href="/zh-hant/" hreflang="zh-Hant" lang="zh-Hant">繁體中文</a></li><li><button type="button" data-setlang="yue" lang="yue-Hant-HK">廣東話</button></li><li><a href="/zh-hans/" hreflang="zh-Hans" lang="zh-Hans">简体中文</a></li><li><a href="/ja/" hreflang="ja" lang="ja">日本語</a></li><li><a href="/es/" hreflang="es" lang="es">Español</a></li><li><a href="/de/" hreflang="de" lang="de">Deutsch</a></li><li><a href="/fr/" hreflang="fr" lang="fr">Français</a></li></ul></details>
+<button type="button" class="tsize" data-textsize aria-pressed="false" title="Bigger text" aria-label="Bigger text">A+</button>
+<a class="signin" href="https://app.bonet.care/">Sign in</a>
+<a class="btn btn--sm" href="https://app.bonet.care/">Start free</a>
+</div></header>
+<main id="main" class="doc-wrap"><div class="wrap"><div class="doc">
 
-<body class="antialiased"
-    style="background: linear-gradient(180deg, #E9F1F7 0%, #dce4ed 50%, #E9F1F7 100%); min-height: 100vh;">
-
-    <!-- ── Navigation ── -->
-    <nav class="fixed top-6 left-1/2 -translate-x-1/2 z-50">
-        <div class="nav-glass rounded-full px-2 py-2 flex items-center gap-1">
-            <a href="index.html" class="flex items-center gap-1.5 px-2 mr-1">
-                <img src="img/coglix-logo.jpg" alt="Coglix Labs" class="h-6 w-6 rounded-full object-cover" fetchpriority="high">
-                <span class="text-sm font-bold" style="color: #162039;">Bonet</span>
-                <span class="text-xs font-normal" style="color: #8587B7;">by Coglix Labs</span>
-            </a>
-            <div class="w-px h-5 bg-brand-200/50"></div>
-            <a href="index.html"
-                class="px-4 py-2 rounded-full text-sm font-medium text-brand-400 hover:text-brand-700 hover:bg-white/50 transition-all"
-                data-en="Home" data-zh="首頁">Home</a>
-            <a href="privacy.html"
-                class="px-4 py-2 rounded-full text-sm font-medium text-brand-700 hover:text-brand-900 hover:bg-white/50 transition-all"
-                data-en="Privacy" data-zh="隱私">Privacy</a>
-            <a href="terms.html"
-                class="px-4 py-2 rounded-full text-sm font-medium text-brand-400 hover:text-brand-700 hover:bg-white/50 transition-all"
-                data-en="Terms" data-zh="條款">Terms</a>
-            <a href="compliance.html"
-                class="px-4 py-2 rounded-full text-sm font-medium text-brand-400 hover:text-brand-700 hover:bg-white/50 transition-all"
-                data-en="Privacy &amp; safety" data-zh="私隱與安全">Privacy &amp; safety</a>
-            <div class="w-px h-5 bg-brand-200/50 mx-1"></div>
-            <div class="flex items-center">
-                <button onclick="setLang('en')" id="lang-en"
-                    class="px-3 py-1.5 rounded-full text-sm font-medium transition-all text-white"
-                    style="background: rgba(30,58,95,0.7); backdrop-filter: blur(8px);">EN</button>
-                <button onclick="setLang('zh')" id="lang-zh"
-                    class="px-3 py-1.5 rounded-full text-sm font-medium transition-all text-brand-300 hover:text-brand-500">ZH</button>
-            </div>
-            <div class="w-px h-5 bg-brand-200/50 mx-1"></div>
-            <button onclick="toggleDarkMode()" id="dark-mode-btn"
-                class="w-8 h-8 rounded-full flex items-center justify-center transition-all text-brand-300 hover:text-brand-500 hover:bg-white/30"
-                title="Dark Mode">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
-                    stroke-linecap="round">
-                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
-                </svg>
-            </button>
-            <button onclick="toggleLargeFont()" id="large-font-btn"
-                class="w-8 h-8 rounded-full flex items-center justify-center text-xs font-bold transition-all text-brand-300 hover:text-brand-500 hover:bg-white/30"
-                title="Large Font">A+</button>
+    <div>
+        <div>
+<div><h1 data-en="Privacy Policy" data-zh="私隱政策">Privacy Policy</h1><p data-en="Last updated: November 2026" data-zh="最後更新：2026 年 11 月">Last updated: November 2026</p></div>
+<section><h2 data-en="Who we are" data-zh="我們是誰">Who we are</h2>
+<p data-en="Coglix Labs Inc. ("we", "us") makes Bonet, a home practice app for movement, speaking and brain games. This policy explains what personal data the app and this website collect and how we use it. Contact: <a href='mailto:privacy@coglixlabs.com'>privacy@coglixlabs.com</a>." data-zh="Coglix Labs Inc.（「我們」）開發哥基健動，一個居家動作、說話及腦力遊戲練習應用程式。本政策說明應用程式和本網站收集哪些個人資料，以及我們如何使用。聯絡：<a href='mailto:privacy@coglixlabs.com'>privacy@coglixlabs.com</a>。">Coglix Labs Inc. ("we", "us") makes Bonet, a home practice app for movement, speaking and brain games. This policy explains what personal data the app and this website collect and how we use it. Contact: <a href="mailto:privacy@coglixlabs.com">privacy@coglixlabs.com</a>.</p>
+<p data-en="Bonet is a practice tool, not a medical device, and does not diagnose or treat any condition. Ask your therapist or doctor before starting." data-zh="哥基健動是練習工具，並非醫療器材，亦不會診斷或治療任何病況。開始之前，請先諮詢你的治療師或醫生。">Bonet is a practice tool, not a medical device, and does not diagnose or treat any condition. Ask your therapist or doctor before starting.</p></section>
+<section><h2 data-en="What we collect in the app" data-zh="應用程式收集的資料">What we collect in the app</h2>
+<ul><li data-en="Account: email address, display name and sign-in details (handled by our sign-in service, Supabase Auth)." data-zh="帳戶：電郵地址、顯示名稱和登入資料（由我們的登入服務 Supabase Auth 處理）。">Account: email address, display name and sign-in details (handled by our sign-in service, Supabase Auth).</li><li data-en="Practice results: which exercise or game, date and time, duration, reps, scores, range-of-motion estimates, tracking quality, speaking prompts, the text the app recognised from your speech, and scores." data-zh="練習結果：哪個練習或遊戲、日期和時間、時長、次數、分數、活動幅度估算、追蹤質素、說話練習的題目、應用程式辨識出的文字及分數。">Practice results: which exercise or game, date and time, duration, reps, scores, range-of-motion estimates, tracking quality, speaking prompts, the text the app recognised from your speech, and scores.</li><li data-en="Settings and progress: preferences, goals, streaks, plans you save, language and difficulty." data-zh="設定與進度：偏好、目標、連續練習日數、你儲存的計劃、語言和難度。">Settings and progress: preferences, goals, streaks, plans you save, language and difficulty.</li><li data-en="Your needs profile: the answers you give when you set up the app, such as an age band (you can choose not to say), which side is weaker, your goals and focus areas, how many minutes a day you want to practise, how you move, and when a reminder suits you. It is saved with your account so your plan follows you to other devices." data-zh="你的需要資料：你設定應用程式時的回答，例如年齡層（你可以選擇不說）、較弱的一邊、目標和重點範圍、每日想練習的分鐘數、活動方式，以及適合的提醒時間。資料會跟你的帳戶一起儲存，令你的計劃可在其他裝置使用。">Your needs profile: the answers you give when you set up the app, such as an age band (you can choose not to say), which side is weaker, your goals and focus areas, how many minutes a day you want to practise, how you move, and when a reminder suits you. It is saved with your account so your plan follows you to other devices.</li><li data-en="Speaking measures: for each speaking try, the speaking rate, the length of pauses and how many words were recognised. The audio itself is not stored." data-zh="說話量度：每次說話練習的語速、停頓長短和辨識出的字數。聲音本身不會被儲存。">Speaking measures: for each speaking try, the speaking rate, the length of pauses and how many words were recognised. The audio itself is not stored.</li><li data-en="Per-item practice results: for each speaking or brain-game item, which item it was, whether it was right, how many tries it took and how much help you used, so the app can choose what to repeat." data-zh="逐項練習結果：每個說話或腦力遊戲項目的內容、是否答對、嘗試次數和使用了多少提示，讓應用程式揀選需要重複的項目。">Per-item practice results: for each speaking or brain-game item, which item it was, whether it was right, how many tries it took and how much help you used, so the app can choose what to repeat.</li><li data-en="League nickname and points, only if you join the weekly league: a nickname (made for you or one you choose) and your weekly points. Other players in your league can see them. Nothing else about your practice is shown to them. To keep leagues lively, some players are computer players. You can leave the league at any time, which deletes your nickname and league results." data-zh="聯賽暱稱和分數（只限你參加每週聯賽時）：一個暱稱（自動產生或由你選擇）和你的每週分數。同一聯賽的其他玩家可以看到。你的其他練習資料不會顯示給他們。為了令聯賽熱鬧，部分玩家是電腦玩家。你可以隨時退出聯賽，暱稱和聯賽成績會一併刪除。">League nickname and points, only if you join the weekly league: a nickname (made for you or one you choose) and your weekly points. Other players in your league can see them. Nothing else about your practice is shown to them. To keep leagues lively, some players are computer players. You can leave the league at any time, which deletes your nickname and league results.</li><li data-en="Your choice of outfit for Bonet (a reward for streaks), saved with your settings." data-zh="你為哥基揀選的服飾（連續練習的獎勵），會跟你的設定一起儲存。">Your choice of outfit for Bonet (a reward for streaks), saved with your settings.</li><li data-en="Apple purchase identifiers, if you subscribe in the iPhone or iPad app: Apple's transaction identifier, product, status, trial, renewal and end dates, and an identifier that links the purchase to your account. We do not receive your Apple ID, card or payment details." data-zh="Apple 購買識別碼（如你在 iPhone 或 iPad 應用程式內訂閱）：Apple 的交易識別碼、產品、狀態、試用、續期和結束日期，以及將購買連結到你帳戶的識別碼。我們不會收到你的 Apple ID、信用卡或付款資料。">Apple purchase identifiers, if you subscribe in the iPhone or iPad app: Apple's transaction identifier, product, status, trial, renewal and end dates, and an identifier that links the purchase to your account. We do not receive your Apple ID, card or payment details.</li><li data-en="Subscription status. Web payments are handled by Stripe and purchases in the iPhone and iPad app by Apple. We do not receive or store your card number." data-zh="訂閱狀態。網頁付款由 Stripe 處理，iPhone 和 iPad 應用程式內的購買由 Apple 處理。我們不會收到或儲存你的信用卡號碼。">Subscription status. Web payments are handled by Stripe and purchases in the iPhone and iPad app by Apple. We do not receive or store your card number.</li><li data-en="On your device: in the iPhone and iPad app your sign-in session is kept in the iOS Keychain. If you finish a session without a connection, the result waits in a queue on your device (for up to 30 days) and is uploaded when you are back online." data-zh="留在你裝置上的資料：在 iPhone 和 iPad 應用程式中，你的登入狀態存放在 iOS 鑰匙圈。如果你在沒有網絡時完成練習，結果會先排隊保存在你的裝置上（最多 30 天），連線後才上載。">On your device: in the iPhone and iPad app your sign-in session is kept in the iOS Keychain. If you finish a session without a connection, the result waits in a queue on your device (for up to 30 days) and is uploaded when you are back online.</li></ul></section>
+<section><h2 data-en="What we do not collect" data-zh="我們不收集的資料">What we do not collect</h2>
+<ul><li data-en="Camera video. It is processed on your device and never uploaded or recorded." data-zh="鏡頭影像。影像在你的裝置上處理，不會上載或錄影。">Camera video. It is processed on your device and never uploaded or recorded.</li><li data-en="Microphone audio. We do not save it. See "Speech" below for where it may be processed." data-zh="咪高峰的聲音。我們不會保存。聲音可能在何處處理，請見下面「語音」。">Microphone audio. We do not save it. See "Speech" below for where it may be processed.</li><li data-en="The app does not include third-party advertising or analytics." data-zh="應用程式不包含第三方廣告或分析工具。">The app does not include third-party advertising or analytics.</li></ul></section>
+<section><h2 data-en="Speech" data-zh="語音">Speech</h2>
+<p data-en="On the iOS app, speech recognition uses Apple speech recognition. It runs on your device where the device supports the language; otherwise Apple may process the audio under its own privacy terms. On the web, English can be recognised on your device. Cantonese audio may be sent through our server to Google Cloud Speech-to-Text to be turned into text. Your browser may also offer its own speech recognition, which sends audio to the browser maker. We do not keep the audio." data-zh="在 iOS 應用程式中，語音使用 Apple 語音辨識；如裝置支援該語言，會在裝置上辨識，否則 Apple 可能按其私隱條款處理聲音。在網頁版，英語可在你的裝置上辨識；粵語聲音可能經我們的伺服器傳送到 Google Cloud Speech-to-Text 轉成文字。你的瀏覽器亦可能提供自己的語音辨識，並把聲音傳送給瀏覽器開發商。我們不保存聲音。">On the iOS app, speech recognition uses Apple speech recognition. It runs on your device where the device supports the language; otherwise Apple may process the audio under its own privacy terms. On the web, English can be recognised on your device. Cantonese audio may be sent through our server to Google Cloud Speech-to-Text to be turned into text. Your browser may also offer its own speech recognition, which sends audio to the browser maker. We do not keep the audio.</p></section>
+<section><h2 data-en="How we use it" data-zh="我們如何使用">How we use it</h2>
+<ul><li data-en="To run the app: show your history and progress, plan your practice, and produce the practice report you can print or share." data-zh="運作應用程式：顯示你的記錄和進度、編排練習，以及產生你可列印或分享的練習報告。">To run the app: show your history and progress, plan your practice, and produce the practice report you can print or share.</li><li data-en="To manage your account and subscription." data-zh="管理你的帳戶和訂閱。">To manage your account and subscription.</li><li data-en="To keep the service secure and fix problems." data-zh="保障服務安全及修正問題。">To keep the service secure and fix problems.</li></ul>
+<p data-en="We do not sell your personal data." data-zh="我們不會出售你的個人資料。">We do not sell your personal data.</p></section>
+<section><h2 data-en="Where it is stored and how it is protected" data-zh="儲存位置與保護方式">Where it is stored and how it is protected</h2>
+<p data-en="Account and practice data is stored in a cloud database run by Supabase. It is encrypted in transit (TLS) and encrypted at rest by the provider. Row-level security rules mean each account can only read and change its own data. We do not use end-to-end encryption, so we and our hosting provider are technically able to access stored data. We hold no security or privacy certification." data-zh="帳戶和練習資料存放在 Supabase 營運的雲端資料庫，傳輸時以 TLS 加密，儲存時由供應商加密。列級安全規則令每個帳戶只能讀取和修改自己的資料。我們沒有採用端對端加密，因此我們和主機供應商在技術上可以存取已儲存的資料。我們沒有任何安全或私隱認證。">Account and practice data is stored in a cloud database run by Supabase. It is encrypted in transit (TLS) and encrypted at rest by the provider. Row-level security rules mean each account can only read and change its own data. We do not use end-to-end encryption, so we and our hosting provider are technically able to access stored data. We hold no security or privacy certification.</p></section>
+<section><h2 data-en="Who else receives data" data-zh="其他接收資料的服務">Who else receives data</h2>
+<ul><li data-en="Supabase: database and sign-in hosting." data-zh="Supabase：資料庫及登入服務。">Supabase: database and sign-in hosting.</li><li data-en="Stripe: subscription payments on the web." data-zh="Stripe：網頁版的訂閱付款。">Stripe: subscription payments on the web.</li><li data-en="Apple: App Store purchases and subscriptions in the iPhone and iPad app, and speech recognition in the app (see Speech)." data-zh="Apple：iPhone 和 iPad 應用程式內的 App Store 購買和訂閱，以及應用程式內的語音辨識（見「語音」）。">Apple: App Store purchases and subscriptions in the iPhone and iPad app, and speech recognition in the app (see Speech).</li><li data-en="Google Cloud Speech-to-Text: Cantonese speech recognition on the web only." data-zh="Google Cloud Speech-to-Text：僅用於網頁版的粵語語音辨識。">Google Cloud Speech-to-Text: Cantonese speech recognition on the web only.</li><li data-en="Apple: speech recognition in the iOS app where your device cannot do it on its own, and App Store services." data-zh="Apple：iOS 應用程式中裝置無法自行辨識時的語音辨識，以及 App Store 服務。">Apple: speech recognition in the iOS app where your device cannot do it on its own, and App Store services.</li><li data-en="A therapist, family member or anyone else only if you choose to give them a report you printed or shared." data-zh="只有在你選擇把列印或分享的報告交給治療師、家人或其他人時，他們才會看到。">A therapist, family member or anyone else only if you choose to give them a report you printed or shared.</li></ul></section>
+<section><h2 data-en="This website" data-zh="本網站">This website</h2>
+<p data-en="The marketing website uses Google Analytics (with IP anonymisation switched on, and no session recording) to understand how the site is used. It is loaded from Google and sets cookies on your browser. The website has no forms: to contact us you email us, and we use your address only to reply. The app itself does not use these tools." data-zh="宣傳網站使用 Google Analytics（已開啟 IP 匿名化，不錄影操作）來了解網站使用情況。它由 Google 載入，並會在你的瀏覽器設定 cookie。本網站沒有表格；如要聯絡我們，請直接電郵，我們只會用你的電郵地址回覆。應用程式本身不使用這些工具。">The marketing website uses Google Analytics (with IP anonymisation switched on, and no session recording) to understand how the site is used. It is loaded from Google and sets cookies on your browser. The website has no forms: to contact us you email us, and we use your address only to reply. The app itself does not use these tools.</p></section>
+<section><h2 data-en="Keeping and deleting your data" data-zh="保存與刪除">Keeping and deleting your data</h2>
+<p data-en="We keep your data while your account is open. You can delete your account in Settings in the app. This erases your account and all your practice history, scores, saved plans and settings, and cancels any web (Stripe) subscription. It does not cancel an App Store subscription: cancel that yourself in Settings > your name (Apple ID) > Subscriptions on your iPhone or iPad. It cannot be undone. Payment records held by Stripe or Apple follow their retention rules." data-zh="在你的帳戶開通期間，我們會保存你的資料。你可以在應用程式的「設定」中刪除帳戶。這會刪除你的帳戶及全部練習記錄、分數、已儲存的計劃和設定，並取消網頁（Stripe）訂閱，而且無法復原。刪除帳戶不會取消 App Store 訂閱，請自行在 iPhone 或 iPad 的「設定」>「你的名字」(Apple ID) >「訂閱」取消。Stripe 或 Apple 持有的付款記錄受其保存規則約束。">We keep your data while your account is open. You can delete your account in Settings in the app. This erases your account and all your practice history, scores, saved plans and settings, and cancels any web (Stripe) subscription. It does not cancel an App Store subscription: cancel that yourself in Settings > your name (Apple ID) > Subscriptions on your iPhone or iPad. It cannot be undone. Payment records held by Stripe or Apple follow their retention rules.</p></section>
+<section><h2 data-en="Your rights" data-zh="你的權利">Your rights</h2>
+<p data-en="You can ask us for a copy of your personal data, ask us to correct it, or ask us to delete it. Email <a href='mailto:privacy@coglixlabs.com'>privacy@coglixlabs.com</a>. We aim to handle personal data in line with the privacy laws that apply to us, including Hong Kong's Personal Data (Privacy) Ordinance. This policy is not a certification of compliance with any law or standard." data-zh="你可以要求我們提供你的個人資料副本、更正資料或刪除資料，請電郵 <a href='mailto:privacy@coglixlabs.com'>privacy@coglixlabs.com</a>。我們致力按適用的私隱法例（包括香港《個人資料（私隱）條例》）處理個人資料。本政策並不代表已獲任何法例或標準的合規認證。">You can ask us for a copy of your personal data, ask us to correct it, or ask us to delete it. Email <a href="mailto:privacy@coglixlabs.com">privacy@coglixlabs.com</a>. We aim to handle personal data in line with the privacy laws that apply to us, including Hong Kong's Personal Data (Privacy) Ordinance. This policy is not a certification of compliance with any law or standard.</p></section>
+<section><h2 data-en="Children" data-zh="兒童">Children</h2>
+<p data-en="Bonet is not designed for children under 13 and we do not knowingly collect their personal data." data-zh="哥基健動並非為 13 歲以下兒童設計，我們亦不會在知情下收集他們的個人資料。">Bonet is not designed for children under 13 and we do not knowingly collect their personal data.</p>
+<h2 data-en="Changes" data-zh="更新">Changes</h2>
+<p data-en="If we change this policy we will update the date above. If a change is significant we will tell you in the app." data-zh="如我們修改本政策，會更新上方日期；如有重大改動，會在應用程式內通知你。">If we change this policy we will update the date above. If a change is significant we will tell you in the app.</p></section>
         </div>
-    </nav>
+    </div>
+    
+</div></div></main>
+<footer class="ftr"><div class="wrap">
+<div class="ftr-pup"><button type="button" class="pupbtn" data-sprite="sleep" data-hover="wiggle" aria-label="Bonet says hello"><span class="sprite" data-clip="sleep" data-rest="sleep" aria-hidden="true"></span></button></div>
+<nav aria-label="Footer"><a href="/privacy.html">Privacy</a><a href="/terms.html">Terms</a><a href="/compliance.html">Privacy and safety</a><a href="/science.html">How it works</a><a href="/therapist.html">For therapists</a><a href="/blog/">Blog</a><a href="mailto:hello@coglixlabs.com">Contact</a></nav>
+<nav class="ftr-langs" aria-label="Language"><a href="/" hreflang="en" lang="en">English</a><a href="/zh-hant/" hreflang="zh-Hant" lang="zh-Hant">繁體中文</a><a href="/yue/" hreflang="yue-Hant-HK" lang="yue-Hant-HK">廣東話</a><a href="/zh-hans/" hreflang="zh-Hans" lang="zh-Hans">简体中文</a><a href="/ja/" hreflang="ja" lang="ja">日本語</a><a href="/es/" hreflang="es" lang="es">Español</a><a href="/de/" hreflang="de" lang="de">Deutsch</a><a href="/fr/" hreflang="fr" lang="fr">Français</a></nav>
+<p>&copy; 2026 Coglix Labs Inc.</p>
+</div></footer>
+<script defer src="/js/site.js"></script>
 
-    <!-- ── Content ── -->
-    <section class="pt-32 pb-24 px-6">
-        <div class="max-w-3xl mx-auto">
-<div class="text-center mb-12 fade-up" style="opacity: 0;"><h1 class="text-4xl md:text-5xl font-bold mb-3" style="color: #162039;" data-en="Privacy Policy" data-zh="私隱政策">Privacy Policy</h1><p class="text-base" style="color: #9AA7C1;" data-en="Last updated: November 2026" data-zh="最後更新：2026 年 11 月">Last updated: November 2026</p></div>
-<div class="glass-card p-8 mb-8 fade-up" style="opacity: 0; animation-delay: 0.06s;"><h2 class="text-xl font-bold mb-3" style="color: #162039;" data-en="Who we are" data-zh="我們是誰">Who we are</h2>
-<p class="text-sm leading-relaxed mb-3" style="color: #657FB1;" data-en="Coglix Labs Inc. (&quot;we&quot;, &quot;us&quot;) makes Bonet, a home practice app for movement, speaking and brain games. This policy explains what personal data the app and this website collect and how we use it. Contact: <a href='mailto:privacy@coglixlabs.com' class='text-brand-500 hover:underline'>privacy@coglixlabs.com</a>." data-zh="Coglix Labs Inc.（「我們」）開發哥基健動，一個居家動作、說話及腦力遊戲練習應用程式。本政策說明應用程式和本網站收集哪些個人資料，以及我們如何使用。聯絡：<a href='mailto:privacy@coglixlabs.com' class='text-brand-500 hover:underline'>privacy@coglixlabs.com</a>。">Coglix Labs Inc. ("we", "us") makes Bonet, a home practice app for movement, speaking and brain games. This policy explains what personal data the app and this website collect and how we use it. Contact: <a href='mailto:privacy@coglixlabs.com' class='text-brand-500 hover:underline'>privacy@coglixlabs.com</a>.</p>
-<p class="text-sm leading-relaxed mb-3" style="color: #657FB1;" data-en="Bonet is a practice tool, not a medical device, and does not diagnose or treat any condition. Ask your therapist or doctor before starting." data-zh="哥基健動是練習工具，並非醫療器材，亦不會診斷或治療任何病況。開始之前，請先諮詢你的治療師或醫生。">Bonet is a practice tool, not a medical device, and does not diagnose or treat any condition. Ask your therapist or doctor before starting.</p></div>
-<div class="glass-card p-8 mb-8 fade-up" style="opacity: 0; animation-delay: 0.1s;"><h2 class="text-xl font-bold mb-3" style="color: #162039;" data-en="What we collect in the app" data-zh="應用程式收集的資料">What we collect in the app</h2>
-<ul class="text-sm leading-relaxed mb-3 list-disc pl-6 space-y-1" style="color: #657FB1;"><li class="" data-en="Account: email address, display name and sign-in details (handled by our sign-in service, Supabase Auth)." data-zh="帳戶：電郵地址、顯示名稱和登入資料（由我們的登入服務 Supabase Auth 處理）。">Account: email address, display name and sign-in details (handled by our sign-in service, Supabase Auth).</li><li class="" data-en="Practice results: which exercise or game, date and time, duration, reps, scores, range-of-motion estimates, tracking quality, speaking prompts, the text the app recognised from your speech, and scores." data-zh="練習結果：哪個練習或遊戲、日期和時間、時長、次數、分數、活動幅度估算、追蹤質素、說話練習的題目、應用程式辨識出的文字及分數。">Practice results: which exercise or game, date and time, duration, reps, scores, range-of-motion estimates, tracking quality, speaking prompts, the text the app recognised from your speech, and scores.</li><li class="" data-en="Settings and progress: preferences, goals, streaks, plans you save, language and difficulty." data-zh="設定與進度：偏好、目標、連續練習日數、你儲存的計劃、語言和難度。">Settings and progress: preferences, goals, streaks, plans you save, language and difficulty.</li><li class="" data-en="Your needs profile: the answers you give when you set up the app, such as an age band (you can choose not to say), which side is weaker, your goals and focus areas, how many minutes a day you want to practise, how you move, and when a reminder suits you. It is saved with your account so your plan follows you to other devices." data-zh="你的需要資料：你設定應用程式時的回答，例如年齡層（你可以選擇不說）、較弱的一邊、目標和重點範圍、每日想練習的分鐘數、活動方式，以及適合的提醒時間。資料會跟你的帳戶一起儲存，令你的計劃可在其他裝置使用。">Your needs profile: the answers you give when you set up the app, such as an age band (you can choose not to say), which side is weaker, your goals and focus areas, how many minutes a day you want to practise, how you move, and when a reminder suits you. It is saved with your account so your plan follows you to other devices.</li><li class="" data-en="Speaking measures: for each speaking try, the speaking rate, the length of pauses and how many words were recognised. The audio itself is not stored." data-zh="說話量度：每次說話練習的語速、停頓長短和辨識出的字數。聲音本身不會被儲存。">Speaking measures: for each speaking try, the speaking rate, the length of pauses and how many words were recognised. The audio itself is not stored.</li><li class="" data-en="Per-item practice results: for each speaking or brain-game item, which item it was, whether it was right, how many tries it took and how much help you used, so the app can choose what to repeat." data-zh="逐項練習結果：每個說話或腦力遊戲項目的內容、是否答對、嘗試次數和使用了多少提示，讓應用程式揀選需要重複的項目。">Per-item practice results: for each speaking or brain-game item, which item it was, whether it was right, how many tries it took and how much help you used, so the app can choose what to repeat.</li><li class="" data-en="League nickname and points, only if you join the weekly league: a nickname (made for you or one you choose) and your weekly points. Other players in your league can see them. Nothing else about your practice is shown to them. To keep leagues lively, some players are computer players. You can leave the league at any time, which deletes your nickname and league results." data-zh="聯賽暱稱和分數（只限你參加每週聯賽時）：一個暱稱（自動產生或由你選擇）和你的每週分數。同一聯賽的其他玩家可以看到。你的其他練習資料不會顯示給他們。為了令聯賽熱鬧，部分玩家是電腦玩家。你可以隨時退出聯賽，暱稱和聯賽成績會一併刪除。">League nickname and points, only if you join the weekly league: a nickname (made for you or one you choose) and your weekly points. Other players in your league can see them. Nothing else about your practice is shown to them. To keep leagues lively, some players are computer players. You can leave the league at any time, which deletes your nickname and league results.</li><li class="" data-en="Your choice of outfit for Bonet (a reward for streaks), saved with your settings." data-zh="你為哥基揀選的服飾（連續練習的獎勵），會跟你的設定一起儲存。">Your choice of outfit for Bonet (a reward for streaks), saved with your settings.</li><li class="" data-en="Apple purchase identifiers, if you subscribe in the iPhone or iPad app: Apple's transaction identifier, product, status, trial, renewal and end dates, and an identifier that links the purchase to your account. We do not receive your Apple ID, card or payment details." data-zh="Apple 購買識別碼（如你在 iPhone 或 iPad 應用程式內訂閱）：Apple 的交易識別碼、產品、狀態、試用、續期和結束日期，以及將購買連結到你帳戶的識別碼。我們不會收到你的 Apple ID、信用卡或付款資料。">Apple purchase identifiers, if you subscribe in the iPhone or iPad app: Apple's transaction identifier, product, status, trial, renewal and end dates, and an identifier that links the purchase to your account. We do not receive your Apple ID, card or payment details.</li><li class="" data-en="Subscription status. Web payments are handled by Stripe and purchases in the iPhone and iPad app by Apple. We do not receive or store your card number." data-zh="訂閱狀態。網頁付款由 Stripe 處理，iPhone 和 iPad 應用程式內的購買由 Apple 處理。我們不會收到或儲存你的信用卡號碼。">Subscription status. Web payments are handled by Stripe and purchases in the iPhone and iPad app by Apple. We do not receive or store your card number.</li><li class="" data-en="On your device: in the iPhone and iPad app your sign-in session is kept in the iOS Keychain. If you finish a session without a connection, the result waits in a queue on your device (for up to 30 days) and is uploaded when you are back online." data-zh="留在你裝置上的資料：在 iPhone 和 iPad 應用程式中，你的登入狀態存放在 iOS 鑰匙圈。如果你在沒有網絡時完成練習，結果會先排隊保存在你的裝置上（最多 30 天），連線後才上載。">On your device: in the iPhone and iPad app your sign-in session is kept in the iOS Keychain. If you finish a session without a connection, the result waits in a queue on your device (for up to 30 days) and is uploaded when you are back online.</li></ul></div>
-<div class="glass-card p-8 mb-8 fade-up" style="opacity: 0; animation-delay: 0.14s;"><h2 class="text-xl font-bold mb-3" style="color: #162039;" data-en="What we do not collect" data-zh="我們不收集的資料">What we do not collect</h2>
-<ul class="text-sm leading-relaxed mb-3 list-disc pl-6 space-y-1" style="color: #657FB1;"><li class="" data-en="Camera video. It is processed on your device and never uploaded or recorded." data-zh="鏡頭影像。影像在你的裝置上處理，不會上載或錄影。">Camera video. It is processed on your device and never uploaded or recorded.</li><li class="" data-en="Microphone audio. We do not save it. See &quot;Speech&quot; below for where it may be processed." data-zh="咪高峰的聲音。我們不會保存。聲音可能在何處處理，請見下面「語音」。">Microphone audio. We do not save it. See "Speech" below for where it may be processed.</li><li class="" data-en="The app does not include third-party advertising or analytics." data-zh="應用程式不包含第三方廣告或分析工具。">The app does not include third-party advertising or analytics.</li></ul></div>
-<div class="glass-card p-8 mb-8 fade-up" style="opacity: 0; animation-delay: 0.18s;"><h2 class="text-xl font-bold mb-3" style="color: #162039;" data-en="Speech" data-zh="語音">Speech</h2>
-<p class="text-sm leading-relaxed mb-3" style="color: #657FB1;" data-en="On the iOS app, speech recognition uses Apple speech recognition. It runs on your device where the device supports the language; otherwise Apple may process the audio under its own privacy terms. On the web, English can be recognised on your device. Cantonese audio may be sent through our server to Google Cloud Speech-to-Text to be turned into text. Your browser may also offer its own speech recognition, which sends audio to the browser maker. We do not keep the audio." data-zh="在 iOS 應用程式中，語音使用 Apple 語音辨識；如裝置支援該語言，會在裝置上辨識，否則 Apple 可能按其私隱條款處理聲音。在網頁版，英語可在你的裝置上辨識；粵語聲音可能經我們的伺服器傳送到 Google Cloud Speech-to-Text 轉成文字。你的瀏覽器亦可能提供自己的語音辨識，並把聲音傳送給瀏覽器開發商。我們不保存聲音。">On the iOS app, speech recognition uses Apple speech recognition. It runs on your device where the device supports the language; otherwise Apple may process the audio under its own privacy terms. On the web, English can be recognised on your device. Cantonese audio may be sent through our server to Google Cloud Speech-to-Text to be turned into text. Your browser may also offer its own speech recognition, which sends audio to the browser maker. We do not keep the audio.</p></div>
-<div class="glass-card p-8 mb-8 fade-up" style="opacity: 0; animation-delay: 0.22s;"><h2 class="text-xl font-bold mb-3" style="color: #162039;" data-en="How we use it" data-zh="我們如何使用">How we use it</h2>
-<ul class="text-sm leading-relaxed mb-3 list-disc pl-6 space-y-1" style="color: #657FB1;"><li class="" data-en="To run the app: show your history and progress, plan your practice, and produce the practice report you can print or share." data-zh="運作應用程式：顯示你的記錄和進度、編排練習，以及產生你可列印或分享的練習報告。">To run the app: show your history and progress, plan your practice, and produce the practice report you can print or share.</li><li class="" data-en="To manage your account and subscription." data-zh="管理你的帳戶和訂閱。">To manage your account and subscription.</li><li class="" data-en="To keep the service secure and fix problems." data-zh="保障服務安全及修正問題。">To keep the service secure and fix problems.</li></ul>
-<p class="text-sm leading-relaxed mb-3" style="color: #657FB1;" data-en="We do not sell your personal data." data-zh="我們不會出售你的個人資料。">We do not sell your personal data.</p></div>
-<div class="glass-card p-8 mb-8 fade-up" style="opacity: 0; animation-delay: 0.26s;"><h2 class="text-xl font-bold mb-3" style="color: #162039;" data-en="Where it is stored and how it is protected" data-zh="儲存位置與保護方式">Where it is stored and how it is protected</h2>
-<p class="text-sm leading-relaxed mb-3" style="color: #657FB1;" data-en="Account and practice data is stored in a cloud database run by Supabase. It is encrypted in transit (TLS) and encrypted at rest by the provider. Row-level security rules mean each account can only read and change its own data. We do not use end-to-end encryption, so we and our hosting provider are technically able to access stored data. We hold no security or privacy certification." data-zh="帳戶和練習資料存放在 Supabase 營運的雲端資料庫，傳輸時以 TLS 加密，儲存時由供應商加密。列級安全規則令每個帳戶只能讀取和修改自己的資料。我們沒有採用端對端加密，因此我們和主機供應商在技術上可以存取已儲存的資料。我們沒有任何安全或私隱認證。">Account and practice data is stored in a cloud database run by Supabase. It is encrypted in transit (TLS) and encrypted at rest by the provider. Row-level security rules mean each account can only read and change its own data. We do not use end-to-end encryption, so we and our hosting provider are technically able to access stored data. We hold no security or privacy certification.</p></div>
-<div class="glass-card p-8 mb-8 fade-up" style="opacity: 0; animation-delay: 0.3s;"><h2 class="text-xl font-bold mb-3" style="color: #162039;" data-en="Who else receives data" data-zh="其他接收資料的服務">Who else receives data</h2>
-<ul class="text-sm leading-relaxed mb-3 list-disc pl-6 space-y-1" style="color: #657FB1;"><li class="" data-en="Supabase: database and sign-in hosting." data-zh="Supabase：資料庫及登入服務。">Supabase: database and sign-in hosting.</li><li class="" data-en="Stripe: subscription payments on the web." data-zh="Stripe：網頁版的訂閱付款。">Stripe: subscription payments on the web.</li><li class="" data-en="Apple: App Store purchases and subscriptions in the iPhone and iPad app, and speech recognition in the app (see Speech)." data-zh="Apple：iPhone 和 iPad 應用程式內的 App Store 購買和訂閱，以及應用程式內的語音辨識（見「語音」）。">Apple: App Store purchases and subscriptions in the iPhone and iPad app, and speech recognition in the app (see Speech).</li><li class="" data-en="Google Cloud Speech-to-Text: Cantonese speech recognition on the web only." data-zh="Google Cloud Speech-to-Text：僅用於網頁版的粵語語音辨識。">Google Cloud Speech-to-Text: Cantonese speech recognition on the web only.</li><li class="" data-en="Apple: speech recognition in the iOS app where your device cannot do it on its own, and App Store services." data-zh="Apple：iOS 應用程式中裝置無法自行辨識時的語音辨識，以及 App Store 服務。">Apple: speech recognition in the iOS app where your device cannot do it on its own, and App Store services.</li><li class="" data-en="A therapist, family member or anyone else only if you choose to give them a report you printed or shared." data-zh="只有在你選擇把列印或分享的報告交給治療師、家人或其他人時，他們才會看到。">A therapist, family member or anyone else only if you choose to give them a report you printed or shared.</li></ul></div>
-<div class="glass-card p-8 mb-8 fade-up" style="opacity: 0; animation-delay: 0.34s;"><h2 class="text-xl font-bold mb-3" style="color: #162039;" data-en="This website" data-zh="本網站">This website</h2>
-<p class="text-sm leading-relaxed mb-3" style="color: #657FB1;" data-en="The marketing website uses Google Analytics (with IP anonymisation switched on, and no session recording) to understand how the site is used. It is loaded from Google and sets cookies on your browser. The demo request form sends the name, email, organisation and message you type to our form provider (Web3Forms) so that we can reply. The app itself does not use these tools." data-zh="宣傳網站使用 Google Analytics（已開啟 IP 匿名化，不錄影操作）來了解網站使用情況。它由 Google 載入，並會在你的瀏覽器設定 cookie。預約展示表格會把你輸入的姓名、電郵、機構和訊息傳送到我們的表單服務（Web3Forms），以便我們回覆。應用程式本身不使用這些工具。">The marketing website uses Google Analytics (with IP anonymisation switched on, and no session recording) to understand how the site is used. It is loaded from Google and sets cookies on your browser. The demo request form sends the name, email, organisation and message you type to our form provider (Web3Forms) so that we can reply. The app itself does not use these tools.</p></div>
-<div class="glass-card p-8 mb-8 fade-up" style="opacity: 0; animation-delay: 0.38s;"><h2 class="text-xl font-bold mb-3" style="color: #162039;" data-en="Keeping and deleting your data" data-zh="保存與刪除">Keeping and deleting your data</h2>
-<p class="text-sm leading-relaxed mb-3" style="color: #657FB1;" data-en="We keep your data while your account is open. You can delete your account in Settings in the app. This erases your account and all your practice history, scores, saved plans and settings, and cancels any web (Stripe) subscription. It does not cancel an App Store subscription: cancel that yourself in Settings > your name (Apple ID) > Subscriptions on your iPhone or iPad. It cannot be undone. Payment records held by Stripe or Apple follow their retention rules." data-zh="在你的帳戶開通期間，我們會保存你的資料。你可以在應用程式的「設定」中刪除帳戶。這會刪除你的帳戶及全部練習記錄、分數、已儲存的計劃和設定，並取消網頁（Stripe）訂閱，而且無法復原。刪除帳戶不會取消 App Store 訂閱，請自行在 iPhone 或 iPad 的「設定」>「你的名字」(Apple ID) >「訂閱」取消。Stripe 或 Apple 持有的付款記錄受其保存規則約束。">We keep your data while your account is open. You can delete your account in Settings in the app. This erases your account and all your practice history, scores, saved plans and settings, and cancels any web (Stripe) subscription. It does not cancel an App Store subscription: cancel that yourself in Settings > your name (Apple ID) > Subscriptions on your iPhone or iPad. It cannot be undone. Payment records held by Stripe or Apple follow their retention rules.</p></div>
-<div class="glass-card p-8 mb-8 fade-up" style="opacity: 0; animation-delay: 0.42s;"><h2 class="text-xl font-bold mb-3" style="color: #162039;" data-en="Your rights" data-zh="你的權利">Your rights</h2>
-<p class="text-sm leading-relaxed mb-3" style="color: #657FB1;" data-en="You can ask us for a copy of your personal data, ask us to correct it, or ask us to delete it. Email <a href='mailto:privacy@coglixlabs.com' class='text-brand-500 hover:underline'>privacy@coglixlabs.com</a>. We aim to handle personal data in line with the privacy laws that apply to us, including Hong Kong's Personal Data (Privacy) Ordinance. This policy is not a certification of compliance with any law or standard." data-zh="你可以要求我們提供你的個人資料副本、更正資料或刪除資料，請電郵 <a href='mailto:privacy@coglixlabs.com' class='text-brand-500 hover:underline'>privacy@coglixlabs.com</a>。我們致力按適用的私隱法例（包括香港《個人資料（私隱）條例》）處理個人資料。本政策並不代表已獲任何法例或標準的合規認證。">You can ask us for a copy of your personal data, ask us to correct it, or ask us to delete it. Email <a href='mailto:privacy@coglixlabs.com' class='text-brand-500 hover:underline'>privacy@coglixlabs.com</a>. We aim to handle personal data in line with the privacy laws that apply to us, including Hong Kong's Personal Data (Privacy) Ordinance. This policy is not a certification of compliance with any law or standard.</p></div>
-<div class="glass-card p-8 mb-8 fade-up" style="opacity: 0; animation-delay: 0.46s;"><h2 class="text-xl font-bold mb-3" style="color: #162039;" data-en="Children" data-zh="兒童">Children</h2>
-<p class="text-sm leading-relaxed mb-3" style="color: #657FB1;" data-en="Bonet is not designed for children under 13 and we do not knowingly collect their personal data." data-zh="哥基健動並非為 13 歲以下兒童設計，我們亦不會在知情下收集他們的個人資料。">Bonet is not designed for children under 13 and we do not knowingly collect their personal data.</p>
-<h2 class="text-xl font-bold mb-3" style="color: #162039;" data-en="Changes" data-zh="更新">Changes</h2>
-<p class="text-sm leading-relaxed mb-3" style="color: #657FB1;" data-en="If we change this policy we will update the date above. If a change is significant we will tell you in the app." data-zh="如我們修改本政策，會更新上方日期；如有重大改動，會在應用程式內通知你。">If we change this policy we will update the date above. If a change is significant we will tell you in the app.</p></div>
-        </div>
-    </section>
-
-    <footer class="py-12 px-6" style="border-top: 1px solid rgba(189, 197, 212, 0.3);">
-        <div class="max-w-6xl mx-auto">
-            <div class="pt-4 flex flex-col md:flex-row justify-between items-center gap-4">
-                <p class="text-sm" style="color: #9AA7C1;">&copy; 2026 Coglix Labs Inc.</p>
-                <div class="flex gap-6 text-sm" style="color: #9AA7C1;">
-                    <a href="terms.html" class="hover:text-brand-700 transition-colors">Terms</a>
-                    <a href="privacy.html" class="hover:text-brand-700 transition-colors">Privacy</a>
-                    <a href="compliance.html" class="hover:text-brand-700 transition-colors">Privacy &amp; safety</a>
-                    <a href="index.html" class="hover:text-brand-700 transition-colors">Home</a>
-                </div>
-            </div>
-        </div>
-    </footer>
-
-    <script>
-        let currentLang = 'en';
-        let isDarkMode = false;
-        let isLargeFont = false;
-
-        function toggleDarkMode() {
-            isDarkMode = !isDarkMode;
-            localStorage.setItem('isDarkMode', isDarkMode);
-            document.body.classList.toggle('dark', isDarkMode);
-            const btn = document.getElementById('dark-mode-btn');
-            btn.style.background = isDarkMode ? 'rgba(30,58,95,0.7)' : 'transparent';
-            btn.style.backdropFilter = isDarkMode ? 'blur(8px)' : 'none';
-            btn.style.color = isDarkMode ? '#FFFFFF' : '';
-        }
-
-        function toggleLargeFont() {
-            isLargeFont = !isLargeFont;
-            localStorage.setItem('isLargeFont', isLargeFont);
-            document.documentElement.classList.toggle('large-font', isLargeFont);
-            const btn = document.getElementById('large-font-btn');
-            btn.style.background = isLargeFont ? 'rgba(30,58,95,0.7)' : 'transparent';
-            btn.style.backdropFilter = isLargeFont ? 'blur(8px)' : 'none';
-            btn.style.color = isLargeFont ? '#FFFFFF' : '';
-        }
-
-        function setLang(lang) {
-            currentLang = lang;
-            localStorage.setItem('preferredLang', lang);
-            document.getElementById('lang-en').className = lang === 'en'
-                ? 'px-3 py-1.5 rounded-full text-sm font-medium transition-all text-white'
-                : 'px-3 py-1.5 rounded-full text-sm font-medium transition-all text-brand-300 hover:text-brand-500';
-            document.getElementById('lang-zh').className = lang === 'zh'
-                ? 'px-3 py-1.5 rounded-full text-sm font-medium transition-all text-white'
-                : 'px-3 py-1.5 rounded-full text-sm font-medium transition-all text-brand-300 hover:text-brand-500';
-            document.getElementById('lang-en').style.background = lang === 'en' ? 'rgba(30,58,95,0.7)' : 'transparent';
-            document.getElementById('lang-zh').style.background = lang === 'zh' ? 'rgba(30,58,95,0.7)' : 'transparent';
-            document.querySelectorAll('[data-en]').forEach(el => {
-                el.innerHTML = lang === 'en' ? el.dataset.en : el.dataset.zh;
-            });
-            document.documentElement.lang = lang === 'en' ? 'en' : 'zh-TW';
-            document.title = lang === 'en'
-                ? 'Bonet Privacy Policy'
-                : '私隱政策 | Bonet';
-        }
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.opacity = '1';
-                    observer.unobserve(entry.target);
-                }
-            });
-        }, { threshold: 0.15 });
-        document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
-
-        // ── Auto-load Language & Mode ──
-        document.addEventListener('DOMContentLoaded', () => {
-            const savedLang = localStorage.getItem('preferredLang');
-            if (savedLang && savedLang !== currentLang) {
-                setLang(savedLang);
-            }
-
-            const savedDark = localStorage.getItem('isDarkMode');
-            if (savedDark === 'true' && !isDarkMode) toggleDarkMode();
-
-            const savedFont = localStorage.getItem('isLargeFont');
-            if (savedFont === 'true' && !isLargeFont) toggleLargeFont();
-        });
-    </script>
 </body>
-
 </html>
