@@ -13,11 +13,11 @@ OUT = sys.argv[sys.argv.index("--") + 1]
 os.makedirs(OUT, exist_ok=True)
 W, H, SS = 360, 540, 2          # frame size, supersample factor
 N = 32                          # frames at 12 fps
-UP = {"upper_arm_L": (0, -172, 0), "forearm_L": (0, 0, 0), "clavicle_L": (0, 0, -9),
-      "spine": (0, -2, 0), "head": (0, 2, 0)}
+UP = {"upper_arm_L": (-172, 0, 0), "forearm_L": (0, 0, 0), "clavicle_L": (0, -9, 0),
+      "spine": (-3, 0, 0), "chest": (-2, 0, 0), "head": (2, 0, 0)}
 # 3 hold at bottom (29..3), 12 up, 4 hold at top (15..18), 11 down; frame N keyed == frame 0 (seamless)
 define("ARM", N, [(0, {}), (3, {}), (15, UP), (18, UP), (29, {}), (N, {})], {"arm_L"}, framing="tall", shadow=None,
-       cam=dict(az=15, el=6, target=(.30, .05, 1.06), scale=2.36))
+       cam=dict(az=22, el=12, target=(.30, .05, 1.06), scale=2.36))
 ex = build("ARM", 64)
 sc = bpy.context.scene
 sc.render.resolution_x, sc.render.resolution_y = W * SS, H * SS

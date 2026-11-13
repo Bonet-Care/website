@@ -48,10 +48,11 @@ function Figure({ w, run, t0, mirror = false, skeleton = false }: { w: number; r
   if (!fig) return <div ref={box} style={{ width: w, height: h }} />
   const P = fig.points[k]
   const ang = fig.shoulderAngleDeg[k]
-  const sh = P[J(fig, 'r_shoulder')]
+  const sh0 = fig.points[0][J(fig, 'r_shoulder')]
+  const sh = [sh0[0] + 74, sh0[1]] // the arm swings forward, towards the camera, so the angle is shown on a gauge beside the body, not as a sweep of the arm
   const R = 70
   const toRad = (d: number) => (d * Math.PI) / 180
-  const arcPt = (d: number) => [sh[0] + R * Math.sin(toRad(d)) * -1, sh[1] + R * Math.cos(toRad(d))] // 0 = hanging down, 180 = overhead (arm raises on the image right)
+  const arcPt = (d: number) => [sh[0] + R * Math.sin(toRad(d)), sh[1] + R * Math.cos(toRad(d))] // gauge: 0 = arm hanging down, 180 = overhead; shoulderAngleDeg is the true 3D angle from the rig
   const a0 = arcPt(0), a1 = arcPt(Math.max(ang, 1)), tg = arcPt(150)
   return (
     <div ref={box} style={{ position: 'relative', width: w, height: h, transform: mirror ? 'scaleX(-1)' : undefined }}>
@@ -63,7 +64,7 @@ function Figure({ w, run, t0, mirror = false, skeleton = false }: { w: number; r
             return <line key={i} x1={pa[0]} y1={pa[1]} x2={pb[0]} y2={pb[1]} stroke={work ? '#1f8ae6' : '#7fbdf2'} strokeWidth={work ? 7 : 4} strokeLinecap="round" />
           })}
           {P.map((p, i) => <circle key={i} cx={p[0]} cy={p[1]} r={fig.joints[i].startsWith('r_') && i < 8 ? 7 : 5} fill="#fff" stroke="#1f8ae6" strokeWidth="3" />)}
-          <path d={`M${a0[0]},${a0[1]} A${R},${R} 0 0 ${a1[0] < sh[0] ? 1 : 0} ${a1[0]},${a1[1]}`} fill="none" stroke="#ffc23d" strokeWidth="6" strokeLinecap="round" />
+          <path d={`M${a0[0]},${a0[1]} A${R},${R} 0 0 0 ${a1[0]},${a1[1]}`} fill="none" stroke="#ffc23d" strokeWidth="6" strokeLinecap="round" />
           <circle cx={tg[0]} cy={tg[1]} r="5" fill="none" stroke="#f28c28" strokeWidth="3" strokeDasharray="3 3" />
         </svg>
       )}
