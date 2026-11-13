@@ -5,11 +5,18 @@ Builds every HTML page of https://bonet.care.
   python3 scripts/build-site.py              build everything
   python3 scripts/build-site.py --export     write strings/source.json (English -> Cantonese gloss) for translators
   python3 scripts/build-site.py --strict     fail if a language file lacks a string
+  python3 scripts/build-site.py --strict-fragments   also fail while a long page (legal, science, therapist) has no translation file
   python3 scripts/build-site.py --without practice_quality   leave out sections that need the practice-quality feature
   python3 scripts/build-site.py --with new_demo_video  show the demo film section (default: content/flags.json new_demo_video, false)
 
 Inputs: scripts/home.py (home template, English text with a Cantonese gloss), strings/<lang>.json (English -> language),
 content/prices.json, content/*.html (inner pages), content/blog/*.html (posts), content/flags.json.
+
+Every page except the blog is built once per language: English at /<page>, the others at /<lang>/<page> (parts.LOCAL_PAGES).
+Short pages (/what-bonet-tracks, /example-report, /compare.html, 404) use the string files. Long pages use translated fragments:
+content/legal/<slug>.<lang>.html, content/science.<lang>.html, content/therapist.<lang>.html, titles in content/legal/meta.<lang>.json.
+While a fragment is missing, the page is still built at the language's URL with the English text (canonical points at the English
+page, no hreflang) and the build prints "TRANSLATION PENDING". The translation is picked up as soon as the file exists.
 """
 import json
 import re
@@ -18,7 +25,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import parts
-from parts import LANGS, ROOT, SITE, footer, head, header, esc, MISSING, REGISTRY, u
+from parts import LANGS, ROOT, SITE, footer, head, header, esc, MISSING, PENDING, REGISTRY, u, pre, localise, page_urls
 
 FLAGS_OFF = set(sys.argv[sys.argv.index("--without") + 1].split(",")) if "--without" in sys.argv else set()
 if not json.loads((ROOT / "content" / "flags.json").read_text()).get("practice_quality_live", True):
@@ -31,14 +38,15 @@ homemod.VIDEO_ON = bool(_flags.get("new_demo_video", False)) or ("--with" in sys
 
 LASTMOD = "2026-11-13"
 write = lambda rel, text: ((ROOT / rel).parent.mkdir(parents=True, exist_ok=True), (ROOT / rel).write_text(text))
+out_path = lambda lang, page: f"{pre(lang).strip('/')}/{page}".lstrip("/")  # "privacy.html" -> "ja/privacy.html"
 
-# ---------------------------------------------------------------- inner pages (English text with Cantonese in data-zh)
+# ---------------------------------------------------------------- inner pages: content/<slug>.html, translated in content/<slug>.<lang>.html
 INNER = {
     "science": ("How Bonet works", "運作方式 | 哥基健動", "How Bonet's camera, speaking and brain practice work, what it measures, and what it does not claim.", "science.html", "science"),
     "therapist": ("For therapists and carers | Bonet", "俾治療師同照顧者 | 哥基健動", "How therapists, carers and family can see what someone practised in Bonet, and what the app does not do.", "therapist.html", "therapist"),
 }
 
-# ---------------------------------------------------------------- legal pages (English only) and localised notice pages
+# ---------------------------------------------------------------- legal pages (English text, translations for convenience) and localised notice pages
 # Fragments are in content/legal/<slug>.html (reviewed text, no draft notes). Every open question is listed in LEGAL-PUBLISH-NOTES.md.
 LEGAL = {
     "privacy": ("Privacy Policy | Bonet", "What the Bonet app and this website collect, what stays on your device, who else receives data, and how to delete your account.", "0.4"),
@@ -57,22 +65,69 @@ for _c in LANGS:
             NOTICE_META.setdefault(_slug, {})[_c] = _v
 
 
-def legal(slug):
+# Titles and descriptions of the translated long pages: content/legal/meta.<lang>.json = {"privacy": [title, description], ..., "science": [...], "therapist": [...]}
+FRAG_META = {}
+for _c in LANGS:
+    _f = ROOT / "content" / "legal" / f"meta.{_c}.json"
+    if _f.exists():
+        FRAG_META[_c] = json.loads(_f.read_text())
+
+# Shown at the top of every translated legal page. {a} wraps the link to the English page.
+TRANSLATION_NOTE = {
+    "yue": "呢個係方便你閱讀嘅翻譯版本。如果同英文版有出入，以{a}英文版{/a}為準。",
+    "zh-hant": "本頁是為了方便閱讀而提供的翻譯。如與英文版有出入，以{a}英文版{/a}為準。",
+    "zh-hans": "本页是为了方便阅读而提供的翻译。如与英文版有出入，以{a}英文版{/a}为准。",
+    "ja": "このページは参考のための翻訳です。英語版と内容が異なる場合は、{a}英語版{/a}が適用されます。",
+    "es": "Esta es una traducción para tu comodidad. Si hay alguna diferencia, se aplica la {a}versión en inglés{/a}.",
+    "de": "Dies ist eine Übersetzung zum leichteren Lesen. Bei Abweichungen gilt die {a}englische Fassung{/a}.",
+    "fr": "Cette page est une traduction fournie pour votre confort. En cas de différence, la {a}version anglaise{/a} s’applique.",
+}
+
+
+def untranslated(folder, slug):
+    """Languages that have no translated fragment for this page yet."""
+    return {c for c in LANGS if c != "en" and not (folder / f"{slug}.{c}.html").exists()}
+
+
+def frag_meta(lang, slug, title, desc):
+    v = FRAG_META.get(lang, {}).get(slug)
+    if not v:
+        PENDING.setdefault(lang, set()).add(f"title:{slug}")
+        return title, desc
+    return v[0], v[1]
+
+
+def legal(slug, lang="en"):
     title, desc, _ = LEGAL[slug]
-    if not (ROOT / "content" / "legal" / f"{slug}.html").exists():
-        print("skipped (no fragment):", slug)
-        MISSING.setdefault("en", set()).add(f"legal:{slug}")
+    d = ROOT / "content" / "legal"
+    if not (d / f"{slug}.html").exists():
+        if lang == "en":
+            print("skipped (no fragment):", slug)
+            MISSING.setdefault("en", set()).add(f"legal:{slug}")
         return
-    body = (ROOT / "content" / "legal" / f"{slug}.html").read_text()
+    skip = untranslated(d, slug)
+    translated = lang != "en" and lang not in skip
+    en_body = (d / f"{slug}.html").read_text()
+    body = (d / f"{slug}.{lang}.html").read_text() if translated else en_body
+    if translated and body.count("<!--hkd-->") != en_body.count("<!--hkd-->"):
+        print(f"WARNING: {slug}.{lang}.html has {body.count('<!--hkd-->')} <!--hkd--> markers, the English page has {en_body.count('<!--hkd-->')}")
     if parts.PRICES.get("checkout_matches") or slug not in parts.PRICES.get("show_hkd_note_on", []):
         body = re.sub(r"<!--hkd-->.*?<!--/hkd-->", "", body, flags=re.S)  # the Hong Kong dollar note goes away once checkout matches the quoted price
     body = body.replace("<!--hkd-->", "").replace("<!--/hkd-->", "")
-    assert "CONFIRM" not in body and "draft-note" not in body and 'class="confirm"' not in body, f"unresolved marker in {slug}"
-    h = head("en", title, desc, f"{SITE}/{slug}", "og-en.png", app_css=False)
-    h += header("en", inplace=set())
+    assert "CONFIRM" not in body and "draft-note" not in body and 'class="confirm"' not in body, f"unresolved marker in {slug} ({lang})"
+    urls, alt = page_urls(slug, skip)
+    if translated:
+        title, desc = frag_meta(lang, slug, title, desc)
+        note = TRANSLATION_NOTE[lang].replace("{a}", f'<a href="/{slug}" hreflang="en" lang="en">').replace("{/a}", "</a>")
+        body = f'<p class="tr-note">{note}</p>\n{body}'
+    elif lang != "en":
+        PENDING.setdefault(lang, set()).add(f"legal:{slug}")
+        body = f'<div lang="en">\n{body}\n</div>'
+    h = head(lang, title, desc, alt.get(lang, alt["en"]), "og-en.png", app_css=False, alt=alt if lang in alt else None)
+    h += header(lang, urls=urls)
     h += f'<main id="main" class="doc-wrap"><div class="wrap"><div class="doc doc--legal">\n{body}\n</div></div></main>\n'
-    h += footer("en")
-    write(f"{slug}.html", h)
+    h += footer(lang, urls=urls)
+    write(out_path(lang, f"{slug}.html"), localise(h, lang))
 
 
 def notice(slug, lang):
@@ -91,19 +146,29 @@ def notice(slug, lang):
     h += header(lang, urls=urls)
     h += f'<main id="main" class="doc-wrap"><div class="wrap"><div class="doc doc--legal">\n{body}\n</div></div></main>\n'
     h += footer(lang, urls=urls)
-    write(path, h)
+    write(path, localise(h, lang))
     return True
 
 
-def inner(slug):
-    title, ztitle, desc, path, frag = INNER[slug]
-    body = (ROOT / "content" / f"{frag}.html").read_text()
+def inner(slug, lang="en"):
+    title, _ztitle, desc, path, frag = INNER[slug]
+    d = ROOT / "content"
+    skip = untranslated(d, frag)
+    translated = lang != "en" and lang not in skip
+    body = (d / (f"{frag}.{lang}.html" if translated else f"{frag}.html")).read_text()
+    body = re.sub(r'\s+data-zh="[^"]*"', "", body)  # Cantonese has its own page now; the English page no longer carries it
     body = re.sub(r'href="(?!https?:|mailto:|/|#)([^"]+)"', r'href="/\1"', body)
-    h = head("en", title, desc, f"{SITE}/{path}", "og-en.png", app_css=False, extra=f'<meta name="x-title-zh" content="{esc(ztitle)}">\n')
-    h += header("en", inplace={"en", "yue"})
+    urls, alt = page_urls(path, skip)
+    if translated:
+        title, desc = frag_meta(lang, slug, title, desc)
+    elif lang != "en":
+        PENDING.setdefault(lang, set()).add(f"page:{slug}")
+        body = f'<div lang="en">\n{body}\n</div>'
+    h = head(lang, title, desc, alt.get(lang, alt["en"]), "og-en.png", app_css=False, alt=alt if lang in alt else None)
+    h += header(lang, urls=urls)
     h += f'<main id="main" class="doc-wrap"><div class="wrap"><div class="doc">\n{body}\n</div></div></main>\n'
-    h += footer("en", inplace={"en", "yue"})
-    write(path, h)
+    h += footer(lang, urls=urls)
+    write(out_path(lang, path), localise(h, lang))
 
 
 # ---------------------------------------------------------------- blog
@@ -140,7 +205,7 @@ def post_page(slug, lang):
     h += header(lang, urls=urls)
     h += f'<main id="main" class="doc-wrap"><div class="wrap"><div class="doc"><a class="back" href="{idx}">&larr; {back}</a>\n{body}\n</div></div></main>\n'
     h += footer(lang, urls=urls)
-    write(path, h)
+    write(path, localise(h, lang))
     return title, desc, re.search(r"<h1>(.*?)</h1>", body).group(1), re.search(r'class="meta">(.*?)</p>', body).group(1)
 
 
@@ -170,7 +235,7 @@ def blog_index(lang):
     page += header(lang, urls=urls)
     page += f'<main id="main" class="doc-wrap"><div class="wrap"><div class="doc"><div class="doc-top"><h1>{h1}</h1><p>{sub}</p></div><div class="post-list">{items}</div></div></div></main>\n'
     page += footer(lang, urls=urls)
-    write(path, page)
+    write(path, localise(page, lang))
 
 
 def old_post():
@@ -181,25 +246,32 @@ def old_post():
     write("blog/introducing-bonet.html", h)
 
 
-def compare_page():
-    t = parts.mk("en")
-    body = homemod.compare_full("en")
-    h = head("en", "How Bonet compares: notes and sources", "The full comparison of Bonet with Constant Therapy, Tactus Therapy, Lingraphica TalkPath, Flint Rehab and a paper handout, with sources and what others do better.", f"{SITE}/compare.html", "og-en.png", app_css=False)
-    h += header("en")
-    h += f'<main id="main" class="doc-wrap"><div class="wrap"><div class="doc" style="max-width:none"><div class="doc-top"><h1>How Bonet compares</h1><p>Notes and sources behind the short table on the home page.</p></div>{body}{costmod.cost_sources()}</div></div></main>\n'
-    h += footer("en")
-    write("compare.html", h)
+def compare_page(lang="en"):
+    t = parts.mk(lang)
+    body = homemod.compare_full(lang)
+    urls, alt = page_urls("compare.html")
+    title = t("How Bonet compares: notes and sources", "哥基健動同其他方案比較：附註同來源")
+    desc = t("The full comparison of Bonet with Constant Therapy, Tactus Therapy, Lingraphica TalkPath, Flint Rehab and a paper handout, with sources and what others do better.",
+             "哥基健動同 Constant Therapy、Tactus Therapy、Lingraphica TalkPath、Flint Rehab 同紙本講義嘅完整比較，附資料來源，亦講埋其他產品做得更好嘅地方。")
+    h = head(lang, title, desc, alt[lang], "og-en.png", app_css=False, alt=alt)
+    h += header(lang, urls=urls)
+    h += (f'<main id="main" class="doc-wrap"><div class="wrap"><div class="doc" style="max-width:none"><div class="doc-top"><h1>{t("How Bonet compares", "同其他方案比較")}</h1>'
+          f'<p>{t("Notes and sources behind the short table on the home page.", "主頁嗰個簡表背後嘅附註同來源。")}</p></div>{body}{costmod.cost_sources(lang)}</div></div></main>\n')
+    h += footer(lang, urls=urls)
+    write(out_path(lang, "compare.html"), localise(h, lang))
 
 
-def notfound():
-    h = head("en", "Page not found | Bonet", "This page does not exist. Go back to Bonet, the daily home practice app by Coglix Labs Inc.", f"{SITE}/404.html", "og-en.png", app_css=False,
-             extra='<meta name="robots" content="noindex, follow">\n')
-    h += header("en")
+def notfound(lang="en"):
+    # Cloudflare Pages serves the nearest 404.html going up the folders, so /ja/404.html answers for every missing /ja/... address
+    t = parts.mk(lang)
+    h = head(lang, t("Page not found | Bonet", "搵唔到呢一頁 | 哥基健動"), t("This page does not exist. Go back to Bonet, the daily home practice app by Coglix Labs Inc.", "呢一頁並不存在。返去哥基健動，Coglix Labs Inc. 嘅每日居家練習 app。"),
+             f"{SITE}{pre(lang)}/404.html", "og-en.png", app_css=False, extra='<meta name="robots" content="noindex, follow">\n')
+    h += header(lang)
     h += ('<main id="main" class="doc-wrap"><div class="wrap"><div class="err"><img src="/img/mascot/think.webp" width="512" height="512" alt="">'
-          '<h1>We could not find that page</h1><p class="lede">It may have moved. Let us take you back to the start.</p>'
-          '<a class="btn btn--lg" href="/">Back to Bonet</a></div></div></main>\n')
-    h += footer("en")
-    write("404.html", h)
+          f'<h1>{t("We could not find that page", "我哋搵唔到呢一頁")}</h1><p class="lede">{t("It may have moved. Let us take you back to the start.", "佢可能搬咗。等我哋帶你返去開頭。")}</p>'
+          f'<a class="btn btn--lg" href="/">{t("Back to Bonet", "返去哥基健動")}</a></div></div></main>\n')
+    h += footer(lang)
+    write(out_path(lang, "404.html"), localise(h, lang))
 
 
 try:
@@ -220,16 +292,25 @@ def sitemap():
     alts = [(d["tag"], SITE + d["path"]) for d in LANGS.values()] + [("x-default", SITE + "/")]
     for d in LANGS.values():
         url(d["path"], "1.0", alts, "weekly")
-    for p, pri in [("/science.html", "0.8"), ("/therapist.html", "0.8"), ("/blog/", "0.7"), ("/zh-hant/blog/", "0.6"), ("/blog/introducing-bonet.html", "0.5"), ("/compare.html", "0.5")]:
+    for p, pri in [("/blog/", "0.7"), ("/zh-hant/blog/", "0.6"), ("/blog/introducing-bonet.html", "0.5")]:
         url(p, pri)
-    for slug, (_, _, pri) in LEGAL.items():
-        url(f"/{slug}", pri)
     for loc, pri in (extra_pages.SITEMAP if extra_pages else []):
         url(loc, pri)
+
+    def local(page, pri, skip=()):  # one entry per language; a language still showing the English text is left out
+        _, alt = page_urls(page, skip)
+        al = [(LANGS[c]["tag"], href) for c, href in alt.items()] + [("x-default", alt["en"])]
+        for c in alt:
+            url(alt[c][len(SITE):], pri, al)
+    for slug, (_, _, _, path, frag) in INNER.items():
+        local(path, "0.8", untranslated(ROOT / "content", frag))
+    local("compare.html", "0.5")
+    for slug, (_, _, pri) in LEGAL.items():
+        local(slug, pri, untranslated(ROOT / "content" / "legal", slug))
+    for slug, pri in (extra_pages.LOCAL_SITEMAP if extra_pages else []):
+        local(slug, pri)
     for slug in NOTICES:
-        al = [(d["tag"], SITE + d["path"].rstrip("/") + f"/{slug}") for d in LANGS.values()] + [("x-default", f"{SITE}/{slug}")]
-        for d in LANGS.values():
-            url(d["path"].rstrip("/") + f"/{slug}", "0.6", al)
+        local(slug, "0.6")
     for s in POSTS:
         url(f"/blog/{s}.html", "0.6", [("en", f"{SITE}/blog/{s}.html"), ("zh-Hant", f"{SITE}/zh-hant/blog/{s}.html")] if s in ZH_POSTS else None)
         if s in ZH_POSTS:
@@ -239,28 +320,35 @@ def sitemap():
 
 if __name__ == "__main__":
     for lang in LANGS:
-        out = home_html = homemod.home(lang)
-        write("index.html" if lang == "en" else LANGS[lang]["path"].strip("/") + "/index.html", out)
-    for s in INNER:
-        inner(s)
+        write(out_path(lang, "index.html"), localise(homemod.home(lang), lang))
     for s in POSTS:
         post_page(s, "en")
         if s in ZH_POSTS:
             post_page(s, "zh-hant")
-    for s in LEGAL:
-        legal(s)
-    for s in NOTICES:
-        for lang in LANGS:
+    for lang in LANGS:
+        for s in INNER:
+            inner(s, lang)
+        for s in LEGAL:
+            legal(s, lang)
+        for s in NOTICES:
             notice(s, lang)
+        compare_page(lang)
+        notfound(lang)
     if extra_pages:
         extra_pages.build(sys.modules[__name__])
-    blog_index("en"); blog_index("zh-hant"); old_post(); compare_page(); notfound(); sitemap()
+    blog_index("en"); blog_index("zh-hant"); old_post(); sitemap()
     if "--export" in sys.argv:
         (ROOT / "strings").mkdir(exist_ok=True)
         (ROOT / "strings" / "source.json").write_text(json.dumps(REGISTRY, ensure_ascii=False, indent=1))
         print("exported", len(REGISTRY), "strings")
     for lang, miss in MISSING.items():
         print(f"missing {len(miss)} strings for {lang}")
+        if "--verbose" in sys.argv:
+            print("\n".join("  " + x for x in sorted(miss)))
+    for lang, pend in PENDING.items():  # a translator has not delivered yet: a warning, the English text is shown meanwhile
+        print(f"TRANSLATION PENDING ({lang}), English shown for {len(pend)}: {', '.join(sorted(pend))}")
     if "--strict" in sys.argv and MISSING:
+        sys.exit(1)
+    if "--strict-fragments" in sys.argv and PENDING:
         sys.exit(1)
     print("built")

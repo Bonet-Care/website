@@ -1,5 +1,6 @@
 """Shared pieces: languages, string lookup, head, header (with the language menu), footer, prices."""
 import json
+import re
 import sys
 from pathlib import Path
 
@@ -28,10 +29,39 @@ LANG_COUNT = len(LANGS)
 # ---- strings: the template holds the English text and the Cantonese gloss; strings/<lang>.json maps English -> that language.
 STR = {}
 MISSING = {}
+PENDING = {}  # lang -> long fragments (legal, science, therapist) with no translation file yet; the English text is shown. A warning, not a --strict failure.
 REGISTRY = {}
 for code in LANGS:
     f = ROOT / "strings" / f"{code}.json"
     STR[code] = json.loads(f.read_text()) if f.exists() else {}
+
+
+# ---- pages that exist under every language path (/privacy in English, /ja/privacy in Japanese, and so on)
+LOCAL_PAGES = ("privacy", "terms", "subscriptions", "cookies", "consumer-health-data", "ai-and-automatic-measures", "safety", "faq",
+               "what-bonet-tracks", "example-report", "compare", "science", "therapist")
+_LOC = re.compile(r'href="/(?:(%s)(\.html)?)?(#[^"]*)?"(?! hreflang)' % "|".join(LOCAL_PAGES))
+
+
+def pre(lang):
+    """URL prefix of a language: "" for English, "/ja" for Japanese."""
+    p = LANGS[lang]["path"] if lang in LANGS else "/"
+    return "" if p == "/" else p.rstrip("/")
+
+
+def localise(html, lang):
+    """Point internal links at the page in this language. Links that carry hreflang (language menu, 'English version') are left alone."""
+    if lang == "en":
+        return html
+    p = pre(lang)
+    html = re.sub(r'href="/compliance(\.html)?"', 'href="/safety"', html)  # old address of /safety, still used in some fragments
+    return _LOC.sub(lambda m: f'href="{p}/{(m.group(1) + (m.group(2) or "")) if m.group(1) else ""}{m.group(3) or ""}"', html)
+
+
+def page_urls(page, skip=()):
+    """(urls, alt) for a page that exists in every language. page: "privacy", "science.html".
+    urls: lang -> path for the language menu. alt: lang -> absolute url for hreflang, without the languages in skip."""
+    urls = {c: f"{pre(c)}/{page}" for c in LANGS}
+    return urls, {c: SITE + urls[c] for c in LANGS if c not in skip}
 
 
 def mk(lang):
@@ -179,15 +209,14 @@ def header(lang, urls=None, inplace=None):
 
 def footer(lang, urls=None, inplace=None, demos=False):
     t = lambda k: u(k, lang)
-    pre = LANGS[lang]["path"] if lang in LANGS else "/"
-    pre = "" if pre == "/" else pre.rstrip("/")
-    # legal pages are English only (hreflang marks that); safety and FAQ are written in every language
+    pre = globals()["pre"](lang)
+    # every page in the footer exists under each language path; the blog is English plus written Chinese
     legal = [("/privacy", "f_privacy"), ("/terms", "f_terms"), ("/subscriptions", "f_subs"), ("/cookies", "f_cookies"),
-             ("/consumer-health-data", "f_chd"), (pre + "/safety", "f_safety"), ("/ai-and-automatic-measures", "f_ai"), (pre + "/faq", "f_faq")]
-    en_only = {"/privacy", "/terms", "/subscriptions", "/cookies", "/consumer-health-data", "/ai-and-automatic-measures"}
-    nav = "".join(f'<a href="{h}"' + (' hreflang="en" lang="en"' if h in en_only else "") + f'>{t(k)}</a>' for h, k in legal)
+             ("/consumer-health-data", "f_chd"), ("/safety", "f_safety"), ("/ai-and-automatic-measures", "f_ai"), ("/faq", "f_faq")]
+    nav = "".join(f'<a href="{pre}{h}">{t(k)}</a>' for h, k in legal)
     nav += f'<a href="mailto:{MAIL}">{t("f_contact")}</a><button type="button" class="linkbtn" data-consent-open>{t("f_cset")}</button>'
-    more = "".join(f'<a href="{h}">{t(k)}</a>' for h, k in [("/science.html", "f_how"), ("/therapist.html", "f_ther"), ("/blog/", "f_blog")])
+    blog = "/zh-hant/blog/" if lang == "zh-hant" else "/blog/"
+    more = "".join(f'<a href="{h}">{t(k)}</a>' for h, k in [(pre + "/science.html", "f_how"), (pre + "/therapist.html", "f_ther"), (blog, "f_blog")])
     plain = "".join(f'<a href="{(urls or {}).get(c, d["path"])}" hreflang="{d["tag"]}" lang="{d["html"]}">{d["name"]}</a>' for c, d in LANGS.items())
     return f"""<footer class="ftr"><div class="wrap">
 <div class="ftr-top"><a class="brand" href="{pre or '/'}" aria-label="Bonet"><img src="/img/mascot/head.webp" width="512" height="512" alt="">Bonet</a><p>{t('f_line')}</p></div>

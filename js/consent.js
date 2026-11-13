@@ -235,7 +235,8 @@
     sw.addEventListener('click', function () { on = !on; sw.setAttribute('aria-checked', String(on)); state.textContent = on ? words[1] : words[2]; });
     var live = el('p', { 'class': 'cnb-live', 'aria-live': 'polite' });
     var h = el('h2', { id: 'cnb-dt', tabindex: '-1', text: tr.panel_title });
-    var policy = el('a', { href: '/cookies', text: tr.policy_link, hreflang: 'en' });
+    var seg = location.pathname.split('/')[1];
+    var policy = el('a', { href: (/^(zh-hant|yue|zh-hans|ja|es|de|fr)$/.test(seg) ? '/' + seg : '') + '/cookies', text: tr.policy_link });
     var last = rec ? el('p', { 'class': 'cnb-last', text: new Date(rec.ts).toLocaleDateString(lang) }) : null;
     var save_ = button('cnb-btn', tr.save, function () { save(on, mode, 'settings'); live.textContent = tr.saved; close(); setTimeout(closeDlg, 700); });
     var x = button('cnb-btn cnb-btn--ghost', words[0], function () { closeDlg(); });

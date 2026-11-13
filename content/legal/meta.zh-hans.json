@@ -1,0 +1,10 @@
+{
+ "privacy": ["隐私政策 | Bonet", "Bonet 应用和本网站收集什么、哪些数据留在你的设备上、还有谁会收到数据，以及如何删除你的账户。"],
+ "terms": ["服务条款 | Bonet", "使用 Bonet 的条款。Bonet 是 Coglix Labs Inc. 制作的在家练习应用，包含运动、说话和脑力游戏。"],
+ "subscriptions": ["订阅与退款 | Bonet", "Bonet Premium 的收费方式：免费试用、续订、如何取消，以及如何申请退款。"],
+ "cookies": ["Cookie 政策 | Bonet", "Bonet 和本网站在你的设备上存储什么、哪些是可选的，以及如何更改你的选择。"],
+ "consumer-health-data": ["消费者健康数据隐私政策 | Bonet", "Bonet 处理哪些与健康有关的数据、原因、谁会收到，以及你在美国各州消费者健康数据法律下的选择。"],
+ "ai-and-automatic-measures": ["Bonet 如何测量 | Bonet", "Bonet 的自动测量如何运作、在哪里处理，以及它的限制。"],
+ "science": ["Bonet 如何运作 | Bonet", "Bonet 的摄像头、说话和脑力练习如何运作、测量什么，以及它没有声称什么。"],
+ "therapist": ["给治疗师和照顾者 | Bonet", "治疗师、照顾者和家人如何看到某个人在 Bonet 中练习了什么，以及应用不做什么。"]
+}

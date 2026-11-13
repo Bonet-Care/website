@@ -1,0 +1,110 @@
+<article class="legal">
+<h1 id="how-bonets-automatic-measures-work-and-their-limits">Comment fonctionnent les mesures automatiques de Bonet, et leurs limites</h1>
+<p>Dernière mise à jour : 13 novembre 2026</p>
+<h2 id="the-short-version">L'essentiel</h2>
+<ul>
+<li>Bonet utilise des outils automatiques pour compter vos répétitions, écouter les mots que vous dites et choisir un programme quotidien. Il n'utilise pas de chatbot et ne vous parle pas avec une IA générative.</li>
+<li>Il ne pose aucun diagnostic. Il ne prend aucune décision médicale.</li>
+<li>Les chiffres sont des estimations. Ils peuvent être faux, et ils sont faits pour s'exercer, pas pour un usage médical.</li>
+<li>La vidéo de votre caméra reste sur votre appareil. Nous ne conservons pas vos enregistrements de voix. Nous n'utilisons pas vos données pour entraîner des modèles d'IA.</li>
+<li>Si vous ressentez une douleur ou un vertige, arrêtez. En cas d'urgence, appelez le 911.</li>
+</ul>
+<h2 id="what-is-automatic-in-bonet">Ce qui est automatique dans Bonet</h2>
+<table>
+<thead>
+<tr>
+<th>Fonction</th>
+<th>Ce qu'elle fait</th>
+<th>Où elle s'exécute</th>
+<th>Ce qui est conservé</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Comptage des exercices</td>
+<td>Un modèle sur votre appareil repère les positions du corps et des mains dans l'image de la caméra. Des règles comptent les répétitions et estiment jusqu'où une articulation a bougé et si le suivi était stable</td>
+<td>Sur votre appareil. La vidéo n'est pas envoyée sur un serveur</td>
+<td>Nombre de répétitions, durée, estimations d'amplitude de mouvement et qualité du suivi</td>
+</tr>
+<tr>
+<td>Exercices de parole</td>
+<td>La reconnaissance vocale transforme ce que vous dites en texte. Bonet le compare à la consigne, calcule les mots reconnus, le rythme et la durée des pauses, puis donne un score</td>
+<td>Sur votre appareil quand c'est possible. Sinon par Apple (iPhone et iPad), ou par Google (web, pour plusieurs langues)</td>
+<td>Texte reconnu, rythme, pauses, scores. Pas le son</td>
+</tr>
+<tr>
+<td>Programme quotidien</td>
+<td>Un ensemble de règles fixes utilise vos réponses de configuration et votre pratique récente pour proposer ce qu'il faut faire aujourd'hui et ce qu'il faut répéter</td>
+<td>Sur votre appareil</td>
+<td>Votre programme et vos réglages</td>
+</tr>
+<tr>
+<td>Jeux d'esprit</td>
+<td>Les jeux choisissent l'élément suivant selon des règles simples fondées sur vos résultats</td>
+<td>Sur votre appareil</td>
+<td>Résultats par élément</td>
+</tr>
+<tr>
+<td>Ligue</td>
+<td>Les points sont additionnés sur notre serveur. Certains joueurs d'une ligue sont des joueurs informatiques</td>
+<td>Notre serveur</td>
+<td>Pseudo et points</td>
+</tr>
+</tbody>
+</table>
+<p>Bonet ne comprend <strong>pas</strong> : de chatbot, d'IA générative qui rédige des conseils, d'outil de diagnostic, de score de risque, de prédiction de récupération, ni d'outil qui décide d'un traitement. L'estimation des positions du corps et la reconnaissance vocale utilisent des modèles d'apprentissage automatique créés par d'autres entreprises ou par des projets ouverts : MediaPipe de Google pour les positions du corps et des mains, Whisper d'OpenAI pour la reconnaissance de l'anglais sur l'appareil sur le web, et la reconnaissance vocale d'Apple ou de Google lorsque votre appareil ou votre langue en a besoin.</p>
+<h2 id="computer-players">Les joueurs informatiques</h2>
+<p>Pour que les ligues restent animées, certains joueurs de la ligue hebdomadaire sont des joueurs informatiques. Ce ne sont pas de vraies personnes. La page de la ligue dans l'application indique que certains joueurs sont des joueurs informatiques.</p>
+<h2 id="what-can-go-wrong">Ce qui peut mal tourner</h2>
+<p>Les outils automatiques ne sont pas parfaits. Voici les cas où ils se trompent le plus souvent.</p>
+<p><strong>Caméra et exercices</strong></p>
+<ul>
+<li>Lumière faible, fort contre-jour ou arrière-plan chargé.</li>
+<li>Caméra trop près, trop loin, trop basse ou sous un angle étrange.</li>
+<li>Vêtements amples ou sombres qui cachent les articulations, ou chaise qui cache vos jambes.</li>
+<li>Plus d'une personne dans l'image.</li>
+<li>Mouvements petits, lents, ou faits autrement que dans le guide, y compris après une blessure ou un AVC. L'application peut ne pas compter une répétition que vous avez bien faite, ou en compter une que vous n'avez pas faite.</li>
+<li>Les chiffres d'amplitude de mouvement sont des estimations faites à partir d'une image de caméra à plat. Ils ne sont pas équivalents à une mesure faite par un thérapeute.</li>
+</ul>
+<p><strong>Parole</strong></p>
+<ul>
+<li>Bruit de fond, micro de mauvaise qualité ou distance trop grande avec l'appareil.</li>
+<li>Accents, dialectes et mélange de langues.</li>
+<li>Parole lente, faible ou peu claire, ou parole modifiée par un AVC ou une autre affection. Les outils de reconnaissance vocale sont généralement conçus et testés sur des voix typiques, et peuvent donc être moins efficaces avec certaines voix âgées et avec une parole touchée par une affection. L'application peut manquer des mots que vous avez bien dits, ce qui peut faire paraître un score bas.</li>
+<li>Noms propres et mots rares.</li>
+<li>Les chiffres de rythme et de pauses dépendent de ce que le système a entendu. Considérez-les comme approximatifs.</li>
+</ul>
+<p><strong>Scores et programme</strong></p>
+<ul>
+<li>Un score d'un seul jour dit peu de choses. Une tendance sur plusieurs semaines en dit davantage, et même alors ce n'est qu'un repère.</li>
+<li>Le programme quotidien ne sait pas comment vous vous sentez aujourd'hui ni ce que votre professionnel de santé vous a conseillé. C'est vous qui décidez.</li>
+</ul>
+<h2 id="what-to-do-with-the-numbers">Que faire des chiffres</h2>
+<ul>
+<li>Servez-vous-en pour vous encourager et pour garder une trace de ce que vous avez fait.</li>
+<li>Ne vous en servez pas pour décider si votre état s'améliore ou s'aggrave, pour changer vos médicaments ou votre thérapie, ni pour décider d'aller voir un professionnel de santé.</li>
+<li>Si un chiffre vous surprend, ou si vous vous sentez moins bien, dites-le à votre professionnel de santé. Ne comptez pas sur l'application pour vous le dire.</li>
+<li>Aidants et famille : regardez la tendance avec la personne, et demandez-lui comment elle se sent. Ne la jugez pas sur un seul score.</li>
+<li>Thérapeutes : un rapport Bonet est un journal de pratique que votre patient a choisi de partager. Ce n'est pas une mesure clinique et il ne doit pas servir à une évaluation, à un diagnostic ni à une décision de traitement. Vous décidez de ce que vous en faites, le cas échéant.</li>
+</ul>
+<h2 id="safety">Sécurité</h2>
+<ul>
+<li>Arrêtez si vous ressentez une douleur, un vertige ou un malaise, quoi que dise l'application.</li>
+<li>Utilisez un appui stable et gardez quelqu'un près de vous pour les exercices d'équilibre.</li>
+<li>Si vous pensez qu'il s'agit d'une urgence, y compris des signes d'AVC, appelez le 911. Bonet ne peut pas appeler les secours.</li>
+<li>Voir <a href="/safety">Ce qu'il faut savoir avant de commencer</a>.</li>
+</ul>
+<h2 id="people-are-in-charge">Ce sont les personnes qui décident</h2>
+<p>Aucun humain ne suit votre pratique en temps réel dans Bonet. Personne chez Coglix ne lit vos résultats comme le ferait un professionnel de santé, et nous n'intervenons pas dans votre santé. Nous lisons les signalements de problèmes. C'est vous, et votre professionnel de santé si vous en avez un, qui décidez de ce qu'il faut faire.</p>
+<h2 id="how-your-data-is-used-here">Comment vos données sont utilisées ici</h2>
+<ul>
+<li><strong>Vidéo de la caméra :</strong> traitée sur votre appareil, jamais envoyée ni conservée.</li>
+<li><strong>Son de la voix :</strong> non conservé par Bonet. Lorsque votre appareil ne peut pas reconnaître la parole seul, le son est envoyé à Apple ou à Google (ou au fabricant de votre navigateur) pour être transformé en texte, selon leurs conditions. Voir la <a href="/privacy">Politique de confidentialité</a>.</li>
+<li><strong>Entraînement :</strong> nous n'utilisons pas votre vidéo, votre son, votre texte reconnu ni vos résultats pour entraîner ou améliorer des modèles d'apprentissage automatique. Le son envoyé à Apple ou à Google pour la reconnaissance est traité selon leurs conditions.</li>
+<li><strong>Décisions automatiques :</strong> aucune qui ait des effets juridiques ou d'autres effets significatifs sur vous. Rien dans Bonet n'accepte, ne refuse ni ne fixe un prix en fonction de votre santé.</li>
+<li><strong>Aucune vente, aucune publicité.</strong></li>
+</ul>
+<h2 id="tell-us-about-a-problem">Signalez-nous un problème</h2>
+<p>Si un comptage, un score ou une reconnaissance était faux d'une manière qui compte, ou si l'application s'est comportée d'une façon qui pourrait nuire à quelqu'un, écrivez à <a href="mailto:hello@coglixlabs.com">hello@coglixlabs.com</a>. Indiquez l'appareil, la version de l'application, ce que vous faisiez et ce qui s'est passé. N'envoyez ni enregistrements ni dossiers de santé par e-mail. En cas d'urgence, appelez d'abord le 911.</p>
+<p>Nous lisons les signalements et corrigeons ce que nous pouvons.</p>
+</article>

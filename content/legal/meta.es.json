@@ -1,0 +1,10 @@
+{
+ "privacy": ["Política de privacidad | Bonet", "Qué recopilan la aplicación Bonet y este sitio web, qué se queda en su dispositivo, quién más recibe datos y cómo eliminar su cuenta."],
+ "terms": ["Condiciones del servicio | Bonet", "Las condiciones para usar Bonet, una aplicación de práctica en casa con movimiento, habla y juegos mentales, hecha por Coglix Labs Inc."],
+ "subscriptions": ["Suscripciones y reembolsos | Bonet", "Cómo funciona el cobro de Bonet Premium: la prueba gratuita, la renovación, cómo cancelar y cómo pedir un reembolso."],
+ "cookies": ["Política de cookies | Bonet", "Qué guardan Bonet y este sitio web en su dispositivo, qué es opcional y cómo cambiar su elección."],
+ "consumer-health-data": ["Política de privacidad de datos de salud del consumidor | Bonet", "Qué datos relacionados con la salud maneja Bonet, para qué, quién los recibe y sus opciones según las leyes estatales de EE. UU. sobre datos de salud del consumidor."],
+ "ai-and-automatic-measures": ["Cómo mide Bonet | Bonet", "Cómo funcionan las mediciones automáticas de Bonet, dónde se procesan y cuáles son sus límites."],
+ "science": ["Cómo funciona Bonet | Bonet", "Cómo funcionan la cámara, el habla y la práctica mental de Bonet, qué mide y qué no afirma."],
+ "therapist": ["Para terapeutas y cuidadores | Bonet", "Cómo pueden ver terapeutas, cuidadores y familiares qué practicó una persona en Bonet, y qué no hace la aplicación."]
+}

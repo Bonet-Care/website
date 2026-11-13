@@ -1,0 +1,10 @@
+{
+ "privacy": ["私隱政策 | Bonet", "Bonet 程式同呢個網站收集啲乜、啲乜留喺你部機度、邊個會收到資料，同點樣刪除你嘅帳戶。"],
+ "terms": ["服務條款 | Bonet", "使用 Bonet 嘅條款。Bonet 係 Coglix Labs Inc. 製作嘅屋企練習程式，包括運動、講嘢同腦力遊戲。"],
+ "subscriptions": ["訂閱同退款 | Bonet", "Bonet Premium 收費點樣運作：免費試用、續期、點樣取消，同點樣申請退款。"],
+ "cookies": ["Cookie 政策 | Bonet", "Bonet 同呢個網站喺你部機度儲存啲乜、邊啲係可選嘅，同點樣更改你嘅選擇。"],
+ "consumer-health-data": ["消費者健康資料私隱政策 | Bonet", "Bonet 處理啲乜同健康有關嘅資料、點解、邊個會收到，同你喺美國各州消費者健康資料法下嘅選擇。"],
+ "ai-and-automatic-measures": ["Bonet 點樣量度 | Bonet", "Bonet 嘅自動量度點樣運作、喺邊度處理，同佢哋嘅限制。"],
+ "science": ["哥基健動點樣運作 | Bonet", "Bonet 嘅鏡頭、講嘢同腦力練習點樣運作、量度啲乜，同佢冇聲稱啲乜。"],
+ "therapist": ["俾治療師同照顧者 | Bonet", "治療師、照顧者同家人點樣睇到某個人喺 Bonet 練習過啲乜，同個程式唔做啲乜。"]
+}

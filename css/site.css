@@ -382,6 +382,7 @@ p { margin: 0; }
 .doc--legal summary { cursor: pointer; font-weight: 900; font-size: 1.15rem; color: var(--ink); padding: .9rem 0; min-height: 3rem; }
 .doc--legal summary:focus-visible { outline: 3px solid var(--blue); outline-offset: 3px; }
 .doc--legal details[open] summary { border-bottom: 2px solid var(--line); margin-bottom: .8rem; }
+.tr-note { background: var(--blue-wash); border-radius: 1rem; padding: .8rem 1.1rem; margin-bottom: 1.6rem; font-weight: 700; color: var(--ink-2); }
 .doc--legal .toc { background: var(--blue-wash); border-radius: 1.2rem; padding: 1rem 1.4rem; }
 .doc--legal .toc ul { list-style: none; padding: 0; margin: 0; }
 

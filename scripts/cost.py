@@ -73,13 +73,18 @@ def cost_section(lang):
 """
 
 
-def cost_sources():
-    """English only: the sources note shown on /compare under the cost board link."""
-    return """<section id="cost-sources" class="cost-sources"><h2>Sources for the cost board</h2>
-<p>The cost board starts with no visit cost filled in. What a person pays per therapy visit depends on their plan, deductible, copay or coinsurance and visit limits, and we found no per-visit figure we could stand behind. Enter your own. The other outputs do not need it.</p>
+def cost_sources(lang="en"):
+    """The sources note shown on /compare under the cost board link. Citations stay as published; the prose is translated."""
+    T = mk(lang)
+    c1 = T("Uses the Medical Expenditure Panel Survey (2,189 people). It reports spending per episode of care, not per visit: among people with any out-of-pocket spending the mean was $351 and the median $144, over an average of 9.9 visits.",
+           "用咗 Medical Expenditure Panel Survey（2,189 人）嘅數據。佢報告嘅係每個護理療程嘅支出，唔係每次覆診：喺有自付支出嘅人入面，平均數係 $351，中位數係 $144，平均覆診 9.9 次。")
+    c2 = T("Median negotiated rates for evaluation services ran from $151 to $215 across hospitals. These are what insurers pay, not what patients pay.",
+           "各醫院評估服務嘅協議收費中位數由 $151 至 $215。呢啲係保險公司俾嘅錢，唔係病人俾嘅錢。")
+    return f"""<section id="cost-sources" class="cost-sources"><h2>{T("Sources for the cost board", "費用計算板嘅資料來源")}</h2>
+<p>{T("The cost board starts with no visit cost filled in. What a person pays per therapy visit depends on their plan, deductible, copay or coinsurance and visit limits, and we found no per-visit figure we could stand behind. Enter your own. The other outputs do not need it.", "費用計算板一開始冇填覆診費用。每次見治療師要俾幾多，視乎各人嘅保險計劃、自付額、定額或者按比例分擔，同埋覆診次數上限；我哋搵唔到一個企得住腳嘅每次費用數字。請輸入你自己嘅數字。其他結果唔需要用到佢。")}</p>
 <ul>
-<li>Chevan J, Riddle DL, Reed M. Out-of-pocket spending for ambulatory physical therapy services from 2008 to 2012: national panel survey. <em>Physical Therapy</em>, 2015. Uses the Medical Expenditure Panel Survey (2,189 people). It reports spending per episode of care, not per visit: among people with any out-of-pocket spending the mean was $351 and the median $144, over an average of 9.9 visits. <a href="https://read.qxmd.com/read/26112257/out-of-pocket-spending-for-ambulatory-physical-therapy-services-from-2008-to-2012-national-panel-survey">Abstract</a>.</li>
-<li>Skydel J, Ross J. Commercial negotiated rates for outpatient physical therapy at US hospitals. <em>JAMA Internal Medicine</em>, research letter, 2026. Median negotiated rates for evaluation services ran from $151 to $215 across hospitals. These are what insurers pay, not what patients pay. <a href="https://news.yale.edu/2026/03/05/cost-physical-therapy-varies-widely-state-state">Yale News summary</a>.</li>
+<li>Chevan J, Riddle DL, Reed M. Out-of-pocket spending for ambulatory physical therapy services from 2008 to 2012: national panel survey. <em>Physical Therapy</em>, 2015. {c1} <a href="https://read.qxmd.com/read/26112257/out-of-pocket-spending-for-ambulatory-physical-therapy-services-from-2008-to-2012-national-panel-survey">{T("Abstract", "摘要")}</a>.</li>
+<li>Skydel J, Ross J. Commercial negotiated rates for outpatient physical therapy at US hospitals. <em>JAMA Internal Medicine</em>, research letter, 2026. {c2} <a href="https://news.yale.edu/2026/03/05/cost-physical-therapy-varies-widely-state-state">{T("Yale News summary", "Yale News 摘要")}</a>.</li>
 </ul>
-<p>We found no comparable source for speech-language therapy. A month is counted as 52 &divide; 12 weeks. Premium price and trial length come from the same file that sets the price on the home page.</p>
+<p>{T("We found no comparable source for speech-language therapy. A month is counted as 52 &divide; 12 weeks. Premium price and trial length come from the same file that sets the price on the home page.", "言語治療方面，我哋搵唔到可以比較嘅來源。一個月當 52 &divide; 12 個星期計。完整版價錢同試用期長度，同主頁價錢用同一個檔案。")}</p>
 </section>"""

@@ -488,8 +488,6 @@ def home(lang):
 {compare(lang)}
 </div></section>
 
-{video_section(T, lang, vid) if VIDEO_ON else ""}
-
 {cost_section(lang)}
 
 <section class="sec" id="who"><div class="wrap">
@@ -504,12 +502,14 @@ def home(lang):
 <div class="rv-tilt"><div class="card-demo" data-ss-fill>{demo('simple', T('Animated preview: turning on Simple mode changes a busy list into one big Start button.', '動畫預覽：開啟簡單模式，一堆選項變成一個大大嘅開始掣。'))}</div><div class="tcap"><h3>{T('Simple mode', '簡單模式')}</h3></div></div>
 <div class="rv-tilt"><div class="card-demo" data-ss-fill>{demo('lang', T(f'Animated preview: a greeting changes through {NUM_WORD[LANG_COUNT].lower()} languages.', f'動畫預覽：問候語轉換{NUM_YUE[LANG_COUNT]}種語言。'))}</div><div class="tcap"><h3>{T(f'{NUM_WORD[LANG_COUNT]} languages', f'{NUM_YUE[LANG_COUNT]}種語言')}</h3></div></div>
 </div>
-<p class="safe rv">{T('Camera video stays on your device. <span>Bonet is not a medical device.</span>', '鏡頭影像只留喺你部機。<span>哥基健動唔係醫療器材。</span>')} <a href="/compliance.html">{T('Privacy and safety', '私隱與安全')}</a></p>
+<p class="safe rv">{T('Camera video stays on your device. <span>Bonet is not a medical device.</span>', '鏡頭影像只留喺你部機。<span>哥基健動唔係醫療器材。</span>')} <a href="{pre}/safety">{T('Privacy and safety', '私隱與安全')}</a></p>
 </div></section>
 
 <section class="sec sec--wash" id="faq"><div class="wrap">
 <div class="open open--c"><h2 class="rv">{T('Questions, answered plainly', '常見問題，直接答你')}</h2></div>
 <div class="faq">{faq}</div></div></section>
+
+{video_section(T, lang, vid) if VIDEO_ON else ""}
 
 <section class="final" data-final><div class="wrap">
 <span class="fi fi1"><img src="/img/icons/star.webp" width="128" height="128" alt=""></span><span class="fi fi2"><img src="/img/icons/heart.webp" width="128" height="128" alt=""></span><span class="fi fi3"><img src="/img/icons/bone.webp" width="128" height="128" alt=""></span>

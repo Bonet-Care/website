@@ -66,6 +66,8 @@
     var want = pick(navigator.languages || [navigator.language || 'en']);
     if (want && want !== here && SUG[want]) {
       var s = SUG[want], bar = document.createElement('div');
+      var same = document.querySelector('link[rel="alternate"][hreflang="' + s[0] + '"]');  /* the same page in that language, when it exists */
+      if (same) { try { s = [s[0], s[1], s[2], new URL(same.href).pathname]; } catch (e) {} }
       bar.className = 'langbar'; bar.setAttribute('role', 'region'); bar.setAttribute('aria-label', 'Language');
       bar.innerHTML = '<div class="wrap"><span></span><span><a href="' + s[3] + '" lang="' + s[0] + '"></a> <button type="button"></button></span></div>';
       bar.querySelector('a').textContent = s[1]; bar.querySelector('button').textContent = s[2];
