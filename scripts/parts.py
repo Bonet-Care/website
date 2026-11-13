@@ -89,6 +89,13 @@ UI = {
     "f_ther": {"en": "For therapists", "zh-hant": "給治療師", "yue": "俾治療師", "zh-hans": "给治疗师", "ja": "セラピストの方へ", "es": "Para terapeutas", "de": "Für Therapeuten", "fr": "Pour les thérapeutes"},
     "f_blog": {"en": "Blog", "zh-hant": "部落格", "yue": "網誌", "zh-hans": "博客", "ja": "ブログ", "es": "Blog", "de": "Blog", "fr": "Blog"},
     "f_contact": {"en": "Contact", "zh-hant": "聯絡我們", "yue": "聯絡我哋", "zh-hans": "联系我们", "ja": "お問い合わせ", "es": "Contacto", "de": "Kontakt", "fr": "Contact"},
+    "f_subs": {"en": "Subscriptions and refunds", "zh-hant": "訂閱與退款", "yue": "訂閱同退款", "zh-hans": "订阅与退款", "ja": "購読と返金", "es": "Suscripciones y reembolsos", "de": "Abos und Erstattungen", "fr": "Abonnements et remboursements"},
+    "f_cookies": {"en": "Cookies", "zh-hant": "Cookie", "yue": "Cookie", "zh-hans": "Cookie", "ja": "Cookie", "es": "Cookies", "de": "Cookies", "fr": "Cookies"},
+    "f_chd": {"en": "Consumer health data", "zh-hant": "消費者健康資料", "yue": "消費者健康資料", "zh-hans": "消费者健康数据", "ja": "消費者の健康データ", "es": "Datos de salud del consumidor", "de": "Gesundheitsdaten", "fr": "Données de santé"},
+    "f_ai": {"en": "How Bonet measures", "zh-hant": "Bonet 如何量度", "yue": "Bonet 點樣量度", "zh-hans": "Bonet 如何测量", "ja": "Bonetの測り方", "es": "Cómo mide Bonet", "de": "Wie Bonet misst", "fr": "Comment Bonet mesure"},
+    "f_faq": {"en": "FAQ", "zh-hant": "常見問題", "yue": "常見問題", "zh-hans": "常见问题", "ja": "よくある質問", "es": "Preguntas", "de": "Fragen", "fr": "Questions"},
+    "f_cset": {"en": "Cookie settings", "zh-hant": "Cookie 設定", "yue": "Cookie 設定", "zh-hans": "Cookie 设置", "ja": "Cookieの設定", "es": "Ajustes de cookies", "de": "Cookie-Einstellungen", "fr": "Réglages des cookies"},
+    "f_english": {"en": "English", "zh-hant": "英文", "yue": "英文", "zh-hans": "英文", "ja": "英語", "es": "en inglés", "de": "auf Englisch", "fr": "en anglais"},
     "hello": {"en": "Bonet says hello", "zh-hant": "柯基向你打招呼", "yue": "朱古力同你打招呼", "zh-hans": "柯基向你打招呼", "ja": "コーギーがあいさつします", "es": "Bonet te saluda", "de": "Bonet sagt Hallo", "fr": "Bonet vous dit bonjour"},
 }
 u = lambda k, lang: UI[k][lang]
@@ -128,8 +135,7 @@ def head(lang, title, desc, canon, og, extra="", alt=None, app_css=True):
 <link rel="preload" href="/fonts/nunito-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="/css/site.css">
 {'<link rel="stylesheet" href="/css/demos.css">' if app_css else ''}
-{extra}<script async src="https://www.googletagmanager.com/gtag/js?id={GA}"></script>
-<script defer src="/js/gtag-init.js"></script>
+{extra}<script defer src="/js/consent.js"></script>
 </head>
 """
 
@@ -169,13 +175,20 @@ def header(lang, urls=None, inplace=None):
 
 def footer(lang, urls=None, inplace=None, demos=False):
     t = lambda k: u(k, lang)
-    items = [("/privacy.html", "f_privacy"), ("/terms.html", "f_terms"), ("/compliance.html", "f_safety"), ("/science.html", "f_how"),
-             ("/therapist.html", "f_ther"), ("/blog/", "f_blog"), (f"mailto:{MAIL}", "f_contact")]
-    nav = "".join(f'<a href="{h}">{t(k)}</a>' for h, k in items)
+    pre = LANGS[lang]["path"] if lang in LANGS else "/"
+    pre = "" if pre == "/" else pre.rstrip("/")
+    # legal pages are English only (hreflang marks that); safety and FAQ are written in every language
+    legal = [("/privacy", "f_privacy"), ("/terms", "f_terms"), ("/subscriptions", "f_subs"), ("/cookies", "f_cookies"),
+             ("/consumer-health-data", "f_chd"), (pre + "/safety", "f_safety"), ("/ai-and-automatic-measures", "f_ai"), (pre + "/faq", "f_faq")]
+    en_only = {"/privacy", "/terms", "/subscriptions", "/cookies", "/consumer-health-data", "/ai-and-automatic-measures"}
+    nav = "".join(f'<a href="{h}"' + (' hreflang="en" lang="en"' if h in en_only else "") + f'>{t(k)}</a>' for h, k in legal)
+    nav += f'<a href="mailto:{MAIL}">{t("f_contact")}</a><button type="button" class="linkbtn" data-consent-open>{t("f_cset")}</button>'
+    more = "".join(f'<a href="{h}">{t(k)}</a>' for h, k in [("/science.html", "f_how"), ("/therapist.html", "f_ther"), ("/blog/", "f_blog")])
     plain = "".join(f'<a href="{(urls or {}).get(c, d["path"])}" hreflang="{d["tag"]}" lang="{d["html"]}">{d["name"]}</a>' for c, d in LANGS.items())
     return f"""<footer class="ftr"><div class="wrap">
 <div class="ftr-pup"><button type="button" class="pupbtn" data-sprite="sleep" data-hover="wiggle" aria-label="{t('hello')}"><span class="sprite" data-clip="sleep" data-rest="sleep" aria-hidden="true"></span></button></div>
 <nav aria-label="Footer">{nav}</nav>
+<nav class="ftr-more" aria-label="Bonet">{more}</nav>
 <nav class="ftr-langs" aria-label="{t('language')}">{plain}</nav>
 <p>&copy; 2026 Coglix Labs Inc.</p>
 </div></footer>

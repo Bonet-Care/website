@@ -30,12 +30,53 @@ write = lambda rel, text: ((ROOT / rel).parent.mkdir(parents=True, exist_ok=True
 
 # ---------------------------------------------------------------- inner pages (English text with Cantonese in data-zh)
 INNER = {
-    "privacy": ("Bonet Privacy Policy", "私隱政策 | 哥基健動", "What the Bonet app and this website collect, what stays on your device, who else receives data, and how to delete your account.", "privacy.html", "privacy"),
-    "terms": ("Bonet Terms of Service", "使用條款 | 哥基健動", "The terms for using Bonet, a home practice app for movement, speaking and brain games, made by Coglix Labs Inc.", "terms.html", "terms"),
-    "compliance": ("Privacy, safety and what to know before you start | Bonet", "私隱、安全同開始前要知 | 哥基健動", "Plain answers on privacy and safety: what stays on your device, what is stored, who processes speech, and what to know before you practise.", "compliance.html", "compliance"),
     "science": ("How Bonet works", "運作方式 | 哥基健動", "How Bonet's camera, speaking and brain practice work, what it measures, and what it does not claim.", "science.html", "science"),
     "therapist": ("For therapists and carers | Bonet", "俾治療師同照顧者 | 哥基健動", "How therapists, carers and family can see what someone practised in Bonet, and what the app does not do.", "therapist.html", "therapist"),
 }
+
+# ---------------------------------------------------------------- legal pages (English only) and localised notice pages
+# Fragments are in content/legal/<slug>.html (reviewed text, no draft notes). Every open question is listed in LEGAL-PUBLISH-NOTES.md.
+LEGAL = {
+    "privacy": ("Privacy Policy | Bonet", "What the Bonet app and this website collect, what stays on your device, who else receives data, and how to delete your account.", "0.4"),
+    "terms": ("Terms of Service | Bonet", "The terms for using Bonet, a home practice app for movement, speaking and brain games, made by Coglix Labs Inc.", "0.4"),
+    "subscriptions": ("Subscriptions and refunds | Bonet", "How Bonet Premium billing works: the free trial, renewal, how to cancel, and how to ask for a refund.", "0.4"),
+    "cookies": ("Cookie Policy | Bonet", "What Bonet and this website store on your device, which of it is optional, and how to change your choice.", "0.4"),
+    "consumer-health-data": ("Consumer Health Data Privacy Policy | Bonet", "What health-related data Bonet handles, why, who receives it, and your choices under US state consumer health data laws.", "0.3"),
+    "ai-and-automatic-measures": ("How Bonet measures | Bonet", "How Bonet's automatic measures work, where they are processed, and their limits.", "0.5"),
+}
+NOTICES = ("safety", "faq")
+NOTICE_META = json.loads((ROOT / "content" / "pages" / "meta.json").read_text()) if (ROOT / "content" / "pages" / "meta.json").exists() else {}
+
+
+def legal(slug):
+    title, desc, _ = LEGAL[slug]
+    body = (ROOT / "content" / "legal" / f"{slug}.html").read_text()
+    assert "CONFIRM" not in body and "draft-note" not in body and 'class="confirm"' not in body, f"unresolved marker in {slug}"
+    h = head("en", title, desc, f"{SITE}/{slug}", "og-en.png", app_css=False)
+    h += header("en", inplace=set())
+    h += f'<main id="main" class="doc-wrap"><div class="wrap"><div class="doc doc--legal">\n{body}\n</div></div></main>\n'
+    h += footer("en")
+    write(f"{slug}.html", h)
+
+
+def notice(slug, lang):
+    f = ROOT / "content" / "pages" / f"{slug}.{lang}.html"
+    if not f.exists():
+        MISSING.setdefault(lang, set()).add(f"page:{slug}")
+        return False
+    body = f.read_text()
+    assert "CONFIRM" not in body, f"marker in {slug}.{lang}"
+    title, desc = NOTICE_META[slug][lang]
+    pre = LANGS[lang]["path"].rstrip("/")
+    path = f"{slug}.html" if lang == "en" else f"{pre.strip('/')}/{slug}.html"
+    alt = {c: f"{SITE}{(LANGS[c]['path'].rstrip('/'))}/{slug}" for c in LANGS}
+    h = head(lang, title, desc, alt[lang], "og-en.png", app_css=False, alt=alt)
+    urls = {c: f"{LANGS[c]['path'].rstrip('/')}/{slug}" for c in LANGS}
+    h += header(lang, urls=urls)
+    h += f'<main id="main" class="doc-wrap"><div class="wrap"><div class="doc doc--legal">\n{body}\n</div></div></main>\n'
+    h += footer(lang, urls=urls)
+    write(path, h)
+    return True
 
 
 def inner(slug):
@@ -157,8 +198,14 @@ def sitemap():
     alts = [(d["tag"], SITE + d["path"]) for d in LANGS.values()] + [("x-default", SITE + "/")]
     for d in LANGS.values():
         url(d["path"], "1.0", alts, "weekly")
-    for p, pri in [("/science.html", "0.8"), ("/therapist.html", "0.8"), ("/compliance.html", "0.6"), ("/blog/", "0.7"), ("/zh-hant/blog/", "0.6"), ("/blog/introducing-bonet.html", "0.5"), ("/compare.html", "0.5"), ("/privacy.html", "0.3"), ("/terms.html", "0.3")]:
+    for p, pri in [("/science.html", "0.8"), ("/therapist.html", "0.8"), ("/blog/", "0.7"), ("/zh-hant/blog/", "0.6"), ("/blog/introducing-bonet.html", "0.5"), ("/compare.html", "0.5")]:
         url(p, pri)
+    for slug, (_, _, pri) in LEGAL.items():
+        url(f"/{slug}", pri)
+    for slug in NOTICES:
+        al = [(d["tag"], SITE + d["path"].rstrip("/") + f"/{slug}") for d in LANGS.values()] + [("x-default", f"{SITE}/{slug}")]
+        for d in LANGS.values():
+            url(d["path"].rstrip("/") + f"/{slug}", "0.6", al)
     for s in POSTS:
         url(f"/blog/{s}.html", "0.6", [("en", f"{SITE}/blog/{s}.html"), ("zh-Hant", f"{SITE}/zh-hant/blog/{s}.html")] if s in ZH_POSTS else None)
         if s in ZH_POSTS:
@@ -176,6 +223,11 @@ if __name__ == "__main__":
         post_page(s, "en")
         if s in ZH_POSTS:
             post_page(s, "zh-hant")
+    for s in LEGAL:
+        legal(s)
+    for s in NOTICES:
+        for lang in LANGS:
+            notice(s, lang)
     blog_index("en"); blog_index("zh-hant"); old_post(); compare_page(); notfound(); sitemap()
     if "--export" in sys.argv:
         (ROOT / "strings").mkdir(exist_ok=True)

@@ -361,3 +361,27 @@ p { margin: 0; }
 @media (max-width: 36rem) { .btn--sm { font-size: .9rem; padding-inline: .7rem; min-height: 2.5rem; } .brand { font-size: 1.3rem; } }
 @media (max-width: 30rem) { .langmenu summary span { display: none; } .langmenu summary::after { content: '\25BE'; color: var(--ink-3); } }
 @media (max-width: 51.99rem) { .hero-copy { gap: 1rem; padding-bottom: .4rem; } .hero-copy .cta-row .btn--2 { display: none; } .hero-copy .lede { font-size: 1.05rem; } }
+
+/* footer extras, legal reading pages */
+.linkbtn { background: none; border: 0; padding: 0; font: inherit; font-weight: 800; color: #fff; text-decoration: underline; cursor: pointer; min-height: 2.75rem; }
+.ftr-more a { color: #c9d1de; font-weight: 700; font-size: .95rem; }
+.doc--legal { max-width: 44rem; gap: 0; }
+.doc--legal .legal > * + * { margin-top: 1rem; }
+.doc--legal h1 { margin-bottom: .4rem; overflow-wrap: anywhere; }
+.doc--legal h1 + p { color: var(--ink-3); font-weight: 800; }
+.doc--legal h2 { margin: 2.6rem 0 .8rem; scroll-margin-top: 5.5rem; padding-top: 1.6rem; border-top: 2px solid var(--line); }
+.doc--legal h3 { scroll-margin-top: 5.5rem; }
+.doc--legal h2:first-of-type { border-top: 0; }
+.doc--legal a { color: var(--blue-ink, var(--blue)); text-decoration: underline; text-underline-offset: .18em; }
+.doc--legal :is(h2, h3) .anchor { margin-left: .4rem; opacity: 0; text-decoration: none; }
+.doc--legal :is(h2, h3):hover .anchor, .doc--legal :is(h2, h3) .anchor:focus { opacity: 1; }
+.doc--legal table { display: block; max-width: 100%; overflow-x: auto; font-size: 1rem; border: 2px solid var(--line); border-radius: 1rem; }
+.doc--legal th { background: var(--blue-wash); font-weight: 900; color: var(--ink); white-space: nowrap; }
+.doc--legal td, .doc--legal th { min-width: 8rem; }
+.doc--legal tr:last-child td { border-bottom: 0; }
+.doc--legal details { border: 2px solid var(--line); border-radius: 1.1rem; padding: .2rem 1.2rem; margin: .7rem 0; background: #fff; }
+.doc--legal summary { cursor: pointer; font-weight: 900; font-size: 1.15rem; color: var(--ink); padding: .9rem 0; min-height: 3rem; }
+.doc--legal summary:focus-visible { outline: 3px solid var(--blue); outline-offset: 3px; }
+.doc--legal details[open] summary { border-bottom: 2px solid var(--line); margin-bottom: .8rem; }
+.doc--legal .toc { background: var(--blue-wash); border-radius: 1.2rem; padding: 1rem 1.4rem; }
+.doc--legal .toc ul { list-style: none; padding: 0; margin: 0; }

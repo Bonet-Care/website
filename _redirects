@@ -7,3 +7,7 @@
 # Old Cantonese/Chinese home page
 /zh        /zh-hant/  301
 /zh/       /zh-hant/  301
+
+# Old notice page now lives at /safety
+/compliance        /safety  301
+/compliance.html   /safety  301
