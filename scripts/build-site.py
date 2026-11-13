@@ -55,6 +55,10 @@ for _c in LANGS:
 
 def legal(slug):
     title, desc, _ = LEGAL[slug]
+    if not (ROOT / "content" / "legal" / f"{slug}.html").exists():
+        print("skipped (no fragment):", slug)
+        MISSING.setdefault("en", set()).add(f"legal:{slug}")
+        return
     body = (ROOT / "content" / "legal" / f"{slug}.html").read_text()
     assert "CONFIRM" not in body and "draft-note" not in body and 'class="confirm"' not in body, f"unresolved marker in {slug}"
     h = head("en", title, desc, f"{SITE}/{slug}", "og-en.png", app_css=False)
