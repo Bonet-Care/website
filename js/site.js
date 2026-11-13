@@ -133,7 +133,7 @@
   var hero = document.querySelector('[data-corgi] .sprite');
   if (hero) {
     window.addEventListener('bonet:start', function () { play(hero, 'point', 1, 'idle'); });
-    window.addEventListener('bonet:goal', function () { play(hero, 'cheer', 2, 'idle'); var c = hero.closest('.corgi'); c.classList.remove('hop'); void c.offsetWidth; c.classList.add('hop'); });
+    window.addEventListener('bonet:goal', function () { play(hero, 'cheer', 2, 'idle'); });
   }
 
   /* ---- hero parallax: floating icons drift a little with the pointer; transform only, off for reduced motion and small screens */

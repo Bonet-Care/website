@@ -12,8 +12,8 @@
   --gut: clamp(1.1rem, 4.5vw, 2.5rem);
   --spring: cubic-bezier(.34, 1.56, .64, 1);
   /* type scale, defined once: nothing on the site is larger than --fs-h1 (60px) */
-  --fs-h1: clamp(2.25rem, 4.6vw, 3.75rem);
-  --fs-h2: clamp(1.75rem, 3.2vw, 3rem);
+  --fs-h1: clamp(2.25rem, 4.6vw, 60px);
+  --fs-h2: clamp(1.75rem, 3.2vw, 54px);
   --fs-h3: clamp(1.25rem, 2vw, 1.5rem);
   --fs-lede: clamp(1.15rem, 1.8vw, 1.35rem);
   --space-sec: clamp(2.5rem, 5vw, 4.5rem);
@@ -96,8 +96,6 @@ p { margin: 0; }
 .corgi img { position: absolute; left: 0; bottom: 0; width: 100%; height: auto; filter: drop-shadow(0 14px 12px rgba(20,60,110,.2)); transition: opacity .25s; }
 .corgi img:first-child { position: relative; }
 .corgi .c2 { opacity: 0; } .corgi.cheer .c1 { opacity: 0; } .corgi.cheer .c2 { opacity: 1; }
-.corgi.cheer { animation: hop .7s var(--spring); }
-@keyframes hop { 0% { transform: translateY(0); } 35% { transform: translateY(-1.4rem) rotate(-3deg); } 100% { transform: none; } }
 .fl { position: absolute; z-index: 1; pointer-events: none; transform: translate3d(calc(var(--px, 0) * var(--k, 12) * 1px), calc(var(--py, 0) * var(--k, 12) * 1px), 0); }
 .fl img { width: 100%; display: block; }
 @media (min-width: 52rem) { .hero-grid { grid-template-columns: .8fr 1.2fr; gap: 2rem; } }
@@ -227,10 +225,12 @@ p { margin: 0; }
 @keyframes treat { 0% { opacity: 0; transform: translateY(0) rotate(0); } 15% { opacity: 1; } 70% { opacity: 1; transform: translateY(15rem) rotate(200deg); } 82% { transform: translateY(13.5rem) rotate(240deg); } 100% { opacity: 0; transform: translateY(14.5rem) rotate(260deg) scale(.4); } }
 
 /* footer */
+.ftr :focus-visible { outline-color: #fff; }
 .ftr { background: var(--ink); color: #c9d1de; padding-block: 3rem; }
 .ftr .wrap { display: grid; gap: 1.6rem; }
 .ftr nav { display: flex; flex-wrap: wrap; gap: .5rem 1.6rem; }
 .ftr a { color: #fff; font-weight: 800; }
+@media (max-width: 36rem) { .ftr nav { display: grid; grid-template-columns: 1fr 1fr; gap: .7rem 1rem; } }
 .ftr .row2 { display: flex; flex-wrap: wrap; gap: 1rem; align-items: center; justify-content: space-between; }
 .ftr .lang { border-color: #3f4a5a; } .ftr .lang a, .ftr .lang button { background: transparent; color: #c9d1de; } .ftr .lang [aria-current='true'], .ftr .lang [aria-pressed='true'] { background: var(--blue); color: #fff; }
 .spin { display: inline-block; border: 0; background: none; padding: 0; cursor: pointer; width: 3.4rem; }
@@ -321,7 +321,6 @@ p { margin: 0; }
 @keyframes sprite { to { background-position: 100% 0; } }
 .pupbtn { display: block; width: 100%; padding: 0; border: 0; background: none; cursor: pointer; }
 .corgi { aspect-ratio: 1; filter: drop-shadow(0 14px 12px rgba(20,60,110,.2)); }
-.corgi.hop { animation: hop .7s var(--spring); }
 .corgi { animation: none; } .corgi img { display: none; }
 .ftr-pup { width: 8.5rem; margin-bottom: -1rem; }
 .ftr-langs { display: flex; flex-wrap: wrap; gap: .4rem 1.2rem; font-size: .95rem; }
@@ -454,7 +453,8 @@ p { margin: 0; }
 .cnb-btn--ghost { background: #fff; color: var(--blue-dark); }
 .cnb-link { min-height: 3rem; padding: .4rem .8rem; background: none; border: 0; font: inherit; font-size: 1.125rem; font-weight: 800; color: var(--blue-dark); text-decoration: underline; cursor: pointer; }
 .cnb :is(button, a):focus-visible, .cnb-back :is(button, a, h2):focus-visible { outline: 3px solid var(--orange); outline-offset: 3px; }
-@media (max-width: 34rem) { .cnb-row { display: grid; } .cnb-btn { width: 100%; } }
+@media (max-width: 34rem) { .cnb-row { display: grid; grid-template-columns: 1fr 1fr; gap: .5rem; } .cnb-btn { width: 100%; min-width: 0; padding-inline: .6rem; } .cnb-link { grid-column: 1 / -1; } .cnb-in { padding: 1rem; gap: .5rem; } }
+.cnb-in { max-height: 55vh; max-height: 55dvh; overflow-y: auto; overscroll-behavior: contain; }
 .cnb-back { position: fixed; inset: 0; z-index: 100; background: rgba(15, 31, 51, .45); display: grid; place-items: end center; padding: .8rem; overflow: auto; }
 .cnb-dlg { width: min(100%, 36rem); background: #fff; border-radius: 1.4rem; padding: 1.4rem; display: grid; gap: 1rem; max-height: 100%; overflow: auto; }
 .cnb-dlg p, .cnb-dlg h3 { margin: 0; font-size: 1.125rem; }
@@ -469,3 +469,4 @@ p { margin: 0; }
 .cnb-switch[aria-checked='true'] .cnb-knob { transform: translateX(1.6rem); background: #fff; }
 @media (prefers-reduced-motion: reduce) { .cnb-knob { transition: none; } }
 body:has(.cnb) { padding-bottom: 14rem; }
+@media (max-width: 40rem) { .final .pup { width: 7rem; height: 7rem; } .final h2 { max-width: calc(100% - 7rem); } }
