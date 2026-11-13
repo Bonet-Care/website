@@ -1,6 +1,6 @@
 {
- "_comment": "Product facts quoted in site copy. Change a number here and every language follows (strings use {levels}, {exercises}, {free_ex}). speaking_levels is 40 today; the app is growing it to 100 per mode, so bump it here when that ships. exercises = number of exercises in the app (app/web/src/features/rehab/exercises.ts); free_exercises = FREE_EXERCISE_IDS in app/web/src/lib/limits.ts.",
- "speaking_levels": 40,
+ "_comment": "Product facts quoted in site copy. Change a number here and every language follows (strings use {levels}, {exercises}, {free_ex}). speaking_levels = levels per speaking mode in the app (LEVEL_COUNT in app/web/src/features/speech/levels.ts). exercises = number of exercises in the app (app/web/src/features/rehab/exercises.ts); free_exercises = FREE_EXERCISE_IDS in app/web/src/lib/limits.ts.",
+ "speaking_levels": 100,
  "exercises": 34,
  "free_exercises": 8
 }
