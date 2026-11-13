@@ -25,10 +25,11 @@ export const Ico = ({ n, s, style }: { n: string; s?: number; style?: CSSPropert
 )
 
 /** Guide clip. No poster image: the clip fades in over a neutral ground, and under reduced motion it stays paused on its first frame. */
-export function Guide({ clip }: { clip: string; poster?: string }) {
+export function Guide({ clip, onVideo }: { clip: string; poster?: string; onVideo?: (v: HTMLVideoElement | null) => void }) {
   const ref = useRef<HTMLVideoElement>(null)
   const reduced = useReducedMotion()
   const [ready, setReady] = useState(false)
+  useEffect(() => { onVideo?.(ref.current); return () => onVideo?.(null) }, [onVideo])
   useEffect(() => {
     const v = ref.current
     if (!v || reduced) return

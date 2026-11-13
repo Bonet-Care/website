@@ -601,5 +601,68 @@
   "es": "Últimas 2 semanas",
   "de": "Letzte 2 Wochen",
   "fr": "2 dernières semaines"
+ },
+ "Your phone's camera": {
+  "yue": "你部電話嘅鏡頭",
+  "zh-hant": "你手機的鏡頭",
+  "zh-hans": "你手机的摄像头",
+  "ja": "スマホのカメラ",
+  "es": "La cámara del móvil",
+  "de": "Die Kamera deines Handys",
+  "fr": "La caméra du téléphone"
+ },
+ "Camera view of you": {
+  "yue": "鏡頭睇到嘅你",
+  "zh-hant": "鏡頭裡的你",
+  "zh-hans": "镜头里的你",
+  "ja": "カメラに映るあなた",
+  "es": "Tú, vista por la cámara",
+  "de": "Du, von der Kamera gesehen",
+  "fr": "Vous, vus par la caméra"
+ },
+ "Six measures": {
+  "yue": "六項指標",
+  "zh-hant": "六項指標",
+  "zh-hans": "六项指标",
+  "ja": "6つの指標",
+  "es": "Seis medidas",
+  "de": "Sechs Werte",
+  "fr": "Six mesures"
+ },
+ "Your next step": {
+  "yue": "你嘅下一步",
+  "zh-hant": "你的下一步",
+  "zh-hans": "你的下一步",
+  "ja": "次の一歩",
+  "es": "Tu próximo paso",
+  "de": "Dein nächster Schritt",
+  "fr": "Votre prochaine étape"
+ },
+ "On record": {
+  "yue": "已記錄",
+  "zh-hant": "已記錄",
+  "zh-hans": "已记录",
+  "ja": "記録済み",
+  "es": "Registrado",
+  "de": "Festgehalten",
+  "fr": "Au dossier"
+ },
+ "Saved": {
+  "yue": "已儲存",
+  "zh-hant": "已儲存",
+  "zh-hans": "已保存",
+  "ja": "保存しました",
+  "es": "Guardado",
+  "de": "Gespeichert",
+  "fr": "Sauvegardé"
+ },
+ "What the camera sees": {
+  "yue": "鏡頭睇到嘅畫面",
+  "zh-hant": "鏡頭看到的畫面",
+  "zh-hans": "镜头看到的画面",
+  "ja": "カメラが見ている画面",
+  "es": "Lo que ve la cámara",
+  "de": "Was die Kamera sieht",
+  "fr": "Ce que voit la caméra"
  }
 }

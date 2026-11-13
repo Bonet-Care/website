@@ -1,0 +1,10 @@
+{
+ "clip": "G03",
+ "duration": 4.0,
+ "fps": 24,
+ "frames": 96,
+ "topStart": 1.0,
+ "topEnd": 2.542,
+ "downBy": 3.0,
+ "_note": "Measured once from G03.mp4 (96 frames at 24 fps, 4.0 s loop): blue arm tip row per frame. topStart = first frame the arm is within 6 px of its highest point, topEnd = last such frame, downBy = first frame back at the resting row. The hero counter is driven from the video clock with these numbers; scripts/check-demo-sync.mjs asserts it."
+}

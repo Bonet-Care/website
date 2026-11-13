@@ -17,7 +17,7 @@ UP = {"upper_arm_L": (-172, 0, 0), "forearm_L": (0, 0, 0), "clavicle_L": (0, -9,
       "spine": (-3, 0, 0), "chest": (-2, 0, 0), "head": (2, 0, 0)}
 # 3 hold at bottom (29..3), 12 up, 4 hold at top (15..18), 11 down; frame N keyed == frame 0 (seamless)
 define("ARM", N, [(0, {}), (3, {}), (15, UP), (18, UP), (29, {}), (N, {})], {"arm_L"}, framing="tall", shadow=None,
-       cam=dict(az=22, el=12, target=(.30, .05, 1.06), scale=2.36))
+       cam=dict(az=float(os.environ.get("AZ", 22)), el=float(os.environ.get("EL", 12)), target=(.30, .05, 1.06), scale=float(os.environ.get("SCALE", 2.36))))
 ex = build("ARM", 64)
 sc = bpy.context.scene
 sc.render.resolution_x, sc.render.resolution_y = W * SS, H * SS
@@ -38,7 +38,8 @@ JOINTS = ["head", "neck", "l_shoulder", "r_shoulder", "l_elbow", "r_elbow", "l_w
 # image-left = model R bone (model faces camera), image-right = model L bone
 S = {"l": "R", "r": "L"}
 points, ang = [], []
-for f in range(N):
+ONLY = [int(x) for x in os.environ["FRAMES"].split(",")] if os.environ.get("FRAMES") else range(N)  # FRAMES=16 renders one test frame
+for f in ONLY:
     sc.frame_set(f)
     bpy.context.view_layer.update()
     pts = {"head": proj(P("head", .435)), "neck": proj(P("neck"))}

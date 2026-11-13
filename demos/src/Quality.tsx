@@ -50,13 +50,17 @@ export function Hex({ labels, last, today, s }: { labels: string[]; last: number
   )
 }
 
-function Card({ title, labels, last, today, tipText, icon }: { title: string; labels: string[]; last: number[]; today: number[]; tipText: string; icon: string }) {
+const TURN = 9800  // one card plays about 9.4 s; the pair takes turns, so each waits one turn between its runs
+function Card({ title, labels, last, today, tipText, icon, second = false }: { title: string; labels: string[]; last: number[]; today: number[]; tipText: string; icon: string; second?: boolean }) {
+  const first = useRef(true)
   const script = async (a: Act<S>) => {
+    if (second && first.current) { first.current = false; await a.wait(TURN); await a.snap({ ...S0 }) }
     await a.wait(900); a.put({ drawn: 6 }); await a.wait(2600); a.put({ m: 1 }); await a.wait(1500); a.put({ tip: true }); await a.wait(3800)
     a.put({ cut: true }); await a.wait(350); await a.snap({ ...S0, cut: true }); await a.wait(150); a.put({ cut: false })
+    await a.wait(TURN)
   }
   return (
-    <Stage<S> className="bn" width={400} height={620} compact={{ below: 400, width: 358, height: 580 }} initial={S0} poster={{ drawn: 6, m: 1, tip: true, cut: false }} script={script}>
+    <Stage<S> className="bn" width={400} height={620} compact={{ below: 400, width: 358, height: 580 }} initial={second ? { drawn: 6, m: 1, tip: true, cut: false } : S0} poster={{ drawn: 6, m: 1, tip: true, cut: false }} script={script}>
       {(s) => (
         <div className="bn-stagebox">
           <Phone width={330}>
@@ -67,6 +71,9 @@ function Card({ title, labels, last, today, tipText, icon }: { title: string; la
                 <span><i style={{ display: 'inline-block', width: 22, height: 5, background: '#1f8ae6', borderRadius: 3, verticalAlign: 'middle', marginRight: 6 }} />{t('Today')}</span>
                 <span><i style={{ display: 'inline-block', width: 22, height: 0, borderTop: '4px dashed #6b7484', verticalAlign: 'middle', marginRight: 6 }} />{t('Last time')}</span>
               </div>
+              <div className="bn-ann" data-on={s.drawn >= 2 || undefined} style={{ left: 16, top: 112 }}>{t('Six measures')}</div>
+              <div className="bn-ann" data-on={s.m >= 1 || undefined} style={{ right: 16, top: 112 }}>{t('Today')}</div>
+              <div className="bn-ann" data-on={s.tip || undefined} style={{ left: 24, top: 482 }}>{t('Your next step')}</div>
               <div className="bn-tipcard" data-on={s.tip || undefined}>
                 <img src="/img/mascot/point.webp" width={512} height={512} alt="" />
                 <div><b>{t('A tip for next time')}</b><p>{tipText}</p></div>
@@ -87,7 +94,7 @@ export const QualityMove = () => <Card title={t('How it went')} icon="muscle"
   labels={[t('Range'), t('Pace'), t('Steady'), t('L/R'), t('Hold'), t('Done')]}
   last={[0.6, 0.5, 0.7, 0.55, 0.4, 0.65]} today={[0.8, 0.7, 0.75, 0.82, 0.65, 0.92]}
   tipText={t('Lift a little higher on your left side.')} />
-export const QualitySpeak = () => <Card title={t('How it went')} icon="speak"
+export const QualitySpeak = () => <Card second title={t('How it went')} icon="speak"
   labels={[t('Heard'), t('No hints'), t('Pace'), t('Pauses'), t('Start time'), t('Steady')]}
   last={[0.55, 0.45, 0.6, 0.5, 0.6, 0.5]} today={[0.85, 0.7, 0.72, 0.8, 0.7, 0.78]}
   tipText={t('Take a breath before long sentences.')} />

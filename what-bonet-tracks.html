@@ -25,7 +25,7 @@
 <meta name="twitter:description" content="Every number Bonet records, how it is measured, where it is processed and what is not kept.">
 <meta name="twitter:image" content="https://bonet.care/img/og-en.png">
 <link rel="preload" href="/fonts/nunito-latin.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="/css/site.css?v=704a4a106a">
+<link rel="stylesheet" href="/css/site.css?v=fdbb362d47">
 
 <script defer src="/js/consent.js?v=834d1b402c"></script>
 </head>
@@ -33,7 +33,7 @@
 <a class="skip" href="#main">Skip to content</a>
 <header class="hdr"><div class="wrap">
 <a class="brand" href="/" aria-label="Bonet"><img src="/img/mascot/head.webp" width="512" height="512" alt="">Bonet</a>
-<nav class="nav" aria-label="Main"><a href="/#how">Practice</a><a href="/science.html">How it works</a><a href="/#plans">Plans</a><a href="/#faq">FAQ</a></nav>
+<nav class="nav" aria-label="Main"><a href="/#practice">Practice</a><a href="/#feedback">Feedback</a><a href="/#plans">Plans</a><a href="/#compare">Compare</a><a href="/#faq">FAQ</a></nav>
 <details class="langmenu"><summary aria-label="Language"><img src="/img/icons/globe.webp" width="128" height="128" alt=""><span>English</span></summary><ul><li><a href="/" hreflang="en" lang="en" aria-current="true">English</a></li><li><a href="/zh-hant/" hreflang="zh-Hant" lang="zh-Hant">繁體中文</a></li><li><a href="/yue/" hreflang="yue-Hant-HK" lang="yue-Hant-HK">廣東話</a></li><li><a href="/zh-hans/" hreflang="zh-Hans" lang="zh-Hans">简体中文</a></li><li><a href="/ja/" hreflang="ja" lang="ja">日本語</a></li><li><a href="/es/" hreflang="es" lang="es">Español</a></li><li><a href="/de/" hreflang="de" lang="de">Deutsch</a></li><li><a href="/fr/" hreflang="fr" lang="fr">Français</a></li></ul></details>
 <button type="button" class="tsize" data-textsize aria-pressed="false" title="Bigger text" aria-label="Bigger text">A+</button>
 <a class="signin" href="https://app.bonet.care/">Sign in</a>
@@ -46,6 +46,12 @@
 <div class="toc"><ul><li><a href="#numbers">The numbers</a></li><li><a href="#never">What is not kept</a></li><li><a href="#limits">What the numbers are</a></li></ul></div>
 <h2 id="numbers">The numbers</h2>
 <table><thead><tr><th>Number</th><th>How it is measured</th><th>Where</th><th>What is kept</th></tr></thead><tbody><tr><th scope="row">Repetitions and time</th><td>A model on your device finds body and hand positions in the camera picture. Rules count each repetition and time the set.</td><td>On your device</td><td>Count and duration</td></tr><tr><th scope="row">Range of movement and tracking quality</th><td>Estimated from joint positions in a flat camera image. An estimate, not a therapist's measurement.</td><td>On your device</td><td>The estimate and a tracking quality number</td></tr><tr><th scope="row">Speaking: words recognized, pace, pauses, score</th><td>Speech recognition turns what you say into text. Bonet compares it with the prompt, then works out words recognized, pace and pause length.</td><td>On your device where supported. Otherwise Apple (iPhone and iPad) or Google (web, several languages)</td><td>The recognized text and the measures. Not the audio</td></tr><tr><th scope="row">Brain games: right or wrong, tries, help used</th><td>Simple rules pick the next item from how you did.</td><td>On your device</td><td>Results for each item</td></tr><tr><th scope="row">Daily plan</th><td>Fixed rules use your setup answers and recent practice to suggest what to do today.</td><td>On your device</td><td>Your plan and settings</td></tr><tr><th scope="row">Minutes, practice days, streak</th><td>Added up from the results above.</td><td>Saved with your account</td><td>Totals, streak, streak savers, points and outfit</td></tr><tr><th scope="row">Weekly league points</th><td>Points added up on our server. Some league players are computer players, and the app says so.</td><td>Our server</td><td>Nickname and points</td></tr><tr><th scope="row">App usage events</th><td>For example &ldquo;finished a session&rdquo;, with broad bands such as 1 to 3 minutes, tied to a random account number.</td><td>Our analytics. They do not receive exercise results, speech text or health answers</td><td>The event and the band</td></tr></tbody></table>
+<!-- requires_feature: practice_quality -->
+<h2 id="how-it-went">How it went</h2>
+<p>The camera looks at how the movement went, inspired by what therapists look for: how far it went, pace, steadiness, left and right balance, hold time and how much of the set you finished. A six-sided chart shows today's shape with last time behind it.</p>
+<p>The same idea for speaking: words heard, saying it without hints, pace, pauses, time to start and consistency across the session.</p>
+<p>These are automatic measures of home practice and general practice tips. They are not a clinical assessment or medical advice.</p>
+<!-- /requires_feature -->
 <h2 id="never">What is not kept</h2>
 <ul>
 <li>Camera video and images. They are read on your device and never recorded or uploaded.</li>
@@ -59,13 +65,13 @@
 </div>
 </div></div></main>
 <footer class="ftr"><div class="wrap">
-<div class="ftr-pup"><button type="button" class="pupbtn" data-sprite="sleep" data-hover="wiggle" aria-label="Bonet says hello"><span class="sprite" data-clip="sleep" data-rest="sleep" aria-hidden="true"></span></button></div>
-<nav aria-label="Footer"><a href="/privacy" hreflang="en" lang="en">Privacy</a><a href="/terms" hreflang="en" lang="en">Terms</a><a href="/subscriptions" hreflang="en" lang="en">Subscriptions and refunds</a><a href="/cookies" hreflang="en" lang="en">Cookies</a><a href="/consumer-health-data" hreflang="en" lang="en">Consumer health data</a><a href="/safety">Privacy and safety</a><a href="/ai-and-automatic-measures" hreflang="en" lang="en">How Bonet measures</a><a href="/faq">FAQ</a><a href="mailto:hello@coglixlabs.com">Contact</a><button type="button" class="linkbtn" data-consent-open>Cookie settings</button></nav>
+<div class="ftr-top"><a class="brand" href="/" aria-label="Bonet"><img src="/img/mascot/head.webp" width="512" height="512" alt="">Bonet</a><p>Daily home practice for movement, speaking and brain games.</p></div>
+<div class="ftr-cols"><nav aria-label="Footer"><a href="/privacy" hreflang="en" lang="en">Privacy</a><a href="/terms" hreflang="en" lang="en">Terms</a><a href="/subscriptions" hreflang="en" lang="en">Subscriptions and refunds</a><a href="/cookies" hreflang="en" lang="en">Cookies</a><a href="/consumer-health-data" hreflang="en" lang="en">Consumer health data</a><a href="/safety">Privacy and safety</a><a href="/ai-and-automatic-measures" hreflang="en" lang="en">How Bonet measures</a><a href="/faq">FAQ</a><a href="mailto:hello@coglixlabs.com">Contact</a><button type="button" class="linkbtn" data-consent-open>Cookie settings</button></nav>
 <nav class="ftr-more" aria-label="Bonet"><a href="/science.html">How it works</a><a href="/therapist.html">For therapists</a><a href="/blog/">Blog</a></nav>
-<nav class="ftr-langs" aria-label="Language"><a href="/" hreflang="en" lang="en">English</a><a href="/zh-hant/" hreflang="zh-Hant" lang="zh-Hant">繁體中文</a><a href="/yue/" hreflang="yue-Hant-HK" lang="yue-Hant-HK">廣東話</a><a href="/zh-hans/" hreflang="zh-Hans" lang="zh-Hans">简体中文</a><a href="/ja/" hreflang="ja" lang="ja">日本語</a><a href="/es/" hreflang="es" lang="es">Español</a><a href="/de/" hreflang="de" lang="de">Deutsch</a><a href="/fr/" hreflang="fr" lang="fr">Français</a></nav>
-<p>&copy; 2026 Coglix Labs Inc.</p>
+<nav class="ftr-langs" aria-label="Language"><a href="/" hreflang="en" lang="en">English</a><a href="/zh-hant/" hreflang="zh-Hant" lang="zh-Hant">繁體中文</a><a href="/yue/" hreflang="yue-Hant-HK" lang="yue-Hant-HK">廣東話</a><a href="/zh-hans/" hreflang="zh-Hans" lang="zh-Hans">简体中文</a><a href="/ja/" hreflang="ja" lang="ja">日本語</a><a href="/es/" hreflang="es" lang="es">Español</a><a href="/de/" hreflang="de" lang="de">Deutsch</a><a href="/fr/" hreflang="fr" lang="fr">Français</a></nav></div>
+<p class="ftr-c">&copy; 2026 Coglix Labs Inc.</p>
 </div></footer>
-<script defer src="/js/site.js?v=48a4527f30"></script>
+<script defer src="/js/site.js?v=d756f7da04"></script>
 
 </body>
 </html>

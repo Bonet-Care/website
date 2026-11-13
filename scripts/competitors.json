@@ -259,27 +259,31 @@
   },
   {
    "key": "price",
-   "label": "Price to start (page prices, Nov 2026)",
+   "label": "Price (each company's own page, checked 13 November 2026)",
    "cells": {
     "Constant Therapy": {
      "v": "partly",
-     "note": "$29.99 per month; first two weeks free; currency not named",
-     "src": "https://constanttherapyhealth.com/constant-therapy/pricing/"
+     "note": "$29.99 per month (monthly plan); first two weeks free; 30-day money-back guarantee; currency not named",
+     "src": "https://constanttherapyhealth.com/constant-therapy/pricing/",
+     "checked": "2026-11-13"
     },
     "Tactus Therapy": {
      "v": "partly",
-     "note": "One-time US$89.99 Language 4-in-1; free Lite apps; no subscription",
-     "src": "https://tactustherapy.com/apps/"
+     "note": "$89.99 USD for Language Therapy 4-in-1; free Lite version; billing model not stated on the page",
+     "src": "https://tactustherapy.com/apps/",
+     "checked": "2026-11-13"
     },
     "Lingraphica TalkPath": {
      "v": "yes",
      "note": "Free account and exercises",
-     "src": "https://lingraphica.com/talkpath-therapy-aphasia-app/"
+     "src": "https://lingraphica.com/talkpath-therapy-aphasia-app/",
+     "checked": "2026-11-13"
     },
     "Flint Rehab": {
      "v": "partly",
-     "note": "CT app $29.99/month; FitMi $399; currency not named",
-     "src": "https://www.flintrehab.com/"
+     "note": "CT app $29.99/month; FitMi $399; remote programme $99/month; currency not named",
+     "src": "https://www.flintrehab.com/",
+     "checked": "2026-11-13"
     },
     "Exercise video or paper handout": {
      "v": "partly",

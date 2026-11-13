@@ -4,6 +4,12 @@ import { Roll } from './kit/motion/Roll'
 import type { Act } from './kit/act'
 import {Confetti, Guide, Ico, t } from './ui'
 import { Hex, MOVE_AXES, MOVE_LAST, MOVE_TODAY } from './Quality'
+import G03 from '../../clips/G03.json'
+
+/* The guide clip (clips/G03.mp4, 4 s loop, arm down at 0 s) is the clock: a rep is counted when the video itself reaches the top (G03.topStart)
+   and the set ends only after the third raise is back down (G03.downBy). No separate timers decide the count. */
+const clock: { v: HTMLVideoElement | null } = { v: null }
+const setClockVideo = (v: HTMLVideoElement | null) => { clock.v = v }
 
 /* Pattern: stageshow `phone-touch` (touch cursor, cropped phone, loop that folds back) + `payout-flow` (slow beats, payoff holds). */
 type S = { scene: 'today' | 'move' | 'how' | 'back'; reps: number; fin: boolean; cut: boolean; boom: number; drawn: number; m: number; tip: boolean }
@@ -64,7 +70,7 @@ export function Player({ reps, fin, boom }: { reps: number; fin: boolean; boom: 
       <span className="bn-title"><Ico n="muscle" s={30} />{t('Arm raise')}</span>
       <span className="bn-reps"><Roll>{`${reps}/${TOTAL}`}</Roll></span>
       <div className="bn-prog"><i style={{ width: `${(reps / TOTAL) * 100}%` }} /></div>
-      <div className="bn-guide"><Guide clip="/clips/G03" /></div>
+      <div className="bn-guide"><Guide clip="/clips/G03" onVideo={setClockVideo} /></div>
       <div className="bn-sheet">
         <div className="bn-ring">
           <svg width="140" height="140" viewBox="0 0 140 140"><circle cx="70" cy="70" r="60" stroke="#e5e7eb" /><circle className="arc" cx="70" cy="70" r="60" strokeDasharray={`${(reps / TOTAL) * 377} 400`} /></svg>
@@ -76,7 +82,6 @@ export function Player({ reps, fin, boom }: { reps: number; fin: boolean; boom: 
           <span className="gold" data-on={(reps === 2 && !fin) || undefined}>{t('Lift a little higher')}</span>
           <span className="ok" data-on={fin || undefined}>{t('Great set!')}</span>
         </div>
-        <div className="bn-lock"><Ico n="lock" />{t('Your video stays on this phone')}</div>
         {boom > 0 && <Confetti key={boom} />}
       </div>
     </div>
@@ -92,11 +97,18 @@ const script = (full: boolean, pq: boolean) => async (a: Act<S>) => {
     a.put({ scene: 'move' })
     await a.wait(900)
   }
-  for (let i = 1; i <= TOTAL; i++) {
-    await a.wait(i === 1 ? 700 : 1250)
-    a.put({ reps: i })
+  const v = clock.v
+  let loops = 0, prev = 0
+  if (v) { v.currentTime = 0; await v.play().catch(() => {}) }
+  const tick = () => { const ct = v ? v.currentTime : 0; if (ct < prev - 1) loops++; prev = ct; return ct }
+  const until = async (cond: (ct: number) => boolean, max = 20000) => { const t0 = performance.now(); while (performance.now() - t0 < max) { if (cond(tick())) return; await a.wait(30) } }
+  if (v) {
+    for (let i = 1; i <= TOTAL; i++) { await until((ct) => loops === i - 1 && ct >= G03.topStart); a.put({ reps: i }) }
+    await until((ct) => loops === TOTAL - 1 && ct >= G03.downBy)
+  } else {
+    for (let i = 1; i <= TOTAL; i++) { await a.wait(i === 1 ? 1000 : 4000); a.put({ reps: i }) }
+    await a.wait(2000)
   }
-  await a.wait(500)
   a.put({ fin: true, boom: 1 })
   if (full) window.dispatchEvent(new CustomEvent('bonet:goal'))
   await a.wait(1900)

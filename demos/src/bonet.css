@@ -200,3 +200,7 @@
 .bn-fchip[data-on] { animation: fchip 2.4s ease both; }
 @keyframes fchip { 0% { opacity: 0; transform: translate(-50%, -10px) scale(.9); } 12%, 80% { opacity: 1; transform: translate(-50%, 0) scale(1); } 100% { opacity: 0; transform: translate(-50%, 6px) scale(.98); } }
 .bn-wcol { min-width: 0; } .bn-wcol b { overflow-wrap: anywhere; line-height: 1.15; }
+
+/* annotation labels on the feedback demos: 2 to 4 words, appear with the beat they describe, static under reduced motion */
+.bn-ann { position: absolute; z-index: 3; padding: 5px 12px; border-radius: 12px; background: #fff7df; border: 2.5px solid #ffc23d; color: #7a4a00; font-weight: 900; font-size: 16px; line-height: 1.1; white-space: nowrap; opacity: 0; transform: translateY(6px) scale(.95); transition: opacity .4s ease, transform .5s cubic-bezier(.34,1.56,.64,1); }
+.bn-ann[data-on] { opacity: 1; transform: none; }

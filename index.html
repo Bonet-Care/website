@@ -34,8 +34,8 @@
 <meta name="twitter:description" content="A daily practice app for older adults. Move with your camera counting reps, practise speaking with hints, and play short brain games, with a corgi coach named Bonet. Free to start. A practice tool, not a medical device.">
 <meta name="twitter:image" content="https://bonet.care/img/og-en.png">
 <link rel="preload" href="/fonts/nunito-latin.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="/css/site.css?v=704a4a106a">
-<link rel="stylesheet" href="/css/demos.css?v=254e84d640">
+<link rel="stylesheet" href="/css/site.css?v=fdbb362d47">
+<link rel="stylesheet" href="/css/demos.css?v=c3d04ab24b">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Organization", "@id": "https://bonet.care/#organization", "name": "Coglix Labs Inc.", "url": "https://bonet.care/", "logo": "https://bonet.care/icon-512.png", "email": "hello@coglixlabs.com"}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "@id": "https://bonet.care/#software", "name": "Bonet", "alternateName": "哥基健動", "url": "https://bonet.care/", "image": "https://bonet.care/img/og-en.png", "applicationCategory": "LifestyleApplication", "operatingSystem": "Web browser", "inLanguage": ["en", "zh-Hant", "yue-Hant-HK", "zh-Hans", "ja", "es", "de", "fr"], "description": "A daily practice app for older adults. Move with your camera counting reps, practise speaking with hints, and play short brain games, with a corgi coach named Bonet. Free to start. A practice tool, not a medical device.", "publisher": {"@id": "https://bonet.care/#organization"}, "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Is Bonet a medical device or a therapy?", "acceptedAnswer": {"@type": "Answer", "text": "No. Bonet is a practice tool for home. It does not diagnose or treat anything. More answers"}}, {"@type": "Question", "name": "Does my camera video get uploaded?", "acceptedAnswer": {"@type": "Answer", "text": "No. Video is processed on your device and is never uploaded or recorded. More answers"}}, {"@type": "Question", "name": "Which languages does it speak?", "acceptedAnswer": {"@type": "Answer", "text": "Eight languages: English, Chinese, Japanese, Spanish, German and French. More answers"}}, {"@type": "Question", "name": "What is free, and what is Premium?", "acceptedAnswer": {"@type": "Answer", "text": "Free covers the basics. Premium is US$9.99 a month, with 7 days free. More answers"}}]}</script>
@@ -45,7 +45,7 @@
 <a class="skip" href="#main">Skip to content</a>
 <header class="hdr"><div class="wrap">
 <a class="brand" href="/" aria-label="Bonet"><img src="/img/mascot/head.webp" width="512" height="512" alt="">Bonet</a>
-<nav class="nav" aria-label="Main"><a href="/#how">Practice</a><a href="/science.html">How it works</a><a href="/#plans">Plans</a><a href="/#faq">FAQ</a></nav>
+<nav class="nav" aria-label="Main"><a href="/#practice">Practice</a><a href="/#feedback">Feedback</a><a href="/#plans">Plans</a><a href="/#compare">Compare</a><a href="/#faq">FAQ</a></nav>
 <details class="langmenu"><summary aria-label="Language"><img src="/img/icons/globe.webp" width="128" height="128" alt=""><span>English</span></summary><ul><li><a href="/" hreflang="en" lang="en" aria-current="true">English</a></li><li><a href="/zh-hant/" hreflang="zh-Hant" lang="zh-Hant">繁體中文</a></li><li><a href="/yue/" hreflang="yue-Hant-HK" lang="yue-Hant-HK">廣東話</a></li><li><a href="/zh-hans/" hreflang="zh-Hans" lang="zh-Hans">简体中文</a></li><li><a href="/ja/" hreflang="ja" lang="ja">日本語</a></li><li><a href="/es/" hreflang="es" lang="es">Español</a></li><li><a href="/de/" hreflang="de" lang="de">Deutsch</a></li><li><a href="/fr/" hreflang="fr" lang="fr">Français</a></li></ul></details>
 <button type="button" class="tsize" data-textsize aria-pressed="false" title="Bigger text" aria-label="Bigger text">A+</button>
 <a class="signin" href="https://app.bonet.care/">Sign in</a>
@@ -55,126 +55,141 @@
 <section class="hero"><div class="wrap hero-grid">
 <div class="hero-copy">
 <h1><span class="w" style="--i:0">A</span> <span class="w" style="--i:1">little</span> <span class="w" style="--i:2">practice,</span> <span class="w b" style="--i:3">every</span> <span class="w b" style="--i:4">day.</span> </h1>
-<div class="cta-row"><a class="btn btn--lg" href="https://app.bonet.care/">Start free</a><a class="btn btn--2 btn--lg" href="#how">See how it works</a></div>
+<p class="sub">Daily practice for older adults, including after a stroke. Every session tracked, with feedback made for you.</p>
+<div class="cta-row"><a class="btn btn--lg" href="https://app.bonet.care/">Start free</a><a class="btn btn--2 btn--lg" href="#practice">See how it works</a></div>
+<p class="priceline">Free to start. Premium US$9.99 a month, about 33 cents a day.</p>
 </div>
 <div class="hero-art" data-ss-fill>
-<span class="fl" style="left:4%;top:8%;width:3.2rem;--k:18" data-par><img src="/img/icons/star.webp" width="128" height="128" alt=""></span>
+<span class="fl" style="left:4%;top:8%;width:2.6rem;--k:18" data-par><img src="/img/icons/star.webp" width="128" height="128" alt=""></span>
 <div class="corgi" data-corgi role="img" aria-label="Bonet the corgi"><button type="button" class="pupbtn" data-hover="wiggle" tabindex="-1" aria-hidden="true"><span class="sprite" data-clip="wave" data-then="idle" data-loops="2" data-rest="idle"></span></button></div>
-<div class="demo" data-demo="hero" role="img" aria-label="Animated preview: tap Start on the Today path, the camera counts three arm raises, Great set, and the step is ticked."></div>
+<div class="demo" data-demo="hero" data-pq="1" role="img" aria-label="Animated preview: tap Start on the Today path, the camera counts three arm raises, Great set, and the step is ticked."></div>
 </div></div></section>
 
-<section class="sec sec--wash" id="how"><div class="wrap">
-<div class="feat">
-<div class="feat-copy"><h2 class="display  rv-word">Move</h2>
-<p class="kicker rv">The camera counts your reps.</p></div>
-<div class="feat-art"><div class="card-demo rv-tilt " data-ss-fill><div class="demo" data-demo="move" role="img" aria-label="Animated preview of the exercise screen counting 1, 2, 3 reps beside a 3D guide."></div></div></div>
-</div>
+<section class="sec" id="why"><div class="wrap"><div class="why"><div class="why-i rv" style="--rd:0.00s"><img src="/img/icons/today.webp" width="128" height="128" alt="" loading="lazy"><h3>Three kinds of practice, one plan</h3><p>Movement, speaking and brain games share one daily plan.</p></div><div class="why-i rv" style="--rd:0.08s"><img src="/img/icons/fire.webp" width="128" height="128" alt="" loading="lazy"><h3>Made to come back to</h3><p>A daily path, a streak, a weekly league and a corgi to dress up.</p></div><div class="why-i rv" style="--rd:0.16s"><img src="/img/icons/ear.webp" width="128" height="128" alt="" loading="lazy"><h3>Feedback made for you</h3><p>Specific to each session: how high, how steady, which words.</p></div><div class="why-i rv" style="--rd:0.24s"><img src="/img/icons/chart.webp" width="128" height="128" alt="" loading="lazy"><h3>A report your therapist can read</h3><p>Tracked over time, so you can see the change.</p></div></div></div></section>
 
-<div class="feat feat--flip">
-<div class="feat-copy"><h2 class="display  rv-word">Speak</h2>
-<p class="kicker rv">Hints start small and grow, one step at a time.</p>
-<div class="card-demo rv-tilt" style="max-width:420px;margin-top:.6rem"><div class="demo" data-demo="hint" role="img" aria-label="Animated preview: tapping Give me a hint shows three hints, one after another."></div></div></div>
-<div class="feat-art"><div class="card-demo rv-tilt " data-ss-fill><div class="demo" data-demo="speak" role="img" aria-label="Animated preview: word tiles move into place to build a sentence and Great! appears."></div></div></div>
+<section class="sec sec--wash" id="practice"><span id="how"></span><div class="wrap">
+<div class="open open--c"><h2 class="display display--ink rv-word">What you practise</h2></div>
+<div class="tabs" data-tabs>
+<div class="tablist" role="tablist" aria-label="What you practise"><button type="button" role="tab" id="t-move" aria-controls="p-move" aria-selected="true" tabindex="0"><img src="/img/icons/muscle.webp" width="128" height="128" alt="" loading="lazy"><span>Move</span></button><button type="button" role="tab" id="t-speak" aria-controls="p-speak" aria-selected="false" tabindex="-1"><img src="/img/icons/speak.webp" width="128" height="128" alt="" loading="lazy"><span>Speak</span></button><button type="button" role="tab" id="t-think" aria-controls="p-think" aria-selected="false" tabindex="-1"><img src="/img/icons/brain.webp" width="128" height="128" alt="" loading="lazy"><span>Think</span></button></div>
+<div class="panels">
+<div class="panel" role="tabpanel" id="p-move" aria-labelledby="t-move" tabindex="0">
+<div class="panel-copy"><h2 class="display  rv-word">Move</h2><p class="kicker rv">Arms and shoulders, hands, sit-to-stand, legs and balance.</p><ol class="steps"><li><b>See it</b><span>A 3D guide shows the move.</span></li><li><b>Do it</b><span>The camera counts each rep.</span></li><li><b>Get a tip</b><span>Height, steadiness, left and right. The next plan adjusts.</span></li></ol></div>
+<div class="panel-art"><div class="card-demo rv-tilt " data-ss-fill><div class="demo" data-demo="move" role="img" aria-label="Animated preview of the exercise screen counting 1, 2, 3 reps beside a 3D guide."></div></div></div>
 </div>
-
-<div class="feat">
-<div class="feat-copy"><h2 class="display display--or rv-word">Think</h2>
-<p class="kicker rv">Short games for memory and attention.</p></div>
-<div class="feat-art"><div class="card-demo rv-tilt " data-ss-fill><div class="demo" data-demo="brain" role="img" aria-label="Animated preview: two cards flip and match in a pairs game."></div></div></div>
+<div class="panel" role="tabpanel" id="p-speak" aria-labelledby="t-speak" tabindex="0">
+<div class="panel-copy"><h2 class="display  rv-word">Speak</h2><p class="kicker rv">Say words, name pictures, build sentences, listen.</p><ol class="steps"><li><b>Say it</b><span>Pick a level and say the words aloud.</span></li><li><b>Get a hint</b><span>Stuck? Hints grow one step at a time.</span></li><li><b>See what it heard</b><span>Words heard, pace and pauses. Items return for review.</span></li></ol></div>
+<div class="panel-art"><div class="card-demo rv-tilt " data-ss-fill><div class="demo" data-demo="speak" role="img" aria-label="Animated preview: word tiles move into place to build a sentence and Great! appears."></div></div></div>
 </div>
+<div class="panel" role="tabpanel" id="p-think" aria-labelledby="t-think" tabindex="0">
+<div class="panel-copy"><h2 class="display display--or rv-word">Think</h2><p class="kicker rv">Memory, attention and quick thinking, in six games.</p><ol class="steps"><li><b>Play a round</b><span>Short rounds you can start any time.</span></li><li><b>It follows you</b><span>Difficulty adjusts to how you do.</span></li><li><b>See results</b><span>Your results over time.</span></li></ol></div>
+<div class="panel-art"><div class="card-demo rv-tilt " data-ss-fill><div class="demo" data-demo="brain" role="img" aria-label="Animated preview: two cards flip and match in a pairs game."></div></div></div>
+</div>
+</div></div>
 </div></section>
 
-
-<section class="sec"><div class="wrap">
-<div class="open"><h2 class="display display--ink rv-word">Also on a big screen</h2></div>
-<div class="card-demo rv-tilt card-demo--wide" data-ss-fill><div class="demo" data-demo="web" role="img" aria-label="Animated preview of Bonet in a browser: the Move tab, an exercise started, and three reps counted."></div></div>
+<section class="sec sec--blue" id="feedback"><div class="wrap">
+<div class="open open--c"><h2 class="display display--ink rv-word">See how it went. Share it with your therapist.</h2><p class="kicker rv">Every session gets a picture, a next step and a place in your report.</p></div>
+<div class="fb3">
+<div class="fb-col rv" style="--rd:0.00s"><div class="fb-vis"><div class="card-demo" data-ss-fill><div class="demo" data-demo="qmove" role="img" aria-label="Animated preview: after a set, a six-sided chart draws itself and moves from last time to today, then a tip card slides in."></div></div></div><h3>A picture of each session</h3><p>How this session went, next to last time</p></div>
+<div class="fb-col rv" style="--rd:0.35s"><div class="fb-vis"><div class="fb-tip"><img src="/img/mascot/point.webp" width="512" height="512" alt="">
+<b>A tip for next time</b><p>Lift a little higher on your left side.</p>
+<div class="fb-plan" aria-hidden="true"><span class="on"><img src="/img/icons/muscle.webp" width="128" height="128" alt=""></span><span><img src="/img/icons/speak.webp" width="128" height="128" alt=""></span><span><img src="/img/icons/brain.webp" width="128" height="128" alt=""></span><em>Tomorrow's plan adjusts</em></div></div></div><h3>One thing to work on</h3><p>A specific tip after every session. The next daily plan adjusts to it.</p></div>
+<div class="fb-col rv" style="--rd:0.70s"><div class="fb-vis"><a class="fb-paper" href="/example-report" aria-label="See a full sample report">
+<span class="fb-ptop"><img src="/img/mascot/point.webp" width="512" height="512" alt=""><b>Home practice report</b></span>
+<small class="fb-sample">Sample data &middot; Last 2 weeks</small>
+<span class="fb-psum"><span><small>Days practised</small><b>11</b></span><span><small>Minutes</small><b>180</b></span><span><svg viewBox="0 0 300 300" width="64" height="64" aria-hidden="true"><polygon points="150.0,125.0 171.7,137.5 171.7,162.5 150.0,175.0 128.3,162.5 128.3,137.5" fill="none" stroke="#e5e7eb" stroke-width="2"/><polygon points="150.0,100.0 193.3,125.0 193.3,175.0 150.0,200.0 106.7,175.0 106.7,125.0" fill="none" stroke="#e5e7eb" stroke-width="2"/><polygon points="150.0,75.0 215.0,112.5 215.0,187.5 150.0,225.0 85.0,187.5 85.0,112.5" fill="none" stroke="#e5e7eb" stroke-width="2"/><polygon points="150.0,50.0 236.6,100.0 236.6,200.0 150.0,250.0 63.4,200.0 63.4,100.0" fill="none" stroke="#e5e7eb" stroke-width="2"/><line x1="150" y1="150" x2="150.0" y2="50.0" stroke="#e5e7eb" stroke-width="2"/><line x1="150" y1="150" x2="236.6" y2="100.0" stroke="#e5e7eb" stroke-width="2"/><line x1="150" y1="150" x2="236.6" y2="200.0" stroke="#e5e7eb" stroke-width="2"/><line x1="150" y1="150" x2="150.0" y2="250.0" stroke="#e5e7eb" stroke-width="2"/><line x1="150" y1="150" x2="63.4" y2="200.0" stroke="#e5e7eb" stroke-width="2"/><line x1="150" y1="150" x2="63.4" y2="100.0" stroke="#e5e7eb" stroke-width="2"/><polygon points="150.0,95.0 202.0,120.0 193.3,175.0 150.0,195.0 106.7,175.0 89.4,115.0" fill="rgba(107,116,132,.12)" stroke="#6b7484" stroke-width="2.5" stroke-dasharray="6 6"/><polygon points="150.0,80.0 206.3,117.5 203.7,181.0 150.0,205.0 98.0,180.0 76.4,107.5" fill="rgba(31,138,230,.22)" stroke="#1f8ae6" stroke-width="4" stroke-linejoin="round"/><circle cx="150.0" cy="80.0" r="5.5" fill="#1f8ae6"/><circle cx="206.3" cy="117.5" r="5.5" fill="#1f8ae6"/><circle cx="203.7" cy="181.0" r="5.5" fill="#1f8ae6"/><circle cx="150.0" cy="205.0" r="5.5" fill="#1f8ae6"/><circle cx="98.0" cy="180.0" r="5.5" fill="#1f8ae6"/><circle cx="76.4" cy="107.5" r="5.5" fill="#1f8ae6"/><text x="150.0" y="23.0" text-anchor="middle" dominant-baseline="middle" font-size="0" font-weight="900" fill="#3f4a5a">Range</text><text x="260.0" y="86.5" text-anchor="middle" dominant-baseline="middle" font-size="0" font-weight="900" fill="#3f4a5a">Pace</text><text x="260.0" y="213.5" text-anchor="middle" dominant-baseline="middle" font-size="0" font-weight="900" fill="#3f4a5a">Steady</text><text x="150.0" y="277.0" text-anchor="middle" dominant-baseline="middle" font-size="0" font-weight="900" fill="#3f4a5a">L/R</text><text x="40.0" y="213.5" text-anchor="middle" dominant-baseline="middle" font-size="0" font-weight="900" fill="#3f4a5a">Hold</text><text x="40.0" y="86.5" text-anchor="middle" dominant-baseline="middle" font-size="0" font-weight="900" fill="#3f4a5a">Done</text></svg></span></span>
+<span class="fb-pbars"><i style="height:40%"></i><i style="height:4%" class=zero></i><i style="height:60%"></i><i style="height:60%"></i><i style="height:4%" class=zero></i><i style="height:40%"></i><i style="height:80%"></i><i style="height:60%"></i><i style="height:60%"></i><i style="height:4%" class=zero></i><i style="height:80%"></i><i style="height:60%"></i><i style="height:80%"></i><i style="height:100%" class=new></i></span>
+<span class="fb-saved">&#10003; Saved</span></a></div><h3>Ready for your therapist</h3><p>Every session is saved to your progress and your shareable report.</p><a class="fb-more" href="/example-report">See a full sample report</a></div>
+</div>
+<p class="note res-note">These are automatic measures of home practice and general practice tips. They are not a clinical assessment or medical advice.</p>
 </div></section>
 
-<section class="sec sec--blue"><div class="wrap">
-<div class="open"><h2 class="display  rv-word">Big. Calm. Easy.</h2></div>
-<div class="duo">
-<div class="rv-tilt"><div class="card-demo" data-ss-fill><div class="demo" data-demo="simple" role="img" aria-label="Animated preview: turning on Simple mode changes a busy list into one big Start button."></div></div><div class="tcap"><h3>Simple mode</h3></div></div>
-<div class="rv-tilt"><div class="card-demo" data-ss-fill><div class="demo" data-demo="lang" role="img" aria-label="Animated preview: a greeting changes through eight languages."></div></div><div class="tcap"><h3>Eight languages</h3></div></div>
-</div></div></section>
-
 <section class="sec"><div class="wrap">
-<div class="open"><h2 class="display display--ink rv-word">Come back tomorrow.</h2></div>
+<div class="open open--c"><h2 class="display display--ink rv-word">Come back tomorrow.</h2></div>
 <div class="trio">
 <div class="rv-tilt"><div class="card-demo" data-ss-fill><div class="demo" data-demo="streak" role="img" aria-label="Animated preview: a streak calendar where a saver covers a missed day."></div></div><div class="tcap"><h3>Keep your streak</h3></div></div>
 <div class="rv-tilt"><div class="card-demo" data-ss-fill><div class="demo" data-demo="league" role="img" aria-label="Animated preview: a weekly league where your row climbs after practice."></div></div><div class="tcap"><h3>Weekly league</h3></div></div>
 <div class="rv-tilt"><div class="card-demo" data-ss-fill data-wardrobe><div class="demo" data-demo="wardrobe" role="img" aria-label="Animated preview: Bonet the corgi trying on a bandana, a bow tie, a cap and a crown."></div></div><div class="tcap"><h3>Dress up Bonet</h3></div></div>
 </div></div></section>
 
-<section class="sec sec--wash"><div class="wrap">
-<div class="feat">
-<div class="feat-copy"><h2 class="display rv-word">Progress you can see.</h2>
-<p class="kicker rv">Share a one-page report with your therapist or family.</p></div>
-<div class="feat-art"><div class="card-demo rv-tilt" data-ss-fill><div class="demo" data-demo="progress" role="img" aria-label="Animated preview: a weekly progress chart drawing in."></div></div>
-<div class="paper rv" aria-hidden="true"><img src="/img/mascot/point.webp" width="512" height="512" alt=""><h4>Home practice report</h4><small>Last 2 weeks</small>
-<div class="bars rv-bars"><i style="height:45%;--i:0"></i><i style="height:70%;--i:1"></i><i style="height:30%;--i:2"></i><i style="height:85%;--i:3"></i><i style="height:60%;--i:4"></i><i style="height:95%;--i:5"></i><i style="height:75%;--i:6"></i></div><div class="ln"></div><div class="ln m"></div><div class="ln s"></div></div></div>
-</div></div></section>
+<section class="sec" id="plans"><div class="wrap">
+<div class="open open--c"><h2 class="display display--ink rv-word">Start free.</h2><p class="kicker rv">Priced for everyday use: US$9.99 a month, about 33 cents a day.</p></div>
+<div class="plans">
+<article class="plan rv"><h3>Free plan</h3><p class="price">Free</p><ul><li>Speaking levels 1 to 3 of 40</li><li>8 of 34 exercises</li><li>Brain games on Easy</li><li>Last 7 days of progress</li><li>Report for the last 2 weeks</li><li>Streak, league, outfits</li></ul><a class="btn btn--2 btn--lg" href="https://app.bonet.care/">Start free</a></article>
+<article class="plan plan--pro rv" style="--rd:.1s"><h3>Premium</h3><p class="price"><mark class="usd">US$9.99</mark> <small>a month</small></p><p class="trial">about 33 cents a day. 7 days free</p><ul><li>All 40 speaking levels</li><li>All 34 exercises, your own plans</li><li>Every brain game level</li><li>Full history and report</li><li>Everything in Free</li></ul><a class="btn btn--lg" href="https://app.bonet.care/">Start 7 days free</a><p class="canc"><a href="/subscriptions">Cancel any time</a></p></article>
+</div>
+<p class="vnote">7 days free, then billed monthly. Cancel in Settings.</p>
+</div></section>
 
 <section class="sec" id="compare"><div class="wrap">
-<div class="open"><h2 class="display display--ink rv-word">How Bonet compares</h2></div>
-<div class="cmpwrap" role="region" tabindex="0" aria-label="Comparison table"><table class="cmp cmp--s"><thead><tr><th scope="col"><span class="sr">Feature</span></th><th scope="col" class="us">Bonet</th><th scope="col">Constant Therapy</th><th scope="col">Tactus Therapy</th><th scope="col">Paper handout</th></tr></thead><tbody><tr><th scope="row">Camera counts reps</th><td class="us"><span class="mk y" aria-label="Yes">✓</span></td><td><span class="mk n" aria-label="Not offered, as far as we can tell">–</span></td><td><span class="mk n" aria-label="Not offered, as far as we can tell">–</span></td><td><span class="mk p" aria-label="Partly">Part</span></td></tr><tr><th scope="row">Speaking practice</th><td class="us"><span class="mk y" aria-label="Yes">✓</span></td><td><span class="mk y" aria-label="Yes">✓</span></td><td><span class="mk p" aria-label="Partly">Part</span></td><td><span class="mk p" aria-label="Partly">Part</span></td></tr><tr><th scope="row">Brain games</th><td class="us"><span class="mk y" aria-label="Yes">✓</span></td><td><span class="mk y" aria-label="Yes">✓</span></td><td><span class="mk p" aria-label="Partly">Part</span></td><td><span class="mk p" aria-label="Partly">Part</span></td></tr><tr><th scope="row">One daily plan</th><td class="us"><span class="mk y" aria-label="Yes">✓</span></td><td><span class="mk p" aria-label="Partly">Part</span></td><td><span class="mk n" aria-label="Not offered, as far as we can tell">–</span></td><td><span class="mk p" aria-label="Partly">Part</span></td></tr><tr><th scope="row">Streak, league, mascot</th><td class="us"><span class="mk y" aria-label="Yes">✓</span></td><td><span class="mk n" aria-label="Not offered, as far as we can tell">–</span></td><td><span class="mk n" aria-label="Not offered, as far as we can tell">–</span></td><td><span class="mk n" aria-label="No">–</span></td></tr><tr><th scope="row">Languages</th><td class="us"><span class="mk y" aria-label="Yes">8</span></td><td><span class="mk p" aria-label="2">2</span></td><td><span class="mk p" aria-label="4">4</span></td><td><span class="mk p" aria-label="1+">1+</span></td></tr></tbody></table></div>
+<div class="open open--c"><h2 class="display display--ink rv-word">How Bonet compares</h2></div>
+<div class="cmpwrap" role="region" tabindex="0" aria-label="Comparison table"><table class="cmp cmp--s"><thead><tr><th scope="col"><span class="sr">Feature</span></th><th scope="col" class="us">Bonet</th><th scope="col">Constant Therapy</th><th scope="col">Tactus Therapy</th><th scope="col">Paper handout</th></tr></thead><tbody><tr><th scope="row">Camera counts reps</th><td class="us"><span class="mk y" aria-label="Yes">✓</span></td><td><span class="mk n" aria-label="Not offered, as far as we can tell">–</span></td><td><span class="mk n" aria-label="Not offered, as far as we can tell">–</span></td><td><span class="mk p" aria-label="Partly">Part</span></td></tr><tr><th scope="row">Speaking practice</th><td class="us"><span class="mk y" aria-label="Yes">✓</span></td><td><span class="mk y" aria-label="Yes">✓</span></td><td><span class="mk p" aria-label="Partly">Part</span></td><td><span class="mk p" aria-label="Partly">Part</span></td></tr><tr><th scope="row">Brain games</th><td class="us"><span class="mk y" aria-label="Yes">✓</span></td><td><span class="mk y" aria-label="Yes">✓</span></td><td><span class="mk p" aria-label="Partly">Part</span></td><td><span class="mk p" aria-label="Partly">Part</span></td></tr><tr><th scope="row">One daily plan</th><td class="us"><span class="mk y" aria-label="Yes">✓</span></td><td><span class="mk p" aria-label="Partly">Part</span></td><td><span class="mk n" aria-label="Not offered, as far as we can tell">–</span></td><td><span class="mk p" aria-label="Partly">Part</span></td></tr><tr><th scope="row">Streak, league, mascot</th><td class="us"><span class="mk y" aria-label="Yes">✓</span></td><td><span class="mk n" aria-label="Not offered, as far as we can tell">–</span></td><td><span class="mk n" aria-label="Not offered, as far as we can tell">–</span></td><td><span class="mk n" aria-label="No">–</span></td></tr><tr><th scope="row">Practice tips</th><td class="us"><span class="mk y" aria-label="Yes">✓</span></td><td><span class="mk p" aria-label="Partly">Part</span></td><td><span class="mk p" aria-label="Partly">Part</span></td><td><span class="mk n" aria-label="No">–</span></td></tr><tr><th scope="row">Languages</th><td class="us"><span class="mk y" aria-label="Yes">8</span></td><td><span class="mk p" aria-label="2">2</span></td><td><span class="mk p" aria-label="4">4</span></td><td><span class="mk p" aria-label="1+">1+</span></td></tr><tr class="pricerow"><th scope="row">Price</th><td class="us"><span class="mk t y">US$9.99 / month</span><small>Free plan</small></td><td><span class="mk t">$29.99 / month</span></td><td><span class="mk t">$89.99</span><small>4-in-1 app</small></td><td><span class="mk t">Free</span></td></tr></tbody></table></div>
 <p class="asof">✓ yes, Part = partly, – not offered as far as we can tell. As of November 2026. <a href="/compare.html">Notes and sources</a></p>
 </div></section>
 
-<section class="wrap"><div class="strip"><p class="rv">Camera video stays on your device. <span>Bonet is not a medical device.</span></p>
-<a class="btn btn--2" href="/compliance.html">Privacy and safety</a></div></section>
 
-<section class="sec sec--wash"><div class="wrap">
-<div class="open"><h2 class="rv">Bonet in 50 seconds</h2></div>
-<button type="button" class="player rv-tilt" data-video="/media/demo/bonet-demo-en.mp4" data-lang="English" aria-label="Play the demo video"><img src="/media/demo/bonet-demo-en.jpg" width="1280" height="720" alt="" loading="lazy"><span class="play" aria-hidden="true"></span></button>
-<noscript><p class="vnote"><a href="/media/demo/bonet-demo-en.mp4">Open the demo video</a></p></noscript>
-
-</div></section>
 
 <section class="sec sec--wash" id="cost"><div class="wrap">
-<div class="open"><h2 class="display display--ink rv-word">Count your practice days.</h2></div>
-<div class="cb" data-cost data-cur="US$" data-price="9.99" data-trial="7" data-weeks="4.3333" data-notset="Not set" data-lang="en">
-<form class="cb-form" aria-label="Count your practice days."><div class="cb-field"><label for="cb-visits">Therapist visits a month</label><output for="cb-visits" id="cb-visits-o" data-out="visits" aria-live="polite">4</output><input type="range" id="cb-visits" name="visits" min="0" max="12" step="1" value="4" data-in="visits"></div><div class="cb-field"><label for="cb-cost">What one visit costs you (US$)</label><output for="cb-cost" id="cb-cost-o" data-out="cost" aria-live="polite">Not set</output><input type="range" id="cb-cost" name="cost" min="0" max="300" step="5" value="0" data-in="cost"></div><div class="cb-field"><label for="cb-days">Days a week with Bonet</label><output for="cb-days" id="cb-days-o" data-out="days" aria-live="polite">3</output><input type="range" id="cb-days" name="days" min="1" max="7" step="1" value="3" data-in="days"></div><div class="cb-field"><label for="cb-mins">Minutes a day with Bonet</label><output for="cb-mins" id="cb-mins-o" data-out="mins" aria-live="polite">15</output><input type="range" id="cb-mins" name="mins" min="5" max="60" step="5" value="15" data-in="mins"></div></form>
-<div class="cb-res">
-<dl class="cb-stats"><div class="cb-stat"><dt>Practice days a month</dt><dd><output data-out="pdays" aria-live="polite">13</output></dd></div><div class="cb-stat"><dt>Premium cost per practice day</dt><dd><output data-out="per_day" aria-live="polite">US$0.77</output></dd></div></dl>
-<div class="cb-chart" data-chart>
-<p class="cb-hint" data-hint>Add what a visit costs you to see the bars.</p>
+<div class="open open--c"><h2 class="display display--ink rv-word">Count your practice days.</h2></div>
+<div class="cb" data-cost data-cur="US$" data-price="9.99" data-trial="7" data-weeks="4.3333" data-notset="Not set" data-lang="en" data-msg-none="No visits planned? Bonet still gives you a plan, feedback and a record every day." data-msg-n="Between visits you would have {n} guided practice days on record.">
+<form class="cb-form cb-card" aria-label="Count your practice days."><div class="cb-field"><label for="cb-days">Days a week with Bonet</label><output for="cb-days" id="cb-days-o" data-out="days" aria-live="polite">3</output><input type="range" id="cb-days" name="days" min="1" max="7" step="1" value="3" data-in="days" style="--p:33.3%"></div><div class="cb-field"><label for="cb-mins">Minutes a day with Bonet</label><output for="cb-mins" id="cb-mins-o" data-out="mins" aria-live="polite">10</output><input type="range" id="cb-mins" name="mins" min="5" max="60" step="5" value="10" data-in="mins" style="--p:9.1%"></div><fieldset class="cb-choice"><legend>Do you see a therapist?</legend><div class="cb-opts"><label><input type="radio" name="ther" value="none" data-ther><span>Not now</span></label><label><input type="radio" name="ther" value="some" data-ther checked><span>Now and then</span></label><label><input type="radio" name="ther" value="month" data-ther><span>About monthly</span></label><label><input type="radio" name="ther" value="often" data-ther><span>Every week or two</span></label></div></fieldset><div class="cb-field" data-costfield><label for="cb-cost">What one visit costs you (US$)</label><output for="cb-cost" id="cb-cost-o" data-out="cost" aria-live="polite">Not set</output><input type="range" id="cb-cost" name="cost" min="0" max="300" step="5" value="0" data-in="cost" style="--p:0.0%"><p class="cb-tip" data-tip>Add a visit cost to compare.</p></div></form>
+<div class="cb-res cb-card">
+<div class="cb-cal"><div><p class="cb-cap">Your month</p><div class="cb-days" data-days role="img" aria-label="Practice days this month"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div></div>
+<img class="cb-pup" data-pup src="/img/mascot/encourage.webp" width="512" height="512" alt=""></div>
+<dl class="cb-stats"><div class="cb-stat cb-stat--main"><dt>Practice days a month</dt><dd><output data-out="pdays" aria-live="polite">13</output></dd></div><div class="cb-stat "><dt>Minutes with Bonet a month</dt><dd><output data-out="mins_month" aria-live="polite">130</output></dd></div><div class="cb-stat "><dt>Everyday price per practice day</dt><dd><output data-out="per_day" aria-live="polite">US$0.77</output></dd></div></dl>
+<p class="cb-msg" data-msg aria-live="polite"></p>
 <div class="cb-bars" data-bars hidden>
 <div class="cb-bar"><span>One visit: what you pay</span><div class="cb-track"><i data-bar="visit"></i></div><b data-val="visit"></b></div>
 <div class="cb-bar cb-bar--pro"><span>A month of Premium</span><div class="cb-track"><i data-bar="prem"></i></div><b data-val="prem">US$9.99</b></div>
-</div></div></div>
+</div>
+</div>
 </div>
 <p class="cb-line">Bonet is for practice between visits. It does not replace your therapist.</p>
-<p class="note"><a href="/compare.html#cost-sources">About the numbers</a></p>
+<p class="note cb-note"><a href="/compare.html#cost-sources">About the numbers</a></p>
 </div></section>
 
-<section class="sec" id="plans"><div class="wrap">
-<div class="open"><h2 class="display display--ink rv-word">Start free.</h2></div>
-<div class="plans">
-<div class="plan rv"><h3>Free plan</h3><div class="price">Free</div><a class="btn btn--2" href="https://app.bonet.care/">Start free</a></div>
-<div class="plan plan--pro rv" style="--rd:.1s"><h3>Premium</h3><div class="price"><mark class="usd">US$9.99</mark> <small>a month</small></div><p class="trial">7 days free</p><a class="btn" href="https://app.bonet.care/">Start 7 days free</a></div>
+
+<section class="sec" id="who"><div class="wrap">
+<div class="open open--c"><h2 class="display display--ink rv-word">Who Bonet is for</h2></div>
+<ul class="who"><li class="rv"><span class="wc"><img src="/img/icons/sun.webp" width="128" height="128" alt="" loading="lazy"><span>Older adults keeping active every day</span></span></li><li class="rv"><span class="wc"><img src="/img/icons/footprints.webp" width="128" height="128" alt="" loading="lazy"><span>Practising at home after a stroke or injury</span></span></li><li class="rv"><span class="wc"><img src="/img/icons/calendar.webp" width="128" height="128" alt="" loading="lazy"><span>Between physio or speech therapy visits</span></span></li><li class="rv"><span class="wc"><img src="/img/icons/brain.webp" width="128" height="128" alt="" loading="lazy"><span>Regular memory and attention practice</span></span></li><li class="rv"><span class="wc"><img src="/img/icons/heart.webp" width="128" height="128" alt="" loading="lazy"><span>Families and carers helping out</span></span></li><li class="rv"><a class="wc" href="/therapist.html"><img src="/img/icons/chart.webp" width="128" height="128" alt="" loading="lazy"><span>Therapists following home practice</span></a></li></ul>
+<p class="calm rv">Bonet is a practice tool. It is not a medical device and does not diagnose or treat. Ask your doctor or therapist what practice is right for you. <a href="/safety">Privacy and safety</a></p>
+</div></section>
+
+<section class="sec sec--blue"><div class="wrap">
+<div class="open open--c"><h2 class="display  rv-word">Big. Calm. Easy.</h2></div>
+<div class="duo">
+<div class="rv-tilt"><div class="card-demo" data-ss-fill><div class="demo" data-demo="simple" role="img" aria-label="Animated preview: turning on Simple mode changes a busy list into one big Start button."></div></div><div class="tcap"><h3>Simple mode</h3></div></div>
+<div class="rv-tilt"><div class="card-demo" data-ss-fill><div class="demo" data-demo="lang" role="img" aria-label="Animated preview: a greeting changes through eight languages."></div></div><div class="tcap"><h3>Eight languages</h3></div></div>
 </div>
-<p class="vnote">7 days free, then billed monthly. Cancel in Settings. For now, checkout charges Hong Kong dollars (HK$78).</p>
+<p class="safe rv">Camera video stays on your device. <span>Bonet is not a medical device.</span> <a href="/compliance.html">Privacy and safety</a></p>
 </div></section>
 
 <section class="sec sec--wash" id="faq"><div class="wrap">
-<div class="open"><h2 class="rv">Questions, answered plainly</h2></div>
+<div class="open open--c"><h2 class="rv">Questions, answered plainly</h2></div>
 <div class="faq"><details><summary>Is Bonet a medical device or a therapy?</summary><div><p>No. Bonet is a practice tool for home. It does not diagnose or treat anything. <a href="/faq">More answers</a></p></div></details><details><summary>Does my camera video get uploaded?</summary><div><p>No. Video is processed on your device and is never uploaded or recorded. <a href="/faq">More answers</a></p></div></details><details><summary>Which languages does it speak?</summary><div><p>Eight languages: English, Chinese, Japanese, Spanish, German and French. <a href="/faq">More answers</a></p></div></details><details><summary>What is free, and what is Premium?</summary><div><p>Free covers the basics. Premium is US$9.99 a month, with 7 days free. <a href="/faq">More answers</a></p></div></details></div></div></section>
 
 <section class="final" data-final><div class="wrap">
-<h2 class="rv">Ready for today?</h2>
+<span class="fi fi1"><img src="/img/icons/star.webp" width="128" height="128" alt=""></span><span class="fi fi2"><img src="/img/icons/heart.webp" width="128" height="128" alt=""></span><span class="fi fi3"><img src="/img/icons/bone.webp" width="128" height="128" alt=""></span>
+<div class="final-stage">
+<div class="fpup" role="img" aria-label="Bonet the corgi"><button type="button" class="pupbtn" data-hover="cheer" tabindex="-1" aria-hidden="true"><span class="sprite" data-seq="tilt,wiggle,wave,idle" data-rest="idle"></span></button><i class="gshadow"></i></div>
+<div class="final-say">
+<h2 class="rv">Ready when you are.</h2>
+<p class="bubble rv">Just a few minutes. I'll count.</p>
 <a class="btn btn--lg" href="https://app.bonet.care/">Start free</a>
-<div class="pup" aria-hidden="true"><img class="treat" src="/img/icons/bone.webp" width="128" height="128" alt=""><span class="sprite" data-clip="idle" data-hover="wiggle"></span></div>
+<p class="priceline">Free to start. Premium US$9.99 a month, 7 days free.</p>
+</div></div>
 </div></section>
+
 </main>
-<script defer src="/js/cost.js?v=5e3a3ca0fe"></script>
+<script defer src="/js/cost.js?v=0a8aae0b06"></script>
 <footer class="ftr"><div class="wrap">
-<div class="ftr-pup"><button type="button" class="pupbtn" data-sprite="sleep" data-hover="wiggle" aria-label="Bonet says hello"><span class="sprite" data-clip="sleep" data-rest="sleep" aria-hidden="true"></span></button></div>
-<nav aria-label="Footer"><a href="/privacy" hreflang="en" lang="en">Privacy</a><a href="/terms" hreflang="en" lang="en">Terms</a><a href="/subscriptions" hreflang="en" lang="en">Subscriptions and refunds</a><a href="/cookies" hreflang="en" lang="en">Cookies</a><a href="/consumer-health-data" hreflang="en" lang="en">Consumer health data</a><a href="/safety">Privacy and safety</a><a href="/ai-and-automatic-measures" hreflang="en" lang="en">How Bonet measures</a><a href="/faq">FAQ</a><a href="mailto:hello@coglixlabs.com">Contact</a><button type="button" class="linkbtn" data-consent-open>Cookie settings</button></nav>
+<div class="ftr-top"><a class="brand" href="/" aria-label="Bonet"><img src="/img/mascot/head.webp" width="512" height="512" alt="">Bonet</a><p>Daily home practice for movement, speaking and brain games.</p></div>
+<div class="ftr-cols"><nav aria-label="Footer"><a href="/privacy" hreflang="en" lang="en">Privacy</a><a href="/terms" hreflang="en" lang="en">Terms</a><a href="/subscriptions" hreflang="en" lang="en">Subscriptions and refunds</a><a href="/cookies" hreflang="en" lang="en">Cookies</a><a href="/consumer-health-data" hreflang="en" lang="en">Consumer health data</a><a href="/safety">Privacy and safety</a><a href="/ai-and-automatic-measures" hreflang="en" lang="en">How Bonet measures</a><a href="/faq">FAQ</a><a href="mailto:hello@coglixlabs.com">Contact</a><button type="button" class="linkbtn" data-consent-open>Cookie settings</button></nav>
 <nav class="ftr-more" aria-label="Bonet"><a href="/science.html">How it works</a><a href="/therapist.html">For therapists</a><a href="/blog/">Blog</a></nav>
-<nav class="ftr-langs" aria-label="Language"><a href="/" hreflang="en" lang="en">English</a><a href="/zh-hant/" hreflang="zh-Hant" lang="zh-Hant">繁體中文</a><a href="/yue/" hreflang="yue-Hant-HK" lang="yue-Hant-HK">廣東話</a><a href="/zh-hans/" hreflang="zh-Hans" lang="zh-Hans">简体中文</a><a href="/ja/" hreflang="ja" lang="ja">日本語</a><a href="/es/" hreflang="es" lang="es">Español</a><a href="/de/" hreflang="de" lang="de">Deutsch</a><a href="/fr/" hreflang="fr" lang="fr">Français</a></nav>
-<p>&copy; 2026 Coglix Labs Inc.</p>
+<nav class="ftr-langs" aria-label="Language"><a href="/" hreflang="en" lang="en">English</a><a href="/zh-hant/" hreflang="zh-Hant" lang="zh-Hant">繁體中文</a><a href="/yue/" hreflang="yue-Hant-HK" lang="yue-Hant-HK">廣東話</a><a href="/zh-hans/" hreflang="zh-Hans" lang="zh-Hans">简体中文</a><a href="/ja/" hreflang="ja" lang="ja">日本語</a><a href="/es/" hreflang="es" lang="es">Español</a><a href="/de/" hreflang="de" lang="de">Deutsch</a><a href="/fr/" hreflang="fr" lang="fr">Français</a></nav></div>
+<p class="ftr-c">&copy; 2026 Coglix Labs Inc.</p>
 </div></footer>
-<script defer src="/js/site.js?v=48a4527f30"></script>
-<script defer src="/js/demos.js?v=dd49684ab1"></script>
+<script defer src="/js/site.js?v=d756f7da04"></script>
+<script defer src="/js/demos.js?v=e8d07ece78"></script>
 </body>
 </html>

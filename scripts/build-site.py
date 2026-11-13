@@ -6,6 +6,7 @@ Builds every HTML page of https://bonet.care.
   python3 scripts/build-site.py --export     write strings/source.json (English -> Cantonese gloss) for translators
   python3 scripts/build-site.py --strict     fail if a language file lacks a string
   python3 scripts/build-site.py --without practice_quality   leave out sections that need the practice-quality feature
+  python3 scripts/build-site.py --with new_demo_video  show the demo film section (default: content/flags.json new_demo_video, false)
 
 Inputs: scripts/home.py (home template, English text with a Cantonese gloss), strings/<lang>.json (English -> language),
 content/prices.json, content/*.html (inner pages), content/blog/*.html (posts), content/flags.json.
@@ -25,6 +26,8 @@ if not json.loads((ROOT / "content" / "flags.json").read_text()).get("practice_q
 parts.FLAGS_OFF = FLAGS_OFF
 import home as homemod  # noqa: E402
 import cost as costmod  # noqa: E402
+_flags = json.loads((ROOT / "content" / "flags.json").read_text())
+homemod.VIDEO_ON = bool(_flags.get("new_demo_video", False)) or ("--with" in sys.argv and "new_demo_video" in sys.argv[sys.argv.index("--with") + 1].split(","))
 
 LASTMOD = "2026-11-13"
 write = lambda rel, text: ((ROOT / rel).parent.mkdir(parents=True, exist_ok=True), (ROOT / rel).write_text(text))
@@ -61,6 +64,9 @@ def legal(slug):
         MISSING.setdefault("en", set()).add(f"legal:{slug}")
         return
     body = (ROOT / "content" / "legal" / f"{slug}.html").read_text()
+    if parts.PRICES.get("checkout_matches") or slug not in parts.PRICES.get("show_hkd_note_on", []):
+        body = re.sub(r"<!--hkd-->.*?<!--/hkd-->", "", body, flags=re.S)  # the Hong Kong dollar note goes away once checkout matches the quoted price
+    body = body.replace("<!--hkd-->", "").replace("<!--/hkd-->", "")
     assert "CONFIRM" not in body and "draft-note" not in body and 'class="confirm"' not in body, f"unresolved marker in {slug}"
     h = head("en", title, desc, f"{SITE}/{slug}", "og-en.png", app_css=False)
     h += header("en", inplace=set())

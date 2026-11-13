@@ -4,7 +4,7 @@ import re
 from parts import PRICES, price_text, mk
 
 WEEKS = 52 / 12  # a month counted as 4.33 weeks
-DEFAULT = {"visits": 4, "cost": 0, "days": 3, "mins": 15}
+DEFAULT = {"cost": 0, "days": 3, "mins": 10, "ther": "some"}
 
 
 def _num(x):
@@ -20,57 +20,55 @@ def cost_section(lang):
     pdays = round(d["days"] * WEEKS)
     mins = pdays * d["mins"]
     per_day = amount / pdays
-    between = pdays / d["visits"] if d["visits"] else None
     notset = T("Not set", "未設定")
 
-    def slider(key, label, lo, hi, step, val, shown):
+    def slider(key, label, lo, hi, step, val, shown, extra="", attr=""):
         i = f"cb-{key}"
-        return (f'<div class="cb-field"><label for="{i}">{label}</label>'
+        return (f'<div class="cb-field"{attr}><label for="{i}">{label}</label>'
                 f'<output for="{i}" id="{i}-o" data-out="{key}" aria-live="polite">{shown}</output>'
-                f'<input type="range" id="{i}" name="{key}" min="{lo}" max="{hi}" step="{step}" value="{val}" data-in="{key}"></div>')
+                f'<input type="range" id="{i}" name="{key}" min="{lo}" max="{hi}" step="{step}" value="{val}" data-in="{key}" style="--p:{(val - lo) / (hi - lo) * 100:.1f}%">{extra}</div>')
 
-    sliders = "".join([
-        slider("visits", T("Therapist visits a month", "每月睇治療師次數"), 0, 12, 1, d["visits"], d["visits"]),
-        slider("cost", T("What one visit costs you (US$)", "每次覆診你要俾幾多（US$）"), 0, 300, 5, d["cost"], notset),
+    opts = [("none", T("Not now", "暫時冇")), ("some", T("Now and then", "間中")), ("month", T("About monthly", "大約每月一次")), ("often", T("Every week or two", "每一至兩星期"))]
+    choice = (f'<fieldset class="cb-choice"><legend>{T("Do you see a therapist?", "你有冇睇治療師？")}</legend><div class="cb-opts">'
+              + "".join(f'<label><input type="radio" name="ther" value="{v}" data-ther{" checked" if v == d["ther"] else ""}><span>{t}</span></label>' for v, t in opts)
+              + '</div></fieldset>')
+    tip = f'<p class="cb-tip" data-tip>{T("Add a visit cost to compare.", "輸入覆診費用就可以比較。")}</p>'
+    form = "".join([
         slider("days", T("Days a week with Bonet", "每星期用哥基健動嘅日數"), 1, 7, 1, d["days"], d["days"]),
         slider("mins", T("Minutes a day with Bonet", "每日用哥基健動嘅分鐘數"), 5, 60, 5, d["mins"], d["mins"]),
+        choice,
+        slider("cost", T("What one visit costs you (US$)", "每次覆診你要俾幾多（US$）"), 0, 300, 5, d["cost"], notset, tip, " data-costfield"),
     ])
 
-    def stat(key, label, val):
-        return f'<div class="cb-stat"><dt>{label}</dt><dd><output data-out="{key}" aria-live="polite">{val}</output></dd></div>'
+    def stat(key, label, val, cls=""):
+        return f'<div class="cb-stat {cls}"><dt>{label}</dt><dd><output data-out="{key}" aria-live="polite">{val}</output></dd></div>'
 
     stats = "".join([
-        stat("pdays", T("Practice days a month", "每月練習日數"), pdays),
-        stat("per_day", T("Premium cost per practice day", "完整版每個練習日嘅費用"), f"{cur}{per_day:.2f}"),
+        stat("pdays", T("Practice days a month", "每月練習日數"), pdays, "cb-stat--main"),
+        stat("mins_month", T("Minutes with Bonet a month", "每月用哥基健動嘅分鐘"), mins),
+        stat("per_day", T("Everyday price per practice day", "每個練習日嘅日常價錢"), f"{cur}{per_day:.2f}"),
     ])
-    prem_price = f'{price_text(lang)} {T("a month", "每月")}'
-    free = [T("Speaking levels 1 to 3", "說話第 1 至 3 級"), T("Eight starter exercises", "八個入門運動"), T("Easy brain games", "簡單腦力遊戲")]
-    prem = [T("Every level and exercise", "全部級別同運動"), T("Harder brain games", "較難嘅腦力遊戲"), T("Longer reports", "更長嘅報告")]
-    rows = [
-        (T("Cost", "費用"), T("Free", "免費"), f'{prem_price}<br>{T("7 days free", "免費試用 7 日")}', T("Set by your clinic", "由診所訂")),
-        (T("When", "幾時"), T("Any day, at home", "喺屋企，每日都得"), T("Any day, at home", "喺屋企，每日都得"), T("At the visit", "覆診時")),
-        (T("What you get", "你得到啲乜"), ", ".join(free), ", ".join(prem), T("Chosen with your therapist", "同你嘅治療師一齊揀")),
-    ]
-    head = ["", T("Free plan", "免費版"), T("Premium", "完整版"), T("Therapy visit", "治療覆診")]
-    thead = "<tr>" + "".join(f'<th scope="col">{h}</th>' if h else '<td></td>' for h in head) + "</tr>"
-    tbody = "".join(f'<tr><th scope="row">{r[0]}</th>' + "".join(f"<td>{c}</td>" for c in r[1:]) + "</tr>" for r in rows)
-    word = T("Count your practice days.", "數下你嘅練習日數。").split(" ")
-    h2 = " ".join(word)
+    cells = "".join('<i></i>' for _ in range(30))
+    h2 = T("Count your practice days.", "數下你嘅練習日數。")
+    msg_none = T("No visits planned? Bonet still gives you a plan, feedback and a record every day.", "暫時冇覆診？哥基健動每日照樣俾你計劃、回饋同紀錄。")
+    msg_n = T("Between visits you would have {n} guided practice days on record.", "兩次覆診之間，你會有 {n} 個有指引嘅練習日紀錄。")
     return f"""<section class="sec sec--wash" id="cost"><div class="wrap">
-<div class="open"><h2 class="display display--ink rv-word">{h2}</h2></div>
-<div class="cb" data-cost data-cur="{cur}" data-price="{amount}" data-trial="{trial}" data-weeks="{WEEKS:.4f}" data-notset="{T('Not set', '未設定')}" data-lang="{lang}">
-<form class="cb-form" aria-label="{T('Count your practice days.', '數下你嘅練習日數。')}">{sliders}</form>
-<div class="cb-res">
+<div class="open open--c"><h2 class="display display--ink rv-word">{h2}</h2></div>
+<div class="cb" data-cost data-cur="{cur}" data-price="{amount}" data-trial="{trial}" data-weeks="{WEEKS:.4f}" data-notset="{T('Not set', '未設定')}" data-lang="{lang}" data-msg-none="{msg_none}" data-msg-n="{msg_n}">
+<form class="cb-form cb-card" aria-label="{h2}">{form}</form>
+<div class="cb-res cb-card">
+<div class="cb-cal"><div><p class="cb-cap">{T('Your month', '你嘅一個月')}</p><div class="cb-days" data-days role="img" aria-label="{T('Practice days this month', '今個月嘅練習日')}">{cells}</div></div>
+<img class="cb-pup" data-pup src="/img/mascot/encourage.webp" width="512" height="512" alt=""></div>
 <dl class="cb-stats">{stats}</dl>
-<div class="cb-chart" data-chart>
-<p class="cb-hint" data-hint>{T('Add what a visit costs you to see the bars.', '輸入每次覆診嘅費用，就睇到兩條棒。')}</p>
+<p class="cb-msg" data-msg aria-live="polite"></p>
 <div class="cb-bars" data-bars hidden>
 <div class="cb-bar"><span>{T('One visit: what you pay', '一次覆診：你要俾嘅')}</span><div class="cb-track"><i data-bar="visit"></i></div><b data-val="visit"></b></div>
 <div class="cb-bar cb-bar--pro"><span>{T('A month of Premium', '完整版一個月')}</span><div class="cb-track"><i data-bar="prem"></i></div><b data-val="prem">{cur}{amount}</b></div>
-</div></div></div>
+</div>
+</div>
 </div>
 <p class="cb-line">{T('Bonet is for practice between visits. It does not replace your therapist.', '哥基健動係喺覆診之間練習用。佢唔會取代你嘅治療師。')}</p>
-<p class="note"><a href="/compare.html#cost-sources">{T('About the numbers', '關於呢啲數字')}</a></p>
+<p class="note cb-note"><a href="/compare.html#cost-sources">{T('About the numbers', '關於呢啲數字')}</a></p>
 </div></section>
 """
 

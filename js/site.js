@@ -75,15 +75,14 @@
     }
   }
 
-  /* ---- demo video: nothing loads until the visitor presses play */
-  $$('[data-video]').forEach(function (b) {
-    b.addEventListener('click', function () {
-      var v = document.createElement('video');
-      v.src = b.getAttribute('data-video'); v.controls = true; v.autoplay = true; v.playsInline = true; v.preload = 'auto';
-      v.setAttribute('poster', b.querySelector('img').src); v.className = 'player'; v.style.cursor = 'auto';
-      if (b.getAttribute('data-vtt')) { var tk = document.createElement('track'); tk.kind = 'captions'; tk.src = b.getAttribute('data-vtt'); tk.default = true; tk.label = b.getAttribute('data-lang') || ''; v.appendChild(tk); }
-      b.replaceWith(v); v.play().catch(function () {});
-    });
+  /* ---- demo film: the <video> has preload="none", so no film bytes load until the visitor presses play */
+  $$('[data-player]').forEach(function (box) {
+    var v = box.querySelector('video'), b = box.querySelector('.play');
+    if (!v || !b) return;
+    v.controls = false;
+    var go = function () { box.classList.add('on'); v.controls = true; v.play().catch(function () {}); };
+    b.addEventListener('click', go);
+    v.addEventListener('click', function () { if (!box.classList.contains('on')) go(); });
   });
 
   /* ---- scroll entrances (CSS does the motion; this only adds .in when something is on screen) */
@@ -115,11 +114,18 @@
     el.style.animationName = 'sprite'; el.style.animationTimingFunction = 'steps(' + c[0] + ', jump-none)'; el.style.animationFillMode = 'both'; el.style.animationPlayState = 'running';
     el.onanimationend = loops ? function () { el.onanimationend = null; play(el, then || 'idle'); } : null;
   }
-  var sprites = $$('.sprite[data-clip]');
+  /* a short sequence, once: look up, wiggle, wave, then settle to idle */
+  function chain(el, list, i) {
+    var last = i >= list.length - 1;
+    play(el, list[i], last ? 0 : 1, 'idle');
+    if (!last && !reduce) el.onanimationend = function () { el.onanimationend = null; chain(el, list, i + 1); };
+  }
+  var sprites = $$('.sprite[data-clip], .sprite[data-seq]');
   sprites.forEach(function (el) {
-    var clip = el.getAttribute('data-clip');
+    var clip = el.getAttribute('data-clip') || 'idle';
     if (sio) sio.observe(el);
-    var start = function () { play(el, clip, el.getAttribute('data-loops') ? +el.getAttribute('data-loops') : 0, el.getAttribute('data-then')); };
+    var seq = el.getAttribute('data-seq');
+    var start = seq ? function () { chain(el, seq.split(','), 0); } : function () { play(el, clip, el.getAttribute('data-loops') ? +el.getAttribute('data-loops') : 0, el.getAttribute('data-then')); };
     if (el.closest('[data-final]')) { var f = el.closest('[data-final]'); new MutationObserver(function () { if (f.classList.contains('in')) start(); }).observe(f, { attributes: true, attributeFilter: ['class'] }); }
     else if (clip === 'sleep') { start(); } else start();
     var btn = el.closest('.pupbtn, .pup');
@@ -145,4 +151,39 @@
       if (!tick) { tick = true; requestAnimationFrame(function () { par.forEach(function (p) { p.style.setProperty('--px', px.toFixed(3)); p.style.setProperty('--py', py.toFixed(3)); }); tick = false; }); }
     }, { passive: true });
   }
+})();
+
+/* ---- practice tabs: Move | Speak | Think. Real buttons (aria-selected, arrow keys), swipe, auto-advance while in view until the visitor touches it.
+   Without JavaScript the three panels simply stack. No auto-advance under reduced motion. */
+(function () {
+  var box = document.querySelector('[data-tabs]');
+  if (!box) return;
+  var tabs = [].slice.call(box.querySelectorAll('[role=tab]')), panels = [].slice.call(box.querySelectorAll('[role=tabpanel]'));
+  var reduce = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var cur = 0, auto = !reduce, inView = false, hover = false, timer = 0;
+  function show(i, focus) {
+    cur = (i + tabs.length) % tabs.length;
+    tabs.forEach(function (t, k) { t.setAttribute('aria-selected', k === cur ? 'true' : 'false'); t.tabIndex = k === cur ? 0 : -1; });
+    panels.forEach(function (p, k) { if (k === cur) p.setAttribute('data-active', ''); else p.removeAttribute('data-active'); });
+    if (focus) tabs[cur].focus();
+    window.dispatchEvent(new Event('resize'));
+  }
+  function stop() { auto = false; clearInterval(timer); }
+  function loop() { clearInterval(timer); if (auto) timer = setInterval(function () { if (inView && !hover && !document.hidden) show(cur + 1); }, 9000); }
+  box.classList.add('tabs-on'); show(0);
+  tabs.forEach(function (t, k) {
+    t.addEventListener('click', function () { stop(); show(k); });
+    t.addEventListener('keydown', function (e) {
+      var d = e.key === 'ArrowRight' ? 1 : e.key === 'ArrowLeft' ? -1 : 0;
+      if (d) { e.preventDefault(); stop(); show(cur + d, true); }
+      else if (e.key === 'Home') { e.preventDefault(); stop(); show(0, true); } else if (e.key === 'End') { e.preventDefault(); stop(); show(tabs.length - 1, true); }
+    });
+  });
+  box.addEventListener('pointerenter', function () { hover = true; }); box.addEventListener('pointerleave', function () { hover = false; });
+  box.addEventListener('focusin', function () { stop(); });
+  var x0 = null;
+  box.addEventListener('pointerdown', function (e) { x0 = e.pointerType === 'mouse' ? null : e.clientX; });
+  box.addEventListener('pointerup', function (e) { if (x0 !== null && Math.abs(e.clientX - x0) > 60) { stop(); show(cur + (e.clientX < x0 ? 1 : -1)); } x0 = null; });
+  if ('IntersectionObserver' in window) new IntersectionObserver(function (es) { inView = es[0].isIntersecting; }, { threshold: 0.35 }).observe(box); else inView = true;
+  loop();
 })();

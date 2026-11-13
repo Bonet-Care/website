@@ -52,6 +52,7 @@ def mk(lang):
 
 # ---- prices (content/prices.json, the single source)
 PRICES = json.loads((ROOT / "content" / "prices.json").read_text())
+FACTS = json.loads((ROOT / "content" / "facts.json").read_text())  # speaking_levels, exercises, free_exercises
 
 
 def price_text(lang):
@@ -80,6 +81,8 @@ UI = {
     "bigger": {"en": "Bigger text", "zh-hant": "放大文字", "yue": "大字", "zh-hans": "放大文字", "ja": "文字を大きく", "es": "Texto más grande", "de": "Größere Schrift", "fr": "Texte plus grand"},
     "n_practice": {"en": "Practice", "zh-hant": "練習", "yue": "練習", "zh-hans": "练习", "ja": "練習", "es": "Práctica", "de": "Üben", "fr": "Pratique"},
     "n_how": {"en": "How it works", "zh-hant": "運作方式", "yue": "運作方式", "zh-hans": "运作方式", "ja": "しくみ", "es": "Cómo funciona", "de": "So funktioniert's", "fr": "Comment ça marche"},
+    "n_feedback": {"en": "Feedback", "zh-hant": "回饋", "yue": "回饋", "zh-hans": "反馈", "ja": "フィードバック", "es": "Comentarios", "de": "Rückmeldung", "fr": "Retours"},
+    "n_compare": {"en": "Compare", "zh-hant": "比較", "yue": "比較", "zh-hans": "比较", "ja": "比較", "es": "Comparar", "de": "Vergleich", "fr": "Comparer"},
     "n_plans": {"en": "Plans", "zh-hant": "方案", "yue": "方案", "zh-hans": "方案", "ja": "プラン", "es": "Planes", "de": "Tarife", "fr": "Offres"},
     "n_faq": {"en": "FAQ", "zh-hant": "常見問題", "yue": "常見問題", "zh-hans": "常见问题", "ja": "よくある質問", "es": "Preguntas", "de": "Fragen", "fr": "Questions"},
     "f_privacy": {"en": "Privacy", "zh-hant": "隱私政策", "yue": "私隱政策", "zh-hans": "隐私政策", "ja": "プライバシー", "es": "Privacidad", "de": "Datenschutz", "fr": "Confidentialité"},
@@ -96,6 +99,7 @@ UI = {
     "f_faq": {"en": "FAQ", "zh-hant": "常見問題", "yue": "常見問題", "zh-hans": "常见问题", "ja": "よくある質問", "es": "Preguntas", "de": "Fragen", "fr": "Questions"},
     "f_cset": {"en": "Cookie settings", "zh-hant": "Cookie 設定", "yue": "Cookie 設定", "zh-hans": "Cookie 设置", "ja": "Cookieの設定", "es": "Ajustes de cookies", "de": "Cookie-Einstellungen", "fr": "Réglages des cookies"},
     "f_english": {"en": "English", "zh-hant": "英文", "yue": "英文", "zh-hans": "英文", "ja": "英語", "es": "en inglés", "de": "auf Englisch", "fr": "en anglais"},
+    "f_line": {"en": "Daily home practice for movement, speaking and brain games.", "zh-hant": "在家每日練習運動、說話與腦力遊戲。", "yue": "喺屋企每日練習運動、說話同腦力遊戲。", "zh-hans": "在家每日练习运动、说话与脑力游戏。", "ja": "毎日のおうち練習で、運動・話す・脳トレ。", "es": "Práctica diaria en casa: movimiento, habla y juegos mentales.", "de": "Tägliches Üben zu Hause: Bewegung, Sprechen und Denkspiele.", "fr": "Une pratique quotidienne à la maison : mouvement, parole et jeux de cerveau."},
     "hello": {"en": "Bonet says hello", "zh-hant": "柯基向你打招呼", "yue": "朱古力同你打招呼", "zh-hans": "柯基向你打招呼", "ja": "コーギーがあいさつします", "es": "Bonet te saluda", "de": "Bonet sagt Hallo", "fr": "Bonet vous dit bonjour"},
 }
 u = lambda k, lang: UI[k][lang]
@@ -158,7 +162,7 @@ def lang_menu(cur, urls=None, inplace=None):
 def header(lang, urls=None, inplace=None):
     t = lambda k: u(k, lang)
     pre = LANGS[lang]["path"]
-    nav = [(pre + "#how", t("n_practice")), ("/science.html", t("n_how")), (pre + "#plans", t("n_plans")), (pre + "#faq", t("n_faq"))]
+    nav = [(pre + "#practice", t("n_practice")), (pre + "#feedback", t("n_feedback")), (pre + "#plans", t("n_plans")), (pre + "#compare", t("n_compare")), (pre + "#faq", t("n_faq"))]
     links = "".join(f'<a href="{h}">{x}</a>' for h, x in nav)
     return f"""<body>
 <a class="skip" href="#main">{t('skip')}</a>
@@ -186,11 +190,11 @@ def footer(lang, urls=None, inplace=None, demos=False):
     more = "".join(f'<a href="{h}">{t(k)}</a>' for h, k in [("/science.html", "f_how"), ("/therapist.html", "f_ther"), ("/blog/", "f_blog")])
     plain = "".join(f'<a href="{(urls or {}).get(c, d["path"])}" hreflang="{d["tag"]}" lang="{d["html"]}">{d["name"]}</a>' for c, d in LANGS.items())
     return f"""<footer class="ftr"><div class="wrap">
-<div class="ftr-pup"><button type="button" class="pupbtn" data-sprite="sleep" data-hover="wiggle" aria-label="{t('hello')}"><span class="sprite" data-clip="sleep" data-rest="sleep" aria-hidden="true"></span></button></div>
-<nav aria-label="Footer">{nav}</nav>
+<div class="ftr-top"><a class="brand" href="{pre or '/'}" aria-label="Bonet"><img src="/img/mascot/head.webp" width="512" height="512" alt="">Bonet</a><p>{t('f_line')}</p></div>
+<div class="ftr-cols"><nav aria-label="Footer">{nav}</nav>
 <nav class="ftr-more" aria-label="Bonet">{more}</nav>
-<nav class="ftr-langs" aria-label="{t('language')}">{plain}</nav>
-<p>&copy; 2026 Coglix Labs Inc.</p>
+<nav class="ftr-langs" aria-label="{t('language')}">{plain}</nav></div>
+<p class="ftr-c">&copy; 2026 Coglix Labs Inc.</p>
 </div></footer>
 <script defer src="/js/site.js"></script>
 {'<script defer src="/js/demos.js"></script>' if demos else ''}
