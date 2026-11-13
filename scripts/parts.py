@@ -44,6 +44,9 @@ NEED_PAGES = ("stroke-home-practice", "exercise-app-for-seniors", "speech-practi
 VS_PAGES = {"constant-therapy": "Constant Therapy", "tactus-therapy": "Tactus Therapy", "lingraphica-talkpath": "Lingraphica TalkPath", "flint-rehab": "Flint Rehab"}
 vs_slug = lambda s: f"compare/bonet-vs-{s}"
 LOCAL_PAGES += NEED_PAGES + tuple(vs_slug(s) for s in VS_PAGES)
+# Fact pages (scripts/info_pages.py, built by seo_pages.py like the need pages): plain facts AI answers and search engines can quote.
+INFO_PAGES = ("about", "camera-rep-counting", "pricing")
+LOCAL_PAGES += INFO_PAGES
 # The practice library (scripts/practice_pages.py): the hub, one page per body area, exercise, kind of speaking practice and brain game.
 _P = json.loads((ROOT / "content" / "practice.json").read_text())
 PRACTICE_PAGES = (("practice",) + tuple(f"practice/area/{a['slug']}" for a in _P["areas"]) + tuple(f"practice/move/{e['slug']}" for e in _P["exercises"])
@@ -146,9 +149,13 @@ UI = {
     "f_family": {"en": "For family and carers", "zh-hant": "給家人與照顧者", "yue": "俾家人同照顧者", "zh-hans": "给家人和照顾者", "ja": "ご家族・介助者の方へ", "es": "Para familiares y cuidadores", "de": "Für Angehörige und Pflegende", "fr": "Pour la famille et les aidants"},
     "f_library": {"en": "Practice library", "zh-hant": "練習資料庫", "yue": "練習庫", "zh-hans": "练习库", "ja": "練習ライブラリ", "es": "Biblioteca de práctica", "de": "Übungsbibliothek", "fr": "Bibliothèque de pratique"},
     "hello": {"en": "Bonet says hello", "zh-hant": "柯基向你打招呼", "yue": "朱古力同你打招呼", "zh-hans": "柯基向你打招呼", "ja": "コーギーがあいさつします", "es": "Bonet te saluda", "de": "Bonet sagt Hallo", "fr": "Bonet vous dit bonjour"},
+    "f_about": {"en": "About Bonet", "zh-hant": "關於哥基健動", "yue": "關於哥基健動", "zh-hans": "关于哥基健动", "ja": "Bonetについて", "es": "Acerca de Bonet", "de": "Über Bonet", "fr": "À propos de Bonet"},
+    "f_camera": {"en": "Camera rep counting", "zh-hant": "鏡頭計算次數", "yue": "鏡頭數次數", "zh-hans": "镜头计算次数", "ja": "カメラで回数を数える", "es": "Conteo de repeticiones con la cámara", "de": "Wiederholungen zählen mit der Kamera", "fr": "Comptage des répétitions par la caméra"},
+    "f_pricing": {"en": "Pricing", "zh-hant": "價格", "yue": "價錢", "zh-hans": "价格", "ja": "料金", "es": "Precios", "de": "Preise", "fr": "Tarifs"},
 }
 u = lambda k, lang: UI[k][lang]
 NEED_UI = dict(zip(NEED_PAGES, ("f_stroke", "f_seniors", "f_speech", "f_family")))  # link label of each need page
+NEED_UI.update(zip(INFO_PAGES, ("f_about", "f_camera", "f_pricing")))  # and of each fact page
 
 
 def head(lang, title, desc, canon, og, extra="", alt=None, app_css=True):
@@ -232,7 +239,7 @@ def footer(lang, urls=None, inplace=None, demos=False):
     nav = "".join(f'<a href="{pre}{h}">{t(k)}</a>' for h, k in legal)
     nav += f'<a href="mailto:{MAIL}">{t("f_contact")}</a><button type="button" class="linkbtn" data-consent-open>{t("f_cset")}</button>'
     blog = "/zh-hant/blog/" if lang == "zh-hant" else "/blog/"
-    more = "".join(f'<a href="{h}">{t(k)}</a>' for h, k in [(pre + "/science.html", "f_how"), (pre + "/therapist.html", "f_ther"), (pre + "/practice", "f_library")] + [(f"{pre}/{p}", NEED_UI[p]) for p in NEED_PAGES] + [(blog, "f_blog")])
+    more = "".join(f'<a href="{h}">{t(k)}</a>' for h, k in [(pre + "/science.html", "f_how"), (pre + "/therapist.html", "f_ther"), (pre + "/practice", "f_library")] + [(f"{pre}/{p}", NEED_UI[p]) for p in NEED_PAGES + INFO_PAGES] + [(blog, "f_blog")])
     plain = "".join(f'<a href="{(urls or {}).get(c, d["path"])}" hreflang="{d["tag"]}" lang="{d["html"]}">{d["name"]}</a>' for c, d in LANGS.items())
     return f"""<footer class="ftr"><div class="wrap">
 <div class="ftr-top"><a class="brand" href="{pre or '/'}" aria-label="Bonet"><img src="/img/mascot/head.webp" width="512" height="512" alt="">Bonet</a><p>{t('f_line')}</p></div>

@@ -462,7 +462,7 @@ def home(lang):
 <section class="hero"><div class="wrap hero-grid">
 <div class="hero-copy">
 <h1>{h1}</h1>
-<p class="sub">{T('Daily practice for older adults, including after a stroke.', '為長者而設嘅每日練習，中風後都用得。')} {T('Every session tracked, with feedback made for you.', '每次練習都有紀錄，仲有為你而設嘅回饋。')}</p>
+<p class="sub">{T('Bonet is a daily home practice app for older adults, including people practising after a stroke.', '哥基健動係為長者而設嘅每日居家練習 app，中風後練習嘅人都用得。')} {T('Every session tracked, with feedback made for you.', '每次練習都有紀錄，仲有為你而設嘅回饋。')}</p>
 <div class="cta-row"><a class="btn btn--lg" href="{APP}/">{T('Start free', '免費開始')}</a><a class="btn btn--2 btn--lg" href="#practice">{T('See how it works', '睇下點用')}</a></div>
 <p class="priceline">{T('Free to start. Premium {price} a month, about {day} a day.', '免費開始。完整版每月 {price}，約 {day} 一日。').replace('{price}', price).replace('{day}', day)}</p>
 </div>

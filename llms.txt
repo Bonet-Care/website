@@ -8,7 +8,7 @@ Bonet (Chinese name: 哥基健動) is made by Coglix Labs Inc. The web app is at
 
 - What it is: an app for daily practice at home. Move: 34 exercises with a 3D guide, repetitions counted by the camera on the device. Speak: say words, name pictures, build sentences and listen, with hints that grow one step at a time and 100 levels per practice type. Think: six short brain games for memory, attention and quick thinking.
 - Who it is for: older adults keeping active, people practising at home after a stroke or injury, people practising between physiotherapy or speech therapy visits, and the family members and carers who help them.
-- What it is not: Bonet is not a medical device and not a therapy. It does not diagnose, treat, cure or prevent any condition, and it does not replace a doctor, therapist or speech-language pathologist. It has not been tested in a clinical trial and no regulator has reviewed or cleared it. Its numbers are estimates and can be wrong.
+- What it is not: Bonet is not a medical device and not a therapy. It does not diagnose, treat, cure or prevent any condition, and it does not replace a doctor, therapist or speech-language pathologist. It has not been tested in a clinical trial and no regulator has reviewed or cleared it. Its numbers are estimates and can be wrong. Bonet is a different app from Bold and is not connected to it.
 - Price: a free plan (8 of 34 exercises, speaking levels 1 to 3 of 100, brain games on Easy). Premium is US$9.99 a month with 7 days free for new subscribers; cancel any time.
 - Languages (8): English (https://bonet.care/), 繁體中文 (https://bonet.care/zh-hant/), 廣東話 (https://bonet.care/yue/), 简体中文 (https://bonet.care/zh-hans/), 日本語 (https://bonet.care/ja/), Español (https://bonet.care/es/), Deutsch (https://bonet.care/de/), Français (https://bonet.care/fr/).
 - Where it runs: in a modern web browser at https://app.bonet.care/ on a phone, tablet or computer with a camera and a microphone.
@@ -38,6 +38,9 @@ Generated from the app's own data: names, instructions and levels are the app's 
 ## About the app
 
 - [Home](https://bonet.care/): What you practise, plans and price, short comparison table.
+- [About Bonet](https://bonet.care/about): Plain facts: what Bonet is and is not, who makes it, price, languages, privacy. Bonet is not the app Bold.
+- [Camera rep counting](https://bonet.care/camera-rep-counting): How the device camera counts repetitions, what is kept, and how accurate it is.
+- [Pricing](https://bonet.care/pricing): The free plan and Premium, what each includes, and the free trial.
 - [How Bonet works](https://bonet.care/science): How the camera, speaking and brain practice work, what is measured, and what is not claimed.
 - [What Bonet tracks](https://bonet.care/what-bonet-tracks): Every number recorded, how it is measured, where, and what is never kept.
 - [Example report](https://bonet.care/example-report): A sample one-page practice report with invented data.

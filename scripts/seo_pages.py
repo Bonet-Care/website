@@ -13,10 +13,10 @@ Rules for this copy: Bonet is a practice tool. Never say it treats, restores or 
 import json
 import re
 import parts
-from parts import APP, FACTS, LANG_COUNT, LANGS, MAIL, NEED_PAGES, NEED_UI, NUM_WORD, NUM_YUE, PRICES, SITE, VS_PAGES, mk, page_urls, pre, price_text, u, vs_slug
+from parts import APP, FACTS, INFO_PAGES, LANG_COUNT, LANGS, MAIL, NEED_PAGES, NEED_UI, NUM_WORD, NUM_YUE, PRICES, SITE, VS_PAGES, mk, page_urls, pre, price_text, u, vs_slug
 import home
 
-LOCAL_SITEMAP = [(s, "0.8") for s in NEED_PAGES] + [(vs_slug(s), "0.5") for s in VS_PAGES]
+LOCAL_SITEMAP = [(s, "0.8") for s in NEED_PAGES + INFO_PAGES] + [(vs_slug(s), "0.5") for s in VS_PAGES]
 
 # Search titles and descriptions for pages whose body is a fragment: slug -> ((title en, yue), (description en, yue)).
 # build-site.py uses these instead of content/pages/meta.<lang>.json and content/legal/meta.<lang>.json for these four pages.
@@ -280,6 +280,10 @@ PAGES = {
 }
 
 
+import info_pages  # noqa: E402  the fact pages: /about, /camera-rep-counting, /pricing
+PAGES.update({k: dict(v, sections=[(q, [COST if b == "COST" else b for b in blocks]) for q, blocks in v["sections"]]) for k, v in info_pages.PAGES.items()})
+
+
 def _block(b, T, lang):
     if b[0] == "p":
         return f"<p>{_fill(T(b[1], b[2]), lang)}</p>"
@@ -290,6 +294,7 @@ def _more(T, lang, skip=None):
     """Links every landing page ends with: the other need pages, then FAQ, safety, example report and the comparison."""
     links = [(f"/{p}", u(NEED_UI[p], lang)) for p in NEED_PAGES if p != skip]
     links.insert(0, ("/practice", u("f_library", lang)))
+    links[1:1] = [(f"/{p}", u(NEED_UI[p], lang)) for p in INFO_PAGES if p != skip]
     links += [("/faq", T("Frequently asked questions", "常見問題")), ("/safety", T("What to know before you start", "開始之前要知嘅事")),
               ("/example-report", T("Example report", "示範報告")), ("/compare", T("How Bonet compares", "同其他方案比較"))]
     return f'<p><strong>{T("More about Bonet", "更多關於哥基健動")}</strong></p>\n<ul>' + "".join(f'<li><a href="{h}">{x}</a></li>' for h, x in links) + "</ul>"
@@ -309,8 +314,8 @@ def need_page(ctx, slug, lang):
     p = PAGES[slug]
     tx = lambda k: _fill(T(*p[k]), lang)
     start = f'<p><a class="btn btn--lg" href="{APP}/">{u("start", lang)}</a></p>'
-    demo_name, demo_after = p["demo"]
-    fig = (f'<figure><div class="card-demo" data-ss-fill><div class="demo" data-demo="{demo_name}"{" data-pq=" + chr(34) + "1" + chr(34) if demo_name == "hero" and "practice_quality" not in parts.FLAGS_OFF else ""}'
+    demo_name, demo_after = p["demo"] or (None, -1)
+    fig = "" if not demo_name else (f'<figure><div class="card-demo" data-ss-fill><div class="demo" data-demo="{demo_name}"{" data-pq=" + chr(34) + "1" + chr(34) if demo_name == "hero" and "practice_quality" not in parts.FLAGS_OFF else ""}'
            f' role="img" aria-label="{parts.esc(T(*DEMO_ALT[demo_name]))}"></div></div></figure>')
     body = f'<h1>{tx("h1")}</h1>\n<div class="alert"><p>{tx("answer")}</p></div>\n{start}\n'
     faq = []
@@ -324,7 +329,7 @@ def need_page(ctx, slug, lang):
     body += f'{start}\n{_more(T, lang, slug)}\n<p class="note">{T(*DISCLAIMER)}</p>'
     ld = [{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": faq},
           _crumbs(lang, [("Bonet", "/"), (u(NEED_UI[slug], lang), f"/{slug}")])]
-    _write(ctx, lang, slug, tx("title"), tx("desc"), body, ld, demos=True)
+    _write(ctx, lang, slug, tx("title"), tx("desc"), body, ld, demos=bool(demo_name))
 
 
 # ------------------------------------------------------------------ Bonet next to one other product: every fact comes from competitors.json
@@ -439,7 +444,7 @@ Bonet (Chinese name: 哥基健動) is made by Coglix Labs Inc. The web app is at
 
 - What it is: an app for daily practice at home. Move: {f['exercises']} exercises with a 3D guide, repetitions counted by the camera on the device. Speak: say words, name pictures, build sentences and listen, with hints that grow one step at a time and {f['speaking_levels']} levels per practice type. Think: six short brain games for memory, attention and quick thinking.
 - Who it is for: older adults keeping active, people practising at home after a stroke or injury, people practising between physiotherapy or speech therapy visits, and the family members and carers who help them.
-- What it is not: Bonet is not a medical device and not a therapy. It does not diagnose, treat, cure or prevent any condition, and it does not replace a doctor, therapist or speech-language pathologist. It has not been tested in a clinical trial and no regulator has reviewed or cleared it. Its numbers are estimates and can be wrong.
+- What it is not: Bonet is not a medical device and not a therapy. It does not diagnose, treat, cure or prevent any condition, and it does not replace a doctor, therapist or speech-language pathologist. It has not been tested in a clinical trial and no regulator has reviewed or cleared it. Its numbers are estimates and can be wrong. Bonet is a different app from Bold and is not connected to it.
 - Price: a free plan ({f['free_exercises']} of {f['exercises']} exercises, speaking levels 1 to 3 of {f['speaking_levels']}, brain games on Easy). Premium is {usd} a month with {trial} days free for new subscribers; cancel any time.
 - Languages ({len(LANGS)}): {names}.
 - Where it runs: in a modern web browser at {APP}/ on a phone, tablet or computer with a camera and a microphone.
@@ -461,6 +466,9 @@ Generated from the app's own data: names, instructions and levels are the app's 
 ## About the app
 
 {L("/", "Home", "What you practise, plans and price, short comparison table.")}
+{L("/about", "About Bonet", "Plain facts: what Bonet is and is not, who makes it, price, languages, privacy. Bonet is not the app Bold.")}
+{L("/camera-rep-counting", "Camera rep counting", "How the device camera counts repetitions, what is kept, and how accurate it is.")}
+{L("/pricing", "Pricing", "The free plan and Premium, what each includes, and the free trial.")}
 {L("/science", "How Bonet works", "How the camera, speaking and brain practice work, what is measured, and what is not claimed.")}
 {L("/what-bonet-tracks", "What Bonet tracks", "Every number recorded, how it is measured, where, and what is never kept.")}
 {L("/example-report", "Example report", "A sample one-page practice report with invented data.")}
@@ -491,7 +499,7 @@ Every page above exists in each language under its prefix: {", ".join(d["path"] 
 
 def build(ctx):
     for lang in LANGS:
-        for slug in NEED_PAGES:
+        for slug in NEED_PAGES + INFO_PAGES:
             need_page(ctx, slug, lang)
         for slug in VS_PAGES:
             vs_page(ctx, slug, lang)
