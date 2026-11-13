@@ -372,7 +372,7 @@ p { margin: 0; }
 .doc--legal h2 { margin: 2.6rem 0 .8rem; scroll-margin-top: 5.5rem; padding-top: 1.6rem; border-top: 2px solid var(--line); }
 .doc--legal h3 { scroll-margin-top: 5.5rem; }
 .doc--legal h2:first-of-type { border-top: 0; }
-.doc--legal a { color: var(--blue-ink, var(--blue)); text-decoration: underline; text-underline-offset: .18em; }
+.doc--legal a { color: var(--blue-dark); text-decoration: underline; text-underline-offset: .18em; }
 .doc--legal :is(h2, h3) .anchor { margin-left: .4rem; opacity: 0; text-decoration: none; }
 .doc--legal :is(h2, h3):hover .anchor, .doc--legal :is(h2, h3) .anchor:focus { opacity: 1; }
 .doc--legal table { display: block; max-width: 100%; overflow-x: auto; font-size: 1rem; border: 2px solid var(--line); border-radius: 1rem; }
