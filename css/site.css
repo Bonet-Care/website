@@ -360,3 +360,4 @@ p { margin: 0; }
 @media (max-width: 36rem) { .signin { display: none; } .brand small { display: none; } .hdr .wrap { gap: .4rem; } .btn--sm { padding-inline: .8rem; } .langmenu summary { padding: 0 .5rem; } .langmenu summary span { max-width: 5.5rem; overflow: hidden; text-overflow: ellipsis; } }
 @media (max-width: 36rem) { .btn--sm { font-size: .9rem; padding-inline: .7rem; min-height: 2.5rem; } .brand { font-size: 1.3rem; } }
 @media (max-width: 30rem) { .langmenu summary span { display: none; } .langmenu summary::after { content: '\25BE'; color: var(--ink-3); } }
+@media (max-width: 51.99rem) { .hero-copy { gap: 1rem; padding-bottom: .4rem; } .hero-copy .cta-row .btn--2 { display: none; } .hero-copy .lede { font-size: 1.05rem; } }
