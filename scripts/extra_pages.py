@@ -68,7 +68,8 @@ def tracks(ctx, lang="en"):
 <p>{T("They are estimates from a camera and a microphone. They show what was practiced. They can be wrong, and a single day says little. Bonet is a practice tool, not a medical device.", "呢啲係由鏡頭同咪高峰得出嘅估算，顯示練習咗啲乜。佢哋有可能唔準，單睇一日亦說明唔到乜。哥基健動係練習工具，唔係醫療器材。")}</p>
 <p>{last}</p>
 </div>"""
-    _page(ctx, "what-bonet-tracks", T("What Bonet tracks | Bonet", "哥基健動記錄啲乜 | 哥基健動"), T("Every number Bonet records, how it is measured, where it is processed and what is not kept.", "哥基健動記錄嘅每一個數字：點樣量度、喺邊度處理、唔會保留啲乜。"), body, lang=lang, local=True)
+    _page(ctx, "what-bonet-tracks", T("What Bonet tracks: reps, speech measures and privacy | Bonet", "哥基健動記錄啲乜：次數、說話量度同私隱 | 哥基健動"),
+          T("Every number the Bonet home practice app records, how it is measured, where it is processed, and what is never kept: no camera video and no voice recordings.", "哥基健動居家練習 app 記錄嘅每一個數字：點樣量度、喺邊度處理，同埋永遠唔會保留啲乜：冇鏡頭影片，亦冇錄音。"), body, lang=lang, local=True)
 
 
 # ------------------------------------------------------------------ example report
@@ -143,7 +144,8 @@ def report(ctx, lang="en"):
 </article>
 <p>{T('See <a href="/what-bonet-tracks">what Bonet tracks</a> and <a href="/ai-and-automatic-measures">how automatic measures work</a>.', '睇下<a href="/what-bonet-tracks">哥基健動記錄啲乜</a>同<a href="/ai-and-automatic-measures">自動量度點樣運作</a>。')}</p>
 </div>"""
-    _page(ctx, "example-report", T("Example report | Bonet", "示範報告 | 哥基健動"), T("A sample one-page Bonet practice report with invented data. Not a real person.", "哥基健動一頁練習報告嘅示範，資料係虛構嘅，唔係真人。"), body, lang=lang, local=True)
+    _page(ctx, "example-report", T("Example home practice report for your therapist | Bonet", "俾治療師睇嘅居家練習報告示範 | 哥基健動"),
+          T("A sample one-page home practice report to print or share with a therapist or family: days, minutes, exercises and speaking. Invented data, not a real person.", "一頁居家練習報告嘅示範，可以列印或者俾治療師同家人睇：日數、分鐘、運動同說話。資料係虛構嘅，唔係真人。"), body, lang=lang, local=True)
 
 
 # ------------------------------------------------------------------ android early access (unlinked, noindex, flagged)

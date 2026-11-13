@@ -13,7 +13,9 @@ Inputs: scripts/home.py (home template, English text with a Cantonese gloss), st
 content/prices.json, content/*.html (inner pages), content/blog/*.html (posts), content/flags.json.
 
 Every page except the blog is built once per language: English at /<page>, the others at /<lang>/<page> (parts.LOCAL_PAGES).
-Short pages (/what-bonet-tracks, /example-report, /compare.html, 404) use the string files. Long pages use translated fragments:
+Short pages (/what-bonet-tracks, /example-report, /compare.html, 404) use the string files, and so do the search landing pages in
+scripts/seo_pages.py (four need pages, /compare/bonet-vs-<product>, and /llms.txt). The search titles and descriptions of /science,
+/therapist, /faq and /safety are in seo_pages.META (string files again); the meta.<lang>.json files are only the fallback for other pages. Long pages use translated fragments:
 content/legal/<slug>.<lang>.html, content/science.<lang>.html, content/therapist.<lang>.html, titles in content/legal/meta.<lang>.json.
 While a fragment is missing, the page is still built at the language's URL with the English text (canonical points at the English
 page, no hreflang) and the build prints "TRANSLATION PENDING". The translation is picked up as soon as the file exists.
@@ -33,6 +35,7 @@ if not json.loads((ROOT / "content" / "flags.json").read_text()).get("practice_q
 parts.FLAGS_OFF = FLAGS_OFF
 import home as homemod  # noqa: E402
 import cost as costmod  # noqa: E402
+import seo_pages  # noqa: E402
 _flags = json.loads((ROOT / "content" / "flags.json").read_text())
 homemod.VIDEO_ON = bool(_flags.get("new_demo_video", False)) or ("--with" in sys.argv and "new_demo_video" in sys.argv[sys.argv.index("--with") + 1].split(","))
 
@@ -137,7 +140,7 @@ def notice(slug, lang):
         return False
     body = f.read_text()
     assert "CONFIRM" not in body, f"marker in {slug}.{lang}"
-    title, desc = NOTICE_META[slug][lang]
+    title, desc = seo_pages.meta(slug, lang) if slug in seo_pages.META else NOTICE_META[slug][lang]
     pre = LANGS[lang]["path"].rstrip("/")
     path = f"{slug}.html" if lang == "en" else f"{pre.strip('/')}/{slug}.html"
     alt = {c: f"{SITE}{(LANGS[c]['path'].rstrip('/'))}/{slug}" for c in LANGS}
@@ -159,9 +162,11 @@ def inner(slug, lang="en"):
     body = re.sub(r'\s+data-zh="[^"]*"', "", body)  # Cantonese has its own page now; the English page no longer carries it
     body = re.sub(r'href="(?!https?:|mailto:|/|#)([^"]+)"', r'href="/\1"', body)
     urls, alt = page_urls(path, skip)
-    if translated:
+    if slug in seo_pages.META and (translated or lang == "en"):
+        title, desc = seo_pages.meta(slug, lang)
+    elif translated:
         title, desc = frag_meta(lang, slug, title, desc)
-    elif lang != "en":
+    if not translated and lang != "en":
         PENDING.setdefault(lang, set()).add(f"page:{slug}")
         body = f'<div lang="en">\n{body}\n</div>'
     h = head(lang, title, desc, alt.get(lang, alt["en"]), "og-en.png", app_css=False, alt=alt if lang in alt else None)
@@ -250,13 +255,15 @@ def compare_page(lang="en"):
     t = parts.mk(lang)
     body = homemod.compare_full(lang)
     urls, alt = page_urls("compare.html")
-    title = t("How Bonet compares: notes and sources", "哥基健動同其他方案比較：附註同來源")
-    desc = t("The full comparison of Bonet with Constant Therapy, Tactus Therapy, Lingraphica TalkPath, Flint Rehab and a paper handout, with sources and what others do better.",
-             "哥基健動同 Constant Therapy、Tactus Therapy、Lingraphica TalkPath、Flint Rehab 同紙本講義嘅完整比較，附資料來源，亦講埋其他產品做得更好嘅地方。")
+    title = t("Bonet vs Constant Therapy, Tactus, TalkPath and Flint Rehab", "哥基健動同 Constant Therapy、Tactus、TalkPath、Flint Rehab 比較")
+    desc = t("Bonet compared with Constant Therapy, Tactus Therapy, Lingraphica TalkPath, Flint Rehab and a paper handout: features, prices, sources, and what others do better.",
+             "哥基健動同 Constant Therapy、Tactus Therapy、Lingraphica TalkPath、Flint Rehab 同紙本講義比較：功能、價錢、資料來源，亦講埋其他產品做得更好嘅地方。")
+    one = (f'<section id="one-to-one" class="cost-sources"><h2>{t("One product at a time", "逐個產品比較")}</h2><ul>'
+           + "".join(f'<li><a href="{h}">{x}</a></li>' for h, x in seo_pages.vs_links(lang)) + "</ul></section>")
     h = head(lang, title, desc, alt[lang], "og-en.png", app_css=False, alt=alt)
     h += header(lang, urls=urls)
     h += (f'<main id="main" class="doc-wrap"><div class="wrap"><div class="doc" style="max-width:none"><div class="doc-top"><h1>{t("How Bonet compares", "同其他方案比較")}</h1>'
-          f'<p>{t("Notes and sources behind the short table on the home page.", "主頁嗰個簡表背後嘅附註同來源。")}</p></div>{body}{costmod.cost_sources(lang)}</div></div></main>\n')
+          f'<p>{t("Notes and sources behind the short table on the home page.", "主頁嗰個簡表背後嘅附註同來源。")}</p></div>{body}{one}{costmod.cost_sources(lang)}</div></div></main>\n')
     h += footer(lang, urls=urls)
     write(out_path(lang, "compare.html"), localise(h, lang))
 
@@ -307,7 +314,7 @@ def sitemap():
     local("compare.html", "0.5")
     for slug, (_, _, pri) in LEGAL.items():
         local(slug, pri, untranslated(ROOT / "content" / "legal", slug))
-    for slug, pri in (extra_pages.LOCAL_SITEMAP if extra_pages else []):
+    for slug, pri in (extra_pages.LOCAL_SITEMAP if extra_pages else []) + seo_pages.LOCAL_SITEMAP:
         local(slug, pri)
     for slug in NOTICES:
         local(slug, "0.6")
@@ -336,6 +343,7 @@ if __name__ == "__main__":
         notfound(lang)
     if extra_pages:
         extra_pages.build(sys.modules[__name__])
+    seo_pages.build(sys.modules[__name__])
     blog_index("en"); blog_index("zh-hant"); old_post(); sitemap()
     if "--export" in sys.argv:
         (ROOT / "strings").mkdir(exist_ok=True)

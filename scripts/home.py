@@ -3,7 +3,7 @@ import json
 import re
 import parts
 from cost import cost_section
-from parts import FACTS, NUM_WORD, NUM_YUE, LANG_COUNT, APP, MAIL, SITE, esc, footer, head, header, mk, price_html, price_text, LANGS, PRICES
+from parts import NEED_PAGES, NEED_UI, VS_PAGES, vs_slug, u, FACTS, NUM_WORD, NUM_YUE, LANG_COUNT, APP, MAIL, SITE, esc, footer, head, header, mk, price_html, price_text, LANGS, PRICES
 
 ROOT = __import__("pathlib").Path(__file__).resolve().parent.parent
 CMP = json.loads((ROOT / "scripts" / "competitors.json").read_text())
@@ -146,7 +146,8 @@ def compare(lang):
              + pc(f"$29.99 / {mo}") + pc("$89.99", t("4-in-1 app", "四合一 app")) + pc(t("Free", "免費")) + '</tr>')
     legend = t("\u2713 yes, Part = partly, \u2013 not offered as far as we can tell.", "\u2713 有，部分 = 部分有，\u2013 據我哋所知冇提供。")
     return f"""<div class="cmpwrap" role="region" tabindex="0" aria-label="{t('Comparison table', '比較表')}"><table class="cmp cmp--s"><thead><tr><th scope="col"><span class="sr">{t('Feature', '項目')}</span></th><th scope="col" class="us">Bonet</th>{th}</tr></thead><tbody>{rows}</tbody></table></div>
-<p class="asof">{legend} {t('As of November 2026.', '資料截至 2026 年 11 月。')} <a href="/compare.html">{t('Notes and sources', '附註同來源')}</a></p>"""
+<p class="asof">{legend} {t('As of November 2026.', '資料截至 2026 年 11 月。')} <a href="/compare.html">{t('Notes and sources', '附註同來源')}</a></p>
+<p class="asof">{t('One product at a time:', '逐個產品比較：')} {" &middot; ".join(f'<a href="/{vs_slug(s)}">{t("Bonet vs {name}", "哥基健動同 {name} 比較").replace("{name}", n)}</a>' for s, n in VS_PAGES.items())}</p>"""
 
 def compare_full(lang):
     t = mk(lang)
@@ -230,14 +231,23 @@ def video_for(lang):
 def home(lang):
     T = mk(lang)
     base = LANGS[lang]["path"]
-    title = T("Bonet: daily home practice for movement, speaking and brain games", "哥基健動 Bonet：喺屋企每日練習運動、說話同腦力")
-    desc = T("A daily practice app for older adults. Move with your camera counting reps, practise speaking with hints, and play short brain games, with a corgi coach named Bonet. Free to start. A practice tool, not a medical device.",
-             "為長者而設嘅每日練習：鏡頭幫你數運動次數、有提示嘅說話練習、簡短腦力遊戲，仲有柯基教練朱古力陪你。免費開始。呢個係練習工具，唔係醫療器材。")
+    title = T("Bonet: home practice app for seniors and after a stroke", "哥基健動 Bonet：長者同中風後嘅居家練習 app")
+    desc = T("Daily home practice for older adults, including after a stroke: camera-counted exercises, speech practice and brain games. Free to start. Not a medical device.",
+             "為長者而設嘅每日居家練習，中風後都用得：鏡頭數次數嘅運動、說話練習同腦力遊戲。免費開始。唔係醫療器材。")
+    usd = re.match(r"[^\d]*([\d.]+)", PRICES["usd"]).group(1)
+    FXL = lambda x: x.replace("{levels}", str(FACTS["speaking_levels"])).replace("{exercises}", str(FACTS["exercises"]))
     ld = [
         {"@context": "https://schema.org", "@type": "Organization", "@id": SITE + "/#organization", "name": "Coglix Labs Inc.", "url": SITE + "/", "logo": SITE + "/icon-512.png", "email": MAIL},
         {"@context": "https://schema.org", "@type": "SoftwareApplication", "@id": SITE + "/#software", "name": "Bonet", "alternateName": "哥基健動", "url": SITE + "/",
          "image": SITE + "/img/" + ("og-en.png" if lang == "en" else "og-zh.png"), "applicationCategory": "LifestyleApplication", "operatingSystem": "Web browser",
-         "inLanguage": [x["tag"] for x in LANGS.values()], "description": desc, "publisher": {"@id": SITE + "/#organization"}, "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}},
+         "inLanguage": [x["tag"] for x in LANGS.values()], "description": desc, "publisher": {"@id": SITE + "/#organization"},
+         "featureList": [FXL(T("All {exercises} exercises, your own plans", "全部 {exercises} 個運動，仲可以自訂計劃")), FXL(T("All {levels} speaking levels", "全部 {levels} 級說話練習")), T("Every brain game level", "所有腦力遊戲級別")],
+         "offers": [{"@type": "Offer", "name": T("Free plan", "免費版"), "price": "0", "priceCurrency": "USD", "url": APP + "/"},
+                    {"@type": "Offer", "name": T("Premium", "完整版"), "price": usd, "priceCurrency": "USD", "url": APP + "/",
+                     "description": T("7 days free, then billed monthly. Cancel in Settings.", "免費試用 7 日，之後按月收費。可以喺設定取消。"),
+                     "priceSpecification": {"@type": "UnitPriceSpecification", "price": usd, "priceCurrency": "USD", "billingDuration": "P1M"}}]},
+        {"@context": "https://schema.org", "@type": "WebSite", "@id": SITE + "/#website", "url": SITE + "/", "name": "Bonet", "alternateName": "哥基健動",
+         "inLanguage": [x["tag"] for x in LANGS.values()], "publisher": {"@id": SITE + "/#organization"}},
         {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [
             {"@type": "Question", "name": q, "acceptedAnswer": {"@type": "Answer", "text": re.sub(r"<[^>]+>", "", a).replace("{price}", price_text(lang))}} for q, a in faq_items(lang)]},
     ]
@@ -348,12 +358,13 @@ def home(lang):
            ("ear", T("Feedback made for you", "為你而設嘅回饋"), T("Specific to each session: how high, how steady, which words.", "每次練習都不同：幾高、幾穩、邊啲詞語。")),
            ("chart", T("A report your therapist can read", "治療師睇得明嘅報告"), T("Tracked over time, so you can see the change.", "長期記錄，睇得到變化。"))]
     whyh = "".join(f'<div class="why-i rv" style="--rd:{n * .08:.2f}s">{icon(i)}<h3>{a}</h3><p>{b}</p></div>' for n, (i, a, b) in enumerate(why))
-    who = [("sun", T("Older adults keeping active every day", "每日保持活動嘅長者")),
-           ("footprints", T("Practising at home after a stroke or injury", "中風或受傷後喺屋企練習")),
-           ("calendar", T("Between physio or speech therapy visits", "物理治療或言語治療覆診之間")),
-           ("brain", T("Regular memory and attention practice", "定期練習記憶同專注")),
-           ("heart", T("Families and carers helping out", "幫手嘅家人同照顧者"))]
-    whoh = "".join(f'<li class="rv"><span class="wc">{icon(i)}<span>{x}</span></span></li>' for i, x in who)
+    who = [("sun", T("Older adults keeping active every day", "每日保持活動嘅長者"), "/exercise-app-for-seniors"),
+           ("footprints", T("Practising at home after a stroke or injury", "中風或受傷後喺屋企練習"), "/stroke-home-practice"),
+           ("calendar", T("Between physio or speech therapy visits", "物理治療或言語治療覆診之間"), "/speech-practice-at-home"),
+           ("brain", T("Regular memory and attention practice", "定期練習記憶同專注"), None),
+           ("heart", T("Families and carers helping out", "幫手嘅家人同照顧者"), "/for-family-and-carers")]
+    whoh = "".join(f'<li class="rv"><a class="wc" href="{h}">{icon(i)}<span>{x}</span></a></li>' if h else f'<li class="rv"><span class="wc">{icon(i)}<span>{x}</span></span></li>' for i, x, h in who)
+    need_links = " &middot; ".join(f'<a href="/{p}">{u(NEED_UI[p], lang)}</a>' for p in NEED_PAGES)
     whoh += f'<li class="rv"><a class="wc" href="/therapist.html">{icon("chart")}<span>{T("Therapists following home practice", "跟進居家練習嘅治療師")}</span></a></li>'
     final_price = T("Free to start. Premium {price} a month, 7 days free.", "免費開始。完整版每月 {price}，免費試用 7 日。").replace("{price}", price)
 
@@ -493,6 +504,7 @@ def home(lang):
 <section class="sec" id="who"><div class="wrap">
 <div class="open open--c"><h2 class="display display--ink rv-word">{T('Who Bonet is for', '哥基健動啱邊啲人')}</h2></div>
 <ul class="who">{whoh}</ul>
+<p class="calm rv">{need_links}</p>
 <p class="calm rv">{T('Bonet is a practice tool. It is not a medical device and does not diagnose or treat. Ask your doctor or therapist what practice is right for you.', '哥基健動係練習工具，唔係醫療器材，亦唔會診斷或者治療。邊啲練習啱你，請問你嘅醫生或者治療師。')} <a href="{pre}/safety">{T('Privacy and safety', '私隱與安全')}</a></p>
 </div></section>
 

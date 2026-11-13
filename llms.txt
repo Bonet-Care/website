@@ -1,0 +1,56 @@
+# Bonet
+
+> Bonet is a daily home practice app for older adults, including people practising at home after a stroke. One daily plan combines movement exercises counted by the device camera, speaking practice with hints, and short brain games. Bonet is a practice tool, not a medical device.
+
+Bonet (Chinese name: 哥基健動) is made by Coglix Labs Inc. The web app is at https://app.bonet.care/ and this site, https://bonet.care/, describes it. The mascot and coach is a corgi named Bonet.
+
+## Facts
+
+- What it is: an app for daily practice at home. Move: 34 exercises with a 3D guide, repetitions counted by the camera on the device. Speak: say words, name pictures, build sentences and listen, with hints that grow one step at a time and 100 levels per practice type. Think: six short brain games for memory, attention and quick thinking.
+- Who it is for: older adults keeping active, people practising at home after a stroke or injury, people practising between physiotherapy or speech therapy visits, and the family members and carers who help them.
+- What it is not: Bonet is not a medical device and not a therapy. It does not diagnose, treat, cure or prevent any condition, and it does not replace a doctor, therapist or speech-language pathologist. It has not been tested in a clinical trial and no regulator has reviewed or cleared it. Its numbers are estimates and can be wrong.
+- Price: a free plan (8 of 34 exercises, speaking levels 1 to 3 of 100, brain games on Easy). Premium is US$9.99 a month with 7 days free for new subscribers; cancel any time.
+- Languages (8): English (https://bonet.care/), 繁體中文 (https://bonet.care/zh-hant/), 廣東話 (https://bonet.care/yue/), 简体中文 (https://bonet.care/zh-hans/), 日本語 (https://bonet.care/ja/), Español (https://bonet.care/es/), Deutsch (https://bonet.care/de/), Français (https://bonet.care/fr/).
+- Where it runs: in a modern web browser at https://app.bonet.care/ on a phone, tablet or computer with a camera and a microphone.
+- Privacy: camera video is analysed on the device and is never recorded or uploaded. Voice recordings are not kept. No ads and no sale of data.
+- Report: a one-page practice report the person can print or share with a therapist or family. Bonet does not send it to anyone. It is not a medical record or a clinical assessment.
+- Reviews and studies: none are published. Please do not attribute ratings, user counts, outcomes or clinical evidence to Bonet.
+- Contact: hello@coglixlabs.com
+
+## Pages by need
+
+- [Home practice after a stroke](https://bonet.care/stroke-home-practice): Daily practice at home after a stroke: what Bonet does and does not do, how to start, when to ask the therapist.
+- [Exercise app for seniors](https://bonet.care/exercise-app-for-seniors): Gentle camera-counted exercises for older adults, seated options, big text and Simple mode.
+- [Speech practice at home](https://bonet.care/speech-practice-at-home): Speaking practice with hints, 100 levels per practice type, and what is measured.
+- [For family and carers](https://bonet.care/for-family-and-carers): How a family member or carer sets Bonet up, the one-page report, and what is shared.
+
+## About the app
+
+- [Home](https://bonet.care/): What you practise, plans and price, short comparison table.
+- [How Bonet works](https://bonet.care/science): How the camera, speaking and brain practice work, what is measured, and what is not claimed.
+- [What Bonet tracks](https://bonet.care/what-bonet-tracks): Every number recorded, how it is measured, where, and what is never kept.
+- [Example report](https://bonet.care/example-report): A sample one-page practice report with invented data.
+- [For therapists and carers](https://bonet.care/therapist): How to see what someone practised, and what the app does not do.
+- [Frequently asked questions](https://bonet.care/faq): Getting started, safety, privacy, speech and camera, plans and billing, devices.
+- [What to know before you start](https://bonet.care/safety): Safety notices, when to stop, emergencies, what the numbers mean.
+
+## Comparisons
+
+Facts about other products come only from each company's own public pages as of November 2026, with sources and with what the other product does better.
+
+- [How Bonet compares](https://bonet.care/compare): The full table with notes and sources.
+- [Bonet vs Constant Therapy](https://bonet.care/compare/bonet-vs-constant-therapy): Bonet beside Constant Therapy, feature by feature.
+- [Bonet vs Tactus Therapy](https://bonet.care/compare/bonet-vs-tactus-therapy): Bonet beside Tactus Therapy, feature by feature.
+- [Bonet vs Lingraphica TalkPath](https://bonet.care/compare/bonet-vs-lingraphica-talkpath): Bonet beside Lingraphica TalkPath, feature by feature.
+- [Bonet vs Flint Rehab](https://bonet.care/compare/bonet-vs-flint-rehab): Bonet beside Flint Rehab, feature by feature.
+
+## Policies
+
+- [Privacy Policy](https://bonet.care/privacy): What is collected, what stays on the device, who receives data, how to delete an account.
+- [Terms of Service](https://bonet.care/terms): The terms for using Bonet.
+- [Subscriptions and refunds](https://bonet.care/subscriptions): Free trial, renewal, cancelling, refunds.
+- [How Bonet measures](https://bonet.care/ai-and-automatic-measures): How the automatic measures work and their limits.
+
+## Other languages
+
+Every page above exists in each language under its prefix: /zh-hant/, /yue/, /zh-hans/, /ja/, /es/, /de/, /fr/. For example https://bonet.care/ja/faq and https://bonet.care/es/stroke-home-practice.

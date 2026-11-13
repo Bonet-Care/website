@@ -39,6 +39,11 @@ for code in LANGS:
 # ---- pages that exist under every language path (/privacy in English, /ja/privacy in Japanese, and so on)
 LOCAL_PAGES = ("privacy", "terms", "subscriptions", "cookies", "consumer-health-data", "ai-and-automatic-measures", "safety", "faq",
                "what-bonet-tracks", "example-report", "compare", "science", "therapist")
+# Search landing pages (scripts/seo_pages.py): one per need, and one comparison page per product in scripts/competitors.json.
+NEED_PAGES = ("stroke-home-practice", "exercise-app-for-seniors", "speech-practice-at-home", "for-family-and-carers")
+VS_PAGES = {"constant-therapy": "Constant Therapy", "tactus-therapy": "Tactus Therapy", "lingraphica-talkpath": "Lingraphica TalkPath", "flint-rehab": "Flint Rehab"}
+vs_slug = lambda s: f"compare/bonet-vs-{s}"
+LOCAL_PAGES += NEED_PAGES + tuple(vs_slug(s) for s in VS_PAGES)
 _LOC = re.compile(r'href="/(?:(%s)(\.html)?)?(#[^"]*)?"(?! hreflang)' % "|".join(LOCAL_PAGES))
 
 
@@ -130,9 +135,14 @@ UI = {
     "f_cset": {"en": "Cookie settings", "zh-hant": "Cookie 設定", "yue": "Cookie 設定", "zh-hans": "Cookie 设置", "ja": "Cookieの設定", "es": "Ajustes de cookies", "de": "Cookie-Einstellungen", "fr": "Réglages des cookies"},
     "f_english": {"en": "English", "zh-hant": "英文", "yue": "英文", "zh-hans": "英文", "ja": "英語", "es": "en inglés", "de": "auf Englisch", "fr": "en anglais"},
     "f_line": {"en": "Daily home practice for movement, speaking and brain games.", "zh-hant": "在家每日練習運動、說話與腦力遊戲。", "yue": "喺屋企每日練習運動、說話同腦力遊戲。", "zh-hans": "在家每日练习运动、说话与脑力游戏。", "ja": "毎日のおうち練習で、運動・話す・脳トレ。", "es": "Práctica diaria en casa: movimiento, habla y juegos mentales.", "de": "Tägliches Üben zu Hause: Bewegung, Sprechen und Denkspiele.", "fr": "Une pratique quotidienne à la maison : mouvement, parole et jeux de cerveau."},
+    "f_stroke": {"en": "Home practice after a stroke", "zh-hant": "中風後在家練習", "yue": "中風後喺屋企練習", "zh-hans": "中风后在家练习", "ja": "脳卒中後の自宅練習", "es": "Práctica en casa tras un ictus", "de": "Üben zu Hause nach Schlaganfall", "fr": "S’exercer à la maison après un AVC"},
+    "f_seniors": {"en": "Exercise app for seniors", "zh-hant": "長者運動 App", "yue": "長者運動 app", "zh-hans": "长者运动 App", "ja": "シニア向け運動アプリ", "es": "App de ejercicios para mayores", "de": "Übungs-App für Senioren", "fr": "Appli d’exercices pour seniors"},
+    "f_speech": {"en": "Speech practice at home", "zh-hant": "在家練習說話", "yue": "喺屋企練習說話", "zh-hans": "在家练习说话", "ja": "自宅で話す練習", "es": "Practicar el habla en casa", "de": "Sprechen üben zu Hause", "fr": "S’exercer à parler à la maison"},
+    "f_family": {"en": "For family and carers", "zh-hant": "給家人與照顧者", "yue": "俾家人同照顧者", "zh-hans": "给家人和照顾者", "ja": "ご家族・介助者の方へ", "es": "Para familiares y cuidadores", "de": "Für Angehörige und Pflegende", "fr": "Pour la famille et les aidants"},
     "hello": {"en": "Bonet says hello", "zh-hant": "柯基向你打招呼", "yue": "朱古力同你打招呼", "zh-hans": "柯基向你打招呼", "ja": "コーギーがあいさつします", "es": "Bonet te saluda", "de": "Bonet sagt Hallo", "fr": "Bonet vous dit bonjour"},
 }
 u = lambda k, lang: UI[k][lang]
+NEED_UI = dict(zip(NEED_PAGES, ("f_stroke", "f_seniors", "f_speech", "f_family")))  # link label of each need page
 
 
 def head(lang, title, desc, canon, og, extra="", alt=None, app_css=True):
@@ -216,7 +226,7 @@ def footer(lang, urls=None, inplace=None, demos=False):
     nav = "".join(f'<a href="{pre}{h}">{t(k)}</a>' for h, k in legal)
     nav += f'<a href="mailto:{MAIL}">{t("f_contact")}</a><button type="button" class="linkbtn" data-consent-open>{t("f_cset")}</button>'
     blog = "/zh-hant/blog/" if lang == "zh-hant" else "/blog/"
-    more = "".join(f'<a href="{h}">{t(k)}</a>' for h, k in [(pre + "/science.html", "f_how"), (pre + "/therapist.html", "f_ther"), (blog, "f_blog")])
+    more = "".join(f'<a href="{h}">{t(k)}</a>' for h, k in [(pre + "/science.html", "f_how"), (pre + "/therapist.html", "f_ther")] + [(f"{pre}/{p}", NEED_UI[p]) for p in NEED_PAGES] + [(blog, "f_blog")])
     plain = "".join(f'<a href="{(urls or {}).get(c, d["path"])}" hreflang="{d["tag"]}" lang="{d["html"]}">{d["name"]}</a>' for c, d in LANGS.items())
     return f"""<footer class="ftr"><div class="wrap">
 <div class="ftr-top"><a class="brand" href="{pre or '/'}" aria-label="Bonet"><img src="/img/mascot/head.webp" width="512" height="512" alt="">Bonet</a><p>{t('f_line')}</p></div>

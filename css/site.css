@@ -835,3 +835,5 @@ body:has(.cnb) { padding-bottom: 14rem; }
 .fb-col .fb-more { font-size: 1rem; margin-top: .2rem; }
 .fb-vis .bn-tipcard, .fb-vis .bn-ann:nth-of-type(3) { display: none; }
 main { overflow-x: clip; }
+/* search landing pages (scripts/seo_pages.py): the Start button and the demo inside a text page */
+.doc--legal a.btn { color: #fff; text-decoration: none; } .doc--legal figure .card-demo { margin-inline: auto; } .doc--legal .vs tbody th { white-space: normal; min-width: 9rem; } .doc--legal .vs td { min-width: 11rem; }
