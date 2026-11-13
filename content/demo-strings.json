@@ -6,7 +6,7 @@
   "ja": "今日",
   "es": "Hoy",
   "de": "Heute",
-  "fr": "Aujourd'hui"
+  "fr": "Aujourd’hui"
  },
  "Move": {
   "yue": "運動",
@@ -33,7 +33,7 @@
   "ja": "脳",
   "es": "Mente",
   "de": "Denken",
-  "fr": "Mental"
+  "fr": "Esprit"
  },
  "Me": {
   "yue": "我",
@@ -177,7 +177,7 @@
   "ja": "よくできました！",
   "es": "¡Bien hecho!",
   "de": "Gut gemacht!",
-  "fr": "Bravo !"
+  "fr": "Bien joué !"
  },
  "Well done! One step ticked.": {
   "yue": "做得好！完成咗一步。",
@@ -203,8 +203,8 @@
   "zh-hans": "再抬高一点",
   "ja": "もう少し高く上げて",
   "es": "Sube un poco más",
-  "de": "Etwas höher heben",
-  "fr": "Levez un peu plus"
+  "de": "Hebe es noch etwas höher",
+  "fr": "Levez un peu plus haut"
  },
  "Your video stays on this phone": {
   "yue": "影像只留喺你部電話",
@@ -266,7 +266,7 @@
   "zh-hans": "幅度",
   "ja": "可動域",
   "es": "Alcance",
-  "de": "Weite",
+  "de": "Umfang",
   "fr": "Amplitude"
  },
  "Pace": {
@@ -284,8 +284,8 @@
   "zh-hans": "稳定",
   "ja": "安定",
   "es": "Estable",
-  "de": "Ruhig",
-  "fr": "Stable"
+  "de": "Stabil",
+  "fr": "Stabilité"
  },
  "L/R": {
   "yue": "左右",
@@ -294,7 +294,7 @@
   "ja": "左右",
   "es": "I/D",
   "de": "L/R",
-  "fr": "G/D"
+  "fr": "Symétrie"
  },
  "Hold": {
   "yue": "維持",
@@ -356,8 +356,8 @@
   "zh-hans": "排句子",
   "ja": "文を作る",
   "es": "Formar una frase",
-  "de": "Satz bauen",
-  "fr": "Construire la phrase"
+  "de": "Satz bilden",
+  "fr": "Construire une phrase"
  },
  "Asking for a drink": {
   "yue": "想要飲嘢",
@@ -402,7 +402,7 @@
   "ja": "ヒントをください",
   "es": "Dame una pista",
   "de": "Gib mir einen Tipp",
-  "fr": "Un indice"
+  "fr": "Donnez-moi un indice"
  },
  "Find the pairs": {
   "yue": "搵相同",
@@ -536,8 +536,8 @@
   "zh-hans": "每周排行榜",
   "ja": "週間リーグ",
   "es": "Liga semanal",
-  "de": "Wochenliga",
-  "fr": "Ligue hebdo"
+  "de": "Liga der Woche",
+  "fr": "Ligue de la semaine"
  },
  "Today's practice": {
   "yue": "今日練習",
@@ -545,7 +545,7 @@
   "zh-hans": "今天的练习",
   "ja": "今日の練習",
   "es": "Práctica de hoy",
-  "de": "Heutiges Training",
+  "de": "Heutige Übung",
   "fr": "Entraînement du jour"
  },
  "Start time": {
@@ -555,7 +555,7 @@
   "ja": "話しはじめ",
   "es": "Empezar",
   "de": "Start",
-  "fr": "Démarrer"
+  "fr": "Départ"
  },
  "Maple": {
   "yue": "楓葉",

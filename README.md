@@ -18,7 +18,7 @@ It is plain static HTML and CSS. There is no framework and no build step for dep
 
 ## Checks
 
-`python3 scripts/check-demos.py` (no dependencies): every demo string exists in all eight languages (`content/demo-strings.json`, `content/demo-speak.json`), every `t('...')` key exists, and no demo component has hard-coded text. `cd demos && npm install && npm run check` also runs `scripts/check-demos.mjs`: it opens each language page in headless Chromium and fails if a demo shows English text on a non-English page or the language menu marks the wrong language (serve the folder on :8124 or pass a base URL). Demo wording lives in `content/demo-strings.json` (keyed by the English text) and `content/demo-speak.json`. German and French labels are our own wording until the app has i18n.de.ts and i18n.fr.ts.
+`python3 scripts/check-demos.py` (no dependencies): every demo string exists in all eight languages (`content/demo-strings.json`, `content/demo-speak.json`), every `t('...')` key exists, and no demo component has hard-coded text. `cd demos && npm install && npm run check` also runs `scripts/check-demos.mjs`: it opens each language page in headless Chromium and fails if a demo shows English text on a non-English page or the language menu marks the wrong language (serve the folder on :8124 or pass a base URL). Demo wording lives in `content/demo-strings.json` (keyed by the English text) and `content/demo-speak.json`. German and French labels use the app's wording (app/web/src/lib/i18n.de.ts, i18n.fr.ts) wherever the same screen text exists there; the sentences and labels the app does not have (for example the speaking demo, the tip text and the league names) are our own wording.
 
 ## Editing
 
