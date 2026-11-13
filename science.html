@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-WMQD9MWHJN"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-WMQD9MWHJN', { anonymize_ip: true });
+    </script>
+    <title>How Bonet works</title>
+    <meta name="description" content="What the Bonet app does, how its camera and speech measurements work and their limits. A practice tool, not a medical device.">
+    <meta name="keywords" content="home practice app, camera exercise, speaking practice, brain games">
+    <link rel="canonical" href="https://bonet.care/science.html">
+    <link rel="alternate" hreflang="en" href="https://bonet.care/science.html">
+    <link rel="alternate" hreflang="x-default" href="https://bonet.care/science.html">
+
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://bonet.care/science.html">
+    <meta property="og:title" content="How Bonet works">
+    <meta property="og:description" content="What the Bonet app does, how its camera and speech measurements work and their limits. A practice tool, not a medical device.">
+    <meta property="og:image" content="https://bonet.care/img/og-en.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="How Bonet works">
+    <meta name="twitter:description" content="What the Bonet app does, how its camera and speech measurements work and their limits. A practice tool, not a medical device.">
+    <meta name="twitter:image" content="https://bonet.care/img/og-en.png">
+
+
+
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="stylesheet" href="css/tailwind.css">
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', system-ui, sans-serif;
+        }
+
+        /* ── Animations ── */
+        @keyframes fade-up {
+            from {
+                opacity: 0;
+                transform: translateY(24px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-up {
+            animation: fade-up 0.7s ease-out forwards;
+        }
+
+        /* ── Glass nav ── */
+        .nav-glass {
+            background: rgba(255, 255, 255, 0.6);
+            backdrop-filter: blur(40px) saturate(1.8);
+            -webkit-backdrop-filter: blur(40px) saturate(1.8);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.04);
+        }
+
+        /* ── Glass cards ── */
+        .glass-card {
+            background: rgba(255, 255, 255, 0.5);
+            backdrop-filter: blur(24px) saturate(1.6);
+            -webkit-backdrop-filter: blur(24px) saturate(1.6);
+            border: 1px solid rgba(255, 255, 255, 0.6);
+            border-radius: 24px;
+            box-shadow:
+                0 8px 32px rgba(70, 119, 172, 0.08),
+                0 2px 8px rgba(0, 0, 0, 0.04),
+                inset 0 1px 0 rgba(255, 255, 255, 0.5);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .glass-card:hover {
+            background: rgba(255, 255, 255, 0.7);
+            transform: translateY(-6px);
+            box-shadow:
+                0 24px 64px rgba(70, 119, 172, 0.14),
+                0 4px 16px rgba(0, 0, 0, 0.06),
+                inset 0 1px 0 rgba(255, 255, 255, 0.7);
+        }
+
+        .leading-relaxed {
+            line-height: 1.75;
+        }
+
+        /* ── Tech section large canvas ── */
+        .tech-canvas-large {
+            width: 200px;
+            height: 200px;
+            border-radius: 32px;
+            overflow: hidden;
+            background: rgba(255, 255, 255, 0.3);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.4);
+            box-shadow: 0 8px 32px rgba(70, 119, 172, 0.1);
+        }
+
+        /* ── Dark mode ── */
+        body.dark {
+            background: linear-gradient(180deg, #0f1724 0%, #162039 50%, #0f1724 100%) !important;
+        }
+
+        body.dark [style*="color: #162039"] {
+            color: #FFFFFF !important;
+        }
+
+        body.dark [style*="color: #657FB1"] {
+            color: #9AA7C1 !important;
+        }
+
+        body.dark [style*="color: #9AA7C1"] {
+            color: #BDC5D4 !important;
+        }
+
+        body.dark [style*="color: #8587B7"] {
+            color: #A5A7D7 !important;
+        }
+
+        body.dark [style*="color: #4677AC"] {
+            color: #7BB3E0 !important;
+        }
+
+        body.dark [style*="color: #1E3A5F"] {
+            color: #BDC5D4 !important;
+        }
+
+        body.dark .text-brand-700 {
+            color: #BDC5D4 !important;
+        }
+
+        body.dark .text-brand-400 {
+            color: #9AA7C1 !important;
+        }
+
+        body.dark .text-brand-300 {
+            color: #A5A7D7 !important;
+        }
+
+        body.dark .text-brand-500 {
+            color: #7BB3E0 !important;
+        }
+
+        body.dark .nav-glass {
+            background: rgba(15, 23, 36, 0.75) !important;
+            border-color: rgba(255, 255, 255, 0.08) !important;
+        }
+
+        body.dark .glass-card {
+            background: rgba(22, 32, 57, 0.55) !important;
+            border-color: rgba(255, 255, 255, 0.08) !important;
+        }
+
+        body.dark .glass-card:hover {
+            background: rgba(22, 32, 57, 0.75) !important;
+        }
+
+        body.dark .tech-canvas-large {
+            background: rgba(22, 32, 57, 0.4) !important;
+            border-color: rgba(255, 255, 255, 0.08) !important;
+        }
+
+        body.dark footer {
+            border-color: rgba(255, 255, 255, 0.08) !important;
+        }
+
+        body.dark footer [style*="border-top"] {
+            border-color: rgba(255, 255, 255, 0.08) !important;
+        }
+
+        /* ── Large font mode ── */
+        html.large-font {
+            font-size: 125%;
+        }
+
+        /* ── Mobile responsive ── */
+        @media (max-width: 640px) {
+
+            /* Nav: compact for small screens */
+            nav {
+                top: 8px !important;
+            }
+
+            nav .nav-glass {
+                padding: 4px 6px !important;
+                gap: 2px !important;
+            }
+
+            nav .nav-glass a[href] {
+                padding: 6px 8px !important;
+                font-size: 12px !important;
+            }
+
+            nav .nav-glass .text-sm.font-bold {
+                font-size: 12px !important;
+            }
+
+            nav .nav-glass .text-xs.font-normal {
+                display: none !important;
+            }
+
+            nav .nav-glass .w-px {
+                display: none !important;
+            }
+
+            nav .nav-glass button[id="lang-en"],
+            nav .nav-glass button[id="lang-zh"] {
+                padding: 4px 8px !important;
+                font-size: 11px !important;
+            }
+
+            nav .nav-glass button[id="dark-mode-btn"],
+            nav .nav-glass button[id="large-font-btn"] {
+                width: 28px !important;
+                height: 28px !important;
+            }
+
+            /* Hero: smaller padding */
+            .pt-32 {
+                padding-top: 80px !important;
+            }
+
+            /* Section vertical spacing */
+            .py-24 {
+                padding-top: 48px !important;
+                padding-bottom: 48px !important;
+            }
+
+            /* Science canvases: responsive height */
+            canvas[style*="height: 280px"] {
+                height: 180px !important;
+            }
+
+            /* Tech canvas: responsive */
+            .tech-canvas-large {
+                width: 140px !important;
+                height: 140px !important;
+            }
+
+            .tech-canvas-large canvas {
+                width: 140px !important;
+                height: 140px !important;
+            }
+
+            /* Glass cards: reduce padding on mobile */
+            .glass-card {
+                padding: 20px !important;
+            }
+        }
+
+        /* ── Apple wellness override (matches index.html design system) ── */
+        :root {
+            --font-sans: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, 'PingFang TC', sans-serif;
+            --font-display: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Inter', system-ui, 'PingFang TC', sans-serif;
+            --primary: #0066cc;
+            --primary-focus: #0071e3;
+            --primary-soft: rgba(0,102,204,0.08);
+            --ink: #1d1d1f;
+            --ink-muted: #333333;
+            --ink-soft: #6e6e73;
+            --surface: #ffffff;
+            --surface-soft: #f5f5f7;
+            --hairline: #e0e0e0;
+            --type-display: clamp(2.5rem, 6vw, 4.5rem);
+            --type-h2: clamp(1.75rem, 3.4vw, 2.5rem);
+            --type-h3: clamp(1.125rem, 1.6vw, 1.375rem);
+            --type-body: 17px;
+            --shadow-card: 0 0 0 1px rgba(0,0,0,0.03), 0 1px 3px rgba(0,0,0,0.04);
+            --shadow-card-hover: 0 0 0 1px rgba(0,0,0,0.04), 0 14px 30px rgba(0,0,0,0.06);
+        }
+        html { scroll-behavior: smooth; }
+        body, body.antialiased {
+            font-family: var(--font-sans) !important;
+            background: var(--surface) !important;
+            color: var(--ink);
+            -webkit-font-smoothing: antialiased;
+        }
+        h1, h2, h3 { font-family: var(--font-display); letter-spacing: -0.022em; color: var(--ink); }
+        /* Re-skin headings */
+        .text-4xl, .text-5xl, .text-6xl, .text-3xl {
+            font-family: var(--font-display) !important;
+            font-weight: 600 !important;
+            letter-spacing: -0.022em !important;
+            color: var(--ink) !important;
+        }
+        .text-4xl, .text-5xl, .text-6xl { font-size: var(--type-display) !important; line-height: 1.07 !important; }
+        .text-3xl { font-size: var(--type-h2) !important; line-height: 1.07 !important; }
+        .text-lg { font-size: var(--type-body) !important; line-height: 1.47 !important; letter-spacing: -0.022em !important; }
+        .text-sm { font-size: 15px !important; line-height: 1.55 !important; letter-spacing: -0.022em !important; }
+        .text-xs { font-size: 13px !important; letter-spacing: -0.022em !important; }
+        /* Re-skin glass-card to bento pearl */
+        .glass-card {
+            background: #fff !important;
+            border: 1px solid var(--hairline) !important;
+            border-radius: 18px !important;
+            box-shadow: var(--shadow-card) !important;
+            backdrop-filter: none !important;
+            transition: transform .35s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow .25s ease;
+        }
+        .glass-card:hover { transform: translateY(-2px); box-shadow: var(--shadow-card-hover) !important; }
+        /* Eyebrow pill chips → Apple-style centered tagline */
+        section .inline-block.rounded-full[style*="rgba(70, 119, 172"],
+        section .inline-block.rounded-full[style*="rgba(133, 135, 183"],
+        section .inline-block.rounded-full[style*="rgba(70,119,172"],
+        section .inline-block.rounded-full[style*="rgba(133,135,183"] {
+            background: transparent !important;
+            border: 0 !important;
+            padding: 0 !important;
+            color: var(--primary) !important;
+            font-family: var(--font-display);
+            font-size: 14px !important;
+            font-weight: 600;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+            margin-bottom: 14px;
+        }
+        /* Body copy color reset */
+        [style*="color: #657FB1"], [style*="color:#657FB1"] { color: var(--ink-soft) !important; }
+        [style*="color: #9AA7C1"], [style*="color:#9AA7C1"] { color: var(--ink-soft) !important; }
+        [style*="color: #4677AC"], [style*="color:#4677AC"] { color: var(--primary) !important; }
+        [style*="color: #8587B7"], [style*="color:#8587B7"] { color: var(--ink-soft) !important; }
+        [style*="color: #162039"], [style*="color:#162039"] { color: var(--ink) !important; }
+        /* Section paddings still work, just enforce centered max-width */
+        section { scroll-margin-top: 80px; }
+        /* Top fixed nav: simpler */
+        nav.fixed .nav-glass {
+            background: rgba(255,255,255,0.92) !important;
+            border: 1px solid var(--hairline) !important;
+            backdrop-filter: blur(14px) saturate(1.2) !important;
+            box-shadow: 0 1px 2px rgba(0,0,0,0.04), 0 8px 24px rgba(0,0,0,0.04) !important;
+        }
+        /* Scroll progress bar */
+        .scroll-progress { position: fixed; top: 0; left: 0; right: 0; height: 2px; background: var(--primary); transform-origin: left center; transform: scaleX(0); z-index: 9999; pointer-events: none; opacity: 0.85; }
+        @media (prefers-reduced-motion: reduce) { .scroll-progress { display: none; } }
+    </style>
+    <!-- same typeface as the home page -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&display=swap">
+    <style>body, body :not(i):not(svg):not(svg *):not([class*="fa-"]) { font-family: "Geist", -apple-system, BlinkMacSystemFont, "PingFang TC", "Noto Sans TC", sans-serif !important; }</style>
+</head>
+
+<body class="antialiased"
+    style="background: #ffffff; min-height: 100vh;">
+
+    <!-- ── Navigation (Glass Pill) ── -->
+    <nav class="fixed top-6 left-1/2 -translate-x-1/2 z-50">
+        <div class="nav-glass rounded-full px-2 py-2 flex items-center gap-1">
+            <a href="https://www.coglixlabs.com" target="_blank" class="flex items-center gap-1.5 px-2 mr-1">
+                <img src="img/coglix-logo.jpg" alt="Coglix Labs" class="h-6 w-6 rounded-full object-cover" fetchpriority="high">
+                <span class="text-sm font-bold" style="color: var(--ink);">Bonet</span>
+            </a>
+            <div class="w-px h-5 bg-brand-200/50"></div>
+            <a href="index.html"
+                class="px-4 py-2 rounded-full text-sm font-medium text-brand-400 hover:text-brand-700 hover:bg-white/50 transition-all"
+                data-en="Home" data-zh="首頁">Home</a>
+            <a href="#"
+                class="px-4 py-2 rounded-full text-sm font-medium text-brand-700 hover:text-brand-900 hover:bg-white/50 transition-all"
+                data-en="Science" data-zh="科學">Science</a>
+            <a href="blog/index.html"
+                class="px-4 py-2 rounded-full text-sm font-medium text-brand-400 hover:text-brand-700 hover:bg-white/50 transition-all"
+                data-en="Blog" data-zh="部落格">Blog</a>
+            <div class="w-px h-5 bg-brand-200/50 mx-1"></div>
+            <div class="flex items-center">
+                <button onclick="setLang('en')" id="lang-en"
+                    class="px-3 py-1.5 rounded-full text-sm font-medium transition-all text-white"
+                    style="background: rgba(30,58,95,0.7); backdrop-filter: blur(8px);">EN</button>
+                <button onclick="setLang('zh')" id="lang-zh"
+                    class="px-3 py-1.5 rounded-full text-sm font-medium transition-all text-brand-300 hover:text-brand-500">ZH</button>
+            </div>
+            <div class="w-px h-5 bg-brand-200/50 mx-1"></div>
+            <button onclick="toggleDarkMode()" id="dark-mode-btn"
+                class="w-8 h-8 rounded-full flex items-center justify-center transition-all text-brand-300 hover:text-brand-500 hover:bg-white/30"
+                title="Dark Mode">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                    stroke-linecap="round">
+                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+                </svg>
+            </button>
+            <button onclick="toggleLargeFont()" id="large-font-btn"
+                class="w-8 h-8 rounded-full flex items-center justify-center text-xs font-bold transition-all text-brand-300 hover:text-brand-500 hover:bg-white/30"
+                title="Large Font">A+</button>
+        </div>
+    </nav>
+
+    <!-- ── Content ── -->
+    <section class="pt-32 pb-24 px-6">
+        <div class="max-w-4xl mx-auto">
+<div class="text-center mb-12 fade-up" style="opacity: 0;"><h1 class="text-4xl md:text-5xl font-bold mb-3" style="color: #162039;" data-en="How Bonet works" data-zh="哥基健動如何運作">How Bonet works</h1><p class="text-base" style="color: #9AA7C1;" data-en="What the app does, how it measures, and what it does not claim." data-zh="這個應用程式做甚麼、如何測量，以及它沒有聲稱甚麼。">What the app does, how it measures, and what it does not claim.</p></div>
+<div class="glass-card p-8 mb-8 fade-up" style="opacity: 0; animation-delay: 0.1s;"><h2 class="text-xl font-bold mb-3" style="color: #162039;" data-en="Three kinds of practice" data-zh="三種練習">Three kinds of practice</h2>
+<p class="text-sm leading-relaxed mb-3" style="color: #657FB1;" data-en="Bonet is a practice tool, not a medical device, and does not diagnose or treat any condition. Ask your therapist or doctor before starting." data-zh="哥基健動是練習工具，並非醫療器材，亦不會診斷或治療任何病況。開始之前，請先諮詢你的治療師或醫生。">Bonet is a practice tool, not a medical device, and does not diagnose or treat any condition. Ask your therapist or doctor before starting.</p>
+<h3 class="text-base font-semibold mt-4 mb-2" style="color: #162039;" data-en="Movement" data-zh="動作練習">Movement</h3>
+<p class="text-sm leading-relaxed mb-3" style="color: #657FB1;" data-en="Your camera finds body and hand positions on your device. The app uses them to count reps, show an estimate of range of motion and give form tips. There are 34 exercises grouped by body region." data-zh="鏡頭在你的裝置上辨識身體和手部位置。應用程式用這些位置計算次數、顯示活動幅度的估算，並提供姿勢提示。共有 34 個練習，按身體部位分類。">Your camera finds body and hand positions on your device. The app uses them to count reps, show an estimate of range of motion and give form tips. There are 34 exercises grouped by body region.</p>
+<h3 class="text-base font-semibold mt-4 mb-2" style="color: #162039;" data-en="Speaking" data-zh="說話練習">Speaking</h3>
+<p class="text-sm leading-relaxed mb-3" style="color: #657FB1;" data-en="You say a word or phrase. The app compares what it recognised with the target and gives a score. It works in English and Cantonese, in 21 levels." data-zh="你說出詞語或短句，應用程式把辨識到的內容與目標比較並給予分數。支援英語和粵語，共 21 個級別。">You say a word or phrase. The app compares what it recognised with the target and gives a score. It works in English and Cantonese, in 21 levels.</p>
+<h3 class="text-base font-semibold mt-4 mb-2" style="color: #162039;" data-en="Brain games" data-zh="腦力遊戲">Brain games</h3>
+<p class="text-sm leading-relaxed mb-3" style="color: #657FB1;" data-en="Short games for memory, attention and quick thinking, with levels of difficulty." data-zh="考驗記憶、專注和反應的短遊戲，設有不同難度。">Short games for memory, attention and quick thinking, with levels of difficulty.</p></div>
+<div class="glass-card p-8 mb-8 fade-up" style="opacity: 0; animation-delay: 0.14s;"><h2 class="text-xl font-bold mb-3" style="color: #162039;" data-en="What the measurements mean" data-zh="測量的意思">What the measurements mean</h2>
+<ul class="text-sm leading-relaxed mb-3 list-disc pl-6 space-y-1" style="color: #657FB1;"><li class="" data-en="Range of motion is an estimate from a single phone or computer camera. It changes with camera height, angle, distance and light. It is not a medical measurement. Compare yourself with yourself, not with other people." data-zh="活動幅度是用單一手機或電腦鏡頭作出的估算，會因鏡頭高度、角度、距離和光線而改變，並非醫療測量。請與自己比較，不要與他人比較。">Range of motion is an estimate from a single phone or computer camera. It changes with camera height, angle, distance and light. It is not a medical measurement. Compare yourself with yourself, not with other people.</li><li class="" data-en="Speech scores are automatic and can be wrong, especially with accents, background noise or a poor microphone." data-zh="說話分數由系統自動計算，可能有誤，特別是有口音、背景噪音或咪高峰欠佳時。">Speech scores are automatic and can be wrong, especially with accents, background noise or a poor microphone.</li><li class="" data-en="The practice report and the words &quot;improving&quot;, &quot;steady&quot; or &quot;declining&quot; only summarise the practice you did. They are not a diagnosis or a clinical assessment." data-zh="練習報告以及「進步」、「穩定」或「退步」等字眼，只是總結你做過的練習，並非診斷或臨床評估。">The practice report and the words "improving", "steady" or "declining" only summarise the practice you did. They are not a diagnosis or a clinical assessment.</li></ul></div>
+<div class="glass-card p-8 mb-8 fade-up" style="opacity: 0; animation-delay: 0.18s;"><h2 class="text-xl font-bold mb-3" style="color: #162039;" data-en="Why feedback and routine" data-zh="為甚麼有回饋和日常安排">Why feedback and routine</h2>
+<p class="text-sm leading-relaxed mb-3" style="color: #657FB1;" data-en="Many people find it easier to keep up a practice routine when they can see what they did and get clear prompts. Bonet is built to make daily practice easier to start and to keep track of. We do not claim that it improves, restores or treats any condition." data-zh="許多人在能看到自己做過甚麼、並得到清晰提示時，較容易持續練習。哥基健動的目的，是讓每日練習更容易開始，也更容易記錄。我們不聲稱它能改善、恢復或治療任何病況。">Many people find it easier to keep up a practice routine when they can see what they did and get clear prompts. Bonet is built to make daily practice easier to start and to keep track of. We do not claim that it improves, restores or treats any condition.</p></div>
+<div class="glass-card p-8 mb-8 fade-up" style="opacity: 0; animation-delay: 0.22s;"><h2 class="text-xl font-bold mb-3" style="color: #162039;" data-en="What we have not done" data-zh="我們尚未做的事">What we have not done</h2>
+<ul class="text-sm leading-relaxed mb-3 list-disc pl-6 space-y-1" style="color: #657FB1;"><li class="" data-en="We have not run a clinical trial of Bonet." data-zh="我們沒有為哥基健動進行臨床試驗。">We have not run a clinical trial of Bonet.</li><li class="" data-en="No medical regulator has reviewed or cleared it." data-zh="沒有任何醫療監管機構審查或批准它。">No medical regulator has reviewed or cleared it.</li><li class="" data-en="We do not publish outcome statistics." data-zh="我們不公布成效統計數字。">We do not publish outcome statistics.</li></ul>
+<p class="text-sm leading-relaxed mb-3" style="color: #657FB1;" data-en="For how your data is handled, see <a href='compliance.html' class='text-brand-500 hover:underline'>Privacy and safety</a>." data-zh="有關你的資料如何處理，請見<a href='compliance.html' class='text-brand-500 hover:underline'>私隱與安全</a>。">For how your data is handled, see <a href='compliance.html' class='text-brand-500 hover:underline'>Privacy and safety</a>.</p></div>
+        </div>
+    </section>
+
+    <footer class="py-12 px-6" style="border-top: 1px solid rgba(189, 197, 212, 0.3);">
+        <div class="max-w-6xl mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-10 mb-10">
+                <div>
+                    <span class="text-xl font-bold" style="color: #162039;">Bonet <a href="https://coglixlabs.com/"
+                            target="_blank" class="font-normal hover:underline transition-all"
+                            style="color: #8587B7;">by Coglix Labs Inc.</a></span>
+                    <p class="text-sm mt-3" style="color: #657FB1;"
+                        data-en="AI-guided practice for movement, speech and cognition. A practice tool, not a medical device."
+                        data-zh="AI 引導的動作、語言與認知練習。這是練習工具，並非醫療器材。">AI-guided practice for movement, speech and cognition. A practice tool, not a medical device.</p>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4" style="color: #162039;" data-en="Resources" data-zh="資源">Resources
+                    </h4>
+                    <div class="flex flex-col gap-3 text-sm" style="color: #657FB1;">
+                        <a href="index.html" class="hover:text-brand-700 transition-colors" data-en="Home"
+                            data-zh="首頁">Home</a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4" style="color: #162039;" data-en="Legal" data-zh="法律">Legal</h4>
+                    <div class="flex flex-col gap-3 text-sm" style="color: #657FB1;">
+                        <a href="terms.html" class="hover:text-brand-700 transition-colors" data-en="Terms of Service"
+                            data-zh="服務條款">Terms of Service</a>
+                        <a href="privacy.html" class="hover:text-brand-700 transition-colors" data-en="Privacy Policy"
+                            data-zh="隱私政策">Privacy Policy</a>
+                    </div>
+                </div>
+            </div>
+            <div class="pt-8 flex flex-col md:flex-row justify-between items-center gap-4"
+                style="border-top: 1px solid rgba(189, 197, 212, 0.3);">
+                <p class="text-sm" style="color: #9AA7C1;">&copy; 2026 Coglix Labs Inc.</p>
+                <div class="flex gap-6 text-sm" style="color: #9AA7C1;">
+                    <a href="terms.html" class="hover:text-brand-700 transition-colors">Terms</a>
+                    <a href="privacy.html" class="hover:text-brand-700 transition-colors">Privacy</a>
+                    <a href="index.html" class="hover:text-brand-700 transition-colors">Home</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        let currentLang = 'en';
+        let isDarkMode = false;
+        let isLargeFont = false;
+
+        function toggleDarkMode() {
+            isDarkMode = !isDarkMode;
+            localStorage.setItem('isDarkMode', isDarkMode);
+            document.body.classList.toggle('dark', isDarkMode);
+            const btn = document.getElementById('dark-mode-btn');
+            btn.style.background = isDarkMode ? 'rgba(30,58,95,0.7)' : 'transparent';
+            btn.style.backdropFilter = isDarkMode ? 'blur(8px)' : 'none';
+            btn.style.color = isDarkMode ? '#FFFFFF' : '';
+        }
+
+        function toggleLargeFont() {
+            isLargeFont = !isLargeFont;
+            localStorage.setItem('isLargeFont', isLargeFont);
+            document.documentElement.classList.toggle('large-font', isLargeFont);
+            const btn = document.getElementById('large-font-btn');
+            btn.style.background = isLargeFont ? 'rgba(30,58,95,0.7)' : 'transparent';
+            btn.style.backdropFilter = isLargeFont ? 'blur(8px)' : 'none';
+            btn.style.color = isLargeFont ? '#FFFFFF' : '';
+        }
+
+        function setLang(lang) {
+            currentLang = lang;
+            localStorage.setItem('preferredLang', lang);
+            document.getElementById('lang-en').className = lang === 'en'
+                ? 'px-3 py-1.5 rounded-full text-sm font-medium transition-all text-white'
+                : 'px-3 py-1.5 rounded-full text-sm font-medium transition-all text-brand-300 hover:text-brand-500';
+            document.getElementById('lang-zh').className = lang === 'zh'
+                ? 'px-3 py-1.5 rounded-full text-sm font-medium transition-all text-white'
+                : 'px-3 py-1.5 rounded-full text-sm font-medium transition-all text-brand-300 hover:text-brand-500';
+            document.getElementById('lang-en').style.background = lang === 'en' ? 'rgba(30,58,95,0.7)' : 'transparent';
+            document.getElementById('lang-zh').style.background = lang === 'zh' ? 'rgba(30,58,95,0.7)' : 'transparent';
+            document.querySelectorAll('[data-en]').forEach(el => {
+                el.innerHTML = lang === 'en' ? el.dataset.en : el.dataset.zh;
+            });
+            document.documentElement.lang = lang === 'en' ? 'en' : 'zh-TW';
+            document.title = lang === 'en'
+                ? 'How Bonet works'
+                : '哥基健動如何運作';
+        }
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1 });
+        document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+        // ── Auto-load Language & Mode ──
+        document.addEventListener('DOMContentLoaded', () => {
+            const savedLang = localStorage.getItem('preferredLang');
+            if (savedLang && savedLang !== currentLang) {
+                setLang(savedLang);
+            }
+
+            const savedDark = localStorage.getItem('isDarkMode');
+            if (savedDark === 'true' && !isDarkMode) toggleDarkMode();
+
+            const savedFont = localStorage.getItem('isLargeFont');
+            if (savedFont === 'true' && !isLargeFont) toggleLargeFont();
+        });
+    </script>
+
+    <script>
+    (function () {
+      if (matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+      var bar = document.createElement('div');
+      bar.className = 'scroll-progress';
+      document.body.appendChild(bar);
+      var raf = 0;
+      function update() {
+        var max = document.body.scrollHeight - window.innerHeight;
+        var p = max > 0 ? Math.min(window.scrollY / max, 1) : 0;
+        bar.style.transform = 'scaleX(' + p + ')';
+        raf = 0;
+      }
+      window.addEventListener('scroll', function () { if (!raf) raf = requestAnimationFrame(update); }, { passive: true });
+      update();
+    })();
+    // Smooth anchor scroll
+    document.addEventListener('click', function (e) {
+      var a = e.target.closest && e.target.closest('a[href^="#"]');
+      if (!a) return;
+      var id = a.getAttribute('href');
+      if (id.length <= 1) return;
+      var t = document.querySelector(id);
+      if (!t) return;
+      e.preventDefault();
+      t.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+    </script>
+</body>
+
+
+</html>

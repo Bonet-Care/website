@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-WMQD9MWHJN"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-WMQD9MWHJN', { anonymize_ip: true });
+    </script>
+    <title>Bonet Blog: stories and product updates</title>
+    <meta name="description" content="Stories and updates from the team building Bonet, a home practice app for movement, speaking and brain games.">
+    <link rel="canonical" href="https://bonet.care/blog/">
+    <link rel="alternate" hreflang="en" href="https://bonet.care/blog/">
+    <link rel="alternate" hreflang="x-default" href="https://bonet.care/blog/">
+
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://bonet.care/blog/">
+    <meta property="og:title" content="Bonet Blog: stories and product updates">
+    <meta property="og:description" content="Stories and updates from the team building Bonet, a home practice app for movement, speaking and brain games.">
+    <meta property="og:image" content="https://bonet.care/img/og-en.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Bonet Blog: stories and product updates">
+    <meta name="twitter:description" content="Stories and updates from the team building Bonet, a home practice app for movement, speaking and brain games.">
+    <meta name="twitter:image" content="https://bonet.care/img/og-en.png">
+
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="stylesheet" href="../css/tailwind.css">
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', system-ui, sans-serif;
+        }
+
+        @keyframes fade-up {
+            from { opacity: 0; transform: translateY(24px); }
+            to   { opacity: 1; transform: translateY(0); }
+        }
+
+        .fade-up { animation: fade-up 0.7s ease-out forwards; }
+
+        .nav-glass {
+            background: rgba(255, 255, 255, 0.6);
+            backdrop-filter: blur(40px) saturate(1.8);
+            -webkit-backdrop-filter: blur(40px) saturate(1.8);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.04);
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.5);
+            backdrop-filter: blur(24px) saturate(1.6);
+            -webkit-backdrop-filter: blur(24px) saturate(1.6);
+            border: 1px solid rgba(255, 255, 255, 0.6);
+            border-radius: 24px;
+            box-shadow:
+                0 8px 32px rgba(70, 119, 172, 0.08),
+                0 2px 8px rgba(0, 0, 0, 0.04),
+                inset 0 1px 0 rgba(255, 255, 255, 0.5);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .glass-card:hover {
+            background: rgba(255, 255, 255, 0.7);
+            transform: translateY(-6px);
+            box-shadow:
+                0 24px 64px rgba(70, 119, 172, 0.14),
+                0 4px 16px rgba(0, 0, 0, 0.06),
+                inset 0 1px 0 rgba(255, 255, 255, 0.7);
+        }
+
+        .leading-relaxed { line-height: 1.75; }
+
+        body.dark {
+            background: linear-gradient(180deg, #0f1724 0%, #162039 50%, #0f1724 100%) !important;
+        }
+        body.dark [style*="color: #162039"] { color: #FFFFFF !important; }
+        body.dark [style*="color: #657FB1"] { color: #9AA7C1 !important; }
+        body.dark [style*="color: #9AA7C1"] { color: #BDC5D4 !important; }
+        body.dark [style*="color: #8587B7"] { color: #A5A7D7 !important; }
+        body.dark [style*="color: #4677AC"] { color: #7BB3E0 !important; }
+        body.dark .nav-glass {
+            background: rgba(15, 23, 36, 0.75) !important;
+            border-color: rgba(255, 255, 255, 0.08) !important;
+        }
+        body.dark .glass-card {
+            background: rgba(22, 32, 57, 0.55) !important;
+            border-color: rgba(255, 255, 255, 0.08) !important;
+        }
+        body.dark .glass-card:hover {
+            background: rgba(22, 32, 57, 0.75) !important;
+        }
+        body.dark footer { border-color: rgba(255, 255, 255, 0.08) !important; }
+        body.dark footer [style*="border-top"] { border-color: rgba(255, 255, 255, 0.08) !important; }
+
+        html.large-font { font-size: 125%; }
+
+        @media (max-width: 640px) {
+            nav { top: 8px !important; }
+            nav .nav-glass { padding: 4px 6px !important; gap: 2px !important; }
+            nav .nav-glass a[href] { padding: 6px 8px !important; font-size: 12px !important; }
+            nav .nav-glass .text-sm.font-bold { font-size: 12px !important; }
+            nav .nav-glass .text-xs.font-normal { display: none !important; }
+            nav .nav-glass .w-px { display: none !important; }
+            nav .nav-glass button[id="lang-en"],
+            nav .nav-glass button[id="lang-zh"] { padding: 4px 8px !important; font-size: 11px !important; }
+            nav .nav-glass button[id="dark-mode-btn"],
+            nav .nav-glass button[id="large-font-btn"] { width: 28px !important; height: 28px !important; }
+            .pt-32 { padding-top: 80px !important; }
+            .py-24 { padding-top: 48px !important; padding-bottom: 48px !important; }
+            .glass-card { padding: 20px !important; }
+        }
+    </style>
+    <!-- same typeface as the home page -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&display=swap">
+    <style>body, body :not(i):not(svg):not(svg *):not([class*="fa-"]) { font-family: "Geist", -apple-system, BlinkMacSystemFont, "PingFang TC", "Noto Sans TC", sans-serif !important; }</style>
+</head>
+
+<body class="antialiased"
+    style="background: linear-gradient(180deg, #E9F1F7 0%, #dce4ed 50%, #E9F1F7 100%); min-height: 100vh;">
+
+    <!-- Ambient background gradients -->
+    <div class="fixed inset-0 pointer-events-none" style="z-index: 0;">
+        <div class="absolute top-0 left-1/4 w-96 h-96 rounded-full opacity-20"
+            style="background: radial-gradient(circle, rgba(70,119,172,0.3) 0%, transparent 70%); filter: blur(60px);"></div>
+        <div class="absolute bottom-1/4 right-1/4 w-80 h-80 rounded-full opacity-15"
+            style="background: radial-gradient(circle, rgba(133,135,183,0.3) 0%, transparent 70%); filter: blur(50px);"></div>
+    </div>
+
+    <!-- Navigation (Glass Pill) -->
+    <nav class="fixed top-6 left-1/2 -translate-x-1/2 z-50">
+        <div class="nav-glass rounded-full px-2 py-2 flex items-center gap-1">
+            <a href="https://www.coglixlabs.com" target="_blank" class="flex items-center gap-1.5 px-2 mr-1">
+                <img src="../img/coglix-logo.jpg" alt="Coglix Labs" class="h-6 w-6 rounded-full object-cover" fetchpriority="high">
+                <span class="text-sm font-bold" style="color: #162039;">Bonet</span>
+                <span class="text-xs font-normal" style="color: #8587B7;">by Coglix Labs</span>
+            </a>
+            <div class="w-px h-5 bg-brand-200/50"></div>
+            <a href="../index.html"
+                class="px-4 py-2 rounded-full text-sm font-medium text-brand-400 hover:text-brand-700 hover:bg-white/50 transition-all">Home</a>
+            <a href="../science.html"
+                class="px-4 py-2 rounded-full text-sm font-medium text-brand-400 hover:text-brand-700 hover:bg-white/50 transition-all">Science</a>
+            <a href="index.html"
+                class="px-4 py-2 rounded-full text-sm font-medium text-brand-700 hover:text-brand-900 hover:bg-white/50 transition-all"
+                style="background: rgba(255,255,255,0.5);">Blog</a>
+            <div class="w-px h-5 bg-brand-200/50 mx-1"></div>
+            <div class="flex items-center">
+                <button onclick="setLang('en')" id="lang-en"
+                    class="px-3 py-1.5 rounded-full text-sm font-medium transition-all text-white"
+                    style="background: rgba(30,58,95,0.7); backdrop-filter: blur(8px);">EN</button>
+                <button onclick="setLang('zh')" id="lang-zh"
+                    class="px-3 py-1.5 rounded-full text-sm font-medium transition-all text-brand-300 hover:text-brand-500">ZH</button>
+            </div>
+            <div class="w-px h-5 bg-brand-200/50 mx-1"></div>
+            <button onclick="toggleDarkMode()" id="dark-mode-btn"
+                class="w-8 h-8 rounded-full flex items-center justify-center transition-all text-brand-300 hover:text-brand-500 hover:bg-white/30"
+                title="Dark Mode">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
+                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+                </svg>
+            </button>
+            <button onclick="toggleLargeFont()" id="large-font-btn"
+                class="w-8 h-8 rounded-full flex items-center justify-center text-xs font-bold transition-all text-brand-300 hover:text-brand-500 hover:bg-white/30"
+                title="Large Font">A+</button>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="pt-32 pb-16 px-6" style="position: relative; z-index: 1;">
+        <div class="max-w-5xl mx-auto text-center fade-up" style="opacity: 0;">
+            <span class="inline-block px-5 py-1.5 rounded-full text-sm font-medium mb-6"
+                style="background: rgba(70, 119, 172, 0.08); color: #4677AC; border: 1px solid rgba(70,119,172,0.1);">From the Team</span>
+            <h1 class="text-4xl md:text-6xl font-bold mb-6 tracking-tight" style="color: #162039;">Stories, Research and Updates</h1>
+            <p class="text-lg max-w-2xl mx-auto leading-relaxed" style="color: #657FB1;">Notes on what we are building and why.</p>
+        </div>
+    </section>
+
+    <!-- Article listing -->
+    <section class="py-12 px-6" style="position: relative; z-index: 1;">
+        <div class="max-w-3xl mx-auto fade-up" style="opacity: 0;">
+            <a href="introducing-bonet.html" class="block glass-card p-8 md:p-10 no-underline group">
+                <div class="flex items-center gap-3 mb-4">
+                    <span class="text-xs font-semibold uppercase tracking-widest" style="color: #4677AC;">Platform</span>
+                    <span class="w-1 h-1 rounded-full" style="background: #BDC5D4;"></span>
+                    <span class="text-xs" style="color: #9AA7C1;">November 2026</span>
+                    <span class="w-1 h-1 rounded-full" style="background: #BDC5D4;"></span>
+                    <span class="text-xs" style="color: #9AA7C1;">2 min read</span>
+                </div>
+                <h2 class="text-2xl md:text-3xl font-bold mb-3 group-hover:text-brand-700 transition-colors"
+                    style="color: #162039;">Why We Built Bonet</h2>
+                <p class="text-sm leading-relaxed mb-6" style="color: #657FB1;">A printed sheet of exercises is easy to put aside. We built Bonet to make daily practice at home easier to start and easier to keep track of.</p>
+                <span class="inline-block px-5 py-2 rounded-full text-sm font-semibold transition-all"
+                    style="background: rgba(70,119,172,0.08); color: #4677AC; border: 1px solid rgba(70,119,172,0.15);">Read</span>
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-12 px-6 mt-24" style="border-top: 1px solid rgba(189, 197, 212, 0.3); position: relative; z-index: 1;">
+        <div class="max-w-6xl mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-10 mb-10">
+                <div>
+                    <span class="text-xl font-bold" style="color: #162039;">Bonet <a href="https://coglixlabs.com/"
+                            target="_blank" class="font-normal hover:underline transition-all"
+                            style="color: #8587B7;">by Coglix Labs Inc.</a></span>
+                    <p class="text-sm mt-3" style="color: #657FB1;">AI-guided practice for movement, speech and cognition. A practice tool, not a medical device.</p>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4" style="color: #162039;">Resources</h4>
+                    <div class="flex flex-col gap-3 text-sm" style="color: #657FB1;">
+                        <a href="../index.html" class="hover:text-brand-700 transition-colors">Home</a>
+                        <a href="../science.html" class="hover:text-brand-700 transition-colors">Science</a>
+                        <a href="index.html" class="hover:text-brand-700 transition-colors">Blog</a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4" style="color: #162039;">Legal</h4>
+                    <div class="flex flex-col gap-3 text-sm" style="color: #657FB1;">
+                        <a href="../terms.html" class="hover:text-brand-700 transition-colors">Terms of Service</a>
+                        <a href="../privacy.html" class="hover:text-brand-700 transition-colors">Privacy Policy</a>
+                    </div>
+                </div>
+            </div>
+            <div class="pt-8 flex flex-col md:flex-row justify-between items-center gap-4"
+                style="border-top: 1px solid rgba(189, 197, 212, 0.3);">
+                <p class="text-sm" style="color: #9AA7C1;">&copy; 2026 Coglix Labs Inc.</p>
+                <div class="flex gap-6 text-sm" style="color: #9AA7C1;">
+                    <a href="../terms.html" class="hover:text-brand-700 transition-colors">Terms</a>
+                    <a href="../privacy.html" class="hover:text-brand-700 transition-colors">Privacy</a>
+                    <a href="../index.html" class="hover:text-brand-700 transition-colors">Home</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        let isDarkMode = false;
+        let isLargeFont = false;
+
+        function toggleDarkMode() {
+            isDarkMode = !isDarkMode;
+            localStorage.setItem('isDarkMode', isDarkMode);
+            document.body.classList.toggle('dark', isDarkMode);
+            const btn = document.getElementById('dark-mode-btn');
+            btn.style.background = isDarkMode ? 'rgba(30,58,95,0.7)' : 'transparent';
+            btn.style.backdropFilter = isDarkMode ? 'blur(8px)' : 'none';
+            btn.style.color = isDarkMode ? '#FFFFFF' : '';
+        }
+
+        function toggleLargeFont() {
+            isLargeFont = !isLargeFont;
+            localStorage.setItem('isLargeFont', isLargeFont);
+            document.documentElement.classList.toggle('large-font', isLargeFont);
+            const btn = document.getElementById('large-font-btn');
+            btn.style.background = isLargeFont ? 'rgba(30,58,95,0.7)' : 'transparent';
+            btn.style.backdropFilter = isLargeFont ? 'blur(8px)' : 'none';
+            btn.style.color = isLargeFont ? '#FFFFFF' : '';
+        }
+
+        function setLang(lang) {
+            localStorage.setItem('preferredLang', lang);
+            document.getElementById('lang-en').className = lang === 'en'
+                ? 'px-3 py-1.5 rounded-full text-sm font-medium transition-all text-white'
+                : 'px-3 py-1.5 rounded-full text-sm font-medium transition-all text-brand-300 hover:text-brand-500';
+            document.getElementById('lang-zh').className = lang === 'zh'
+                ? 'px-3 py-1.5 rounded-full text-sm font-medium transition-all text-white'
+                : 'px-3 py-1.5 rounded-full text-sm font-medium transition-all text-brand-300 hover:text-brand-500';
+            document.getElementById('lang-en').style.background = lang === 'en' ? 'rgba(30,58,95,0.7)' : 'transparent';
+            document.getElementById('lang-zh').style.background = lang === 'zh' ? 'rgba(30,58,95,0.7)' : 'transparent';
+        }
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.15 });
+        document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+        // Restore preferences
+        (function() {
+            if (localStorage.getItem('isDarkMode') === 'true') toggleDarkMode();
+            if (localStorage.getItem('isLargeFont') === 'true') toggleLargeFont();
+        })();
+    </script>
+</body>
+</html>

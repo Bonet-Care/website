@@ -1,0 +1,5 @@
+# Old product paths. www.bonet.care is redirected at the DNS/Cloudflare level (see README).
+# Old deep links into the web app keep working:
+/app            https://app.bonet.care/        301
+/app/           https://app.bonet.care/        301
+/app/*          https://app.bonet.care/:splat  301
