@@ -385,3 +385,61 @@ p { margin: 0; }
 .doc--legal details[open] summary { border-bottom: 2px solid var(--line); margin-bottom: .8rem; }
 .doc--legal .toc { background: var(--blue-wash); border-radius: 1.2rem; padding: 1rem 1.4rem; }
 .doc--legal .toc ul { list-style: none; padding: 0; margin: 0; }
+
+/* cost board (home #cost). Type comes from the tokens above; motion is transform only and off for reduced motion */
+:root { --fs-num: clamp(1.75rem, 3.4vw, 2.5rem); --fs-small: .95rem; }
+.cb { display: grid; gap: 2rem 3rem; }
+@media (min-width: 56rem) { .cb { grid-template-columns: 1fr 1.15fr; align-items: start; } }
+.cb-form { display: grid; gap: 1.4rem; }
+.cb-field { display: grid; grid-template-columns: 1fr auto; gap: .3rem .8rem; align-items: baseline; }
+.cb-field label { font-weight: 800; color: var(--ink-2); font-size: 1.05rem; }
+.cb-field output { font-weight: 900; color: var(--blue-dark); font-size: 1.25rem; font-variant-numeric: tabular-nums; }
+.cb-field input[type=range] { grid-column: 1 / -1; width: 100%; min-height: 2.75rem; margin: 0; accent-color: var(--blue); cursor: pointer; }
+.cb-field input[type=range]:focus-visible { outline: 3px solid var(--blue-deep); outline-offset: 2px; }
+.cb-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin: 0 0 1.6rem; }
+.cb-stat { background: #fff; border-radius: 1.4rem; padding: 1rem 1.2rem; border: 2px solid var(--line); display: grid; gap: .2rem; align-content: space-between; }
+.cb-stat dt { color: var(--ink-3); font-weight: 800; font-size: var(--fs-small); line-height: 1.25; }
+.cb-stat dd { margin: 0; }
+.cb-stat output { font-size: var(--fs-num); font-weight: 900; line-height: 1; letter-spacing: -.03em; color: var(--ink); font-variant-numeric: tabular-nums; display: inline-block; }
+.cb-stat output.pop { animation: cbpop .35s var(--spring); }
+@keyframes cbpop { 0% { transform: scale(.9); } 100% { transform: none; } }
+.cb-chart h3 { margin-bottom: .6rem; }
+.cb-hint { color: var(--ink-3); font-weight: 700; }
+.cb-bars { display: grid; gap: .9rem; }
+.cb-bar { display: grid; grid-template-columns: 1fr auto; gap: .3rem .8rem; align-items: baseline; }
+.cb-bar span { font-weight: 800; color: var(--ink-2); }
+.cb-bar b { font-weight: 900; font-variant-numeric: tabular-nums; }
+.cb-track { grid-column: 1 / -1; height: 1.6rem; background: #fff; border: 2px solid var(--line); border-radius: .9rem; overflow: hidden; }
+.cb-track i { display: block; height: 100%; width: 100%; background: var(--blue-deep); border-radius: .7rem; transform-origin: left center; transform: scaleX(0); transition: transform .6s var(--spring); }
+.cb-bar--pro .cb-track i { background: var(--blue); }
+.cb-bars .note { margin-top: .2rem; }
+.cb-tbl { margin-top: 2.4rem; overflow-x: auto; }
+.cb-tbl table { width: 100%; min-width: 34rem; border-collapse: collapse; background: #fff; border-radius: 1.2rem; }
+.cb-tbl th, .cb-tbl td { text-align: left; vertical-align: top; padding: .8rem 1rem; border-bottom: 2px solid var(--line); font-size: 1rem; color: var(--ink-2); font-weight: 700; }
+.cb-tbl thead th { color: var(--ink); font-weight: 900; border-bottom-color: var(--blue); }
+.cb-tbl tbody th { color: var(--ink-3); font-weight: 800; white-space: nowrap; }
+.cb-tbl tr:last-child > * { border-bottom: 0; }
+.cb-line { margin-top: 1.6rem; font-size: var(--fs-lede); font-weight: 900; color: var(--blue-deep); text-wrap: balance; }
+@media (max-width: 36rem) { .cb-stats { grid-template-columns: 1fr 1fr; gap: .7rem; } .cb-stat { padding: .8rem; } }
+@media (prefers-reduced-motion: reduce) { .cb-track i { transition: none; } .cb-stat output.pop { animation: none; } }
+.cb-bars[hidden], .cb-hint[hidden] { display: none; }
+.cost-sources { max-width: 46rem; margin-top: 3rem; }
+
+/* example report, android form */
+.rep { background: #fff; border: 2px solid var(--line); border-radius: 1.6rem; padding: clamp(1.2rem, 4vw, 2.2rem); display: grid; gap: 1.6rem; }
+.rep h2 { font-size: var(--fs-h3); margin: 0 0 .6rem; border: 0; padding: 0; }
+.rep-flag { background: var(--blue-soft); border-radius: 1rem; padding: .7rem 1rem; color: var(--blue-deep); }
+.rep-top { display: flex; justify-content: space-between; align-items: center; gap: 1rem; } .rep-top img { width: 4rem; height: 4rem; }
+.rep-sum { display: grid; grid-template-columns: repeat(3, 1fr); gap: .8rem; margin: 0; }
+.rep-sum div { background: var(--blue-wash); border-radius: 1.1rem; padding: .8rem 1rem; } .rep-sum dt { color: var(--ink-3); font-size: var(--fs-small); font-weight: 800; }
+.rep-sum dd { margin: 0; font-size: var(--fs-num); font-weight: 900; line-height: 1.1; }
+.rep-from { font-size: var(--fs-small); font-weight: 800; color: var(--ink-3); margin-left: .5rem; }
+.rep-chart, .rep-hex { width: 100%; max-width: 36rem; height: auto; display: block; } .rep-hex { max-width: 18rem; }
+.rep-tbl { display: table; width: 100%; font-size: 1rem; } .rep-tbl th, .rep-tbl td { min-width: 0; }
+.rep-sec > table { overflow-x: auto; display: block; }
+.android-form { display: grid; gap: 1rem; position: relative; max-width: 28rem; }
+.android-form label { display: grid; gap: .3rem; font-weight: 800; }
+.android-form input:not([type=checkbox]), .android-form select { font: inherit; padding: .7rem .9rem; border: 2px solid var(--line); border-radius: .9rem; min-height: 3rem; }
+.android-form .chk { display: flex; gap: .6rem; align-items: flex-start; }
+.cb-bar b { grid-column: 2; grid-row: 1; }
+.rep, .rep > *, .rep-sec { min-width: 0; max-width: 100%; } .doc--legal .legal { min-width: 0; } @media (max-width: 36rem) { .rep-sum { grid-template-columns: 1fr 1fr; } .rep-sum dd { font-size: var(--fs-h3); } }

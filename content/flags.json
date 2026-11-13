@@ -1,4 +1,5 @@
 {
- "_comment": "Build-time switches. practice_quality_live=false hides the hexagon hero moment, the How-it-went section and the table row until the app feature ships.",
- "practice_quality_live": true
+ "_comment": "Build-time switches. practice_quality_live=false hides the hexagon hero moment, the How-it-went section and the table row until the app feature ships. android_early_access=false keeps the /android form out of the page (the page is unlinked, noindex and not in the sitemap either way); the founder has not approved APK distribution. Before turning it on, add the Supabase host to connect-src in _headers.",
+ "practice_quality_live": true,
+ "android_early_access": false
 }

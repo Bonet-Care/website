@@ -2,6 +2,7 @@
 import json
 import re
 import parts
+from cost import cost_section
 from parts import NUM_WORD, NUM_YUE, LANG_COUNT, APP, MAIL, SITE, esc, footer, head, header, mk, price_html, price_text, LANGS, PRICES
 
 ROOT = __import__("pathlib").Path(__file__).resolve().parent.parent
@@ -367,6 +368,7 @@ def home(lang):
 <p class="vnote">{T('Spoken guide in English.', '影片旁白係英文。')}</p>
 </div></section>
 
+{cost_section(lang)}
 <section class="sec" id="plans"><div class="wrap">
 <div class="open"><h2 class="display display--ink rv-word">{T('Start free.', '免費開始。')}</h2></div>
 <div class="plans">
@@ -387,4 +389,4 @@ def home(lang):
 </div></section>
 </main>
 """
-    return h + body + footer(lang, demos=True)
+    return h + body + '<script defer src="/js/cost.js"></script>\n' + footer(lang, demos=True)

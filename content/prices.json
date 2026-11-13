@@ -1,6 +1,7 @@
 {
  "_comment": "PLACEHOLDER local amounts: founder to confirm. Every page reads prices from this file. English headline price is US$9.99 a month. Cantonese shows HK$78 (what checkout charges today) with USD highlighted; other languages show US$9.99 only until a local amount is set ('main' as a string, shown with the USD price highlighted). checkout_matches=false means checkout still charges Hong Kong dollars (HK$78): the note 'charged in Hong Kong dollars (HK$78) for now' is shown on non-Cantonese pages only while this is false.",
  "usd": "US$9.99",
+ "trial_days": 7,
  "checkout_matches": false,
  "langs": {
   "en": {

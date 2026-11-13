@@ -154,6 +154,26 @@
 <p class="vnote">音声ガイドは英語です。</p>
 </div></section>
 
+<section class="sec sec--wash" id="cost"><div class="wrap">
+<div class="open"><h2 class="display display--ink rv-word">練習した日を数えよう。</h2><p class="kicker rv">スライダーを動かしてください。入力した数字はブラウザの中だけに残ります。</p></div>
+<div class="cb" data-cost data-cur="US$" data-price="9.99" data-trial="7" data-weeks="4.3333" data-notset="未設定" data-lang="ja">
+<form class="cb-form" aria-label="練習した日を数えよう。"><div class="cb-field"><label for="cb-visits">1か月のセラピスト受診回数</label><output for="cb-visits" id="cb-visits-o" data-out="visits" aria-live="polite">4</output><input type="range" id="cb-visits" name="visits" min="0" max="12" step="1" value="4" data-in="visits"></div><div class="cb-field"><label for="cb-cost">1回の受診であなたが払う額（US$）</label><output for="cb-cost" id="cb-cost-o" data-out="cost" aria-live="polite">未設定</output><input type="range" id="cb-cost" name="cost" min="0" max="300" step="5" value="0" data-in="cost"></div><div class="cb-field"><label for="cb-days">1週間にBonetを使う日数</label><output for="cb-days" id="cb-days-o" data-out="days" aria-live="polite">3</output><input type="range" id="cb-days" name="days" min="1" max="7" step="1" value="3" data-in="days"></div><div class="cb-field"><label for="cb-mins">1日にBonetを使う分数</label><output for="cb-mins" id="cb-mins-o" data-out="mins" aria-live="polite">15</output><input type="range" id="cb-mins" name="mins" min="5" max="60" step="5" value="15" data-in="mins"></div></form>
+<div class="cb-res">
+<dl class="cb-stats"><div class="cb-stat"><dt>1か月の練習日数</dt><dd><output data-out="pdays" aria-live="polite">13</output></dd></div><div class="cb-stat"><dt>1か月のガイド付き練習の分数</dt><dd><output data-out="mins_month" aria-live="polite">195</output></dd></div><div class="cb-stat"><dt>プレミアムの1練習日あたりの費用</dt><dd><output data-out="per_day" aria-live="polite">US$0.77</output></dd></div><div class="cb-stat"><dt>受診と受診の間の練習日数</dt><dd><output data-out="between" aria-live="polite">3.2</output></dd></div></dl>
+<div class="cb-chart" data-chart>
+<h3>別々のもの</h3>
+<p class="cb-hint" data-hint>1回の受診の費用を入れると、棒が表示されます。</p>
+<div class="cb-bars" data-bars hidden>
+<div class="cb-bar"><span>1回の受診：あなたの支払い</span><div class="cb-track"><i data-bar="visit"></i></div><b data-val="visit"></b></div>
+<div class="cb-bar cb-bar--pro"><span>プレミアム1か月</span><div class="cb-track"><i data-bar="prem"></i></div><b data-val="prem">US$9.99</b></div>
+<p class="note">受診はセラピストと過ごす時間です。プレミアムは1か月の自宅練習です。比べられるものではありません。</p>
+</div></div></div>
+</div>
+<div class="cb-tbl"><table><caption class="sr">無料プラン / Premium / 治療の受診</caption><thead><tr><td></td><th scope="col">無料プラン</th><th scope="col">Premium</th><th scope="col">治療の受診</th></tr></thead><tbody><tr><th scope="row">費用</th><td>無料</td><td>US$9.99 ／月<br>7日間無料</td><td>クリニックが決めます</td></tr><tr><th scope="row">いつ</th><td>自宅で、毎日</td><td>自宅で、毎日</td><td>受診のとき</td></tr><tr><th scope="row">内容</th><td>話すレベル1～3, はじめての運動8つ, かんたんな脳トレゲーム</td><td>すべてのレベルと運動, むずかしめの脳トレゲーム, 長めのレポート</td><td>セラピストと一緒に決めます</td></tr></tbody></table></div>
+<p class="cb-line">Bonetは受診と受診の間の練習のためのものです。セラピストの代わりにはなりません。</p>
+<p class="note">1か月は4.3週として計算します。 <a href="/compare.html#cost-sources">数字について</a></p>
+</div></section>
+
 <section class="sec" id="plans"><div class="wrap">
 <div class="open"><h2 class="display display--ink rv-word">無料で始めましょう。</h2></div>
 <div class="plans">
@@ -173,6 +193,7 @@
 <div class="pup" aria-hidden="true"><img class="treat" src="/img/icons/bone.webp" width="128" height="128" alt=""><span class="sprite" data-clip="idle" data-hover="wiggle"></span></div>
 </div></section>
 </main>
+<script defer src="/js/cost.js"></script>
 <footer class="ftr"><div class="wrap">
 <div class="ftr-pup"><button type="button" class="pupbtn" data-sprite="sleep" data-hover="wiggle" aria-label="コーギーがあいさつします"><span class="sprite" data-clip="sleep" data-rest="sleep" aria-hidden="true"></span></button></div>
 <nav aria-label="Footer"><a href="/privacy" hreflang="en" lang="en">プライバシー</a><a href="/terms" hreflang="en" lang="en">利用規約</a><a href="/subscriptions" hreflang="en" lang="en">購読と返金</a><a href="/cookies" hreflang="en" lang="en">Cookie</a><a href="/consumer-health-data" hreflang="en" lang="en">消費者の健康データ</a><a href="/ja/safety">プライバシーと安全</a><a href="/ai-and-automatic-measures" hreflang="en" lang="en">Bonetの測り方</a><a href="/ja/faq">よくある質問</a><a href="mailto:hello@coglixlabs.com">お問い合わせ</a><button type="button" class="linkbtn" data-consent-open>Cookieの設定</button></nav>

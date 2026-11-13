@@ -154,6 +154,26 @@
 <p class="vnote">视频旁白为英语。</p>
 </div></section>
 
+<section class="sec sec--wash" id="cost"><div class="wrap">
+<div class="open"><h2 class="display display--ink rv-word">算一算你的练习天数。</h2><p class="kicker rv">拖动滑块。你输入的数字只留在浏览器里。</p></div>
+<div class="cb" data-cost data-cur="US$" data-price="9.99" data-trial="7" data-weeks="4.3333" data-notset="未设置" data-lang="zh-hans">
+<form class="cb-form" aria-label="算一算你的练习天数。"><div class="cb-field"><label for="cb-visits">每月看治疗师的次数</label><output for="cb-visits" id="cb-visits-o" data-out="visits" aria-live="polite">4</output><input type="range" id="cb-visits" name="visits" min="0" max="12" step="1" value="4" data-in="visits"></div><div class="cb-field"><label for="cb-cost">每次看诊你要付多少（US$）</label><output for="cb-cost" id="cb-cost-o" data-out="cost" aria-live="polite">未设置</output><input type="range" id="cb-cost" name="cost" min="0" max="300" step="5" value="0" data-in="cost"></div><div class="cb-field"><label for="cb-days">每周使用 Bonet 的天数</label><output for="cb-days" id="cb-days-o" data-out="days" aria-live="polite">3</output><input type="range" id="cb-days" name="days" min="1" max="7" step="1" value="3" data-in="days"></div><div class="cb-field"><label for="cb-mins">每天使用 Bonet 的分钟数</label><output for="cb-mins" id="cb-mins-o" data-out="mins" aria-live="polite">15</output><input type="range" id="cb-mins" name="mins" min="5" max="60" step="5" value="15" data-in="mins"></div></form>
+<div class="cb-res">
+<dl class="cb-stats"><div class="cb-stat"><dt>每月练习天数</dt><dd><output data-out="pdays" aria-live="polite">13</output></dd></div><div class="cb-stat"><dt>每月有引导的分钟数</dt><dd><output data-out="mins_month" aria-live="polite">195</output></dd></div><div class="cb-stat"><dt>完整版每个练习日的费用</dt><dd><output data-out="per_day" aria-live="polite">US$0.77</output></dd></div><div class="cb-stat"><dt>两次看诊之间的练习天数</dt><dd><output data-out="between" aria-live="polite">3.2</output></dd></div></dl>
+<div class="cb-chart" data-chart>
+<h3>两件不同的事</h3>
+<p class="cb-hint" data-hint>填入每次看诊的费用，就能看到两条柱。</p>
+<div class="cb-bars" data-bars hidden>
+<div class="cb-bar"><span>一次看诊：你付的费用</span><div class="cb-track"><i data-bar="visit"></i></div><b data-val="visit"></b></div>
+<div class="cb-bar cb-bar--pro"><span>完整版一个月</span><div class="cb-track"><i data-bar="prem"></i></div><b data-val="prem">US$9.99</b></div>
+<p class="note">看诊是和治疗师相处的时间，完整版是一个月的居家练习，两者不同。</p>
+</div></div></div>
+</div>
+<div class="cb-tbl"><table><caption class="sr">免费版 / Premium / 治疗看诊</caption><thead><tr><td></td><th scope="col">免费版</th><th scope="col">Premium</th><th scope="col">治疗看诊</th></tr></thead><tbody><tr><th scope="row">费用</th><td>免费</td><td>US$9.99 每月<br>免费试用 7 天</td><td>由诊所制定</td></tr><tr><th scope="row">时间</th><td>在家，每天都可以</td><td>在家，每天都可以</td><td>看诊时</td></tr><tr><th scope="row">你得到什么</th><td>说话第 1 至 3 级, 八个入门运动, 简单的脑力游戏</td><td>全部级别和运动, 较难的脑力游戏, 更长的报告</td><td>和你的治疗师一起决定</td></tr></tbody></table></div>
+<p class="cb-line">Bonet 用于两次看诊之间的练习，不能取代你的治疗师。</p>
+<p class="note">一个月按 4.3 周计算。 <a href="/compare.html#cost-sources">关于这些数字</a></p>
+</div></section>
+
 <section class="sec" id="plans"><div class="wrap">
 <div class="open"><h2 class="display display--ink rv-word">免费开始。</h2></div>
 <div class="plans">
@@ -173,6 +193,7 @@
 <div class="pup" aria-hidden="true"><img class="treat" src="/img/icons/bone.webp" width="128" height="128" alt=""><span class="sprite" data-clip="idle" data-hover="wiggle"></span></div>
 </div></section>
 </main>
+<script defer src="/js/cost.js"></script>
 <footer class="ftr"><div class="wrap">
 <div class="ftr-pup"><button type="button" class="pupbtn" data-sprite="sleep" data-hover="wiggle" aria-label="柯基向你打招呼"><span class="sprite" data-clip="sleep" data-rest="sleep" aria-hidden="true"></span></button></div>
 <nav aria-label="Footer"><a href="/privacy" hreflang="en" lang="en">隐私政策</a><a href="/terms" hreflang="en" lang="en">使用条款</a><a href="/subscriptions" hreflang="en" lang="en">订阅与退款</a><a href="/cookies" hreflang="en" lang="en">Cookie</a><a href="/consumer-health-data" hreflang="en" lang="en">消费者健康数据</a><a href="/zh-hans/safety">隐私与安全</a><a href="/ai-and-automatic-measures" hreflang="en" lang="en">Bonet 如何测量</a><a href="/zh-hans/faq">常见问题</a><a href="mailto:hello@coglixlabs.com">联系我们</a><button type="button" class="linkbtn" data-consent-open>Cookie 设置</button></nav>

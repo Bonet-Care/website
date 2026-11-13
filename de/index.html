@@ -154,6 +154,26 @@
 <p class="vnote">Gesprochene Anleitung auf Englisch.</p>
 </div></section>
 
+<section class="sec sec--wash" id="cost"><div class="wrap">
+<div class="open"><h2 class="display display--ink rv-word">Zähle deine Übungstage.</h2><p class="kicker rv">Bewege die Regler. Deine Zahlen bleiben in deinem Browser.</p></div>
+<div class="cb" data-cost data-cur="US$" data-price="9.99" data-trial="7" data-weeks="4.3333" data-notset="Nicht gesetzt" data-lang="de">
+<form class="cb-form" aria-label="Zähle deine Übungstage."><div class="cb-field"><label for="cb-visits">Therapiebesuche im Monat</label><output for="cb-visits" id="cb-visits-o" data-out="visits" aria-live="polite">4</output><input type="range" id="cb-visits" name="visits" min="0" max="12" step="1" value="4" data-in="visits"></div><div class="cb-field"><label for="cb-cost">Was dich ein Besuch kostet (US$)</label><output for="cb-cost" id="cb-cost-o" data-out="cost" aria-live="polite">Nicht gesetzt</output><input type="range" id="cb-cost" name="cost" min="0" max="300" step="5" value="0" data-in="cost"></div><div class="cb-field"><label for="cb-days">Tage pro Woche mit Bonet</label><output for="cb-days" id="cb-days-o" data-out="days" aria-live="polite">3</output><input type="range" id="cb-days" name="days" min="1" max="7" step="1" value="3" data-in="days"></div><div class="cb-field"><label for="cb-mins">Minuten pro Tag mit Bonet</label><output for="cb-mins" id="cb-mins-o" data-out="mins" aria-live="polite">15</output><input type="range" id="cb-mins" name="mins" min="5" max="60" step="5" value="15" data-in="mins"></div></form>
+<div class="cb-res">
+<dl class="cb-stats"><div class="cb-stat"><dt>Übungstage im Monat</dt><dd><output data-out="pdays" aria-live="polite">13</output></dd></div><div class="cb-stat"><dt>Geführte Minuten im Monat</dt><dd><output data-out="mins_month" aria-live="polite">195</output></dd></div><div class="cb-stat"><dt>Premium-Kosten pro Übungstag</dt><dd><output data-out="per_day" aria-live="polite">US$0.77</output></dd></div><div class="cb-stat"><dt>Übungstage zwischen den Besuchen</dt><dd><output data-out="between" aria-live="polite">3.2</output></dd></div></dl>
+<div class="cb-chart" data-chart>
+<h3>Zwei verschiedene Dinge</h3>
+<p class="cb-hint" data-hint>Gib die Kosten eines Besuchs ein, um die Balken zu sehen.</p>
+<div class="cb-bars" data-bars hidden>
+<div class="cb-bar"><span>Ein Besuch: was du zahlst</span><div class="cb-track"><i data-bar="visit"></i></div><b data-val="visit"></b></div>
+<div class="cb-bar cb-bar--pro"><span>Ein Monat Premium</span><div class="cb-track"><i data-bar="prem"></i></div><b data-val="prem">US$9.99</b></div>
+<p class="note">Ein Besuch ist Zeit mit deiner Therapeutin oder deinem Therapeuten. Premium ist ein Monat Üben zu Hause. Das ist nicht dasselbe.</p>
+</div></div></div>
+</div>
+<div class="cb-tbl"><table><caption class="sr">Gratis-Tarif / Premium / Therapiebesuch</caption><thead><tr><td></td><th scope="col">Gratis-Tarif</th><th scope="col">Premium</th><th scope="col">Therapiebesuch</th></tr></thead><tbody><tr><th scope="row">Kosten</th><td>Kostenlos</td><td>US$9.99 im Monat<br>7 Tage gratis</td><td>Legt deine Praxis fest</td></tr><tr><th scope="row">Wann</th><td>Zu Hause, jeden Tag</td><td>Zu Hause, jeden Tag</td><td>Beim Besuch</td></tr><tr><th scope="row">Was du bekommst</th><td>Sprechstufen 1 bis 3, Acht Einstiegsübungen, Leichte Denkspiele</td><td>Alle Stufen und Übungen, Schwerere Denkspiele, Längere Berichte</td><td>Mit deiner Therapeutin oder deinem Therapeuten vereinbart</td></tr></tbody></table></div>
+<p class="cb-line">Bonet ist zum Üben zwischen den Besuchen da. Es ersetzt deine Therapeutin oder deinen Therapeuten nicht.</p>
+<p class="note">Ein Monat zählt als 4,3 Wochen. <a href="/compare.html#cost-sources">Über die Zahlen</a></p>
+</div></section>
+
 <section class="sec" id="plans"><div class="wrap">
 <div class="open"><h2 class="display display--ink rv-word">Kostenlos starten.</h2></div>
 <div class="plans">
@@ -173,6 +193,7 @@
 <div class="pup" aria-hidden="true"><img class="treat" src="/img/icons/bone.webp" width="128" height="128" alt=""><span class="sprite" data-clip="idle" data-hover="wiggle"></span></div>
 </div></section>
 </main>
+<script defer src="/js/cost.js"></script>
 <footer class="ftr"><div class="wrap">
 <div class="ftr-pup"><button type="button" class="pupbtn" data-sprite="sleep" data-hover="wiggle" aria-label="Bonet sagt Hallo"><span class="sprite" data-clip="sleep" data-rest="sleep" aria-hidden="true"></span></button></div>
 <nav aria-label="Footer"><a href="/privacy" hreflang="en" lang="en">Datenschutz</a><a href="/terms" hreflang="en" lang="en">Nutzungsbedingungen</a><a href="/subscriptions" hreflang="en" lang="en">Abos und Erstattungen</a><a href="/cookies" hreflang="en" lang="en">Cookies</a><a href="/consumer-health-data" hreflang="en" lang="en">Gesundheitsdaten</a><a href="/de/safety">Datenschutz und Sicherheit</a><a href="/ai-and-automatic-measures" hreflang="en" lang="en">Wie Bonet misst</a><a href="/de/faq">Fragen</a><a href="mailto:hello@coglixlabs.com">Kontakt</a><button type="button" class="linkbtn" data-consent-open>Cookie-Einstellungen</button></nav>

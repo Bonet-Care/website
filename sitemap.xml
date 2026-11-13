@@ -194,6 +194,18 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://bonet.care/what-bonet-tracks</loc>
+    <lastmod>2026-11-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://bonet.care/example-report</loc>
+    <lastmod>2026-11-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://bonet.care/safety</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://bonet.care/safety"/>
     <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://bonet.care/zh-hant/safety"/>

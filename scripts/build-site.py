@@ -24,6 +24,7 @@ if not json.loads((ROOT / "content" / "flags.json").read_text()).get("practice_q
     FLAGS_OFF.add("practice_quality")
 parts.FLAGS_OFF = FLAGS_OFF
 import home as homemod  # noqa: E402
+import cost as costmod  # noqa: E402
 
 LASTMOD = "2026-11-13"
 write = lambda rel, text: ((ROOT / rel).parent.mkdir(parents=True, exist_ok=True), (ROOT / rel).write_text(text))
@@ -179,7 +180,7 @@ def compare_page():
     body = homemod.compare_full("en")
     h = head("en", "How Bonet compares: notes and sources", "The full comparison of Bonet with Constant Therapy, Tactus Therapy, Lingraphica TalkPath, Flint Rehab and a paper handout, with sources and what others do better.", f"{SITE}/compare.html", "og-en.png", app_css=False)
     h += header("en")
-    h += f'<main id="main" class="doc-wrap"><div class="wrap"><div class="doc" style="max-width:none"><div class="doc-top"><h1>How Bonet compares</h1><p>Notes and sources behind the short table on the home page.</p></div>{body}</div></div></main>\n'
+    h += f'<main id="main" class="doc-wrap"><div class="wrap"><div class="doc" style="max-width:none"><div class="doc-top"><h1>How Bonet compares</h1><p>Notes and sources behind the short table on the home page.</p></div>{body}{costmod.cost_sources()}</div></div></main>\n'
     h += footer("en")
     write("compare.html", h)
 
