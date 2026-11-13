@@ -42,3 +42,8 @@ Google Analytics (GA4) is the only tracker, with IP anonymisation on and no sess
 ## Legal
 
 The footer on every page reads "(c) 2026 Coglix Labs Inc." with links to Privacy, Terms and Privacy and safety. Contact addresses are the ones already on the site (hello@ and privacy@ coglixlabs.com).
+
+
+## Asset versions
+
+After every build run `python3 scripts/stamp-assets.py`. It adds a content hash to the CSS and JS links. Without it, people who visited before a deploy keep the old stylesheet with the new page and see it unstyled.
