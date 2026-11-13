@@ -24,6 +24,17 @@ Bonet (Chinese name: 哥基健動) is made by Coglix Labs Inc. The web app is at
 - [Speech practice at home](https://bonet.care/speech-practice-at-home): Speaking practice with hints, 100 levels per practice type, and what is measured.
 - [For family and carers](https://bonet.care/for-family-and-carers): How a family member or carer sets Bonet up, the one-page report, and what is shared.
 
+## Practice library
+
+Generated from the app's own data: names, instructions and levels are the app's wording. Pages describe the movement and the practice only; none says an exercise is for a condition.
+
+- [Practice library](https://bonet.care/practice): Every exercise (34), kind of speaking practice (6) and brain game (6) in the app, each with its own page under /practice/move/, /practice/speak/ and /practice/think/.
+- [Arm and shoulder exercises](https://bonet.care/practice/area/arm-and-shoulder): 8 exercises: Assisted Shoulder Flexion, Shoulder Flexion, Bilateral Shoulder Abduction, Shoulder External Rotation, Bilateral Shoulder Flexion, Shoulder Abduction, Assisted Elbow Extension, Elbow Extension.
+- [Hand and fingers exercises](https://bonet.care/practice/area/hand-and-fingers): 11 exercises: Thumb to Index Pinch, Hand Grasp (Fist), Sequential Tapping, Thumb Opposition, Wrist Extension/Flexion, Finger Spread, Wrist Radial/Ulnar Deviation, Individual Finger Lifts, Finger Curls, Pinky to Thumb Touch, Hook Fist.
+- [Legs and walking exercises](https://bonet.care/practice/area/legs-and-walking): 4 exercises: Gait Pre-training, Sit-to-Stand, Seated Knee Extension, Standing Heel Raises.
+- [Balance exercises](https://bonet.care/practice/area/balance): 4 exercises: Single Leg Stand, Sit-to-Stand Weight Shift, Standing Weight Shift, Standing Heel Raises.
+- [Neck and back exercises](https://bonet.care/practice/area/neck-and-back): 8 exercises: Trunk Flexion, Neck Side Bend, Neck Rotation, Chin Tuck, Seated Trunk Rotation, Side Bend, Back Extension, Shoulder Blade Squeeze.
+
 ## About the app
 
 - [Home](https://bonet.care/): What you practise, plans and price, short comparison table.

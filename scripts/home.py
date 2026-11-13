@@ -422,6 +422,7 @@ def home(lang):
        steps((T('Play a round', '玩一局'), T('Short rounds you can start any time.', '短短一局，隨時開始。')), (T('It follows you', '難度跟住你'), T('Difficulty adjusts to how you do.', '難度會跟你做得點而調整。')), (T('See results', '睇結果'), T('Your results over time.', '你嘅結果，一路睇住變化。'))),
        card('brain', T('Animated preview: two cards flip and match in a pairs game.', '動畫預覽：配對遊戲入面兩張牌翻開並且配成一對。')))}
 </div></div>
+<p class="calm rv"><a href="/practice">{T('See every exercise, speaking practice and brain game', '睇晒所有運動、說話練習同腦力遊戲')}</a></p>
 </div></section>"""
 
     if pq_on:

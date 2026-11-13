@@ -289,6 +289,7 @@ def _block(b, T, lang):
 def _more(T, lang, skip=None):
     """Links every landing page ends with: the other need pages, then FAQ, safety, example report and the comparison."""
     links = [(f"/{p}", u(NEED_UI[p], lang)) for p in NEED_PAGES if p != skip]
+    links.insert(0, ("/practice", u("f_library", lang)))
     links += [("/faq", T("Frequently asked questions", "常見問題")), ("/safety", T("What to know before you start", "開始之前要知嘅事")),
               ("/example-report", T("Example report", "示範報告")), ("/compare", T("How Bonet compares", "同其他方案比較"))]
     return f'<p><strong>{T("More about Bonet", "更多關於哥基健動")}</strong></p>\n<ul>' + "".join(f'<li><a href="{h}">{x}</a></li>' for h, x in links) + "</ul>"
@@ -420,6 +421,7 @@ def vs_page(ctx, slug, lang):
 # ------------------------------------------------------------------ /llms.txt
 def llms(ctx):
     """Plain markdown for AI assistants (https://llmstxt.org). English, facts from content/facts.json and content/prices.json."""
+    import practice_pages  # here, not at the top: practice_pages imports this module
     f, usd, trial = FACTS, PRICES["usd"], PRICES.get("trial_days", 7)
     names = ", ".join(f"{d['name']} ({SITE}{d['path']})" for d in LANGS.values())
     need = {"stroke-home-practice": "Daily practice at home after a stroke: what Bonet does and does not do, how to start, when to ask the therapist.",
@@ -449,6 +451,12 @@ Bonet (Chinese name: 哥基健動) is made by Coglix Labs Inc. The web app is at
 ## Pages by need
 
 {chr(10).join(L("/" + s, parts.UI[NEED_UI[s]]["en"], need[s]) for s in NEED_PAGES)}
+
+## Practice library
+
+Generated from the app's own data: names, instructions and levels are the app's wording. Pages describe the movement and the practice only; none says an exercise is for a condition.
+
+{practice_pages.llms_section()}
 
 ## About the app
 

@@ -14,7 +14,8 @@ content/prices.json, content/*.html (inner pages), content/blog/*.html (posts), 
 
 Every page except the blog is built once per language: English at /<page>, the others at /<lang>/<page> (parts.LOCAL_PAGES).
 Short pages (/what-bonet-tracks, /example-report, /compare.html, 404) use the string files, and so do the search landing pages in
-scripts/seo_pages.py (four need pages, /compare/bonet-vs-<product>, and /llms.txt). The search titles and descriptions of /science,
+scripts/seo_pages.py (four need pages, /compare/bonet-vs-<product>, and /llms.txt) and the practice library in scripts/practice_pages.py
+(/practice and the pages under it, generated from content/practice.json, which scripts/extract-practice.py writes from the app's own data). The search titles and descriptions of /science,
 /therapist, /faq and /safety are in seo_pages.META (string files again); the meta.<lang>.json files are only the fallback for other pages. Long pages use translated fragments:
 content/legal/<slug>.<lang>.html, content/science.<lang>.html, content/therapist.<lang>.html, titles in content/legal/meta.<lang>.json.
 While a fragment is missing, the page is still built at the language's URL with the English text (canonical points at the English
@@ -36,6 +37,7 @@ parts.FLAGS_OFF = FLAGS_OFF
 import home as homemod  # noqa: E402
 import cost as costmod  # noqa: E402
 import seo_pages  # noqa: E402
+import practice_pages  # noqa: E402
 _flags = json.loads((ROOT / "content" / "flags.json").read_text())
 homemod.VIDEO_ON = bool(_flags.get("new_demo_video", False)) or ("--with" in sys.argv and "new_demo_video" in sys.argv[sys.argv.index("--with") + 1].split(","))
 
@@ -314,7 +316,7 @@ def sitemap():
     local("compare.html", "0.5")
     for slug, (_, _, pri) in LEGAL.items():
         local(slug, pri, untranslated(ROOT / "content" / "legal", slug))
-    for slug, pri in (extra_pages.LOCAL_SITEMAP if extra_pages else []) + seo_pages.LOCAL_SITEMAP:
+    for slug, pri in (extra_pages.LOCAL_SITEMAP if extra_pages else []) + seo_pages.LOCAL_SITEMAP + practice_pages.LOCAL_SITEMAP:
         local(slug, pri)
     for slug in NOTICES:
         local(slug, "0.6")
@@ -344,6 +346,7 @@ if __name__ == "__main__":
     if extra_pages:
         extra_pages.build(sys.modules[__name__])
     seo_pages.build(sys.modules[__name__])
+    practice_pages.build(sys.modules[__name__])
     blog_index("en"); blog_index("zh-hant"); old_post(); sitemap()
     if "--export" in sys.argv:
         (ROOT / "strings").mkdir(exist_ok=True)

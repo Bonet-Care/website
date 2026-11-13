@@ -1,0 +1,3309 @@
+{
+ "_comment": "Written by scripts/extract-practice.py from the app's own data. Do not edit by hand: run the script again.",
+ "exercises": [
+  {
+   "id": "G01",
+   "slug": "single-leg-stand",
+   "name": {
+    "en": "Single Leg Stand",
+    "yue": "單腳站立",
+    "zh-hant": "單腳站立",
+    "zh-hans": "单脚站立",
+    "ja": "片足立ち",
+    "es": "De pie sobre una pierna",
+    "de": "Einbeinstand",
+    "fr": "Debout sur une jambe"
+   },
+   "instruction": {
+    "en": "Stand on one leg while keeping your balance.",
+    "yue": "單腳站立保持平衡。",
+    "zh-hant": "單腳站立並保持平衡。",
+    "zh-hans": "单脚站立并保持平衡。",
+    "ja": "片足で立って、バランスを保ちます。",
+    "es": "Mantente de pie sobre una pierna y conserva el equilibrio.",
+    "de": "Steh auf einem Bein und halte das Gleichgewicht.",
+    "fr": "Tenez-vous sur une jambe en gardant l’équilibre."
+   },
+   "mode": "pose",
+   "bodyPart": "balance",
+   "areas": [
+    "balance"
+   ],
+   "level": 3,
+   "seated": false,
+   "oneSided": false,
+   "free": false,
+   "hold": true,
+   "view": "body",
+   "leanCheck": false,
+   "cues": {
+    "progress": {
+     "en": "Lift one leg",
+     "yue": "抬起一隻腳",
+     "zh-hant": "抬起一隻腳",
+     "zh-hans": "抬起一只脚",
+     "ja": "片足を上げて",
+     "es": "Levanta un pie",
+     "de": "Einen Fuß heben",
+     "fr": "Levez un pied"
+    },
+    "hold": {
+     "en": "Hold balance",
+     "yue": "保持平衡",
+     "zh-hant": "保持平衡",
+     "zh-hans": "保持平衡",
+     "ja": "バランスをキープ",
+     "es": "Mantén el equilibrio",
+     "de": "Gleichgewicht halten",
+     "fr": "Gardez l’équilibre"
+    },
+    "relax": {
+     "en": "Put foot down",
+     "yue": "腳放下",
+     "zh-hant": "把腳放下",
+     "zh-hans": "把脚放下",
+     "ja": "足を下ろして",
+     "es": "Baja los pies",
+     "de": "Füße abstellen",
+     "fr": "Reposez les pieds"
+    }
+   }
+  },
+  {
+   "id": "G08",
+   "slug": "sit-to-stand-weight-shift",
+   "name": {
+    "en": "Sit-to-Stand Weight Shift",
+    "yue": "坐姿重心轉移",
+    "zh-hant": "坐姿重心轉移",
+    "zh-hans": "坐姿重心转移",
+    "ja": "座って体重移動",
+    "es": "Cambio de peso sentado",
+    "de": "Gewichtsverlagerung im Sitzen",
+    "fr": "Transfert du poids assis-debout"
+   },
+   "instruction": {
+    "en": "While seated, lean left and right.",
+    "yue": "坐著時，向左和向右傾斜。",
+    "zh-hant": "坐著時，身體向左和向右傾斜。",
+    "zh-hans": "坐着时，身体向左和向右倾斜。",
+    "ja": "座ったまま、体を左と右に倒します。",
+    "es": "Sentado, inclínate hacia la izquierda y hacia la derecha.",
+    "de": "Neige dich im Sitzen nach links und nach rechts.",
+    "fr": "Assis, penchez-vous à gauche, puis à droite."
+   },
+   "mode": "pose",
+   "bodyPart": "balance",
+   "areas": [
+    "balance"
+   ],
+   "level": 1,
+   "seated": true,
+   "oneSided": false,
+   "free": true,
+   "hold": false,
+   "view": "body",
+   "leanCheck": false,
+   "cues": {
+    "progress": {
+     "en": "Lean to one side",
+     "yue": "身體向一邊傾斜",
+     "zh-hant": "身體向一邊傾斜",
+     "zh-hans": "身体向一边倾斜",
+     "ja": "体を片側に傾けて",
+     "es": "Inclínate hacia un lado",
+     "de": "Neige dich zur Seite",
+     "fr": "Inclinez-vous d’un côté"
+    },
+    "hold": {
+     "en": "Hold shift",
+     "yue": "保持",
+     "zh-hant": "保持",
+     "zh-hans": "保持",
+     "ja": "キープ",
+     "es": "Mantén",
+     "de": "Halten",
+     "fr": "Maintenez"
+    },
+    "relax": {
+     "en": "Back to center",
+     "yue": "回中間",
+     "zh-hant": "回中間",
+     "zh-hans": "回中间",
+     "ja": "真ん中へ",
+     "es": "Al centro",
+     "de": "Zur Mitte",
+     "fr": "Au centre"
+    }
+   }
+  },
+  {
+   "id": "G12",
+   "slug": "standing-weight-shift",
+   "name": {
+    "en": "Standing Weight Shift",
+    "yue": "站立重心轉移",
+    "zh-hant": "站姿重心轉移",
+    "zh-hans": "站姿重心转移",
+    "ja": "立って体重移動",
+    "es": "Cambio de peso de pie",
+    "de": "Gewichtsverlagerung im Stehen",
+    "fr": "Transfert de poids debout"
+   },
+   "instruction": {
+    "en": "Standing, shift hip over left/right foot.",
+    "yue": "站立時，將臀部移至左右腳上方。",
+    "zh-hant": "站立時，將臀部移到左腳或右腳上方。",
+    "zh-hans": "站立时，将臀部移到左脚或右脚上方。",
+    "ja": "立った姿勢で、腰を左右の足の上に移します。",
+    "es": "De pie, lleva la cadera sobre el pie izquierdo y luego sobre el derecho.",
+    "de": "Verlagere im Stehen die Hüfte über den linken und dann über den rechten Fuß.",
+    "fr": "Debout, déplacez le bassin au-dessus du pied gauche, puis du pied droit."
+   },
+   "mode": "pose",
+   "bodyPart": "balance",
+   "areas": [
+    "balance"
+   ],
+   "level": 2,
+   "seated": false,
+   "oneSided": false,
+   "free": true,
+   "hold": false,
+   "view": "body",
+   "leanCheck": false,
+   "cues": {
+    "progress": {
+     "en": "Shift weight sideways",
+     "yue": "重心向旁邊移",
+     "zh-hant": "重心往旁邊移",
+     "zh-hans": "重心往旁边移",
+     "ja": "重心を横に移して",
+     "es": "Pasa el peso al lado",
+     "de": "Verlagere das Gewicht zur Seite",
+     "fr": "Déplacez le poids sur le côté"
+    },
+    "hold": {
+     "en": "Hold shift",
+     "yue": "保持",
+     "zh-hant": "保持",
+     "zh-hans": "保持",
+     "ja": "キープ",
+     "es": "Mantén",
+     "de": "Halten",
+     "fr": "Maintenez"
+    },
+    "relax": {
+     "en": "Back to center",
+     "yue": "回中間",
+     "zh-hant": "回中間",
+     "zh-hans": "回中间",
+     "ja": "真ん中へ",
+     "es": "Al centro",
+     "de": "Zur Mitte",
+     "fr": "Au centre"
+    }
+   }
+  },
+  {
+   "id": "G02",
+   "slug": "assisted-shoulder-flexion",
+   "name": {
+    "en": "Assisted Shoulder Flexion",
+    "yue": "輔助肩部屈曲",
+    "zh-hant": "輔助肩膀屈曲",
+    "zh-hans": "辅助肩部屈曲",
+    "ja": "補助つき肩上げ",
+    "es": "Flexión de hombro asistida",
+    "de": "Unterstützte Schulterbeugung",
+    "fr": "Flexion d’épaule assistée"
+   },
+   "instruction": {
+    "en": "Clasp hands together and lift both arms forward.",
+    "yue": "雙手握在一起，向前抬起雙臂。",
+    "zh-hant": "雙手握在一起，向前抬起雙臂。",
+    "zh-hans": "双手握在一起，向前抬起双臂。",
+    "ja": "両手を組んで、腕を前に上げます。",
+    "es": "Entrelaza las manos y levanta ambos brazos al frente.",
+    "de": "Falte die Hände und hebe beide Arme nach vorn.",
+    "fr": "Joignez les mains et levez les deux bras devant vous."
+   },
+   "mode": "pose",
+   "bodyPart": "shoulder",
+   "areas": [
+    "arm_shoulder"
+   ],
+   "level": 1,
+   "seated": true,
+   "oneSided": false,
+   "free": false,
+   "hold": false,
+   "view": "shoulders",
+   "leanCheck": true,
+   "cues": {
+    "progress": {
+     "en": "Clasp hands, raise forward",
+     "yue": "雙手握住向前抬起",
+     "zh-hant": "雙手握住向前抬起",
+     "zh-hans": "双手握住向前抬起",
+     "ja": "両手を組んで前に上げて",
+     "es": "Manos juntas, levántalas al frente",
+     "de": "Hände gefaltet, nach vorn heben",
+     "fr": "Mains jointes, levez-les devant vous"
+    },
+    "hold": {
+     "en": "Hold up",
+     "yue": "撐住",
+     "zh-hant": "撐住",
+     "zh-hans": "撑住",
+     "ja": "がんばって",
+     "es": "Aguanta",
+     "de": "Halte durch",
+     "fr": "Tenez bon"
+    },
+    "relax": {
+     "en": "Lower arms",
+     "yue": "放下雙臂",
+     "zh-hant": "放下雙臂",
+     "zh-hans": "放下双臂",
+     "ja": "両腕を下ろして",
+     "es": "Baja los brazos",
+     "de": "Arme senken",
+     "fr": "Baissez les bras"
+    }
+   }
+  },
+  {
+   "id": "G03",
+   "slug": "shoulder-flexion",
+   "name": {
+    "en": "Shoulder Flexion",
+    "yue": "肩部屈曲",
+    "zh-hant": "肩膀向前抬舉",
+    "zh-hans": "肩膀向前抬举",
+    "ja": "肩を前に上げる",
+    "es": "Flexión de hombro",
+    "de": "Arm nach vorn heben",
+    "fr": "Flexion de l’épaule"
+   },
+   "instruction": {
+    "en": "Lift one arm forward and upward.",
+    "yue": "將一隻手臂向前向上抬起。",
+    "zh-hant": "將一隻手臂向前向上抬起。",
+    "zh-hans": "将一只手臂向前向上抬起。",
+    "ja": "片方の腕を前から上へ上げます。",
+    "es": "Levanta un brazo hacia delante y arriba.",
+    "de": "Hebe einen Arm nach vorn und nach oben.",
+    "fr": "Levez un bras vers l’avant et vers le haut."
+   },
+   "mode": "pose",
+   "bodyPart": "shoulder",
+   "areas": [
+    "arm_shoulder"
+   ],
+   "level": 2,
+   "seated": true,
+   "oneSided": true,
+   "free": true,
+   "hold": false,
+   "view": "shoulders",
+   "leanCheck": true,
+   "cues": {
+    "progress": {
+     "en": "Raise arm high",
+     "yue": "手臂抬高",
+     "zh-hant": "手臂抬高",
+     "zh-hans": "手臂抬高",
+     "ja": "腕を上げて",
+     "es": "Sube el brazo",
+     "de": "Arm heben",
+     "fr": "Levez le bras"
+    },
+    "hold": {
+     "en": "Hold high",
+     "yue": "保持住",
+     "zh-hant": "保持住",
+     "zh-hans": "保持住",
+     "ja": "そのままキープ",
+     "es": "Aguanta así",
+     "de": "So halten",
+     "fr": "Tenez la position"
+    },
+    "relax": {
+     "en": "Lower arm",
+     "yue": "放下",
+     "zh-hant": "放下",
+     "zh-hans": "放下",
+     "ja": "下ろして",
+     "es": "Baja",
+     "de": "Absenken",
+     "fr": "Baissez"
+    }
+   }
+  },
+  {
+   "id": "G04",
+   "slug": "bilateral-shoulder-abduction",
+   "name": {
+    "en": "Bilateral Shoulder Abduction",
+    "yue": "雙側肩外展",
+    "zh-hant": "雙側肩外展",
+    "zh-hans": "双侧肩外展",
+    "ja": "両腕を横に上げる",
+    "es": "Abducción de ambos hombros",
+    "de": "Beide Arme seitlich heben",
+    "fr": "Abduction des deux épaules"
+   },
+   "instruction": {
+    "en": "Lift both arms out to the sides like a T-pose.",
+    "yue": "將雙臂向兩側抬起呈T字形。",
+    "zh-hant": "將雙臂向兩側抬起，呈T字形。",
+    "zh-hans": "将双臂向两侧抬起，呈T字形。",
+    "ja": "両腕を横に上げて、T字にします。",
+    "es": "Levanta ambos brazos a los lados formando una T.",
+    "de": "Hebe beide Arme seitlich an, wie ein T.",
+    "fr": "Levez les deux bras sur les côtés en forme de T."
+   },
+   "mode": "pose",
+   "bodyPart": "shoulder",
+   "areas": [
+    "arm_shoulder"
+   ],
+   "level": 3,
+   "seated": true,
+   "oneSided": false,
+   "free": false,
+   "hold": false,
+   "view": "shoulders",
+   "leanCheck": true,
+   "cues": {
+    "progress": {
+     "en": "Arms out to sides",
+     "yue": "雙手向兩邊張開",
+     "zh-hant": "雙手向兩邊張開",
+     "zh-hans": "双手向两边张开",
+     "ja": "両手を左右に開いて",
+     "es": "Abre los brazos a los lados",
+     "de": "Arme zur Seite öffnen",
+     "fr": "Ouvrez les bras sur les côtés"
+    },
+    "hold": {
+     "en": "Hold T-pose",
+     "yue": "保持T形",
+     "zh-hant": "保持T形",
+     "zh-hans": "保持T形",
+     "ja": "T字でキープ",
+     "es": "Mantén la forma de T",
+     "de": "T-Form halten",
+     "fr": "Maintenez la forme en T"
+    },
+    "relax": {
+     "en": "Arms down",
+     "yue": "手放下",
+     "zh-hant": "手放下",
+     "zh-hans": "手放下",
+     "ja": "手を下ろして",
+     "es": "Baja la mano",
+     "de": "Hand senken",
+     "fr": "Baissez la main"
+    }
+   }
+  },
+  {
+   "id": "G07",
+   "slug": "shoulder-external-rotation",
+   "name": {
+    "en": "Shoulder External Rotation",
+    "yue": "肩外旋",
+    "zh-hant": "肩膀外旋",
+    "zh-hans": "肩膀外旋",
+    "ja": "肩を外に回す",
+    "es": "Rotación externa del hombro",
+    "de": "Schulter nach außen drehen",
+    "fr": "Rotation externe de l’épaule"
+   },
+   "instruction": {
+    "en": "Elbows pinned to sides at 90°, rotate hands outward.",
+    "yue": "肘部保持在身體兩側呈90度，向外旋轉雙手。",
+    "zh-hant": "手肘貼著身體兩側呈 90 度，雙手向外轉。",
+    "zh-hans": "手肘贴着身体两侧呈 90 度，双手向外转。",
+    "ja": "ひじを体の横で90度に曲げたまま、両手を外に回します。",
+    "es": "Con los codos pegados al cuerpo a 90°, gira las manos hacia fuera.",
+    "de": "Ellbogen mit 90° an den Körper gelegt, drehe die Hände nach außen.",
+    "fr": "Coudes collés au corps à 90°, tournez les mains vers l’extérieur."
+   },
+   "mode": "pose",
+   "bodyPart": "shoulder",
+   "areas": [
+    "arm_shoulder"
+   ],
+   "level": 3,
+   "seated": true,
+   "oneSided": false,
+   "free": false,
+   "hold": false,
+   "view": "shoulders",
+   "leanCheck": true,
+   "cues": {
+    "progress": {
+     "en": "Rotate arm out",
+     "yue": "手臂向外轉",
+     "zh-hant": "手臂向外轉",
+     "zh-hans": "手臂向外转",
+     "ja": "腕を外に回して",
+     "es": "Gira el brazo hacia fuera",
+     "de": "Arm nach außen drehen",
+     "fr": "Tournez le bras vers l’extérieur"
+    },
+    "hold": {
+     "en": "Hold rotation",
+     "yue": "保持",
+     "zh-hant": "保持",
+     "zh-hans": "保持",
+     "ja": "キープ",
+     "es": "Mantén",
+     "de": "Halten",
+     "fr": "Maintenez"
+    },
+    "relax": {
+     "en": "Rotate back",
+     "yue": "轉回來",
+     "zh-hant": "轉回來",
+     "zh-hans": "转回来",
+     "ja": "もどして",
+     "es": "Vuelve",
+     "de": "Dreh dich zurück",
+     "fr": "Retournez-vous"
+    }
+   }
+  },
+  {
+   "id": "G10",
+   "slug": "bilateral-shoulder-flexion",
+   "name": {
+    "en": "Bilateral Shoulder Flexion",
+    "yue": "雙側肩屈曲",
+    "zh-hant": "雙側肩屈曲",
+    "zh-hans": "双侧肩屈曲",
+    "ja": "両腕を前に上げる",
+    "es": "Flexión de ambos hombros",
+    "de": "Beide Arme nach vorn heben",
+    "fr": "Flexion des deux épaules"
+   },
+   "instruction": {
+    "en": "Lift both arms forward simultaneously (Zombie pose).",
+    "yue": "同時向前抬起雙臂（殭屍姿勢）。",
+    "zh-hant": "同時向前抬起雙臂（殭屍姿勢）。",
+    "zh-hans": "同时向前抬起双臂（僵尸姿势）。",
+    "ja": "両腕を同時に前に上げます（キョンシーのポーズ）。",
+    "es": "Levanta ambos brazos al frente a la vez (postura de zombi).",
+    "de": "Hebe beide Arme gleichzeitig nach vorn (Zombie-Haltung).",
+    "fr": "Levez les deux bras devant vous en même temps (pose du zombie)."
+   },
+   "mode": "pose",
+   "bodyPart": "shoulder",
+   "areas": [
+    "arm_shoulder"
+   ],
+   "level": 2,
+   "seated": true,
+   "oneSided": false,
+   "free": true,
+   "hold": false,
+   "view": "shoulders",
+   "leanCheck": true,
+   "cues": {
+    "progress": {
+     "en": "Both arms forward",
+     "yue": "雙手向前伸",
+     "zh-hant": "雙手向前伸",
+     "zh-hans": "双手向前伸",
+     "ja": "両手を前にのばして",
+     "es": "Brazos al frente",
+     "de": "Arme nach vorn strecken",
+     "fr": "Bras devant vous"
+    },
+    "hold": {
+     "en": "Hold forward",
+     "yue": "保持前伸",
+     "zh-hant": "保持前伸",
+     "zh-hans": "保持前伸",
+     "ja": "前に伸ばしてキープ",
+     "es": "Mantén el brazo adelante",
+     "de": "Arm vorn halten",
+     "fr": "Maintenez le bras en avant"
+    },
+    "relax": {
+     "en": "Arms down",
+     "yue": "放下",
+     "zh-hant": "放下",
+     "zh-hans": "放下",
+     "ja": "下ろして",
+     "es": "Baja",
+     "de": "Absenken",
+     "fr": "Baissez"
+    }
+   }
+  },
+  {
+   "id": "G11",
+   "slug": "shoulder-abduction",
+   "name": {
+    "en": "Shoulder Abduction",
+    "yue": "肩外展",
+    "zh-hant": "肩膀向外抬舉",
+    "zh-hans": "肩膀向外抬举",
+    "ja": "肩を横に上げる",
+    "es": "Abducción del hombro",
+    "de": "Arm zur Seite heben",
+    "fr": "Abduction de l’épaule"
+   },
+   "instruction": {
+    "en": "Lift one arm out to the side.",
+    "yue": "將一隻手臂向側面抬起。",
+    "zh-hant": "將一隻手臂向側面抬起。",
+    "zh-hans": "将一只手臂向侧面抬起。",
+    "ja": "片方の腕を横に上げます。",
+    "es": "Levanta un brazo hacia el lado.",
+    "de": "Hebe einen Arm zur Seite.",
+    "fr": "Levez un bras sur le côté."
+   },
+   "mode": "pose",
+   "bodyPart": "shoulder",
+   "areas": [
+    "arm_shoulder"
+   ],
+   "level": 2,
+   "seated": true,
+   "oneSided": true,
+   "free": false,
+   "hold": false,
+   "view": "shoulders",
+   "leanCheck": true,
+   "cues": {
+    "progress": {
+     "en": "Arm out to side",
+     "yue": "手臂向旁邊抬",
+     "zh-hant": "手臂向旁邊抬",
+     "zh-hans": "手臂向旁边抬",
+     "ja": "腕を横に上げて",
+     "es": "Sube el brazo al lado",
+     "de": "Arm zur Seite heben",
+     "fr": "Levez le bras sur le côté"
+    },
+    "hold": {
+     "en": "Hold out",
+     "yue": "保持",
+     "zh-hant": "保持",
+     "zh-hans": "保持",
+     "ja": "キープ",
+     "es": "Mantén",
+     "de": "Halten",
+     "fr": "Maintenez"
+    },
+    "relax": {
+     "en": "Arm down",
+     "yue": "放下",
+     "zh-hant": "放下",
+     "zh-hans": "放下",
+     "ja": "下ろして",
+     "es": "Baja",
+     "de": "Absenken",
+     "fr": "Baissez"
+    }
+   }
+  },
+  {
+   "id": "G05",
+   "slug": "assisted-elbow-extension",
+   "name": {
+    "en": "Assisted Elbow Extension",
+    "yue": "輔助手肘伸展",
+    "zh-hant": "輔助手肘伸直",
+    "zh-hans": "辅助手肘伸展",
+    "ja": "補助つきひじ伸ばし",
+    "es": "Extensión de codo asistida",
+    "de": "Unterstützte Ellbogenstreckung",
+    "fr": "Extension du coude assistée"
+   },
+   "instruction": {
+    "en": "Clasp hands and push forward to straighten elbows.",
+    "yue": "雙手握在一起，向前推以伸直雙肘。",
+    "zh-hant": "雙手握在一起，向前推以伸直雙肘。",
+    "zh-hans": "双手握在一起，向前推直双肘。",
+    "ja": "両手を組んで、前に押し出してひじをのばします。",
+    "es": "Entrelaza las manos y empuja al frente para estirar los codos.",
+    "de": "Falte die Hände und drücke nach vorn, bis die Ellbogen gestreckt sind.",
+    "fr": "Joignez les mains et poussez vers l’avant pour tendre les coudes."
+   },
+   "mode": "pose",
+   "bodyPart": "elbow",
+   "areas": [
+    "arm_shoulder"
+   ],
+   "level": 1,
+   "seated": true,
+   "oneSided": false,
+   "free": false,
+   "hold": false,
+   "view": "shoulders",
+   "leanCheck": true,
+   "cues": {
+    "progress": {
+     "en": "Straighten elbow",
+     "yue": "伸直手肘",
+     "zh-hant": "伸直手肘",
+     "zh-hans": "伸直手肘",
+     "ja": "ひじをのばして",
+     "es": "Estira el codo",
+     "de": "Ellbogen strecken",
+     "fr": "Tendez le coude"
+    },
+    "hold": {
+     "en": "Hold straight",
+     "yue": "保持伸直",
+     "zh-hant": "保持伸直",
+     "zh-hans": "保持伸直",
+     "ja": "まっすぐキープ",
+     "es": "Mantén recto",
+     "de": "Gestreckt halten",
+     "fr": "Maintenez tendu"
+    },
+    "relax": {
+     "en": "Bend elbow",
+     "yue": "彎曲手肘",
+     "zh-hant": "彎曲手肘",
+     "zh-hans": "弯曲手肘",
+     "ja": "ひじを曲げて",
+     "es": "Dobla el codo",
+     "de": "Ellbogen beugen",
+     "fr": "Pliez le coude"
+    }
+   }
+  },
+  {
+   "id": "G06",
+   "slug": "elbow-extension",
+   "name": {
+    "en": "Elbow Extension",
+    "yue": "手肘伸展",
+    "zh-hant": "手肘伸展",
+    "zh-hans": "手肘伸展",
+    "ja": "ひじをのばす",
+    "es": "Extensión del codo",
+    "de": "Ellbogenstrecken",
+    "fr": "Extension du coude"
+   },
+   "instruction": {
+    "en": "Straighten your arm from a bent position.",
+    "yue": "從彎曲位置伸直手臂。",
+    "zh-hant": "從彎曲的位置把手臂伸直。",
+    "zh-hans": "从弯曲的位置把手臂伸直。",
+    "ja": "曲げた腕をまっすぐ伸ばします。",
+    "es": "Estira el brazo desde la posición doblada.",
+    "de": "Strecke den Arm aus der gebeugten Position.",
+    "fr": "Tendez le bras à partir de la position fléchie."
+   },
+   "mode": "pose",
+   "bodyPart": "elbow",
+   "areas": [
+    "arm_shoulder"
+   ],
+   "level": 2,
+   "seated": true,
+   "oneSided": true,
+   "free": false,
+   "hold": false,
+   "view": "shoulders",
+   "leanCheck": true,
+   "cues": {
+    "progress": {
+     "en": "Straighten arm",
+     "yue": "伸直手臂",
+     "zh-hant": "伸直手臂",
+     "zh-hans": "伸直手臂",
+     "ja": "腕をのばして",
+     "es": "Estira el brazo",
+     "de": "Arm strecken",
+     "fr": "Tendez le bras"
+    },
+    "hold": {
+     "en": "Hold straight",
+     "yue": "保持伸直",
+     "zh-hant": "保持伸直",
+     "zh-hans": "保持伸直",
+     "ja": "まっすぐキープ",
+     "es": "Mantén recto",
+     "de": "Gestreckt halten",
+     "fr": "Maintenez tendu"
+    },
+    "relax": {
+     "en": "Bend arm",
+     "yue": "手臂彎曲",
+     "zh-hant": "手臂彎曲",
+     "zh-hans": "手臂弯曲",
+     "ja": "腕を曲げて",
+     "es": "Dobla el brazo",
+     "de": "Arm beugen",
+     "fr": "Pliez le bras"
+    }
+   }
+  },
+  {
+   "id": "G09",
+   "slug": "trunk-flexion",
+   "name": {
+    "en": "Trunk Flexion",
+    "yue": "軀幹屈曲",
+    "zh-hant": "軀幹彎曲",
+    "zh-hans": "躯干弯曲",
+    "ja": "体を前に曲げる",
+    "es": "Flexión del tronco",
+    "de": "Rumpfbeugung",
+    "fr": "Flexion du tronc"
+   },
+   "instruction": {
+    "en": "While seated, lean forward and return upright.",
+    "yue": "坐著時，向前傾斜，然後返回直立。",
+    "zh-hant": "坐著時，身體向前傾，然後回到坐直。",
+    "zh-hans": "坐着时，身体向前倾，然后回到坐直。",
+    "ja": "座ったまま、体を前に倒して、まっすぐにもどります。",
+    "es": "Sentado, inclínate hacia delante y vuelve a la posición recta.",
+    "de": "Beuge dich im Sitzen nach vorn und richte dich wieder auf.",
+    "fr": "Assis, penchez-vous en avant, puis revenez en position droite."
+   },
+   "mode": "pose",
+   "bodyPart": "trunk",
+   "areas": [
+    "neck_back"
+   ],
+   "level": 2,
+   "seated": true,
+   "oneSided": false,
+   "free": false,
+   "hold": false,
+   "view": "body",
+   "leanCheck": false,
+   "cues": {
+    "progress": {
+     "en": "Bend forward",
+     "yue": "身體向前彎",
+     "zh-hant": "身體向前彎",
+     "zh-hans": "身体向前弯",
+     "ja": "体を前に倒して",
+     "es": "Inclínate hacia delante",
+     "de": "Beuge dich nach vorn",
+     "fr": "Penchez-vous en avant"
+    },
+    "hold": {
+     "en": "Hold bend",
+     "yue": "保持彎曲",
+     "zh-hant": "保持彎曲",
+     "zh-hans": "保持弯曲",
+     "ja": "曲げてキープ",
+     "es": "Mantén doblado",
+     "de": "Gebeugt halten",
+     "fr": "Maintenez fléchi"
+    },
+    "relax": {
+     "en": "Sit up",
+     "yue": "坐直",
+     "zh-hant": "坐直",
+     "zh-hans": "坐直",
+     "ja": "背すじをのばして座って",
+     "es": "Siéntate derecho",
+     "de": "Sitz gerade",
+     "fr": "Asseyez-vous droit"
+    }
+   }
+  },
+  {
+   "id": "G13",
+   "slug": "gait-pre-training",
+   "name": {
+    "en": "Gait Pre-training",
+    "yue": "步態前訓練",
+    "zh-hant": "步態前訓練",
+    "zh-hans": "步态前练习",
+    "ja": "歩く前の練習",
+    "es": "Preparación para caminar",
+    "de": "Gangvorbereitung",
+    "fr": "Préparation à la marche"
+   },
+   "instruction": {
+    "en": "March in place, lifting knees high.",
+    "yue": "原地踏步，高抬膝蓋。",
+    "zh-hant": "原地踏步，膝蓋抬高。",
+    "zh-hans": "原地踏步，膝盖抬高。",
+    "ja": "その場で足ぶみをします。ひざを高く上げましょう。",
+    "es": "Marcha en el sitio levantando bien las rodillas.",
+    "de": "Marschiere auf der Stelle und hebe die Knie hoch.",
+    "fr": "Marchez sur place en levant bien les genoux."
+   },
+   "mode": "pose",
+   "bodyPart": "legs",
+   "areas": [
+    "legs"
+   ],
+   "level": 2,
+   "seated": false,
+   "oneSided": false,
+   "free": false,
+   "hold": false,
+   "view": "legs",
+   "leanCheck": false,
+   "cues": {
+    "progress": {
+     "en": "March in place",
+     "yue": "原地踏步",
+     "zh-hant": "原地踏步",
+     "zh-hans": "原地踏步",
+     "ja": "その場で足ぶみ",
+     "es": "Marcha en el sitio",
+     "de": "Auf der Stelle marschieren",
+     "fr": "Marche sur place"
+    },
+    "hold": {
+     "en": "Lift knee high",
+     "yue": "抬高膝蓋",
+     "zh-hant": "抬高膝蓋",
+     "zh-hans": "抬高膝盖",
+     "ja": "ひざを上げて",
+     "es": "Sube la rodilla",
+     "de": "Knie heben",
+     "fr": "Levez le genou"
+    },
+    "relax": {
+     "en": "Foot down",
+     "yue": "腳放下",
+     "zh-hant": "把腳放下",
+     "zh-hans": "把脚放下",
+     "ja": "足を下ろして",
+     "es": "Baja los pies",
+     "de": "Füße abstellen",
+     "fr": "Reposez les pieds"
+    }
+   }
+  },
+  {
+   "id": "G14",
+   "slug": "sit-to-stand",
+   "name": {
+    "en": "Sit-to-Stand",
+    "yue": "坐到站",
+    "zh-hant": "坐姿起立",
+    "zh-hans": "坐姿起立",
+    "ja": "座って立つ",
+    "es": "De sentado a de pie",
+    "de": "Vom Sitzen aufstehen",
+    "fr": "Assis-debout"
+   },
+   "instruction": {
+    "en": "Stand up from sitting, then sit back down. Use a chair behind you.",
+    "yue": "從坐姿站起來，然後坐下。請確保後方有椅子。",
+    "zh-hant": "從坐姿站起來，然後再坐下。請確認後方有椅子。",
+    "zh-hans": "从坐姿站起来，然后再坐下。请确认身后有椅子。",
+    "ja": "座った姿勢から立ち上がり、またゆっくり座ります。後ろに椅子があるか確認してください。",
+    "es": "Ponte de pie desde sentado y vuelve a sentarte. Asegúrate de tener una silla detrás.",
+    "de": "Steh aus dem Sitzen auf und setz dich dann wieder hin. Achte auf einen Stuhl hinter dir.",
+    "fr": "Levez-vous de la position assise, puis rasseyez-vous. Placez une chaise derrière vous."
+   },
+   "mode": "pose",
+   "bodyPart": "legs",
+   "areas": [
+    "legs"
+   ],
+   "level": 2,
+   "seated": false,
+   "oneSided": false,
+   "free": true,
+   "hold": false,
+   "view": "legs",
+   "leanCheck": false,
+   "cues": {
+    "progress": {
+     "en": "Stand up",
+     "yue": "站起來",
+     "zh-hant": "站起來",
+     "zh-hans": "站起来",
+     "ja": "立ち上がって",
+     "es": "Ponte de pie",
+     "de": "Steh auf",
+     "fr": "Levez-vous"
+    },
+    "hold": {
+     "en": "Stand tall",
+     "yue": "站直",
+     "zh-hant": "站直",
+     "zh-hans": "站直",
+     "ja": "まっすぐ立って",
+     "es": "Ponte recto",
+     "de": "Steh gerade",
+     "fr": "Tenez-vous droit"
+    },
+    "relax": {
+     "en": "Sit down",
+     "yue": "坐下",
+     "zh-hant": "坐下",
+     "zh-hans": "坐下",
+     "ja": "座って",
+     "es": "Siéntate",
+     "de": "Setz dich",
+     "fr": "Asseyez-vous"
+    }
+   }
+  },
+  {
+   "id": "G15",
+   "slug": "seated-knee-extension",
+   "name": {
+    "en": "Seated Knee Extension",
+    "yue": "坐姿伸腿",
+    "zh-hant": "坐姿伸腿",
+    "zh-hans": "坐姿伸腿",
+    "ja": "座って脚をのばす",
+    "es": "Estirar la pierna sentado",
+    "de": "Bein im Sitzen strecken",
+    "fr": "Jambe tendue assis"
+   },
+   "instruction": {
+    "en": "While seated, straighten one leg out front, then lower it. Alternate legs.",
+    "yue": "坐著時，將一條腿向前伸直，然後放下。兩腿交替進行。",
+    "zh-hant": "坐著時，將一條腿向前伸直，然後放下。兩腿輪流進行。",
+    "zh-hans": "坐着时，将一条腿向前伸直，然后放下。两腿轮流进行。",
+    "ja": "座ったまま、片方の脚を前にまっすぐのばして、下ろします。左右の脚を交互に行います。",
+    "es": "Sentado, estira una pierna al frente y bájala. Alterna las piernas.",
+    "de": "Strecke im Sitzen ein Bein nach vorn aus und senke es wieder. Wechsle die Beine ab.",
+    "fr": "Assis, tendez une jambe devant vous, puis reposez-la. Alternez les jambes."
+   },
+   "mode": "pose",
+   "bodyPart": "legs",
+   "areas": [
+    "legs"
+   ],
+   "level": 1,
+   "seated": true,
+   "oneSided": true,
+   "free": false,
+   "hold": false,
+   "view": "legs_ankles",
+   "leanCheck": false,
+   "cues": {
+    "progress": {
+     "en": "Straighten knee",
+     "yue": "伸直膝蓋",
+     "zh-hant": "伸直膝蓋",
+     "zh-hans": "伸直膝盖",
+     "ja": "ひざをのばして",
+     "es": "Estira la rodilla",
+     "de": "Knie strecken",
+     "fr": "Tendez le genou"
+    },
+    "hold": {
+     "en": "Hold straight",
+     "yue": "保持伸直",
+     "zh-hant": "保持伸直",
+     "zh-hans": "保持伸直",
+     "ja": "まっすぐキープ",
+     "es": "Mantén recto",
+     "de": "Gestreckt halten",
+     "fr": "Maintenez tendu"
+    },
+    "relax": {
+     "en": "Bend knee",
+     "yue": "彎曲",
+     "zh-hant": "彎曲",
+     "zh-hans": "弯曲",
+     "ja": "曲げて",
+     "es": "Dobla",
+     "de": "Beugen",
+     "fr": "Pliez"
+    }
+   }
+  },
+  {
+   "id": "G16",
+   "slug": "standing-heel-raises",
+   "name": {
+    "en": "Standing Heel Raises",
+    "yue": "墊腳尖",
+    "zh-hant": "踮腳尖",
+    "zh-hans": "踮脚尖",
+    "ja": "つま先立ち",
+    "es": "Puntillas",
+    "de": "Zehenspitzenstand",
+    "fr": "Montées sur la pointe des pieds"
+   },
+   "instruction": {
+    "en": "Standing near a wall or chair, rise onto your toes, then lower. Hold support if needed.",
+    "yue": "站在牆壁或椅子旁，踮起腳尖，然後放下。如需要可扶住支撐物。",
+    "zh-hant": "站在牆壁或椅子旁，踮起腳尖，然後放下。需要的話可以扶著支撐物。",
+    "zh-hans": "站在墙壁或椅子旁，踮起脚尖，然后放下。需要的话可以扶着支撑物。",
+    "ja": "壁や椅子のそばに立ち、つま先立ちになってから、ゆっくり下ろします。必要なら何かにつかまってください。",
+    "es": "De pie junto a una pared o silla, ponte de puntillas y baja. Agárrate si lo necesitas.",
+    "de": "Stell dich neben eine Wand oder einen Stuhl, geh auf die Zehenspitzen und senke dich wieder ab. Halte dich bei Bedarf fest.",
+    "fr": "Debout près d’un mur ou d’une chaise, montez sur la pointe des pieds, puis redescendez. Tenez-vous à un appui si besoin."
+   },
+   "mode": "pose",
+   "bodyPart": "legs",
+   "areas": [
+    "legs",
+    "balance"
+   ],
+   "level": 3,
+   "seated": false,
+   "oneSided": false,
+   "free": false,
+   "hold": false,
+   "view": "body",
+   "leanCheck": false,
+   "cues": {
+    "progress": {
+     "en": "Rise on toes",
+     "yue": "墊起腳尖",
+     "zh-hant": "踮起腳尖",
+     "zh-hans": "踮起脚尖",
+     "ja": "つま先立ちになる",
+     "es": "Ponte de puntillas",
+     "de": "Auf die Zehenspitzen",
+     "fr": "Montez sur la pointe des pieds"
+    },
+    "hold": {
+     "en": "Hold tiptoe",
+     "yue": "保持墊腳",
+     "zh-hant": "保持踮腳",
+     "zh-hans": "保持踮脚",
+     "ja": "つま先立ちでキープ",
+     "es": "Mantente de puntillas",
+     "de": "Zehenstand halten",
+     "fr": "Restez sur la pointe des pieds"
+    },
+    "relax": {
+     "en": "Heels down",
+     "yue": "腳跟放下",
+     "zh-hant": "把腳跟放下",
+     "zh-hans": "把脚跟放下",
+     "ja": "かかとを下ろして",
+     "es": "Baja los talones",
+     "de": "Fersen abstellen",
+     "fr": "Reposez les talons"
+    }
+   }
+  },
+  {
+   "id": "G17",
+   "slug": "neck-side-bend",
+   "name": {
+    "en": "Neck Side Bend",
+    "yue": "頸部側彎",
+    "zh-hant": "頸部側彎",
+    "zh-hans": "颈部侧弯",
+    "ja": "首を横に倒す",
+    "es": "Inclinación lateral del cuello",
+    "de": "Nacken seitlich neigen",
+    "fr": "Inclinaison latérale du cou"
+   },
+   "instruction": {
+    "en": "Slowly tilt your head toward one shoulder, then the other. Keep shoulders still.",
+    "yue": "慢慢將頭向一邊肩膀傾斜，然後換邊。保持肩膀不動。",
+    "zh-hant": "慢慢將頭向一邊肩膀傾斜，然後換邊。肩膀保持不動。",
+    "zh-hans": "慢慢将头向一边肩膀倾斜，然后换边。肩膀保持不动。",
+    "ja": "ゆっくり頭を片方の肩に倒して、反対側も同じようにします。肩は動かさないでください。",
+    "es": "Inclina despacio la cabeza hacia un hombro y luego hacia el otro. Mantén los hombros quietos.",
+    "de": "Neige den Kopf langsam zu einer Schulter, dann zur anderen. Halte die Schultern ruhig.",
+    "fr": "Inclinez lentement la tête vers une épaule, puis vers l’autre. Gardez les épaules immobiles."
+   },
+   "mode": "pose",
+   "bodyPart": "neck",
+   "areas": [
+    "neck_back"
+   ],
+   "level": 1,
+   "seated": true,
+   "oneSided": false,
+   "free": true,
+   "hold": false,
+   "view": "shoulders",
+   "leanCheck": false,
+   "cues": {
+    "progress": {
+     "en": "Tilt head to shoulder",
+     "yue": "頭向肩膀傾斜",
+     "zh-hant": "頭向肩膀傾斜",
+     "zh-hans": "头向肩膀倾斜",
+     "ja": "頭を肩に倒して",
+     "es": "Inclina la cabeza al hombro",
+     "de": "Kopf zur Schulter neigen",
+     "fr": "Inclinez la tête vers l’épaule"
+    },
+    "hold": {
+     "en": "Hold tilt",
+     "yue": "保持傾斜",
+     "zh-hant": "保持傾斜",
+     "zh-hans": "保持倾斜",
+     "ja": "傾けてキープ",
+     "es": "Mantén la inclinación",
+     "de": "Neigung halten",
+     "fr": "Maintenez l’inclinaison"
+    },
+    "relax": {
+     "en": "Head up",
+     "yue": "頭回正",
+     "zh-hant": "頭回正",
+     "zh-hans": "头回正",
+     "ja": "頭をもどして",
+     "es": "Endereza la cabeza",
+     "de": "Kopf gerade",
+     "fr": "Redressez la tête"
+    }
+   }
+  },
+  {
+   "id": "G18",
+   "slug": "neck-rotation",
+   "name": {
+    "en": "Neck Rotation",
+    "yue": "頸部旋轉",
+    "zh-hant": "頸部旋轉",
+    "zh-hans": "颈部旋转",
+    "ja": "首をまわす",
+    "es": "Giro del cuello",
+    "de": "Nacken drehen",
+    "fr": "Rotation du cou"
+   },
+   "instruction": {
+    "en": "Turn your head to look over one shoulder, then the other. Move slowly.",
+    "yue": "將頭轉向一邊看向肩膀後方，然後換邊。動作要慢。",
+    "zh-hant": "將頭轉向一邊，看向肩膀後方，然後換邊。動作要慢。",
+    "zh-hans": "将头转向一边，看向肩膀后方，然后换边。动作要慢。",
+    "ja": "頭を片側にまわして肩ごしに後ろを見て、反対側も同じようにします。ゆっくり動かしましょう。",
+    "es": "Gira la cabeza para mirar por encima de un hombro y luego del otro. Hazlo despacio.",
+    "de": "Dreh den Kopf und schau über eine Schulter, dann über die andere. Bewege dich langsam.",
+    "fr": "Tournez la tête pour regarder par-dessus une épaule, puis l’autre. Allez-y lentement."
+   },
+   "mode": "pose",
+   "bodyPart": "neck",
+   "areas": [
+    "neck_back"
+   ],
+   "level": 1,
+   "seated": true,
+   "oneSided": false,
+   "free": false,
+   "hold": false,
+   "view": "shoulders",
+   "leanCheck": false,
+   "cues": {
+    "progress": {
+     "en": "Turn head to side",
+     "yue": "頭轉向一邊",
+     "zh-hant": "頭轉向一邊",
+     "zh-hans": "头转向一边",
+     "ja": "頭を横に向けて",
+     "es": "Gira la cabeza a un lado",
+     "de": "Kopf zur Seite drehen",
+     "fr": "Tournez la tête d’un côté"
+    },
+    "hold": {
+     "en": "Hold turn",
+     "yue": "保持轉動",
+     "zh-hant": "保持轉動",
+     "zh-hans": "保持转动",
+     "ja": "回してキープ",
+     "es": "Mantén la rotación",
+     "de": "Drehung halten",
+     "fr": "Maintenez la rotation"
+    },
+    "relax": {
+     "en": "Face front",
+     "yue": "面向前方",
+     "zh-hant": "面向前方",
+     "zh-hans": "面向前方",
+     "ja": "前を向いて",
+     "es": "Mira al frente",
+     "de": "Schau nach vorn",
+     "fr": "Regardez devant vous"
+    }
+   }
+  },
+  {
+   "id": "G19",
+   "slug": "chin-tuck",
+   "name": {
+    "en": "Chin Tuck",
+    "yue": "收下巴",
+    "zh-hant": "收下巴",
+    "zh-hans": "收下巴",
+    "ja": "あごを引く",
+    "es": "Meter la barbilla",
+    "de": "Kinn einziehen",
+    "fr": "Rentrer le menton"
+   },
+   "instruction": {
+    "en": "Pull your chin straight back (make a double chin). Hold, then release.",
+    "yue": "將下巴向後收（做出雙下巴）。保持，然後放鬆。",
+    "zh-hant": "將下巴向後收（做出雙下巴）。維持住，然後放鬆。",
+    "zh-hans": "将下巴向后收（做出双下巴）。保持住，然后放松。",
+    "ja": "あごをまっすぐ後ろに引きます（二重あごをつくる感じ）。そのまま止めて、力をぬきます。",
+    "es": "Lleva la barbilla recta hacia atrás (como si hicieras papada). Mantén y suelta.",
+    "de": "Zieh das Kinn gerade nach hinten (wie ein Doppelkinn). Halten, dann lösen.",
+    "fr": "Reculez le menton en ligne droite (comme pour faire un double menton). Maintenez, puis relâchez."
+   },
+   "mode": "pose",
+   "bodyPart": "neck",
+   "areas": [
+    "neck_back"
+   ],
+   "level": 1,
+   "seated": true,
+   "oneSided": false,
+   "free": false,
+   "hold": false,
+   "view": "shoulders",
+   "leanCheck": false,
+   "cues": {
+    "progress": {
+     "en": "Pull chin back",
+     "yue": "收下巴",
+     "zh-hant": "收下巴",
+     "zh-hans": "收下巴",
+     "ja": "あごを引く",
+     "es": "Meter la barbilla",
+     "de": "Kinn einziehen",
+     "fr": "Rentrer le menton"
+    },
+    "hold": {
+     "en": "Hold tuck",
+     "yue": "保持收緊",
+     "zh-hant": "保持收緊",
+     "zh-hans": "保持收紧",
+     "ja": "力を入れてキープ",
+     "es": "Mantén firme",
+     "de": "Spannung halten",
+     "fr": "Maintenez ferme"
+    },
+    "relax": {
+     "en": "Release",
+     "yue": "放鬆",
+     "zh-hant": "放鬆",
+     "zh-hans": "放松",
+     "ja": "力をぬいて",
+     "es": "Relaja",
+     "de": "Entspannen",
+     "fr": "Relâchez"
+    }
+   }
+  },
+  {
+   "id": "G20",
+   "slug": "seated-trunk-rotation",
+   "name": {
+    "en": "Seated Trunk Rotation",
+    "yue": "坐姿軀幹旋轉",
+    "zh-hant": "坐姿軀幹旋轉",
+    "zh-hans": "坐姿躯干旋转",
+    "ja": "座って体をひねる",
+    "es": "Giro de tronco sentado",
+    "de": "Rumpfdrehung im Sitzen",
+    "fr": "Rotation du buste assis"
+   },
+   "instruction": {
+    "en": "While seated, twist your upper body to one side, then the other. Keep hips still.",
+    "yue": "坐著時，上半身轉向一側，然後換邊。保持臀部不動。",
+    "zh-hant": "坐著時，上半身轉向一側，然後換邊。臀部保持不動。",
+    "zh-hans": "坐着时，上半身转向一侧，然后换边。臀部保持不动。",
+    "ja": "座ったまま、上半身を片側にひねって、反対側も同じようにします。腰は動かさないでください。",
+    "es": "Sentado, gira la parte superior del cuerpo hacia un lado y luego hacia el otro. Mantén las caderas quietas.",
+    "de": "Drehe im Sitzen den Oberkörper zur einen, dann zur anderen Seite. Die Hüften bleiben ruhig.",
+    "fr": "Assis, tournez le haut du corps d’un côté, puis de l’autre. Gardez les hanches immobiles."
+   },
+   "mode": "pose",
+   "bodyPart": "back",
+   "areas": [
+    "neck_back"
+   ],
+   "level": 2,
+   "seated": true,
+   "oneSided": false,
+   "free": false,
+   "hold": false,
+   "view": "body",
+   "leanCheck": false,
+   "cues": {
+    "progress": {
+     "en": "Twist to one side",
+     "yue": "身體轉向一側",
+     "zh-hant": "身體轉向一側",
+     "zh-hans": "身体转向一侧",
+     "ja": "体を横にひねって",
+     "es": "Gira el cuerpo hacia un lado",
+     "de": "Drehe den Oberkörper zur Seite",
+     "fr": "Tournez le corps d’un côté"
+    },
+    "hold": {
+     "en": "Hold twist",
+     "yue": "保持旋轉",
+     "zh-hant": "保持旋轉",
+     "zh-hans": "保持旋转",
+     "ja": "ひねってキープ",
+     "es": "Mantén el giro",
+     "de": "Drehung halten",
+     "fr": "Maintenez la rotation"
+    },
+    "relax": {
+     "en": "Back to center",
+     "yue": "回到中間",
+     "zh-hant": "回到中間",
+     "zh-hans": "回到中间",
+     "ja": "真ん中にもどして",
+     "es": "Vuelve al centro",
+     "de": "Zurück zur Mitte",
+     "fr": "Revenez au centre"
+    }
+   }
+  },
+  {
+   "id": "G21",
+   "slug": "side-bend",
+   "name": {
+    "en": "Side Bend",
+    "yue": "側彎伸展",
+    "zh-hant": "側彎伸展",
+    "zh-hans": "侧弯伸展",
+    "ja": "横に倒してのばす",
+    "es": "Estiramiento lateral",
+    "de": "Seitbeuge",
+    "fr": "Étirement latéral"
+   },
+   "instruction": {
+    "en": "Standing or seated, bend your body to one side reaching down, then the other.",
+    "yue": "站立或坐著，身體向一側彎曲，然後換邊。",
+    "zh-hant": "站著或坐著，身體向一側彎曲，然後換邊。",
+    "zh-hans": "站着或坐着，身体向一侧弯曲，然后换边。",
+    "ja": "立ったまま、または座ったまま、体を片側に倒して手を下にのばし、反対側も同じようにします。",
+    "es": "De pie o sentado, inclina el cuerpo hacia un lado bajando el brazo y luego hacia el otro.",
+    "de": "Beuge im Stehen oder Sitzen den Körper zu einer Seite und lass den Arm nach unten sinken, dann zur anderen.",
+    "fr": "Debout ou assis, penchez le corps d’un côté en descendant le bras, puis de l’autre."
+   },
+   "mode": "pose",
+   "bodyPart": "back",
+   "areas": [
+    "neck_back"
+   ],
+   "level": 2,
+   "seated": true,
+   "oneSided": false,
+   "free": false,
+   "hold": false,
+   "view": "shoulders",
+   "leanCheck": false,
+   "cues": {
+    "progress": {
+     "en": "Bend to side",
+     "yue": "身體向側邊彎",
+     "zh-hant": "身體向側邊彎",
+     "zh-hans": "身体向侧边弯",
+     "ja": "体を横に倒して",
+     "es": "Inclínate hacia un lado",
+     "de": "Beuge dich zur Seite",
+     "fr": "Penchez-vous sur le côté"
+    },
+    "hold": {
+     "en": "Hold bend",
+     "yue": "保持側彎",
+     "zh-hant": "保持側彎",
+     "zh-hans": "保持侧弯",
+     "ja": "横に倒してキープ",
+     "es": "Mantén la inclinación",
+     "de": "Neigung halten",
+     "fr": "Maintenez l’inclinaison"
+    },
+    "relax": {
+     "en": "Stand straight",
+     "yue": "站直",
+     "zh-hant": "站直",
+     "zh-hans": "站直",
+     "ja": "まっすぐ立って",
+     "es": "Ponte recto",
+     "de": "Steh gerade",
+     "fr": "Tenez-vous droit"
+    }
+   }
+  },
+  {
+   "id": "G22",
+   "slug": "back-extension",
+   "name": {
+    "en": "Back Extension",
+    "yue": "背部伸展",
+    "zh-hant": "背部伸展",
+    "zh-hans": "背部伸展",
+    "ja": "背中をのばす",
+    "es": "Estiramiento de espalda",
+    "de": "Rückendehnung",
+    "fr": "Étirement du dos"
+   },
+   "instruction": {
+    "en": "While seated, gently lean back, arching your back slightly. Return to upright.",
+    "yue": "坐著時，輕輕向後仰，稍微拱起背部。然後回到直立。",
+    "zh-hant": "坐著時，輕輕向後仰，背部稍微拱起。然後回到坐直。",
+    "zh-hans": "坐着时，轻轻向后仰，背部稍微拱起。然后回到坐直。",
+    "ja": "座ったまま、背中を軽くそらしながら、ゆっくり後ろに倒します。そのあと、まっすぐにもどります。",
+    "es": "Sentado, inclínate suavemente hacia atrás arqueando un poco la espalda. Vuelve a la posición recta.",
+    "de": "Lehne dich im Sitzen sanft zurück und mache den Rücken leicht hohl. Dann richte dich wieder auf.",
+    "fr": "Assis, penchez-vous doucement en arrière en cambrant légèrement le dos. Revenez en position droite."
+   },
+   "mode": "pose",
+   "bodyPart": "back",
+   "areas": [
+    "neck_back"
+   ],
+   "level": 2,
+   "seated": true,
+   "oneSided": false,
+   "free": false,
+   "hold": false,
+   "view": "body",
+   "leanCheck": false,
+   "cues": {
+    "progress": {
+     "en": "Lean back gently",
+     "yue": "身體向後仰",
+     "zh-hant": "身體向後仰",
+     "zh-hans": "身体向后仰",
+     "ja": "体を後ろにそらして",
+     "es": "Inclínate hacia atrás",
+     "de": "Lehne dich nach hinten",
+     "fr": "Penchez-vous en arrière"
+    },
+    "hold": {
+     "en": "Hold extension",
+     "yue": "保持後仰",
+     "zh-hant": "保持後仰",
+     "zh-hans": "保持后仰",
+     "ja": "後ろにそらしてキープ",
+     "es": "Mantén el torso atrás",
+     "de": "Oberkörper hinten halten",
+     "fr": "Maintenez le buste en arrière"
+    },
+    "relax": {
+     "en": "Sit up",
+     "yue": "坐直",
+     "zh-hant": "坐直",
+     "zh-hans": "坐直",
+     "ja": "背すじをのばして座って",
+     "es": "Siéntate derecho",
+     "de": "Sitz gerade",
+     "fr": "Asseyez-vous droit"
+    }
+   }
+  },
+  {
+   "id": "G23",
+   "slug": "shoulder-blade-squeeze",
+   "name": {
+    "en": "Shoulder Blade Squeeze",
+    "yue": "夾背（肩胛骨內收）",
+    "zh-hant": "夾背（肩胛骨內收）",
+    "zh-hans": "夹背（肩胛骨内收）",
+    "ja": "背中を寄せる（肩甲骨を寄せる）",
+    "es": "Apretar la espalda (juntar omóplatos)",
+    "de": "Schulterblätter zusammenziehen",
+    "fr": "Serrer les omoplates"
+   },
+   "instruction": {
+    "en": "Squeeze your shoulder blades together behind you. Hold, then release.",
+    "yue": "將肩胛骨向後夾緊。保持，然後放鬆。",
+    "zh-hant": "將肩胛骨向後夾緊。維持住，然後放鬆。",
+    "zh-hans": "将肩胛骨向后夹紧。保持住，然后放松。",
+    "ja": "肩甲骨を後ろでぎゅっと寄せます。そのまま止めて、力をぬきます。",
+    "es": "Junta los omóplatos hacia atrás. Mantén y suelta.",
+    "de": "Zieh die Schulterblätter hinten zusammen. Halten, dann lösen.",
+    "fr": "Serrez les omoplates l’une vers l’autre derrière vous. Maintenez, puis relâchez."
+   },
+   "mode": "pose",
+   "bodyPart": "back",
+   "areas": [
+    "neck_back"
+   ],
+   "level": 1,
+   "seated": true,
+   "oneSided": false,
+   "free": false,
+   "hold": false,
+   "view": "shoulders",
+   "leanCheck": false,
+   "cues": {
+    "progress": {
+     "en": "Squeeze shoulder blades",
+     "yue": "夾緊肩胛骨",
+     "zh-hant": "夾緊肩胛骨",
+     "zh-hans": "夹紧肩胛骨",
+     "ja": "肩甲骨を寄せる",
+     "es": "Apretar los omóplatos",
+     "de": "Schulterblätter zusammenziehen",
+     "fr": "Serrer les omoplates"
+    },
+    "hold": {
+     "en": "Hold squeeze",
+     "yue": "保持夾緊",
+     "zh-hant": "保持夾緊",
+     "zh-hans": "保持夹紧",
+     "ja": "ぎゅっと寄せてキープ",
+     "es": "Mantén apretado",
+     "de": "Zusammengedrückt halten",
+     "fr": "Maintenez serré"
+    },
+    "relax": {
+     "en": "Release",
+     "yue": "放鬆",
+     "zh-hant": "放鬆",
+     "zh-hans": "放松",
+     "ja": "力をぬいて",
+     "es": "Relaja",
+     "de": "Entspannen",
+     "fr": "Relâchez"
+    }
+   }
+  },
+  {
+   "id": "F01",
+   "slug": "thumb-to-index-pinch",
+   "name": {
+    "en": "Thumb to Index Pinch",
+    "yue": "拇指食指捏合",
+    "zh-hant": "拇指食指捏合",
+    "zh-hans": "拇指食指捏合",
+    "ja": "親指と人さし指でつまむ",
+    "es": "Pinza de pulgar e índice",
+    "de": "Daumen-Zeigefinger-Griff",
+    "fr": "Pince pouce-index"
+   },
+   "instruction": {
+    "en": "Touch thumb tip to index finger tip, then release.",
+    "yue": "將拇指尖觸碰食指尖，然後鬆開。",
+    "zh-hant": "將拇指尖碰食指尖，然後放開。",
+    "zh-hans": "将拇指尖碰食指尖，然后松开。",
+    "ja": "親指の先を人さし指の先につけて、離します。",
+    "es": "Toca la punta del índice con la punta del pulgar y suelta.",
+    "de": "Berühre mit der Daumenspitze die Zeigefingerspitze, dann löse sie.",
+    "fr": "Touchez le bout de l’index avec le bout du pouce, puis relâchez."
+   },
+   "mode": "hand",
+   "bodyPart": "hand",
+   "areas": [
+    "hand"
+   ],
+   "level": 2,
+   "seated": true,
+   "oneSided": true,
+   "free": false,
+   "hold": false,
+   "view": "hand",
+   "leanCheck": false,
+   "cues": {
+    "progress": {
+     "en": "Touch thumb to index",
+     "yue": "拇指食指碰一起",
+     "zh-hant": "拇指和食指碰在一起",
+     "zh-hans": "拇指和食指碰在一起",
+     "ja": "親指と人さし指をつけて",
+     "es": "Junta pulgar e índice",
+     "de": "Daumen und Zeigefinger zusammen",
+     "fr": "Réunissez le pouce et l’index"
+    },
+    "hold": {
+     "en": "Pinch tight",
+     "yue": "捏住",
+     "zh-hant": "捏住",
+     "zh-hans": "捏住",
+     "ja": "つまんで",
+     "es": "Pellizca",
+     "de": "Zusammendrücken",
+     "fr": "Pincez"
+    },
+    "relax": {
+     "en": "Open fingers",
+     "yue": "張開手指",
+     "zh-hant": "張開手指",
+     "zh-hans": "张开手指",
+     "ja": "指を開いて",
+     "es": "Abre los dedos",
+     "de": "Spreize die Finger",
+     "fr": "Écartez les doigts"
+    }
+   }
+  },
+  {
+   "id": "F02",
+   "slug": "hand-grasp-fist",
+   "name": {
+    "en": "Hand Grasp (Fist)",
+    "yue": "手部抓握（握拳）",
+    "zh-hant": "手部抓握（握拳）",
+    "zh-hans": "手部抓握（握拳）",
+    "ja": "にぎる（グー）",
+    "es": "Agarre de mano (puño)",
+    "de": "Handgriff (Faust)",
+    "fr": "Serrer la main (poing)"
+   },
+   "instruction": {
+    "en": "Make a tight fist, then open fully.",
+    "yue": "握緊拳頭，然後完全張開。",
+    "zh-hant": "握緊拳頭，然後完全張開。",
+    "zh-hans": "握紧拳头，然后完全张开。",
+    "ja": "ぎゅっとこぶしをにぎってから、思いきり開きます。",
+    "es": "Cierra el puño con fuerza y luego ábrelo del todo.",
+    "de": "Balle die Faust fest, dann öffne sie ganz.",
+    "fr": "Serrez bien le poing, puis ouvrez complètement la main."
+   },
+   "mode": "hand",
+   "bodyPart": "hand",
+   "areas": [
+    "hand"
+   ],
+   "level": 1,
+   "seated": true,
+   "oneSided": true,
+   "free": true,
+   "hold": false,
+   "view": "hand",
+   "leanCheck": false,
+   "cues": {
+    "progress": {
+     "en": "Make a fist",
+     "yue": "握緊拳頭",
+     "zh-hant": "用力握緊拳頭",
+     "zh-hans": "用力握紧拳头",
+     "ja": "ぎゅっとにぎって",
+     "es": "Aprieta el puño",
+     "de": "Faust ballen",
+     "fr": "Serrez le poing"
+    },
+    "hold": {
+     "en": "Squeeze tight",
+     "yue": "用力握",
+     "zh-hant": "用力握",
+     "zh-hans": "用力握",
+     "ja": "ぎゅっとにぎって",
+     "es": "Aprieta fuerte",
+     "de": "Fest drücken",
+     "fr": "Serrez fort"
+    },
+    "relax": {
+     "en": "Open hand",
+     "yue": "張開手掌",
+     "zh-hant": "張開手掌",
+     "zh-hans": "张开手掌",
+     "ja": "手のひらを開いて",
+     "es": "Abre la palma",
+     "de": "Öffne die Handfläche",
+     "fr": "Ouvrez la paume"
+    }
+   }
+  },
+  {
+   "id": "F03",
+   "slug": "sequential-tapping",
+   "name": {
+    "en": "Sequential Tapping",
+    "yue": "依序點觸",
+    "zh-hant": "依序點選",
+    "zh-hans": "依次点触",
+    "ja": "順番にタップ",
+    "es": "Toques en secuencia",
+    "de": "Der Reihe nach tippen",
+    "fr": "Touches dans l’ordre"
+   },
+   "instruction": {
+    "en": "Touch thumb to each finger in order: Index, Middle, Ring, Pinky. Lift thumb between each touch.",
+    "yue": "按順序用拇指觸碰：食指、中指、無名指、小指。每次觸碰後抬起拇指。",
+    "zh-hant": "依序用拇指碰：食指、中指、無名指、小指。每次碰完後把拇指抬起。",
+    "zh-hans": "依次用拇指碰：食指、中指、无名指、小指。每次碰完后把拇指抬起。",
+    "ja": "親指で順番にふれます。人さし指、中指、くすり指、小指。ふれるたびに親指を離します。",
+    "es": "Toca con el pulgar cada dedo en orden: índice, medio, anular, meñique. Levanta el pulgar entre cada toque.",
+    "de": "Tippe der Reihe nach mit dem Daumen jeden Finger an: Zeigefinger, Mittelfinger, Ringfinger, kleiner Finger. Hebe den Daumen zwischen den Berührungen an.",
+    "fr": "Touchez chaque doigt avec le pouce, dans l’ordre : index, majeur, annulaire, auriculaire. Relevez le pouce entre chaque contact."
+   },
+   "mode": "hand",
+   "bodyPart": "hand",
+   "areas": [
+    "hand"
+   ],
+   "level": 3,
+   "seated": true,
+   "oneSided": true,
+   "free": false,
+   "hold": false,
+   "view": "hand",
+   "leanCheck": false,
+   "cues": {
+    "progress": {
+     "en": "Touch next finger",
+     "yue": "用拇指碰下一根手指",
+     "zh-hant": "用拇指依序碰觸其他手指",
+     "zh-hans": "用拇指依次碰其他手指",
+     "ja": "親指で次の指にふれて",
+     "es": "Toca el siguiente dedo con el pulgar",
+     "de": "Berühre mit dem Daumen den nächsten Finger",
+     "fr": "Touchez le doigt suivant avec le pouce"
+    },
+    "hold": {
+     "en": "Touching",
+     "yue": "碰到了",
+     "zh-hant": "碰到了",
+     "zh-hans": "碰到了",
+     "ja": "ふれました",
+     "es": "¡Tocado!",
+     "de": "Berührt!",
+     "fr": "Touché !"
+    },
+    "relax": {
+     "en": "Next finger",
+     "yue": "繼續下一個",
+     "zh-hant": "繼續下一個",
+     "zh-hans": "继续下一个",
+     "ja": "次へ続けて",
+     "es": "Sigue con el siguiente",
+     "de": "Weiter zum nächsten",
+     "fr": "Passez au suivant"
+    }
+   }
+  },
+  {
+   "id": "F04",
+   "slug": "thumb-opposition",
+   "name": {
+    "en": "Thumb Opposition",
+    "yue": "拇指對掌",
+    "zh-hant": "拇指對指",
+    "zh-hans": "拇指对指",
+    "ja": "親指と指をつける",
+    "es": "Oposición del pulgar",
+    "de": "Daumenopposition",
+    "fr": "Opposition du pouce"
+   },
+   "instruction": {
+    "en": "Touch thumb tip to the base of pinky finger.",
+    "yue": "將拇指尖觸碰小指根部。",
+    "zh-hant": "將拇指尖碰小指根部。",
+    "zh-hans": "将拇指尖碰小指根部。",
+    "ja": "親指の先を小指のつけ根につけます。",
+    "es": "Toca con la punta del pulgar la base del meñique.",
+    "de": "Berühre mit der Daumenspitze den Ansatz des kleinen Fingers.",
+    "fr": "Touchez la base de l’auriculaire avec le bout du pouce."
+   },
+   "mode": "hand",
+   "bodyPart": "hand",
+   "areas": [
+    "hand"
+   ],
+   "level": 3,
+   "seated": true,
+   "oneSided": true,
+   "free": false,
+   "hold": false,
+   "view": "hand",
+   "leanCheck": false,
+   "cues": {
+    "progress": {
+     "en": "Thumb to pinky base",
+     "yue": "拇指去碰小指根部",
+     "zh-hant": "拇指去碰小指根部",
+     "zh-hans": "拇指去碰小指根部",
+     "ja": "親指を小指のつけ根へ",
+     "es": "Lleva el pulgar a la base del meñique",
+     "de": "Führe den Daumen zum Ansatz des kleinen Fingers",
+     "fr": "Amenez le pouce à la base de l’auriculaire"
+    },
+    "hold": {
+     "en": "Hold touch",
+     "yue": "碰到了",
+     "zh-hant": "碰到了",
+     "zh-hans": "碰到了",
+     "ja": "ふれました",
+     "es": "¡Tocado!",
+     "de": "Berührt!",
+     "fr": "Touché !"
+    },
+    "relax": {
+     "en": "Open hand",
+     "yue": "手指張開",
+     "zh-hant": "手指張開",
+     "zh-hans": "手指张开",
+     "ja": "指を開いて",
+     "es": "Abre los dedos",
+     "de": "Finger spreizen",
+     "fr": "Ouvrez les doigts"
+    }
+   }
+  },
+  {
+   "id": "F05",
+   "slug": "wrist-extension-flexion",
+   "name": {
+    "en": "Wrist Extension/Flexion",
+    "yue": "手腕伸展/屈曲",
+    "zh-hant": "手腕伸展/屈曲",
+    "zh-hans": "手腕伸展/屈曲",
+    "ja": "手首を反らす・曲げる",
+    "es": "Extensión/flexión de la muñeca",
+    "de": "Handgelenk strecken/beugen",
+    "fr": "Extension/flexion du poignet"
+   },
+   "instruction": {
+    "en": "Wave hand up and down at the wrist.",
+    "yue": "在手腕處上下擺動手。",
+    "zh-hant": "在手腕處上下擺動手。",
+    "zh-hans": "在手腕处上下摆动手。",
+    "ja": "手首から先を、上下に振ります。",
+    "es": "Mueve la mano hacia arriba y abajo desde la muñeca.",
+    "de": "Bewege die Hand im Handgelenk auf und ab.",
+    "fr": "Agitez la main de haut en bas au niveau du poignet."
+   },
+   "mode": "hand",
+   "bodyPart": "wrist",
+   "areas": [
+    "hand"
+   ],
+   "level": 2,
+   "seated": true,
+   "oneSided": true,
+   "free": false,
+   "hold": false,
+   "view": "hand",
+   "leanCheck": false,
+   "cues": {
+    "progress": {
+     "en": "Bend wrist up or down",
+     "yue": "手腕向上或向下彎",
+     "zh-hant": "手腕向上或向下彎",
+     "zh-hans": "手腕向上或向下弯",
+     "ja": "手首を上か下に曲げて",
+     "es": "Dobla la muñeca arriba o abajo",
+     "de": "Handgelenk nach oben oder unten beugen",
+     "fr": "Pliez le poignet vers le haut ou le bas"
+    },
+    "hold": {
+     "en": "Hold bend",
+     "yue": "保持手腕彎曲",
+     "zh-hant": "保持手腕彎曲",
+     "zh-hans": "保持手腕弯曲",
+     "ja": "手首を曲げてキープ",
+     "es": "Mantén la muñeca doblada",
+     "de": "Handgelenk gebeugt halten",
+     "fr": "Maintenez le poignet fléchi"
+    },
+    "relax": {
+     "en": "Straighten wrist",
+     "yue": "手腕回正",
+     "zh-hant": "手腕回正",
+     "zh-hans": "手腕回正",
+     "ja": "手首をもどして",
+     "es": "Endereza la muñeca",
+     "de": "Handgelenk gerade",
+     "fr": "Redressez le poignet"
+    }
+   }
+  },
+  {
+   "id": "F06",
+   "slug": "finger-spread",
+   "name": {
+    "en": "Finger Spread",
+    "yue": "手指張開",
+    "zh-hant": "手指張開",
+    "zh-hans": "手指张开",
+    "ja": "指を開いて",
+    "es": "Abre los dedos",
+    "de": "Finger spreizen",
+    "fr": "Ouvrez les doigts"
+   },
+   "instruction": {
+    "en": "Spread fingers wide, then bring together.",
+    "yue": "盡可能張開手指，然後併攏。",
+    "zh-hant": "盡可能張開手指，然後併攏。",
+    "zh-hans": "尽可能张开手指，然后并拢。",
+    "ja": "指をできるだけ大きく開いて、そろえます。",
+    "es": "Abre los dedos todo lo que puedas y luego júntalos.",
+    "de": "Spreize die Finger weit, dann führe sie zusammen.",
+    "fr": "Écartez largement les doigts, puis rapprochez-les."
+   },
+   "mode": "hand",
+   "bodyPart": "hand",
+   "areas": [
+    "hand"
+   ],
+   "level": 1,
+   "seated": true,
+   "oneSided": true,
+   "free": true,
+   "hold": false,
+   "view": "hand",
+   "leanCheck": false,
+   "cues": {
+    "progress": {
+     "en": "Spread fingers wide",
+     "yue": "手指盡量張開",
+     "zh-hant": "手指盡量張開",
+     "zh-hans": "手指尽量张开",
+     "ja": "指を大きく開いて",
+     "es": "Abre bien los dedos",
+     "de": "Finger weit spreizen",
+     "fr": "Écartez bien les doigts"
+    },
+    "hold": {
+     "en": "Hold spread",
+     "yue": "保持張開",
+     "zh-hant": "保持張開",
+     "zh-hans": "保持张开",
+     "ja": "開いてキープ",
+     "es": "Mantén abierto",
+     "de": "Offen halten",
+     "fr": "Maintenez ouvert"
+    },
+    "relax": {
+     "en": "Close fingers",
+     "yue": "手指併攏",
+     "zh-hant": "手指併攏",
+     "zh-hans": "手指并拢",
+     "ja": "指をそろえて",
+     "es": "Junta los dedos",
+     "de": "Finger zusammen",
+     "fr": "Rapprochez les doigts"
+    }
+   }
+  },
+  {
+   "id": "F07",
+   "slug": "wrist-radial-ulnar-deviation",
+   "name": {
+    "en": "Wrist Radial/Ulnar Deviation",
+    "yue": "手腕橈側/尺側偏移",
+    "zh-hant": "手腕橈側/尺側偏移",
+    "zh-hans": "手腕桡侧/尺侧偏移",
+    "ja": "手首を左右に倒す",
+    "es": "Desviación radial/cubital de la muñeca",
+    "de": "Handgelenk zur Daumen-/Kleinfingerseite",
+    "fr": "Déviation radiale/ulnaire du poignet"
+   },
+   "instruction": {
+    "en": "Move hand side to side at the wrist.",
+    "yue": "在手腕處左右擺動手。",
+    "zh-hant": "在手腕處左右擺動手。",
+    "zh-hans": "在手腕处左右摆动手。",
+    "ja": "手首から先を、左右に動かします。",
+    "es": "Mueve la mano de lado a lado desde la muñeca.",
+    "de": "Bewege die Hand im Handgelenk von Seite zu Seite.",
+    "fr": "Bougez la main de gauche à droite au niveau du poignet."
+   },
+   "mode": "hand",
+   "bodyPart": "wrist",
+   "areas": [
+    "hand"
+   ],
+   "level": 2,
+   "seated": true,
+   "oneSided": true,
+   "free": false,
+   "hold": false,
+   "view": "hand",
+   "leanCheck": false,
+   "cues": {
+    "progress": {
+     "en": "Wave wrist side-to-side",
+     "yue": "手腕向左右擺動",
+     "zh-hant": "手腕向左右擺動",
+     "zh-hans": "手腕向左右摆动",
+     "ja": "手首を左右に振って",
+     "es": "Mueve la muñeca a los lados",
+     "de": "Handgelenk seitlich bewegen",
+     "fr": "Balancez le poignet de gauche à droite"
+    },
+    "hold": {
+     "en": "Hold deviation",
+     "yue": "保持偏移",
+     "zh-hant": "保持偏移",
+     "zh-hans": "保持偏移",
+     "ja": "ずらしたままキープ",
+     "es": "Mantén el desvío",
+     "de": "Verschiebung halten",
+     "fr": "Maintenez le décalage"
+    },
+    "relax": {
+     "en": "Center wrist",
+     "yue": "手腕回正",
+     "zh-hant": "手腕回正",
+     "zh-hans": "手腕回正",
+     "ja": "手首をもどして",
+     "es": "Endereza la muñeca",
+     "de": "Handgelenk gerade",
+     "fr": "Redressez le poignet"
+    }
+   }
+  },
+  {
+   "id": "F08",
+   "slug": "individual-finger-lifts",
+   "name": {
+    "en": "Individual Finger Lifts",
+    "yue": "單指抬起",
+    "zh-hant": "單指抬起",
+    "zh-hans": "单指抬起",
+    "ja": "指を1本ずつ上げる",
+    "es": "Levantar un dedo",
+    "de": "Einzelnen Finger heben",
+    "fr": "Lever un doigt"
+   },
+   "instruction": {
+    "en": "Place hand flat, lift one finger at a time while others stay down.",
+    "yue": "手掌放平，一次抬起一根手指，其他手指保持不動。",
+    "zh-hant": "手掌放平，一次抬起一根手指，其他手指保持不動。",
+    "zh-hans": "手掌放平，一次抬起一根手指，其他手指保持不动。",
+    "ja": "手のひらを平らにして、指を1本ずつ上げます。ほかの指は動かしません。",
+    "es": "Apoya la mano plana y levanta un dedo a la vez, con los demás abajo.",
+    "de": "Lege die Hand flach hin und hebe einen Finger nach dem anderen, die übrigen bleiben unten.",
+    "fr": "Posez la main à plat, levez un doigt à la fois en gardant les autres posés."
+   },
+   "mode": "hand",
+   "bodyPart": "hand",
+   "areas": [
+    "hand"
+   ],
+   "level": 3,
+   "seated": true,
+   "oneSided": true,
+   "free": false,
+   "hold": false,
+   "view": "hand",
+   "leanCheck": false,
+   "cues": {
+    "progress": {
+     "en": "Lift one finger",
+     "yue": "抬起一根手指",
+     "zh-hant": "抬起一根手指",
+     "zh-hans": "抬起一根手指",
+     "ja": "指を1本ずつ上げる",
+     "es": "Levantar un dedo",
+     "de": "Einzelne Finger heben",
+     "fr": "Lever un doigt à la fois"
+    },
+    "hold": {
+     "en": "Hold lift",
+     "yue": "保持抬起",
+     "zh-hant": "保持抬起",
+     "zh-hans": "保持抬起",
+     "ja": "上げたままキープ",
+     "es": "Mantén arriba",
+     "de": "Oben halten",
+     "fr": "Maintenez en haut"
+    },
+    "relax": {
+     "en": "Lower finger",
+     "yue": "放下手指",
+     "zh-hant": "放下手指",
+     "zh-hans": "放下手指",
+     "ja": "指を下ろして",
+     "es": "Baja los dedos",
+     "de": "Finger senken",
+     "fr": "Baissez les doigts"
+    }
+   }
+  },
+  {
+   "id": "F09",
+   "slug": "finger-curls",
+   "name": {
+    "en": "Finger Curls",
+    "yue": "手指彎曲",
+    "zh-hant": "手指彎曲",
+    "zh-hans": "手指弯曲",
+    "ja": "指を曲げる",
+    "es": "Doblar los dedos",
+    "de": "Finger beugen",
+    "fr": "Plier les doigts"
+   },
+   "instruction": {
+    "en": "Curl fingers inward toward palm, then extend.",
+    "yue": "手指向掌心彎曲，然後伸展。",
+    "zh-hant": "手指向掌心彎曲，然後伸直。",
+    "zh-hans": "手指向掌心弯曲，然后伸直。",
+    "ja": "指を手のひらに向けて曲げて、のばします。",
+    "es": "Dobla los dedos hacia la palma y luego estíralos.",
+    "de": "Beuge die Finger zur Handfläche, dann strecke sie wieder.",
+    "fr": "Pliez les doigts vers la paume, puis tendez-les."
+   },
+   "mode": "hand",
+   "bodyPart": "hand",
+   "areas": [
+    "hand"
+   ],
+   "level": 2,
+   "seated": true,
+   "oneSided": true,
+   "free": false,
+   "hold": false,
+   "view": "hand",
+   "leanCheck": false,
+   "cues": {
+    "progress": {
+     "en": "Curl fingers in",
+     "yue": "手指向掌心彎曲",
+     "zh-hant": "手指向掌心彎曲",
+     "zh-hans": "手指向掌心弯曲",
+     "ja": "指を曲げる",
+     "es": "Flexión de dedos",
+     "de": "Fingerbeugen",
+     "fr": "Flexion des doigts"
+    },
+    "hold": {
+     "en": "Hold curl",
+     "yue": "保持彎曲",
+     "zh-hant": "保持彎曲",
+     "zh-hans": "保持弯曲",
+     "ja": "曲げてキープ",
+     "es": "Mantén doblado",
+     "de": "Gebeugt halten",
+     "fr": "Maintenez fléchi"
+    },
+    "relax": {
+     "en": "Extend fingers",
+     "yue": "手指伸直",
+     "zh-hant": "手指伸直",
+     "zh-hans": "手指伸直",
+     "ja": "指をのばして",
+     "es": "Estira los dedos",
+     "de": "Finger strecken",
+     "fr": "Tendez les doigts"
+    }
+   }
+  },
+  {
+   "id": "F11",
+   "slug": "pinky-to-thumb-touch",
+   "name": {
+    "en": "Pinky to Thumb Touch",
+    "yue": "小指拇指碰觸",
+    "zh-hant": "小指與拇指相碰",
+    "zh-hans": "小指与拇指相碰",
+    "ja": "小指と親指をつける",
+    "es": "Meñique con pulgar",
+    "de": "Kleiner Finger an Daumen",
+    "fr": "Auriculaire contre pouce"
+   },
+   "instruction": {
+    "en": "Touch thumb tip to pinky tip, then release.",
+    "yue": "拇指尖碰觸小指尖，然後鬆開。",
+    "zh-hant": "拇指尖碰小指尖，然後放開。",
+    "zh-hans": "拇指尖碰小指尖，然后松开。",
+    "ja": "親指の先を小指の先につけて、離します。",
+    "es": "Toca la punta del meñique con la punta del pulgar y suelta.",
+    "de": "Berühre mit der Daumenspitze die Spitze des kleinen Fingers, dann löse sie wieder.",
+    "fr": "Touchez le bout de l’auriculaire avec le bout du pouce, puis relâchez."
+   },
+   "mode": "hand",
+   "bodyPart": "hand",
+   "areas": [
+    "hand"
+   ],
+   "level": 3,
+   "seated": true,
+   "oneSided": true,
+   "free": false,
+   "hold": false,
+   "view": "hand",
+   "leanCheck": false,
+   "cues": {
+    "progress": {
+     "en": "Touch thumb to pinky",
+     "yue": "拇指碰小指尖",
+     "zh-hant": "拇指碰小指尖",
+     "zh-hans": "拇指碰小指尖",
+     "ja": "親指と小指の先をつける",
+     "es": "Pulgar con meñique",
+     "de": "Daumen an kleinen Finger",
+     "fr": "Pouce et auriculaire"
+    },
+    "hold": {
+     "en": "Hold touch",
+     "yue": "碰住",
+     "zh-hant": "碰住",
+     "zh-hans": "碰住",
+     "ja": "ふれたまま",
+     "es": "Toca",
+     "de": "Berühren",
+     "fr": "Touchez"
+    },
+    "relax": {
+     "en": "Open fingers",
+     "yue": "張開手指",
+     "zh-hant": "張開手指",
+     "zh-hans": "张开手指",
+     "ja": "指を開いて",
+     "es": "Abre los dedos",
+     "de": "Spreize die Finger",
+     "fr": "Écartez les doigts"
+    }
+   }
+  },
+  {
+   "id": "F13",
+   "slug": "hook-fist",
+   "name": {
+    "en": "Hook Fist",
+    "yue": "鉤拳",
+    "zh-hant": "鉤拳",
+    "zh-hans": "钩拳",
+    "ja": "かぎこぶし",
+    "es": "Puño en gancho",
+    "de": "Haken",
+    "fr": "Crochet du poing"
+   },
+   "instruction": {
+    "en": "Bend fingers at middle joints while keeping knuckles straight (hook shape).",
+    "yue": "中節彎曲但指節保持拉直（鉤子形狀）。",
+    "zh-hant": "第二指節彎曲，但指關節保持伸直（鉤子形狀）。",
+    "zh-hans": "第二指节弯曲，但指关节保持伸直（钩子形状）。",
+    "ja": "指の真ん中の関節を曲げて、つけ根はのばしたままにします（かぎ形）。",
+    "es": "Dobla los dedos por las articulaciones medias con los nudillos rectos (forma de gancho).",
+    "de": "Beuge die Finger in den Mittelgelenken und halte die Fingerknöchel gerade (Hakenform).",
+    "fr": "Pliez les doigts aux articulations du milieu en gardant les jointures droites (forme de crochet)."
+   },
+   "mode": "hand",
+   "bodyPart": "hand",
+   "areas": [
+    "hand"
+   ],
+   "level": 3,
+   "seated": true,
+   "oneSided": true,
+   "free": false,
+   "hold": false,
+   "view": "hand",
+   "leanCheck": false,
+   "cues": {
+    "progress": {
+     "en": "Make hook fist",
+     "yue": "中節彎曲成鉤形",
+     "zh-hant": "第二指節彎曲成鉤形",
+     "zh-hans": "第二指节弯曲成钩形",
+     "ja": "かぎ形のこぶし",
+     "es": "Puño en gancho",
+     "de": "Hakenfaust",
+     "fr": "Poing en crochet"
+    },
+    "hold": {
+     "en": "Hold hook",
+     "yue": "保持鉤形",
+     "zh-hant": "保持鉤形",
+     "zh-hans": "保持钩形",
+     "ja": "かぎ形でキープ",
+     "es": "Mantén la mano en gancho",
+     "de": "Hakenhand halten",
+     "fr": "Maintenez la main en crochet"
+    },
+    "relax": {
+     "en": "Straighten fingers",
+     "yue": "手指伸直",
+     "zh-hant": "手指伸直",
+     "zh-hans": "手指伸直",
+     "ja": "指をのばして",
+     "es": "Estira los dedos",
+     "de": "Finger strecken",
+     "fr": "Tendez les doigts"
+    }
+   }
+  }
+ ],
+ "areas": [
+  {
+   "id": "arm_shoulder",
+   "slug": "arm-and-shoulder",
+   "title": {
+    "en": "Arm and shoulder",
+    "yue": "手臂同膊頭",
+    "zh-hant": "手臂和肩膀",
+    "zh-hans": "手臂和肩膀",
+    "ja": "腕と肩",
+    "es": "Brazo y hombro",
+    "de": "Arm und Schulter",
+    "fr": "Bras et épaule"
+   }
+  },
+  {
+   "id": "hand",
+   "slug": "hand-and-fingers",
+   "title": {
+    "en": "Hand and fingers",
+    "yue": "手同手指",
+    "zh-hant": "手和手指",
+    "zh-hans": "手和手指",
+    "ja": "手と指",
+    "es": "Mano y dedos",
+    "de": "Hand und Finger",
+    "fr": "Main et doigts"
+   }
+  },
+  {
+   "id": "legs",
+   "slug": "legs-and-walking",
+   "title": {
+    "en": "Legs and walking",
+    "yue": "腳同行路",
+    "zh-hant": "腳和走路",
+    "zh-hans": "腿脚和走路",
+    "ja": "足と歩くこと",
+    "es": "Piernas y caminar",
+    "de": "Beine und Gehen",
+    "fr": "Jambes et marche"
+   }
+  },
+  {
+   "id": "balance",
+   "slug": "balance",
+   "title": {
+    "en": "Balance",
+    "yue": "平衡",
+    "zh-hant": "平衡",
+    "zh-hans": "平衡",
+    "ja": "バランス",
+    "es": "Equilibrio",
+    "de": "Gleichgewicht",
+    "fr": "Équilibre"
+   }
+  },
+  {
+   "id": "neck_back",
+   "slug": "neck-and-back",
+   "title": {
+    "en": "Neck and back",
+    "yue": "頸同背",
+    "zh-hant": "頸部和背部",
+    "zh-hans": "颈部和背部",
+    "ja": "首と背中",
+    "es": "Cuello y espalda",
+    "de": "Nacken und Rücken",
+    "fr": "Cou et dos"
+   }
+  }
+ ],
+ "speech": {
+  "levels": 100,
+  "unit": 5,
+  "free_max_level": 3,
+  "pass_pct": 60,
+  "modes": [
+   {
+    "id": "pronunciation",
+    "slug": "say-the-word",
+    "name": {
+     "en": "Say the word",
+     "yue": "讀字",
+     "zh-hant": "唸字",
+     "zh-hans": "读字",
+     "ja": "言葉を読む",
+     "es": "Palabras",
+     "de": "Wort sprechen",
+     "fr": "Dites le mot"
+    },
+    "purpose": {
+     "en": "Read a word out loud.",
+     "yue": "大聲讀出一個字。",
+     "zh-hant": "大聲唸出一個字。",
+     "zh-hans": "大声读出一个字。",
+     "ja": "言葉を1つ、声に出して読みましょう。",
+     "es": "Lee una palabra en voz alta.",
+     "de": "Lies ein Wort laut vor.",
+     "fr": "Lisez un mot à voix haute."
+    }
+   },
+   {
+    "id": "naming",
+    "slug": "name-the-picture",
+    "name": {
+     "en": "Name the picture",
+     "yue": "講出圖片",
+     "zh-hant": "說出圖片名稱",
+     "zh-hans": "说出图片名称",
+     "ja": "絵の名前を言う",
+     "es": "Nombra la imagen",
+     "de": "Bild benennen",
+     "fr": "Nommez l’image"
+    },
+    "purpose": {
+     "en": "Look at the picture and say its name.",
+     "yue": "睇圖，講出個名。",
+     "zh-hant": "看圖片，說出名稱。",
+     "zh-hans": "看图片，说出名称。",
+     "ja": "絵を見て、名前を言いましょう。",
+     "es": "Mira la imagen y di su nombre.",
+     "de": "Sieh dir das Bild an und sag, was es ist.",
+     "fr": "Regardez l’image et dites son nom."
+    }
+   },
+   {
+    "id": "sentence",
+    "slug": "build-a-sentence",
+    "name": {
+     "en": "Build a sentence",
+     "yue": "砌句子",
+     "zh-hant": "排句子",
+     "zh-hans": "排句子",
+     "ja": "文づくり",
+     "es": "Formar una frase",
+     "de": "Satz bilden",
+     "fr": "Construire une phrase"
+    },
+    "purpose": {
+     "en": "Put the words in order, then say it.",
+     "yue": "將啲字排好次序，再讀出嚟。",
+     "zh-hant": "把字排好順序，再唸出來。",
+     "zh-hans": "把字排好顺序，再读出来。",
+     "ja": "言葉を正しい順番に並べて、声に出して読みましょう。",
+     "es": "Ordena las palabras y luego dilas en voz alta.",
+     "de": "Bring die Wörter in die richtige Reihenfolge und sprich sie dann.",
+     "fr": "Remettez les mots dans l’ordre, puis dites la phrase."
+    }
+   },
+   {
+    "id": "completion",
+    "slug": "finish-the-sentence",
+    "name": {
+     "en": "Finish the sentence",
+     "yue": "完成句子",
+     "zh-hant": "完成句子",
+     "zh-hans": "完成句子",
+     "ja": "文を完成させる",
+     "es": "Completa la frase",
+     "de": "Satz ergänzen",
+     "fr": "Complétez la phrase"
+    },
+    "purpose": {
+     "en": "Pick the word that fits the sentence.",
+     "yue": "揀個啱嘅字完成句子。",
+     "zh-hant": "選出合適的字，完成句子。",
+     "zh-hans": "选出合适的字，完成句子。",
+     "ja": "文に合う言葉を選びましょう。",
+     "es": "Elige la palabra que completa la frase.",
+     "de": "Wähle das passende Wort für den Satz.",
+     "fr": "Choisissez le mot qui complète la phrase."
+    }
+   },
+   {
+    "id": "listening",
+    "slug": "listening",
+    "name": {
+     "en": "Listening",
+     "yue": "聆聽",
+     "zh-hant": "聆聽",
+     "zh-hans": "聆听",
+     "ja": "聞く",
+     "es": "Escuchar",
+     "de": "Zuhören",
+     "fr": "Écoute"
+    },
+    "purpose": {
+     "en": "Listen, then pick the right picture.",
+     "yue": "聽完，揀返啱嘅圖。",
+     "zh-hant": "聽完，選出正確的圖。",
+     "zh-hans": "听完，选出正确的图。",
+     "ja": "聞いてから、合う絵を選びましょう。",
+     "es": "Escucha y elige la imagen correcta.",
+     "de": "Hör zu und wähl das richtige Bild.",
+     "fr": "Écoutez, puis choisissez la bonne image."
+    }
+   },
+   {
+    "id": "match",
+    "slug": "word-match",
+    "name": {
+     "en": "Word match",
+     "yue": "配對",
+     "zh-hant": "配對",
+     "zh-hans": "配对",
+     "ja": "言葉合わせ",
+     "es": "Emparejar palabras",
+     "de": "Wörter zuordnen",
+     "fr": "Mots à associer"
+    },
+    "purpose": {
+     "en": "Remember the cards and find the pairs.",
+     "yue": "記住啲卡，搵出一對對。",
+     "zh-hant": "記住這些牌，找出一對一對。",
+     "zh-hans": "记住这些牌，找出一对一对。",
+     "ja": "カードを覚えて、同じ絵のペアを探しましょう。",
+     "es": "Recuerda las cartas y encuentra las parejas.",
+     "de": "Merke dir die Karten und finde die Paare.",
+     "fr": "Retenez les cartes et trouvez les paires."
+    }
+   }
+  ]
+ },
+ "brain": {
+  "groups": [
+   {
+    "slug": "memory",
+    "title": {
+     "en": "Memory",
+     "yue": "記憶",
+     "zh-hant": "記憶",
+     "zh-hans": "记忆",
+     "ja": "記憶",
+     "es": "Memoria",
+     "de": "Gedächtnis",
+     "fr": "Mémoire"
+    },
+    "hint": {
+     "en": "Hold things in mind.",
+     "yue": "記住啲嘢。",
+     "zh-hant": "把東西記在腦中。",
+     "zh-hans": "把东西记在脑中。",
+     "ja": "覚えておきましょう。",
+     "es": "Retén las cosas en la mente.",
+     "de": "Behalte Dinge im Kopf.",
+     "fr": "Gardez les choses en tête."
+    },
+    "games": [
+     {
+      "id": "span",
+      "slug": "remember-the-order",
+      "name": {
+       "en": "Remember the order",
+       "yue": "記住次序",
+       "zh-hant": "記住順序",
+       "zh-hans": "记住顺序",
+       "ja": "順番を覚える",
+       "es": "Recuerda el orden",
+       "de": "Merke dir die Reihenfolge",
+       "fr": "Retenez l’ordre"
+      },
+      "body": {
+       "en": "Watch the squares light up, then tap them in order.",
+       "yue": "睇啲方格亮，然後照次序㩒返。",
+       "zh-hant": "看方格亮起，然後依順序點回去。",
+       "zh-hans": "看方格亮起，然后按顺序点回去。",
+       "ja": "光るマスを見て、同じ順番にタップしましょう。",
+       "es": "Mira cómo se iluminan las casillas y tócalas en el mismo orden.",
+       "de": "Sieh zu, wie die Felder aufleuchten, und tippe sie dann in derselben Reihenfolge an.",
+       "fr": "Regardez les cases s’allumer, puis touchez-les dans l’ordre."
+      }
+     },
+     {
+      "id": "pairs",
+      "slug": "find-the-pairs",
+      "name": {
+       "en": "Find the pairs",
+       "yue": "搵一對",
+       "zh-hant": "找一對",
+       "zh-hans": "找一对",
+       "ja": "ペア探し",
+       "es": "Encuentra las parejas",
+       "de": "Paare finden",
+       "fr": "Trouver les paires"
+      },
+      "body": {
+       "en": "Turn over cards and find the matching ones.",
+       "yue": "揭牌，搵出一樣嘅一對。",
+       "zh-hant": "翻牌，找出一樣的一對。",
+       "zh-hans": "翻牌，找出一样的一对。",
+       "ja": "カードをめくって、同じ絵のペアを探しましょう。",
+       "es": "Voltea cartas y encuentra las parejas.",
+       "de": "Dreh Karten um und finde die passenden.",
+       "fr": "Retournez des cartes et trouvez les paires."
+      }
+     }
+    ]
+   },
+   {
+    "slug": "attention",
+    "title": {
+     "en": "Attention",
+     "yue": "專注",
+     "zh-hant": "專注力",
+     "zh-hans": "专注力",
+     "ja": "集中",
+     "es": "Atención",
+     "de": "Aufmerksamkeit",
+     "fr": "Attention"
+    },
+    "hint": {
+     "en": "Find the right thing and tap it.",
+     "yue": "搵出啱嘅嘢，然後㩒。",
+     "zh-hant": "找出正確的東西，然後點一下。",
+     "zh-hans": "找出正确的东西，然后点一下。",
+     "ja": "合うものを見つけて、タップしましょう。",
+     "es": "Encuentra lo correcto y tócalo.",
+     "de": "Finde das Richtige und tippe darauf.",
+     "fr": "Trouvez le bon élément et touchez-le."
+    },
+    "games": [
+     {
+      "id": "dimsum",
+      "slug": "dim-sum-pick",
+      "name": {
+       "en": "Dim sum pick",
+       "yue": "夾點心",
+       "zh-hant": "夾點心",
+       "zh-hans": "夹点心",
+       "ja": "点心をつまむ",
+       "es": "Elige el dim sum",
+       "de": "Dim Sum wählen",
+       "fr": "Choisir le dim sum"
+      },
+      "body": {
+       "en": "Find the dim sum Bonet asks for.",
+       "yue": "搵出朱古力要嘅點心。",
+       "zh-hant": "找出巧克力要的點心。",
+       "zh-hans": "找出巧克力要的点心。",
+       "ja": "ボネが言った点心を探しましょう。",
+       "es": "Encuentra el dim sum que pide Bonet.",
+       "de": "Finde das Dim Sum, das Bonet sich wünscht.",
+       "fr": "Trouvez le dim sum que Bonet demande."
+      }
+     },
+     {
+      "id": "fruit",
+      "slug": "fruit-pick",
+      "name": {
+       "en": "Fruit pick",
+       "yue": "摘生果",
+       "zh-hant": "摘水果",
+       "zh-hans": "摘水果",
+       "ja": "果物つみ",
+       "es": "Elige la fruta",
+       "de": "Früchte pflücken",
+       "fr": "Cueillette de fruits"
+      },
+      "body": {
+       "en": "Pick the right fruit before time runs out.",
+       "yue": "喺時間內摘啱生果。",
+       "zh-hant": "在時間內摘到正確的水果。",
+       "zh-hans": "在时间内摘到正确的水果。",
+       "ja": "時間内に、合う果物を選びましょう。",
+       "es": "Elige la fruta correcta antes de que se acabe el tiempo.",
+       "de": "Pflücke die richtige Frucht, bevor die Zeit abläuft.",
+       "fr": "Cueillez le bon fruit avant la fin du temps."
+      }
+     }
+    ]
+   },
+   {
+    "slug": "thinking",
+    "title": {
+     "en": "Thinking",
+     "yue": "思考",
+     "zh-hant": "思考",
+     "zh-hans": "思考",
+     "ja": "考える",
+     "es": "Pensar",
+     "de": "Denken",
+     "fr": "Réflexion"
+    },
+    "hint": {
+     "en": "Work it out, one step at a time.",
+     "yue": "一步一步諗。",
+     "zh-hant": "一步一步想。",
+     "zh-hans": "一步一步想。",
+     "ja": "1つずつ考えましょう。",
+     "es": "Resuélvelo paso a paso.",
+     "de": "Denk es dir Schritt für Schritt aus.",
+     "fr": "Réfléchissez pas à pas."
+    },
+    "games": [
+     {
+      "id": "trail",
+      "slug": "tap-in-order",
+      "name": {
+       "en": "Tap in order",
+       "yue": "照次序㩒",
+       "zh-hant": "依照順序點選",
+       "zh-hans": "按顺序点",
+       "ja": "順番にタップ",
+       "es": "Toca en orden",
+       "de": "Der Reihe nach tippen",
+       "fr": "Touchez dans l’ordre"
+      },
+      "body": {
+       "en": "Tap numbers from small to big, then numbers and letters.",
+       "yue": "由細到大㩒數字，之後數字夾字母。",
+       "zh-hant": "從小到大點選數字，之後是數字加字母。",
+       "zh-hans": "从小到大点数字，之后是数字加字母。",
+       "ja": "数字を小さい順にタップします。そのあと、数字と文字が混ざります。",
+       "es": "Toca los números de menor a mayor y luego números con letras.",
+       "de": "Tippe die Zahlen von klein nach groß, danach Zahlen und Buchstaben im Wechsel.",
+       "fr": "Touchez les nombres du plus petit au plus grand, puis nombres et lettres."
+      }
+     },
+     {
+      "id": "math",
+      "slug": "math-pick",
+      "name": {
+       "en": "Math pick",
+       "yue": "數學選擇",
+       "zh-hant": "數學選擇",
+       "zh-hans": "数学选择",
+       "ja": "計算クイズ",
+       "es": "Elige en matemáticas",
+       "de": "Rechenwahl",
+       "fr": "Choix de calcul"
+      },
+      "body": {
+       "en": "Work out the sum and pick the right answer.",
+       "yue": "計出答案，揀返正確嘅數字。",
+       "zh-hant": "算出答案，選出正確的數字。",
+       "zh-hans": "算出答案，选出正确的数字。",
+       "ja": "計算して、正しい数字を選びましょう。",
+       "es": "Resuelve la cuenta y elige la respuesta correcta.",
+       "de": "Rechne aus und wähle die richtige Antwort.",
+       "fr": "Faites le calcul et choisissez la bonne réponse."
+      }
+     }
+    ]
+   }
+  ],
+  "free_max_level": 1,
+  "span": {
+   "1": {
+    "cells": 6,
+    "cols": 3,
+    "startSpan": 2,
+    "maxSpan": 6,
+    "flashMs": 900,
+    "gapMs": 400,
+    "maxTrials": 8
+   },
+   "2": {
+    "cells": 9,
+    "cols": 3,
+    "startSpan": 2,
+    "maxSpan": 8,
+    "flashMs": 750,
+    "gapMs": 300,
+    "maxTrials": 9
+   },
+   "3": {
+    "cells": 9,
+    "cols": 3,
+    "startSpan": 3,
+    "maxSpan": 9,
+    "flashMs": 600,
+    "gapMs": 250,
+    "maxTrials": 10
+   }
+  },
+  "pairs": {
+   "1": {
+    "pairs": 3,
+    "cols": 3,
+    "timeLimitSec": 90
+   },
+   "2": {
+    "pairs": 6,
+    "cols": 3,
+    "timeLimitSec": 120
+   },
+   "3": {
+    "pairs": 8,
+    "cols": 4,
+    "timeLimitSec": 150
+   }
+  },
+  "trail": {
+   "1": {
+    "count": 6,
+    "alternating": false,
+    "trials": 3
+   },
+   "2": {
+    "count": 9,
+    "alternating": false,
+    "trials": 3
+   },
+   "3": {
+    "count": 10,
+    "alternating": true,
+    "trials": 2
+   }
+  },
+  "math": {
+   "simple": {
+    "maxNum": 9,
+    "ops": [
+     "+",
+     "-"
+    ],
+    "choices": 4,
+    "perRoundTime": 25
+   },
+   "medium": {
+    "maxNum": 50,
+    "ops": [
+     "+",
+     "-"
+    ],
+    "choices": 5,
+    "perRoundTime": 20
+   },
+   "hard": {
+    "maxNum": 30,
+    "ops": [
+     "+",
+     "-",
+     "×"
+    ],
+    "choices": 6,
+    "perRoundTime": 15
+   }
+  },
+  "target": {
+   "1": {
+    "items": 3,
+    "timer": 25,
+    "targets": 1
+   },
+   "2": {
+    "items": 5,
+    "timer": 22,
+    "targets": 2
+   },
+   "3": {
+    "items": 7,
+    "timer": 20,
+    "targets": 2
+   }
+  }
+ },
+ "phrases": {
+  "easy": {
+   "en": "Easy",
+   "yue": "簡單",
+   "zh-hant": "簡單",
+   "zh-hans": "简单",
+   "ja": "かんたん",
+   "es": "Fácil",
+   "de": "Leicht",
+   "fr": "Facile"
+  },
+  "medium": {
+   "en": "Medium",
+   "yue": "中等",
+   "zh-hant": "中等",
+   "zh-hans": "中等",
+   "ja": "ふつう",
+   "es": "Medio",
+   "de": "Mittel",
+   "fr": "Moyen"
+  },
+  "hard": {
+   "en": "Hard",
+   "yue": "困難",
+   "zh-hant": "困難",
+   "zh-hans": "困难",
+   "ja": "むずかしい",
+   "es": "Difícil",
+   "de": "Schwer",
+   "fr": "Difficile"
+  },
+  "listen_again": {
+   "en": "Listen again, slowly",
+   "yue": "再聽一次，慢啲",
+   "zh-hant": "再聽一次，慢一點",
+   "zh-hans": "再听一次，慢一点",
+   "ja": "もう一度、ゆっくり聞く",
+   "es": "Escuchar otra vez, más despacio",
+   "de": "Noch einmal hören, langsam",
+   "fr": "Écouter encore, lentement"
+  },
+  "first_sound": {
+   "en": "First sound",
+   "yue": "第一個音",
+   "zh-hant": "第一個音",
+   "zh-hans": "第一个音",
+   "ja": "最初の音",
+   "es": "Primer sonido",
+   "de": "Erster Laut",
+   "fr": "Premier son"
+  },
+  "the_word": {
+   "en": "The word",
+   "yue": "個字",
+   "zh-hant": "這個字",
+   "zh-hans": "这个字",
+   "ja": "その言葉",
+   "es": "La palabra",
+   "de": "Das Wort",
+   "fr": "Le mot"
+  },
+  "the_sentence": {
+   "en": "The sentence",
+   "yue": "句子",
+   "zh-hant": "句子",
+   "zh-hans": "句子",
+   "ja": "文",
+   "es": "La frase",
+   "de": "Satz",
+   "fr": "La phrase"
+  },
+  "say_with_me": {
+   "en": "Listen, then say it with me",
+   "yue": "聽完，同我一齊讀",
+   "zh-hant": "聽完，跟我一起念",
+   "zh-hans": "听完，跟我一起读",
+   "ja": "聞いてから、いっしょに読みましょう",
+   "es": "Escucha y dilo conmigo",
+   "de": "Hör zu und sprich mit mir nach",
+   "fr": "Écoutez, puis dites-le avec moi"
+  },
+  "build_with_me": {
+   "en": "Listen, then build it with me.",
+   "yue": "聽完，同我一齊砌。",
+   "zh-hant": "聽完，跟我一起排。",
+   "zh-hans": "听完，跟我一起排。",
+   "ja": "聞いてから、いっしょに作りましょう。",
+   "es": "Escucha y arma la frase conmigo.",
+   "de": "Hör zu und bau den Satz mit mir.",
+   "fr": "Écoutez, puis construisons-la ensemble."
+  },
+  "show_pron": {
+   "en": "Show pronunciation",
+   "yue": "顯示發音",
+   "zh-hant": "顯示發音",
+   "zh-hans": "显示发音",
+   "ja": "発音を表示",
+   "es": "Mostrar pronunciación",
+   "de": "Aussprache zeigen",
+   "fr": "Afficher la prononciation"
+  },
+  "two_pictures": {
+   "en": "Two pictures are left.",
+   "yue": "剩返兩幅圖。",
+   "zh-hant": "還剩兩張圖。",
+   "zh-hans": "还剩两张图。",
+   "ja": "絵はあと2つです。",
+   "es": "Quedan dos imágenes.",
+   "de": "Noch zwei Bilder übrig.",
+   "fr": "Il reste deux images."
+  },
+  "two_words": {
+   "en": "Two words are left.",
+   "yue": "剩返兩個字。",
+   "zh-hant": "還剩兩個字。",
+   "zh-hans": "还剩两个字。",
+   "ja": "言葉はあと2つです。",
+   "es": "Quedan dos palabras.",
+   "de": "Noch zwei Wörter übrig.",
+   "fr": "Il reste deux mots."
+  },
+  "starts_with": {
+   "en": "Starts with the sound shown.",
+   "yue": "以顯示嘅音開頭。",
+   "zh-hant": "以顯示的音開頭。",
+   "zh-hans": "以显示的音开头。",
+   "ja": "表示された音ではじまります。",
+   "es": "Empieza con el sonido mostrado.",
+   "de": "Beginnt mit dem gezeigten Laut.",
+   "fr": "Commence par le son affiché."
+  },
+  "answer_marked": {
+   "en": "The answer is marked.",
+   "yue": "已標示答案。",
+   "zh-hant": "已標示答案。",
+   "zh-hans": "已标出答案。",
+   "ja": "答えを示しました。",
+   "es": "La respuesta está marcada.",
+   "de": "Die Antwort ist markiert.",
+   "fr": "La réponse est marquée."
+  },
+  "listen_question": {
+   "en": "Listen to the question again",
+   "yue": "再聽一次條問題",
+   "zh-hant": "再聽一次題目",
+   "zh-hans": "再听一次题目",
+   "ja": "問題をもう一度聞く",
+   "es": "Escuchar la pregunta otra vez",
+   "de": "Frage noch einmal hören",
+   "fr": "Réécouter la question"
+  },
+  "no_camera": {
+   "en": "Do it without the camera",
+   "yue": "唔用鏡頭做",
+   "zh-hant": "不用相機來做",
+   "zh-hans": "不用摄像头来做",
+   "ja": "カメラなしで行う",
+   "es": "Hacerlo sin la cámara",
+   "de": "Ohne Kamera üben",
+   "fr": "Faire sans la caméra"
+  },
+  "tap_screen": {
+   "en": "Tap the screen",
+   "yue": "㩒螢幕",
+   "zh-hant": "點一下螢幕",
+   "zh-hans": "点屏幕",
+   "ja": "画面をタップ",
+   "es": "Tocar la pantalla",
+   "de": "Tippe auf den Bildschirm",
+   "fr": "Touchez l’écran"
+  },
+  "use_camera": {
+   "en": "Use the camera",
+   "yue": "用鏡頭",
+   "zh-hant": "使用鏡頭",
+   "zh-hans": "使用摄像头",
+   "ja": "カメラを使う",
+   "es": "Usar la cámara",
+   "de": "Kamera verwenden",
+   "fr": "Utiliser la caméra"
+  },
+  "math_simple": {
+   "en": "Small numbers, + and −",
+   "yue": "細啲嘅數，加減",
+   "zh-hant": "小的數字，加和減",
+   "zh-hans": "较小的数字，加减",
+   "ja": "小さめの数、たし算とひき算",
+   "es": "Números pequeños, sumas y restas",
+   "de": "Kleine Zahlen, + und −",
+   "fr": "Petits nombres, + et −"
+  },
+  "math_medium": {
+   "en": "Bigger numbers, + and −",
+   "yue": "大啲嘅數，加減",
+   "zh-hant": "較大的數字，加減",
+   "zh-hans": "较大的数字，加减",
+   "ja": "大きめの数、たし算とひき算",
+   "es": "Números más grandes, sumas y restas",
+   "de": "Größere Zahlen, + und −",
+   "fr": "Nombres plus grands, + et −"
+  },
+  "math_hard": {
+   "en": "Adds times (×)",
+   "yue": "加埋乘數 (×)",
+   "zh-hant": "也加入乘法 (×)",
+   "zh-hans": "也加入乘法 (×)",
+   "ja": "かけ算（×）も入ります",
+   "es": "Añade multiplicaciones (×)",
+   "de": "Mit Mal-Aufgaben (×)",
+   "fr": "Ajoute les multiplications (×)"
+  },
+  "few": {
+   "en": "Only a few on screen",
+   "yue": "螢幕上面少啲",
+   "zh-hant": "螢幕上少一些",
+   "zh-hans": "屏幕上少一些",
+   "ja": "画面に少なめ",
+   "es": "Solo unos pocos en pantalla",
+   "de": "Nur wenige auf dem Bildschirm",
+   "fr": "Peu à l’écran"
+  },
+  "more": {
+   "en": "More on screen",
+   "yue": "螢幕上面多啲",
+   "zh-hant": "螢幕上多一些",
+   "zh-hans": "屏幕上多一些",
+   "ja": "画面に多め",
+   "es": "Más en pantalla",
+   "de": "Mehr auf dem Bildschirm",
+   "fr": "Plus à l’écran"
+  },
+  "set_of_questions": {
+   "en": "A set of questions",
+   "yue": "一組題目",
+   "zh-hant": "一組題目",
+   "zh-hans": "一组题目",
+   "ja": "問題のセット",
+   "es": "Un grupo de preguntas",
+   "de": "Eine Reihe von Fragen",
+   "fr": "Une série de questions"
+  },
+  "keep_going": {
+   "en": "Keep going",
+   "yue": "持續練習",
+   "zh-hant": "持續練習",
+   "zh-hans": "坚持练习",
+   "ja": "練習を続ける",
+   "es": "Sigue practicando",
+   "de": "Weiter üben",
+   "fr": "Continuez"
+  },
+  "pick_named": {
+   "en": "Pick what I ask for",
+   "yue": "揀我講嘅嘢",
+   "zh-hant": "選我說的那個",
+   "zh-hans": "选我说的那个",
+   "ja": "言ったものを選ぶ",
+   "es": "Elige lo que te pido",
+   "de": "Wähle, was ich nenne",
+   "fr": "Choisir ce que je demande"
+  },
+  "slow": {
+   "en": "Slow",
+   "yue": "慢速",
+   "zh-hant": "慢速",
+   "zh-hans": "慢速",
+   "ja": "ゆっくり",
+   "es": "Lento",
+   "de": "Langsam",
+   "fr": "Lent"
+  },
+  "normal": {
+   "en": "Normal",
+   "yue": "正常",
+   "zh-hant": "正常",
+   "zh-hans": "正常",
+   "ja": "ふつう",
+   "es": "Normal",
+   "de": "Normal",
+   "fr": "Normal"
+  },
+  "span_1": {
+   "en": "6 squares, starts with 2",
+   "yue": "6 個方格，由 2 個開始",
+   "zh-hant": "6 個方格，從 2 個開始",
+   "zh-hans": "6 个方格，从 2 个开始",
+   "ja": "6個のマス、2個から始めます",
+   "es": "6 casillas, empieza con 2",
+   "de": "6 Felder, beginnt mit 2",
+   "fr": "6 cases, en commençant par 2"
+  },
+  "pairs_1": {
+   "en": "3 pairs, 6 cards",
+   "yue": "3 對，6 張牌",
+   "zh-hant": "3 對，6 張牌",
+   "zh-hans": "3 对，6 张牌",
+   "ja": "3ペア、6枚",
+   "es": "3 parejas, 6 cartas",
+   "de": "3 Paare, 6 Karten",
+   "fr": "3 paires, 6 cartes"
+  },
+  "trail_1": {
+   "en": "Numbers 1 to 6",
+   "yue": "數字 1 至 6",
+   "zh-hant": "數字 1 到 6",
+   "zh-hans": "数字 1 到 6",
+   "ja": "数字1〜6",
+   "es": "Números del 1 al 6",
+   "de": "Zahlen von 1 bis 6",
+   "fr": "Nombres de 1 à 6"
+  },
+  "target_1": {
+   "en": "3 things, 1 to find",
+   "yue": "3 樣嘢，要搵 1 個",
+   "zh-hant": "3 樣東西，要找 1 個",
+   "zh-hans": "3 样东西，要找 1 个",
+   "ja": "3個のうち、1個を探します",
+   "es": "3 cosas, encuentra 1",
+   "de": "3 Dinge, 1 zu finden",
+   "fr": "3 objets, 1 à trouver"
+  },
+  "level_1": {
+   "en": "Level 1",
+   "yue": "第 1 級",
+   "zh-hant": "第 1 級",
+   "zh-hans": "第 1 级",
+   "ja": "レベル1",
+   "es": "Nivel 1",
+   "de": "Stufe 1",
+   "fr": "Niveau 1"
+  },
+  "span_2": {
+   "en": "9 squares, starts with 2",
+   "yue": "9 個方格，由 2 個開始",
+   "zh-hant": "9 個方格，從 2 個開始",
+   "zh-hans": "9 个方格，从 2 个开始",
+   "ja": "9個のマス、2個から始めます",
+   "es": "9 casillas, empieza con 2",
+   "de": "9 Felder, beginnt mit 2",
+   "fr": "9 cases, en commençant par 2"
+  },
+  "pairs_2": {
+   "en": "6 pairs, 12 cards",
+   "yue": "6 對，12 張牌",
+   "zh-hant": "6 對，12 張牌",
+   "zh-hans": "6 对，12 张牌",
+   "ja": "6ペア、12枚",
+   "es": "6 parejas, 12 cartas",
+   "de": "6 Paare, 12 Karten",
+   "fr": "6 paires, 12 cartes"
+  },
+  "trail_2": {
+   "en": "Numbers 1 to 9",
+   "yue": "數字 1 至 9",
+   "zh-hant": "數字 1 到 9",
+   "zh-hans": "数字 1 到 9",
+   "ja": "数字1〜9",
+   "es": "Números del 1 al 9",
+   "de": "Zahlen von 1 bis 9",
+   "fr": "Nombres de 1 à 9"
+  },
+  "target_2": {
+   "en": "5 things, 2 to find",
+   "yue": "5 樣嘢，要搵 2 個",
+   "zh-hant": "5 樣東西，要找 2 個",
+   "zh-hans": "5 样东西，要找 2 个",
+   "ja": "5個のうち、2個を探します",
+   "es": "5 cosas, encuentra 2",
+   "de": "5 Dinge, 2 zu finden",
+   "fr": "5 objets, 2 à trouver"
+  },
+  "level_2": {
+   "en": "Level 2",
+   "yue": "第 2 級",
+   "zh-hant": "第 2 級",
+   "zh-hans": "第 2 级",
+   "ja": "レベル2",
+   "es": "Nivel 2",
+   "de": "Stufe 2",
+   "fr": "Niveau 2"
+  },
+  "span_3": {
+   "en": "9 squares, starts with 3",
+   "yue": "9 個方格，由 3 個開始",
+   "zh-hant": "9 個方格，從 3 個開始",
+   "zh-hans": "9 个方格，从 3 个开始",
+   "ja": "9個のマス、3個から始めます",
+   "es": "9 casillas, empieza con 3",
+   "de": "9 Felder, beginnt mit 3",
+   "fr": "9 cases, en commençant par 3"
+  },
+  "pairs_3": {
+   "en": "8 pairs, 16 cards",
+   "yue": "8 對，16 張牌",
+   "zh-hant": "8 對，16 張牌",
+   "zh-hans": "8 对，16 张牌",
+   "ja": "8ペア、16枚",
+   "es": "8 parejas, 16 cartas",
+   "de": "8 Paare, 16 Karten",
+   "fr": "8 paires, 16 cartes"
+  },
+  "trail_3": {
+   "en": "10 items, numbers and letters",
+   "yue": "10 個，數字加字母",
+   "zh-hant": "10 個，數字加字母",
+   "zh-hans": "10 个，数字加字母",
+   "ja": "10個、数字と文字",
+   "es": "10 elementos, números y letras",
+   "de": "10 Elemente, Zahlen und Buchstaben",
+   "fr": "10 éléments, chiffres et lettres"
+  },
+  "target_3": {
+   "en": "7 things, 2 to find",
+   "yue": "7 樣嘢，要搵 2 個",
+   "zh-hant": "7 樣東西，要找 2 個",
+   "zh-hans": "7 样东西，要找 2 个",
+   "ja": "7個のうち、2個を探します",
+   "es": "7 cosas, encuentra 2",
+   "de": "7 Dinge, 2 zu finden",
+   "fr": "7 objets, 2 à trouver"
+  },
+  "level_3": {
+   "en": "Level 3",
+   "yue": "第 3 級",
+   "zh-hant": "第 3 級",
+   "zh-hans": "第 3 级",
+   "ja": "レベル3",
+   "es": "Nivel 3",
+   "de": "Stufe 3",
+   "fr": "Niveau 3"
+  }
+ },
+ "untranslated": {}
+}
