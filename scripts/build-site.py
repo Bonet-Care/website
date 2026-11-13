@@ -45,7 +45,12 @@ LEGAL = {
     "ai-and-automatic-measures": ("How Bonet measures | Bonet", "How Bonet's automatic measures work, where they are processed, and their limits.", "0.5"),
 }
 NOTICES = ("safety", "faq")
-NOTICE_META = json.loads((ROOT / "content" / "pages" / "meta.json").read_text()) if (ROOT / "content" / "pages" / "meta.json").exists() else {}
+NOTICE_META = {}
+for _c in LANGS:
+    _f = ROOT / "content" / "pages" / f"meta.{_c}.json"
+    if _f.exists():
+        for _slug, _v in json.loads(_f.read_text()).items():
+            NOTICE_META.setdefault(_slug, {})[_c] = _v
 
 
 def legal(slug):
@@ -186,6 +191,12 @@ def notfound():
     write("404.html", h)
 
 
+try:
+    import extra_pages  # optional: scripts/extra_pages.py defines build(ctx) and SITEMAP = [(loc, priority)]
+except ImportError:
+    extra_pages = None
+
+
 def sitemap():
     u_ = []
 
@@ -202,6 +213,8 @@ def sitemap():
         url(p, pri)
     for slug, (_, _, pri) in LEGAL.items():
         url(f"/{slug}", pri)
+    for loc, pri in (extra_pages.SITEMAP if extra_pages else []):
+        url(loc, pri)
     for slug in NOTICES:
         al = [(d["tag"], SITE + d["path"].rstrip("/") + f"/{slug}") for d in LANGS.values()] + [("x-default", f"{SITE}/{slug}")]
         for d in LANGS.values():
@@ -228,6 +241,8 @@ if __name__ == "__main__":
     for s in NOTICES:
         for lang in LANGS:
             notice(s, lang)
+    if extra_pages:
+        extra_pages.build(sys.modules[__name__])
     blog_index("en"); blog_index("zh-hant"); old_post(); compare_page(); notfound(); sitemap()
     if "--export" in sys.argv:
         (ROOT / "strings").mkdir(exist_ok=True)
