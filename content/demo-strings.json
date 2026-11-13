@@ -1,0 +1,605 @@
+{
+ "Today": {
+  "yue": "今次",
+  "zh-hant": "今天",
+  "zh-hans": "今天",
+  "ja": "今日",
+  "es": "Hoy",
+  "de": "Heute",
+  "fr": "Aujourd'hui"
+ },
+ "Move": {
+  "yue": "運動",
+  "zh-hant": "運動",
+  "zh-hans": "运动",
+  "ja": "運動",
+  "es": "Mover",
+  "de": "Bewegen",
+  "fr": "Bouger"
+ },
+ "Speak": {
+  "yue": "說話",
+  "zh-hant": "說話",
+  "zh-hans": "说话",
+  "ja": "話す",
+  "es": "Hablar",
+  "de": "Sprechen",
+  "fr": "Parler"
+ },
+ "Brain": {
+  "yue": "腦力",
+  "zh-hant": "腦力",
+  "zh-hans": "脑力",
+  "ja": "脳",
+  "es": "Mente",
+  "de": "Denken",
+  "fr": "Mental"
+ },
+ "Me": {
+  "yue": "我",
+  "zh-hant": "我",
+  "zh-hans": "我",
+  "ja": "わたし",
+  "es": "Yo",
+  "de": "Ich",
+  "fr": "Moi"
+ },
+ "Good morning! Ready for today?": {
+  "yue": "早晨！今日準備好未？",
+  "zh-hant": "早安！今天準備好了嗎？",
+  "zh-hans": "早上好！今天准备好了吗？",
+  "ja": "おはようございます！今日の準備はいいですか？",
+  "es": "¡Buenos días! ¿Listo para hoy?",
+  "de": "Guten Morgen! Bereit für heute?",
+  "fr": "Bonjour ! Prêt pour aujourd'hui ?"
+ },
+ "Warm up": {
+  "yue": "熱身",
+  "zh-hant": "暖身",
+  "zh-hans": "热身",
+  "ja": "ウォームアップ",
+  "es": "Calentamiento",
+  "de": "Aufwärmen",
+  "fr": "Échauffement"
+ },
+ "Speaking": {
+  "yue": "說話",
+  "zh-hant": "說話",
+  "zh-hans": "说话",
+  "ja": "話す",
+  "es": "Hablar",
+  "de": "Sprechen",
+  "fr": "Parler"
+ },
+ "Brain game": {
+  "yue": "腦力遊戲",
+  "zh-hant": "腦力遊戲",
+  "zh-hans": "脑力游戏",
+  "ja": "脳トレゲーム",
+  "es": "Juego mental",
+  "de": "Denkspiel",
+  "fr": "Jeu mental"
+ },
+ "day streak": {
+  "yue": "日連續練習",
+  "zh-hant": "天連續練習",
+  "zh-hans": "天连续练习",
+  "ja": "日連続",
+  "es": "días de racha",
+  "de": "Tage in Folge",
+  "fr": "jours d'affilée"
+ },
+ "Today's goal": {
+  "yue": "今日目標",
+  "zh-hant": "今天的目標",
+  "zh-hans": "今天的目标",
+  "ja": "今日の目標",
+  "es": "Meta de hoy",
+  "de": "Tagesziel",
+  "fr": "Objectif du jour"
+ },
+ "Arm raise": {
+  "yue": "舉手",
+  "zh-hant": "舉手",
+  "zh-hans": "举手",
+  "ja": "腕上げ",
+  "es": "Subir brazos",
+  "de": "Arme heben",
+  "fr": "Lever les bras"
+ },
+ "10 times": {
+  "yue": "10 下",
+  "zh-hant": "10 次",
+  "zh-hans": "10 次",
+  "ja": "10回",
+  "es": "10 veces",
+  "de": "10 Mal",
+  "fr": "10 fois"
+ },
+ "Sit to stand": {
+  "yue": "企起坐低",
+  "zh-hant": "坐站轉換",
+  "zh-hans": "坐站转换",
+  "ja": "座る・立つ",
+  "es": "Sentarse y pararse",
+  "de": "Aufstehen",
+  "fr": "Assis-debout"
+ },
+ "8 times": {
+  "yue": "8 下",
+  "zh-hant": "8 次",
+  "zh-hans": "8 次",
+  "ja": "8回",
+  "es": "8 veces",
+  "de": "8 Mal",
+  "fr": "8 fois"
+ },
+ "Heel raise": {
+  "yue": "踮腳",
+  "zh-hant": "踮腳",
+  "zh-hans": "踮脚",
+  "ja": "かかと上げ",
+  "es": "Subir talones",
+  "de": "Fersen heben",
+  "fr": "Montées de talons"
+ },
+ "12 times": {
+  "yue": "12 下",
+  "zh-hant": "12 次",
+  "zh-hans": "12 次",
+  "ja": "12回",
+  "es": "12 veces",
+  "de": "12 Mal",
+  "fr": "12 fois"
+ },
+ "Start": {
+  "yue": "開始",
+  "zh-hant": "開始",
+  "zh-hans": "开始",
+  "ja": "スタート",
+  "es": "Empezar",
+  "de": "Start",
+  "fr": "Démarrer"
+ },
+ "of 3 reps": {
+  "yue": "共 3 下",
+  "zh-hant": "共 3 次",
+  "zh-hans": "共 3 次",
+  "ja": "3回中",
+  "es": "de 3 veces",
+  "de": "von 3 Wdh.",
+  "fr": "sur 3 reps"
+ },
+ "Great set!": {
+  "yue": "做得好！",
+  "zh-hant": "做得好！",
+  "zh-hans": "做得好！",
+  "ja": "よくできました！",
+  "es": "¡Bien hecho!",
+  "de": "Gut gemacht!",
+  "fr": "Bravo !"
+ },
+ "Well done! One step ticked.": {
+  "yue": "做得好！完成咗一步。",
+  "zh-hant": "做得好！完成了一步。",
+  "zh-hans": "做得好！完成了一步。",
+  "ja": "よくできました！1つ完了です。",
+  "es": "¡Muy bien! Un paso hecho.",
+  "de": "Super! Ein Schritt erledigt.",
+  "fr": "Bravo ! Une étape cochée."
+ },
+ "START HERE": {
+  "yue": "由呢度開始",
+  "zh-hant": "從這裡開始",
+  "zh-hans": "从这里开始",
+  "ja": "ここからスタート",
+  "es": "EMPIEZA AQUÍ",
+  "de": "HIER STARTEN",
+  "fr": "COMMENCEZ ICI"
+ },
+ "Lift a little higher": {
+  "yue": "再舉高少少",
+  "zh-hant": "再抬高一點",
+  "zh-hans": "再抬高一点",
+  "ja": "もう少し高く上げて",
+  "es": "Sube un poco más",
+  "de": "Etwas höher heben",
+  "fr": "Levez un peu plus"
+ },
+ "Your video stays on this phone": {
+  "yue": "影像只留喺你部電話",
+  "zh-hant": "影像只留在你的手機裡",
+  "zh-hans": "视频只保存在这部手机里",
+  "ja": "映像はこのスマートフォンの中だけに残ります",
+  "es": "El video se queda en este teléfono",
+  "de": "Das Video bleibt auf diesem Handy",
+  "fr": "La vidéo reste sur ce téléphone"
+ },
+ "How it went": {
+  "yue": "做得點",
+  "zh-hant": "做得如何",
+  "zh-hans": "做得如何",
+  "ja": "できばえ",
+  "es": "Cómo te fue",
+  "de": "Wie es lief",
+  "fr": "Comment ça s'est passé"
+ },
+ "After each activity, see how your practice went and get a tip for next time.": {
+  "yue": "每次練習之後，睇下今次做得點，仲有下次嘅小提示。",
+  "zh-hant": "每次練習後，看看這次做得如何，還有下次的小提示。",
+  "zh-hans": "每次练习后，看看这次做得如何，还有下次的小提示。",
+  "ja": "練習のあとに、できばえと次回のヒントが見られます。",
+  "es": "Después de cada actividad, mira cómo te fue y recibe un consejo para la próxima.",
+  "de": "Nach jeder Übung siehst du, wie es lief, und bekommst einen Tipp für das nächste Mal.",
+  "fr": "Après chaque activité, voyez comment ça s'est passé et recevez un conseil pour la prochaine fois."
+ },
+ "A tip for next time": {
+  "yue": "下次嘅提示",
+  "zh-hant": "下次的提示",
+  "zh-hans": "下次的提示",
+  "ja": "次回のヒント",
+  "es": "Un consejo para la próxima",
+  "de": "Ein Tipp fürs nächste Mal",
+  "fr": "Un conseil pour la prochaine fois"
+ },
+ "Lift a little higher on your left side.": {
+  "yue": "左手再舉高少少。",
+  "zh-hant": "左手再抬高一點。",
+  "zh-hans": "左手再抬高一点。",
+  "ja": "左腕をもう少し高く上げましょう。",
+  "es": "Sube un poco más el lado izquierdo.",
+  "de": "Heb die linke Seite etwas höher.",
+  "fr": "Levez un peu plus le côté gauche."
+ },
+ "Last time": {
+  "yue": "上次",
+  "zh-hant": "上次",
+  "zh-hans": "上次",
+  "ja": "前回",
+  "es": "Última vez",
+  "de": "Letztes Mal",
+  "fr": "Dernière fois"
+ },
+ "Range": {
+  "yue": "幅度",
+  "zh-hant": "幅度",
+  "zh-hans": "幅度",
+  "ja": "可動域",
+  "es": "Alcance",
+  "de": "Weite",
+  "fr": "Amplitude"
+ },
+ "Pace": {
+  "yue": "速度",
+  "zh-hant": "速度",
+  "zh-hans": "速度",
+  "ja": "ペース",
+  "es": "Ritmo",
+  "de": "Tempo",
+  "fr": "Rythme"
+ },
+ "Steady": {
+  "yue": "穩定",
+  "zh-hant": "穩定",
+  "zh-hans": "稳定",
+  "ja": "安定",
+  "es": "Estable",
+  "de": "Ruhig",
+  "fr": "Stable"
+ },
+ "L/R": {
+  "yue": "左右",
+  "zh-hant": "左右",
+  "zh-hans": "左右",
+  "ja": "左右",
+  "es": "I/D",
+  "de": "L/R",
+  "fr": "G/D"
+ },
+ "Hold": {
+  "yue": "維持",
+  "zh-hant": "維持",
+  "zh-hans": "保持",
+  "ja": "キープ",
+  "es": "Sostener",
+  "de": "Halten",
+  "fr": "Tenue"
+ },
+ "Done": {
+  "yue": "完成",
+  "zh-hant": "完成",
+  "zh-hans": "完成",
+  "ja": "完了",
+  "es": "Listo",
+  "de": "Fertig",
+  "fr": "Terminé"
+ },
+ "Heard": {
+  "yue": "聽到",
+  "zh-hant": "聽到",
+  "zh-hans": "听到",
+  "ja": "聞き取れた",
+  "es": "Oído",
+  "de": "Gehört",
+  "fr": "Entendu"
+ },
+ "No hints": {
+  "yue": "冇提示",
+  "zh-hant": "沒有提示",
+  "zh-hans": "没有提示",
+  "ja": "ヒントなし",
+  "es": "Sin pistas",
+  "de": "Ohne Hilfe",
+  "fr": "Sans aide"
+ },
+ "Pauses": {
+  "yue": "停頓",
+  "zh-hant": "停頓",
+  "zh-hans": "停顿",
+  "ja": "間（ま）",
+  "es": "Pausas",
+  "de": "Pausen",
+  "fr": "Pauses"
+ },
+ "Take a breath before long sentences.": {
+  "yue": "講長句之前先吸啖氣。",
+  "zh-hant": "講長句之前先吸一口氣。",
+  "zh-hans": "说长句之前先吸一口气。",
+  "ja": "長い文の前に、ひと息つきましょう。",
+  "es": "Respira antes de las frases largas.",
+  "de": "Atme vor langen Sätzen ein.",
+  "fr": "Respirez avant les longues phrases."
+ },
+ "Build the sentence": {
+  "yue": "砌句子",
+  "zh-hant": "排句子",
+  "zh-hans": "排句子",
+  "ja": "文を作る",
+  "es": "Formar una frase",
+  "de": "Satz bauen",
+  "fr": "Construire la phrase"
+ },
+ "Asking for a drink": {
+  "yue": "想要飲嘢",
+  "zh-hant": "想要喝的",
+  "zh-hans": "想要喝的",
+  "ja": "飲み物をお願いする",
+  "es": "Pedir algo de beber",
+  "de": "Um etwas zu trinken bitten",
+  "fr": "Demander à boire"
+ },
+ "Great!": {
+  "yue": "好呀！",
+  "zh-hant": "太好了！",
+  "zh-hans": "太好了！",
+  "ja": "いいですね！",
+  "es": "¡Bien!",
+  "de": "Super!",
+  "fr": "Super !"
+ },
+ "Nice one. That is right.": {
+  "yue": "啱喇，繼續加油。",
+  "zh-hant": "答對了，繼續加油。",
+  "zh-hans": "答对了，继续加油。",
+  "ja": "正解です。その調子です。",
+  "es": "Muy bien. Es correcto.",
+  "de": "Schön. Das stimmt.",
+  "fr": "Bien joué. C'est correct."
+ },
+ "Next": {
+  "yue": "下一題",
+  "zh-hant": "下一題",
+  "zh-hans": "下一题",
+  "ja": "次へ",
+  "es": "Siguiente",
+  "de": "Weiter",
+  "fr": "Suivant"
+ },
+ "Give me a hint": {
+  "yue": "俾啲提示",
+  "zh-hant": "給我一點提示",
+  "zh-hans": "给我一点提示",
+  "ja": "ヒントをください",
+  "es": "Dame una pista",
+  "de": "Gib mir einen Tipp",
+  "fr": "Un indice"
+ },
+ "Find the pairs": {
+  "yue": "搵相同",
+  "zh-hant": "找一對",
+  "zh-hans": "找一对",
+  "ja": "ペア探し",
+  "es": "Encuentra las parejas",
+  "de": "Paare finden",
+  "fr": "Trouver les paires"
+ },
+ "of 3 pairs": {
+  "yue": "/ 3 對",
+  "zh-hant": "/ 3 對",
+  "zh-hans": "/ 3 对",
+  "ja": "/ 3ペア",
+  "es": "de 3 parejas",
+  "de": "von 3 Paaren",
+  "fr": "sur 3 paires"
+ },
+ "Good height": {
+  "yue": "高度剛好",
+  "zh-hant": "高度剛好",
+  "zh-hans": "高度刚好",
+  "ja": "ちょうどいい高さ",
+  "es": "Buena altura",
+  "de": "Gute Höhe",
+  "fr": "Bonne hauteur"
+ },
+ "A little slower down": {
+  "yue": "放落嚟慢少少",
+  "zh-hant": "放下時再慢一點",
+  "zh-hans": "放下时再慢一点",
+  "ja": "下ろすときは、もう少しゆっくり",
+  "es": "Un poco más lento",
+  "de": "Etwas langsamer",
+  "fr": "Un peu plus lentement"
+ },
+ "Stays on your device": {
+  "yue": "影像留喺機入面",
+  "zh-hant": "影像留在裝置裡",
+  "zh-hans": "视频留在设备里",
+  "ja": "映像は端末の中だけ",
+  "es": "Se queda en tu dispositivo",
+  "de": "Bleibt auf deinem Gerät",
+  "fr": "Reste sur votre appareil"
+ },
+ "Savers cover a missed day": {
+  "yue": "保護盾可以補返漏咗嗰日",
+  "zh-hant": "補救次數可以補上漏掉的一天",
+  "zh-hans": "补救次数可以补上漏掉的一天",
+  "ja": "お助けで、休んだ日を埋められます",
+  "es": "Un salvarracha cubre un día perdido",
+  "de": "Ein Retter deckt einen verpassten Tag ab",
+  "fr": "Un joker couvre un jour manqué"
+ },
+ "Leaf league": {
+  "yue": "綠葉組",
+  "zh-hant": "綠葉組",
+  "zh-hans": "绿叶组",
+  "ja": "緑の葉っぱリーグ",
+  "es": "Liga Hoja",
+  "de": "Blatt-Liga",
+  "fr": "Ligue Feuille"
+ },
+ "This week": {
+  "yue": "今個星期",
+  "zh-hant": "本週",
+  "zh-hans": "本周",
+  "ja": "今週",
+  "es": "Esta semana",
+  "de": "Diese Woche",
+  "fr": "Cette semaine"
+ },
+ "You": {
+  "yue": "你",
+  "zh-hant": "你",
+  "zh-hans": "你",
+  "ja": "あなた",
+  "es": "Tú",
+  "de": "Du",
+  "fr": "Vous"
+ },
+ "{n} days": {
+  "yue": "{n} 日",
+  "zh-hant": "{n} 天",
+  "zh-hans": "{n} 天",
+  "ja": "{n}日",
+  "es": "{n} días",
+  "de": "{n} Tage",
+  "fr": "{n} jours"
+ },
+ "Your week": {
+  "yue": "你嘅一個星期",
+  "zh-hant": "你的一週",
+  "zh-hans": "你的一周",
+  "ja": "あなたの1週間",
+  "es": "Tu semana",
+  "de": "Deine Woche",
+  "fr": "Votre semaine"
+ },
+ "Minutes practised each day": {
+  "yue": "每日練習分鐘數",
+  "zh-hant": "每天練習的分鐘數",
+  "zh-hans": "每天练习的分钟数",
+  "ja": "1日ごとの練習時間（分）",
+  "es": "Minutos practicados cada día",
+  "de": "Übungsminuten pro Tag",
+  "fr": "Minutes pratiquées par jour"
+ },
+ "Simple mode": {
+  "yue": "簡單模式",
+  "zh-hant": "簡易模式",
+  "zh-hans": "简易模式",
+  "ja": "かんたんモード",
+  "es": "Modo fácil",
+  "de": "Einfacher Modus",
+  "fr": "Mode simple"
+ },
+ "Exercise": {
+  "yue": "運動",
+  "zh-hant": "運動",
+  "zh-hans": "运动",
+  "ja": "運動",
+  "es": "Mover",
+  "de": "Bewegen",
+  "fr": "Bouger"
+ },
+ "Weekly league": {
+  "yue": "每週聯賽",
+  "zh-hant": "每週排行榜",
+  "zh-hans": "每周排行榜",
+  "ja": "週間リーグ",
+  "es": "Liga semanal",
+  "de": "Wochenliga",
+  "fr": "Ligue hebdo"
+ },
+ "Today's practice": {
+  "yue": "今日練習",
+  "zh-hant": "今天的練習",
+  "zh-hans": "今天的练习",
+  "ja": "今日の練習",
+  "es": "Práctica de hoy",
+  "de": "Heutiges Training",
+  "fr": "Entraînement du jour"
+ },
+ "Start time": {
+  "yue": "開口",
+  "zh-hant": "開口",
+  "zh-hans": "开口",
+  "ja": "話しはじめ",
+  "es": "Empezar",
+  "de": "Start",
+  "fr": "Démarrer"
+ },
+ "Maple": {
+  "yue": "楓葉",
+  "zh-hant": "楓葉",
+  "zh-hans": "枫叶",
+  "ja": "もみじ",
+  "es": "Arce",
+  "de": "Ahorn",
+  "fr": "Érable"
+ },
+ "Pebble": {
+  "yue": "石仔",
+  "zh-hant": "小石頭",
+  "zh-hans": "小石头",
+  "ja": "こいし",
+  "es": "Piedrita",
+  "de": "Kiesel",
+  "fr": "Galet"
+ },
+ "Sunny": {
+  "yue": "陽仔",
+  "zh-hant": "小陽",
+  "zh-hans": "小阳",
+  "ja": "ひなた",
+  "es": "Solecito",
+  "de": "Sonnig",
+  "fr": "Soleil"
+ },
+ "Willow": {
+  "yue": "柳柳",
+  "zh-hant": "柳柳",
+  "zh-hans": "柳柳",
+  "ja": "やなぎ",
+  "es": "Sauce",
+  "de": "Weide",
+  "fr": "Saule"
+ },
+ "Last 2 weeks": {
+  "yue": "最近 2 星期",
+  "zh-hant": "最近 2 週",
+  "zh-hans": "最近 2 周",
+  "ja": "直近2週間",
+  "es": "Últimas 2 semanas",
+  "de": "Letzte 2 Wochen",
+  "fr": "2 dernières semaines"
+ }
+}

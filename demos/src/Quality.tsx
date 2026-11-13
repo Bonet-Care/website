@@ -3,7 +3,7 @@ import { Stage } from './kit/stage'
 import { Phone } from './kit/phone'
 import { useReducedMotion } from './kit/reduced-motion'
 import type { Act } from './kit/act'
-import { Ico, tr } from './ui'
+import {Ico, t } from './ui'
 
 /* Practice-quality hexagon. requires_feature: practice_quality (hold from deploy until the app feature ships). Sample data only.
    Pattern: stageshow `chart-scrub` (a shape that draws in on a hairline grid), `subscriptions` (values roll after the cause), `story` (a tip card arrives last). */
@@ -64,12 +64,12 @@ function Card({ title, labels, last, today, tipText, icon }: { title: string; la
               <div className="bn-top" style={{ top: 70 }}><span className="bn-brand" style={{ fontSize: 22 }}><Ico n={icon} s={34} />{title}</span></div>
               <div style={{ position: 'absolute', left: 42, right: 42, top: 140 }}><Hex labels={labels} last={last} today={today} s={s} /></div>
               <div style={{ position: 'absolute', left: 24, top: 462, display: 'flex', gap: 18, fontWeight: 800, fontSize: 15, color: '#3f4a5a' }}>
-                <span><i style={{ display: 'inline-block', width: 22, height: 5, background: '#1f8ae6', borderRadius: 3, verticalAlign: 'middle', marginRight: 6 }} />{tr('Today', '今次')}</span>
-                <span><i style={{ display: 'inline-block', width: 22, height: 0, borderTop: '4px dashed #6b7484', verticalAlign: 'middle', marginRight: 6 }} />{tr('Last time', '上次')}</span>
+                <span><i style={{ display: 'inline-block', width: 22, height: 5, background: '#1f8ae6', borderRadius: 3, verticalAlign: 'middle', marginRight: 6 }} />{t('Today')}</span>
+                <span><i style={{ display: 'inline-block', width: 22, height: 0, borderTop: '4px dashed #6b7484', verticalAlign: 'middle', marginRight: 6 }} />{t('Last time')}</span>
               </div>
               <div className="bn-tipcard" data-on={s.tip || undefined}>
                 <img src="/img/mascot/point.webp" width={512} height={512} alt="" />
-                <div><b>{tr('A tip for next time', '下次嘅提示')}</b><p>{tipText}</p></div>
+                <div><b>{t('A tip for next time')}</b><p>{tipText}</p></div>
               </div>
               <div className="bn-cut" data-on={s.cut || undefined} style={{ background: '#fff' }} />
             </div>
@@ -80,14 +80,14 @@ function Card({ title, labels, last, today, tipText, icon }: { title: string; la
   )
 }
 
-export const MOVE_AXES = () => [tr('Range', '幅度'), tr('Pace', '速度'), tr('Steady', '穩定'), tr('L/R', '左右'), tr('Hold', '維持'), tr('Done', '完成')]
+export const MOVE_AXES = () => [t('Range'), t('Pace'), t('Steady'), t('L/R'), t('Hold'), t('Done')]
 export const MOVE_LAST = [0.6, 0.5, 0.7, 0.55, 0.4, 0.65]
 export const MOVE_TODAY = [0.8, 0.7, 0.75, 0.82, 0.65, 0.92]
-export const QualityMove = () => <Card title={tr('How it went', '做得點')} icon="muscle"
-  labels={[tr('Range', '幅度'), tr('Pace', '速度'), tr('Steady', '穩定'), tr('L/R', '左右'), tr('Hold', '維持'), tr('Done', '完成')]}
+export const QualityMove = () => <Card title={t('How it went')} icon="muscle"
+  labels={[t('Range'), t('Pace'), t('Steady'), t('L/R'), t('Hold'), t('Done')]}
   last={[0.6, 0.5, 0.7, 0.55, 0.4, 0.65]} today={[0.8, 0.7, 0.75, 0.82, 0.65, 0.92]}
-  tipText={tr('Lift a little higher on your left side.', '左手再舉高少少。')} />
-export const QualitySpeak = () => <Card title={tr('How it went', '做得點')} icon="speak"
-  labels={[tr('Heard', '聽到'), tr('No hints', '冇提示'), tr('Pace', '速度'), tr('Pauses', '停頓'), tr('Start', '開口'), tr('Steady', '穩定')]}
+  tipText={t('Lift a little higher on your left side.')} />
+export const QualitySpeak = () => <Card title={t('How it went')} icon="speak"
+  labels={[t('Heard'), t('No hints'), t('Pace'), t('Pauses'), t('Start time'), t('Steady')]}
   last={[0.55, 0.45, 0.6, 0.5, 0.6, 0.5]} today={[0.85, 0.7, 0.72, 0.8, 0.7, 0.78]}
-  tipText={tr('Take a breath before long sentences.', '講長句之前先吸啖氣。')} />
+  tipText={t('Take a breath before long sentences.')} />

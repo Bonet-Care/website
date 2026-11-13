@@ -21,6 +21,9 @@
     menu.addEventListener('keydown', function (e) { if (e.key === 'Escape') { menu.open = false; menu.querySelector('summary').focus(); } });
   }
 
+  /* ---- switching language keeps the section the visitor is on (#plans, #faq ...) */
+  $$('.langmenu a, .ftr-langs a').forEach(function (a) { a.addEventListener('click', function () { if (location.hash && a.getAttribute('href').indexOf('#') < 0) a.href = a.getAttribute('href') + location.hash; }); });
+
   /* ---- inner pages keep English and Cantonese text in data-en / data-zh and switch in place */
   var titleEn = document.title, tzh = document.querySelector('meta[name="x-title-zh"]');
   function setLang(l) {

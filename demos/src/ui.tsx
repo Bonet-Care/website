@@ -1,9 +1,22 @@
 import { useEffect, useRef, useState, type CSSProperties } from 'react'
 import { useReducedMotion } from './kit/reduced-motion'
 
-/* Demo text exists in English and Cantonese only; other language pages show the English demo text. */
-export const ZH = typeof document !== 'undefined' && /^(yue|zh-hk)/i.test(document.documentElement.lang)
-export const tr = (en: string, zh: string) => (ZH ? zh : en)
+import DICT from '../../content/demo-strings.json'
+import SPEAK from '../../content/demo-speak.json'
+
+/* Every word inside a demo comes from content/demo-strings.json and content/demo-speak.json, in the page's language
+   (<html data-site-lang>). There is no fallback to English on other languages: a missing string is logged and caught by scripts/check-demos.py. */
+export const LANG: string = (typeof document !== 'undefined' && document.documentElement.getAttribute('data-site-lang')) || 'en'
+export const t = (key: string): string => {
+  if (LANG === 'en') return key
+  const v = (DICT as Record<string, Record<string, string>>)[key]?.[LANG]
+  if (!v) { console.error('missing demo string', LANG, key); return key }
+  return v
+}
+const LOCALE: Record<string, string> = { en: 'en', yue: 'zh-HK', 'zh-hant': 'zh-TW', 'zh-hans': 'zh-CN', ja: 'ja', es: 'es', de: 'de', fr: 'fr' }
+/** Monday to Sunday initials in the page language (Intl). */
+export const weekdays = (): string[] => Array.from({ length: 7 }, (_, i) => new Intl.DateTimeFormat(LOCALE[LANG] || 'en', { weekday: 'narrow' }).format(new Date(2024, 0, 1 + i)))
+export const speakData = () => (SPEAK as Record<string, { cjk: boolean; words: string[]; decoy: string; hints: string[] }>)[LANG] || (SPEAK as any).en
 
 export const Ico = ({ n, s, style }: { n: string; s?: number; style?: CSSProperties }) => (
   <span className="bn-ico" style={{ fontSize: s, ...style }} aria-hidden>

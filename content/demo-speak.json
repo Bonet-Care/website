@@ -1,0 +1,130 @@
+{
+ "_comment": "Speaking demo content per language: a natural request sentence split into 4 to 6 tiles in the correct order, one decoy tile, and three hints (a meaning clue, a first-letter or first-character clue, the answer spaced out). Modelled on the speaking content of the app (app/web/src/features/speech/engine). cjk=true for languages written without spaces.",
+ "en": {
+  "cjk": false,
+  "words": [
+   "I",
+   "want",
+   "some",
+   "water",
+   "please"
+  ],
+  "decoy": "tea",
+  "hints": [
+   "It is something to drink.",
+   "Starts with the letter w.",
+   "w a t e r"
+  ]
+ },
+ "yue": {
+  "cjk": true,
+  "words": [
+   "我",
+   "想",
+   "飲",
+   "杯水",
+   "唔該"
+  ],
+  "decoy": "茶",
+  "hints": [
+   "同飲嘢有關。",
+   "第二個字係「水」。",
+   "杯　水"
+  ]
+ },
+ "zh-hant": {
+  "cjk": true,
+  "words": [
+   "請",
+   "給我",
+   "一杯",
+   "熱茶",
+   "謝謝"
+  ],
+  "decoy": "冷水",
+  "hints": [
+   "和喝的東西有關。",
+   "第一個字是「請」。",
+   "請　給我　一杯　熱茶　謝謝"
+  ]
+ },
+ "zh-hans": {
+  "cjk": true,
+  "words": [
+   "麻烦",
+   "给我",
+   "一杯",
+   "热茶"
+  ],
+  "decoy": "冷水",
+  "hints": [
+   "和喝的东西有关。",
+   "第一个词是“麻烦”。",
+   "麻烦　给我　一杯　热茶"
+  ]
+ },
+ "ja": {
+  "cjk": true,
+  "words": [
+   "すみません",
+   "お茶を",
+   "一杯",
+   "ください"
+  ],
+  "decoy": "ごはんを",
+  "hints": [
+   "飲み物をお願いする言葉です。",
+   "さいしょの文字は「す」です。",
+   "すみません　お茶を　一杯　ください"
+  ]
+ },
+ "es": {
+  "cjk": false,
+  "words": [
+   "Quiero",
+   "un",
+   "vaso",
+   "de",
+   "agua"
+  ],
+  "decoy": "té",
+  "hints": [
+   "Es algo para beber.",
+   "Empieza con la letra a.",
+   "a g u a"
+  ]
+ },
+ "de": {
+  "cjk": false,
+  "words": [
+   "Ich",
+   "möchte",
+   "bitte",
+   "ein",
+   "Glas",
+   "Wasser"
+  ],
+  "decoy": "Tee",
+  "hints": [
+   "Es ist etwas zu trinken.",
+   "Beginnt mit dem Buchstaben W.",
+   "W a s s e r"
+  ]
+ },
+ "fr": {
+  "cjk": false,
+  "words": [
+   "Je",
+   "voudrais",
+   "un",
+   "verre",
+   "d'eau"
+  ],
+  "decoy": "thé",
+  "hints": [
+   "C'est quelque chose à boire.",
+   "Commence par la lettre e.",
+   "e a u"
+  ]
+ }
+}

@@ -2,7 +2,7 @@ import { Stage } from './kit/stage'
 import { Phone } from './kit/phone'
 import { Roll } from './kit/motion/Roll'
 import type { Act } from './kit/act'
-import { Confetti, Guide, Ico, tr } from './ui'
+import {Confetti, Guide, Ico, t } from './ui'
 import { Hex, MOVE_AXES, MOVE_LAST, MOVE_TODAY } from './Quality'
 
 /* Pattern: stageshow `phone-touch` (touch cursor, cropped phone, loop that folds back) + `payout-flow` (slow beats, payoff holds). */
@@ -11,9 +11,9 @@ const START: S = { scene: 'today', reps: 0, fin: false, cut: false, boom: 0, dra
 const REST = { x: 330, y: 470 }
 const TOTAL = 3
 const NODES = [
-  { i: 'move', l: tr('Warm up', '熱身'), x: 128, y: 430 },
-  { i: 'speak', l: tr('Speaking', '說話'), x: 276, y: 540 },
-  { i: 'brain', l: tr('Brain game', '腦力遊戲'), x: 128, y: 650 },
+  { i: 'move', l: t('Warm up'), x: 128, y: 430 },
+  { i: 'speak', l: t('Speaking'), x: 276, y: 540 },
+  { i: 'brain', l: t('Brain game'), x: 128, y: 650 },
 ]
 
 function Today({ done }: { done: boolean }) {
@@ -28,10 +28,10 @@ function Today({ done }: { done: boolean }) {
         <img src="/img/mascot/idle.webp" alt="" data-on={!done || undefined} width={512} height={512} />
         <img src="/img/mascot/cheer.webp" alt="" data-on={done || undefined} width={512} height={512} />
       </div>
-      <div className="bn-bub">{done ? tr('Well done! One step ticked.', '做得好！完成咗一步。') : tr('Good morning! Ready for today?', '早晨！今日準備好未？')}</div>
+      <div className="bn-bub">{done ? t('Well done! One step ticked.') : t('Good morning! Ready for today?')}</div>
       <div className="bn-card bn-goal">
         <Ico n="trophy" />
-        <b>{tr("Today's goal", '今日目標')}</b>
+        <b>{t("Today's goal")}</b>
         <output><Roll>{done ? '1 / 3' : '0 / 3'}</Roll></output>
         <div className="bn-bar"><i style={{ width: done ? '34%' : '0%' }} /></div>
       </div>
@@ -49,7 +49,7 @@ function Today({ done }: { done: boolean }) {
             <Ico n={n.i} /><Ico n="check" />
           </div>
           <div className="bn-lab" data-st={st(i)} style={{ left: n.x + (i % 2 ? -190 : 58), top: n.y - 12, textAlign: i % 2 ? 'right' : 'left' }}>{n.l}</div>
-          {st(i) === 'cur' && <div className="bn-start" style={{ left: n.x, top: n.y - 82 }}>{tr('START HERE', '由呢度開始')}</div>}
+          {st(i) === 'cur' && <div className="bn-start" style={{ left: n.x, top: n.y - 82 }}>{t('START HERE')}</div>}
         </div>
       ))}
     </div>
@@ -61,7 +61,7 @@ export function Player({ reps, fin, boom }: { reps: number; fin: boolean; boom: 
     <div className="bn-player">
       <div className="bn-hd" />
       <span className="bn-x">✕</span>
-      <span className="bn-title"><Ico n="muscle" s={30} />{tr('Arm raise', '舉手')}</span>
+      <span className="bn-title"><Ico n="muscle" s={30} />{t('Arm raise')}</span>
       <span className="bn-reps"><Roll>{`${reps}/${TOTAL}`}</Roll></span>
       <div className="bn-prog"><i style={{ width: `${(reps / TOTAL) * 100}%` }} /></div>
       <div className="bn-guide"><Guide clip="/clips/G03" /></div>
@@ -71,12 +71,12 @@ export function Player({ reps, fin, boom }: { reps: number; fin: boolean; boom: 
           <div className="bn-num"><Roll>{String(reps)}</Roll></div>
           {reps > 0 && <div className="bn-plus" key={reps} data-go>+1</div>}
         </div>
-        <div className="bn-of">{tr(`of ${TOTAL} reps`, `共 ${TOTAL} 下`)}</div>
+        <div className="bn-of">{t('of 3 reps')}</div>
         <div className="bn-cue">
-          <span className="gold" data-on={(reps === 2 && !fin) || undefined}>{tr('Lift a little higher', '再舉高少少')}</span>
-          <span className="ok" data-on={fin || undefined}>{tr('Great set!', '做得好！')}</span>
+          <span className="gold" data-on={(reps === 2 && !fin) || undefined}>{t('Lift a little higher')}</span>
+          <span className="ok" data-on={fin || undefined}>{t('Great set!')}</span>
         </div>
-        <div className="bn-lock"><Ico n="lock" />{tr('Your video stays on this phone', '影像只留喺你部電話')}</div>
+        <div className="bn-lock"><Ico n="lock" />{t('Your video stays on this phone')}</div>
         {boom > 0 && <Confetti key={boom} />}
       </div>
     </div>
@@ -128,10 +128,10 @@ const sc = (s: S, full: boolean, pq = false) => (
     {full && pq && (
       <div className="bn-layer" data-off={s.scene !== 'how' || undefined} style={{ zIndex: 1 }}>
         <div className="bn-screen" style={{ background: '#fff' }}>
-          <div className="bn-top"><span className="bn-brand" style={{ fontSize: 24 }}><Ico n="muscle" s={34} />{tr('How it went', '做得點')}</span></div>
-          <div style={{ position: 'absolute', left: 22, right: 22, top: 130 }}><Hex labels={MOVE_AXES()} last={MOVE_LAST} today={MOVE_TODAY} s={{ drawn: s.drawn, m: s.m, tip: s.tip, cut: false }} /></div>
-          <div style={{ position: 'absolute', left: 24, right: 24, top: 470, fontSize: 16, fontWeight: 800, color: '#3f4a5a', lineHeight: 1.25 }}>{tr('After each activity, see how your practice went and get a tip for next time.', '每次練習之後，睇下今次做得點，仲有下次嘅小提示。')}</div>
-          <div className="bn-tipcard" data-on={s.tip || undefined} style={{ top: 540 }}><img src="/img/mascot/point.webp" width={512} height={512} alt="" /><div><b>{tr('A tip for next time', '下次嘅提示')}</b><p>{tr('Lift a little higher on your left side.', '左手再舉高少少。')}</p></div></div>
+          <div className="bn-top"><span className="bn-brand" style={{ fontSize: 24 }}><Ico n="muscle" s={34} />{t('How it went')}</span></div>
+          <div style={{ position: 'absolute', left: 46, right: 46, top: 128 }}><Hex labels={MOVE_AXES()} last={MOVE_LAST} today={MOVE_TODAY} s={{ drawn: s.drawn, m: s.m, tip: s.tip, cut: false }} /></div>
+          <div style={{ position: 'absolute', left: 24, right: 24, top: 462, fontSize: 16, fontWeight: 800, color: '#3f4a5a', lineHeight: 1.25 }}>{t('After each activity, see how your practice went and get a tip for next time.')}</div>
+          <div className="bn-tipcard" data-on={s.tip || undefined} style={{ top: 540 }}><img src="/img/mascot/point.webp" width={512} height={512} alt="" /><div><b>{t('A tip for next time')}</b><p>{t('Lift a little higher on your left side.')}</p></div></div>
         </div>
       </div>
     )}

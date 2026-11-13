@@ -199,3 +199,4 @@
 .bn-fchip { position: absolute; left: 50%; top: 18px; transform: translate(-50%, -10px) scale(.9); opacity: 0; padding: 10px 18px; border-radius: 20px; background: #fff7df; border: 3px solid #ffc23d; color: #8a5a00; font-weight: 900; font-size: 20px; white-space: nowrap; }
 .bn-fchip[data-on] { animation: fchip 2.4s ease both; }
 @keyframes fchip { 0% { opacity: 0; transform: translate(-50%, -10px) scale(.9); } 12%, 80% { opacity: 1; transform: translate(-50%, 0) scale(1); } 100% { opacity: 0; transform: translate(-50%, 6px) scale(.98); } }
+.bn-wcol { min-width: 0; } .bn-wcol b { overflow-wrap: anywhere; line-height: 1.15; }

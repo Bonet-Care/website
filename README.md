@@ -16,6 +16,10 @@ It is plain static HTML and CSS. There is no framework and no build step for dep
 - `index.html`, `zh-hant/`, `yue/`, `zh-hans/`, `ja/`, `es/`, `de/`, `fr/`, inner pages, `blog/`: generated, committed.
 - `_headers`, `_redirects`: Cloudflare Pages headers (strict CSP, no inline script) and redirects (`/zh` to `/zh-hant/`).
 
+## Checks
+
+`python3 scripts/check-demos.py` (no dependencies): every demo string exists in all eight languages (`content/demo-strings.json`, `content/demo-speak.json`), every `t('...')` key exists, and no demo component has hard-coded text. `cd demos && npm install && npm run check` also runs `scripts/check-demos.mjs`: it opens each language page in headless Chromium and fails if a demo shows English text on a non-English page or the language menu marks the wrong language (serve the folder on :8124 or pass a base URL). Demo wording lives in `content/demo-strings.json` (keyed by the English text) and `content/demo-speak.json`. German and French labels are our own wording until the app has i18n.de.ts and i18n.fr.ts.
+
 ## Editing
 
 Change copy in `scripts/home.py` or `content/`, run `python3 scripts/build-site.py --strict`, commit the generated files. Preview: `python3 -m http.server 8000`.

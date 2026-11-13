@@ -4,7 +4,7 @@ import { Phone } from './kit/phone'
 import { Roll } from './kit/motion/Roll'
 import { useReducedMotion } from './kit/reduced-motion'
 import type { Act } from './kit/act'
-import { Confetti, Ico, tr } from './ui'
+import {Confetti, Ico, t } from './ui'
 import { Hex, MOVE_AXES, MOVE_LAST, MOVE_TODAY } from './Quality'
 
 /* Move: a mannequin does an arm raise, a phone propped up films it. The skeleton is NOT hand-animated: the joint positions were projected
@@ -74,8 +74,8 @@ function Figure({ w, run, t0, mirror = false, skeleton = false }: { w: number; r
 const TOP = 1375, REP = 2667
 const script = async (a: Act<S>) => {
   await a.wait(700); a.put({ run: true, t0: performance.now() })
-  await a.wait(TOP); a.put({ reps: 1, chip: tr('Good height', '高度剛好') })
-  await a.wait(REP); a.put({ reps: 2, chip: tr('A little slower down', '放落嚟慢少少') })
+  await a.wait(TOP); a.put({ reps: 1, chip: t('Good height') })
+  await a.wait(REP); a.put({ reps: 2, chip: t('A little slower down') })
   await a.wait(REP); a.put({ reps: 3, chip: '+1' })
   await a.wait(1300); a.put({ run: false, chip: '', fin: true, boom: 1 })
   await a.wait(1800); a.put({ how: true, drawn: 0 }); await a.wait(600)
@@ -104,19 +104,19 @@ export function FigureDemo() {
             <div style={{ position: 'absolute', left: wide ? 380 : 14, top: 20 }}>
               <Phone width={wide ? 262 : 330}>
                 <div className="bn-screen" style={{ background: '#fff' }}>
-                  <div className="bn-top"><span className="bn-brand" style={{ fontSize: 22 }}><Ico n="muscle" s={32} />{tr('Arm raise', '舉手')}</span><span className="bn-chip"><Roll>{`${s.reps}/3`}</Roll></span></div>
+                  <div className="bn-top"><span className="bn-brand" style={{ fontSize: 22 }}><Ico n="muscle" s={32} />{t('Arm raise')}</span><span className="bn-chip"><Roll>{`${s.reps}/3`}</Roll></span></div>
                   <div style={{ position: 'absolute', left: 16, right: 16, top: 134, height: 520, borderRadius: 24, background: '#eef3f8', overflow: 'hidden', display: 'grid', placeItems: 'center' }}>
                     <Figure w={346} run={s.run} t0={s.t0} mirror skeleton />
                     <div className="bn-fchip" data-on={!!s.chip || undefined} key={s.chip}>{s.chip}</div>
                   </div>
-                  <div className="bn-lock" style={{ top: 672, left: 16, right: 16, height: 52 }}><Ico n="lock" />{tr('Stays on your device', '影像留喺機入面')}</div>
-                  <div className="bn-cue" style={{ position: 'absolute', left: 16, top: 740, right: 16 }}><span className="ok" data-on={s.fin || undefined} style={{ fontSize: 22 }}>{tr('Great set!', '做得好！')}</span></div>
+                  <div className="bn-lock" style={{ top: 672, left: 16, right: 16, height: 52 }}><Ico n="lock" />{t('Stays on your device')}</div>
+                  <div className="bn-cue" style={{ position: 'absolute', left: 16, top: 740, right: 16 }}><span className="ok" data-on={s.fin || undefined} style={{ fontSize: 22 }}>{t('Great set!')}</span></div>
                   {s.boom > 0 && <Confetti key={s.boom} n={26} spread={150} className="bn-conf" />}
                   <div className="bn-layer" data-off={!s.how || undefined} style={{ zIndex: 1, background: '#fff' }}>
                     <div className="bn-screen" style={{ background: '#fff' }}>
-                      <div className="bn-top"><span className="bn-brand" style={{ fontSize: 22 }}><Ico n="muscle" s={32} />{tr('How it went', '做得點')}</span></div>
-                      <div style={{ position: 'absolute', left: 22, right: 22, top: 130 }}><Hex labels={MOVE_AXES()} last={MOVE_LAST} today={MOVE_TODAY} s={{ drawn: s.drawn, m: s.m, tip: s.tip, cut: false }} /></div>
-                      <div className="bn-tipcard" data-on={s.tip || undefined} style={{ top: 520 }}><img src="/img/mascot/point.webp" width={512} height={512} alt="" /><div><b>{tr('A tip for next time', '下次嘅提示')}</b><p>{tr('Lift a little higher on your left side.', '左手再舉高少少。')}</p></div></div>
+                      <div className="bn-top"><span className="bn-brand" style={{ fontSize: 22 }}><Ico n="muscle" s={32} />{t('How it went')}</span></div>
+                      <div style={{ position: 'absolute', left: 46, right: 46, top: 128 }}><Hex labels={MOVE_AXES()} last={MOVE_LAST} today={MOVE_TODAY} s={{ drawn: s.drawn, m: s.m, tip: s.tip, cut: false }} /></div>
+                      <div className="bn-tipcard" data-on={s.tip || undefined} style={{ top: 520 }}><img src="/img/mascot/point.webp" width={512} height={512} alt="" /><div><b>{t('A tip for next time')}</b><p>{t('Lift a little higher on your left side.')}</p></div></div>
                     </div>
                   </div>
                   <div className="bn-cut" data-on={s.cut || undefined} />
