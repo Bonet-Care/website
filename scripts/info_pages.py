@@ -77,7 +77,7 @@ PAGES = {
                 ("p", "Not yet. No studies of Bonet have been published, and we do not show ratings or user numbers.", "暫時未有。未有任何關於哥基健動嘅研究發表，我哋亦唔會顯示評分或者用戶數字。"),
             ]),
             (("Who makes Bonet, and how do I contact you?", "邊個整哥基健動？點樣聯絡你哋？"), [
-                ("p", "Bonet is made by Coglix Labs Inc. Email <a href=\"mailto:hello@coglixlabs.com\">hello@coglixlabs.com</a>.", "哥基健動由 Coglix Labs Inc. 開發。請電郵 <a href=\"mailto:hello@coglixlabs.com\">hello@coglixlabs.com</a>。"),
+                ("p", "Bonet is made by Coglix Labs Inc. Email <a href=\"mailto:infos@coglixlabs.com\">infos@coglixlabs.com</a>.", "哥基健動由 Coglix Labs Inc. 開發。請電郵 <a href=\"mailto:infos@coglixlabs.com\">infos@coglixlabs.com</a>。"),
                 ("p", "<a href=\"https://coglixlabs.com/\">Coglix Labs</a> was co-founded by <a href=\"https://haileycheng.com/\">Hailey Cheng</a>, a student at Columbia University.",
                  "<a href=\"https://coglixlabs.com/\">Coglix Labs</a> 嘅聯合創辦人係 <a href=\"https://haileycheng.com/\">Hailey Cheng（鄭曦琳）</a>，佢喺哥倫比亞大學讀書。"),
             ]),
@@ -341,8 +341,8 @@ PAGES["accessibility"] = {
              "有啲練習要靠部機。數運動次數要鏡頭影到你，有啲語音辨識要連網。次數同說話結果都係估算，有可能唔準。"),
         ]),
         (("How do I tell you about a problem?", "點樣話俾你哋知有問題？"), [
-            ("p", "Email <a href=\"mailto:hello@coglixlabs.com\">hello@coglixlabs.com</a>. Tell us the page or screen, your device and browser, and any assistive technology you use. We will use what you tell us to decide what to fix next.",
-             "請電郵 <a href=\"mailto:hello@coglixlabs.com\">hello@coglixlabs.com</a>。話俾我哋知係邊一頁或者邊個畫面、你用咩機同瀏覽器，同埋你有冇用輔助工具。我哋會根據你嘅意見決定下一步改乜。"),
+            ("p", "Email <a href=\"mailto:infos@coglixlabs.com\">infos@coglixlabs.com</a>. Tell us the page or screen, your device and browser, and any assistive technology you use. We will use what you tell us to decide what to fix next.",
+             "請電郵 <a href=\"mailto:infos@coglixlabs.com\">infos@coglixlabs.com</a>。話俾我哋知係邊一頁或者邊個畫面、你用咩機同瀏覽器，同埋你有冇用輔助工具。我哋會根據你嘅意見決定下一步改乜。"),
         ]),
     ],
 }

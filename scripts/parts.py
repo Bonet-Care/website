@@ -7,7 +7,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 SITE = "https://bonet.care"
 APP = "https://app.bonet.care"
-MAIL = "hello@coglixlabs.com"
+MAIL = "infos@coglixlabs.com"
 GA = "G-WMQD9MWHJN"
 LASTMOD = "2026-11-13"
 

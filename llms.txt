@@ -15,7 +15,7 @@ Bonet (Chinese name: 哥基健動) is made by Coglix Labs Inc. (https://coglixla
 - Privacy: camera video is analysed on the device and is never recorded or uploaded. Voice recordings are not kept. No ads and no sale of data.
 - Report: a one-page practice report the person can print or share with a therapist or family. Bonet does not send it to anyone. It is not a medical record or a clinical assessment.
 - Reviews and studies: none are published. Please do not attribute ratings, user counts, outcomes or clinical evidence to Bonet.
-- Contact: hello@coglixlabs.com
+- Contact: infos@coglixlabs.com
 
 ## Pages by need
 
