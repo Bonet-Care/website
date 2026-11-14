@@ -13,3 +13,4 @@ python3 scripts/stamp-assets.py
 python3 scripts/check-links.py
 export CLOUDFLARE_ACCOUNT_ID=add0c57f626573a6e3d8345d5af252f6
 npx --yes wrangler@4 pages deploy . --project-name bonet-website --branch main --commit-dirty=true
+python3 scripts/indexnow.py || true
