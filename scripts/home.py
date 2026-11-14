@@ -217,6 +217,47 @@ def video_section(T, lang, vid):
 """
 
 
+VIDEO_DATE = "2026-11-15"  # when the current per-language films in media/demo/ went live (commit 015c031); update when the films are replaced
+
+
+def _mp4_seconds(path):
+    """Duration from the mp4 'mvhd' box, so the build needs no ffprobe."""
+    import struct
+    b = path.read_bytes()[:4_000_000]
+    i = b.find(b"mvhd")
+    if i < 0:
+        return None
+    ver = b[i + 4]
+    if ver == 1:
+        scale, dur = struct.unpack(">IQ", b[i + 24:i + 36])
+    else:
+        scale, dur = struct.unpack(">II", b[i + 16:i + 24])
+    return round(dur / scale) if scale else None
+
+
+def video_ld(T, lang, vid):
+    """VideoObject for the demo film: lets search engines and AI assistants read what the film shows (the captions become the transcript)."""
+    f = ROOT / vid["src"].lstrip("/")
+    secs = _mp4_seconds(f)
+    vtt = ROOT / vid["vtt"].lstrip("/") if vid["vtt"] else None
+    lines = []
+    if vtt and vtt.exists():
+        for blk in vtt.read_text(encoding="utf-8").split("\n\n"):
+            rows = [r for r in blk.strip().splitlines() if r and "-->" not in r and r != "WEBVTT" and not r.isdigit()]
+            lines += rows
+    ld = {"@context": "https://schema.org", "@type": "VideoObject", "@id": SITE + LANGS[lang]["path"] + "#video",
+          "name": T("Bonet demo film", "哥基健動示範片"),
+          "description": T("A one-minute look at Bonet: camera-counted exercises, speaking practice, a brain game and the one-page practice report.",
+                           "一分鐘睇哥基健動：鏡頭數次數嘅運動、說話練習、腦力遊戲，同埋一頁練習報告。"),
+          "thumbnailUrl": SITE + vid["poster"], "contentUrl": SITE + vid["src"], "uploadDate": VIDEO_DATE,
+          "inLanguage": LANGS[lang]["tag"], "publisher": {"@id": SITE + "/#organization"}}
+    if secs:
+        ld["duration"] = f"PT{secs // 60}M{secs % 60}S"
+    if lines:
+        ld["transcript"] = " ".join(lines)
+    return ld
+
+
 def soon_badges(T):
     """Store-style "coming soon" badges for the apps. Not links, and no Apple or Google logos: those badges may only be used once an app is live."""
     phone = '<svg viewBox="0 0 24 24" width="28" height="28" aria-hidden="true"><rect x="6" y="2" width="12" height="20" rx="3" fill="none" stroke="currentColor" stroke-width="2"/><path d="M10.5 18.5h3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>'
@@ -264,6 +305,8 @@ def home(lang):
         {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [
             {"@type": "Question", "name": q, "acceptedAnswer": {"@type": "Answer", "text": re.sub(r"<[^>]+>", "", a).replace("{price}", price_text(lang))}} for q, a in faq_items(lang)]},
     ]
+    if VIDEO_ON:
+        ld.append(video_ld(T, lang, video_for(lang)))
     extra = "".join(f'<script type="application/ld+json">{json.dumps(x, ensure_ascii=False)}</script>\n' for x in ld)
     h = head(lang, title, desc, SITE + base, "og-en.png" if lang == "en" else "og-zh.png", extra=extra, alt={c: SITE + d["path"] for c, d in LANGS.items()})
     h += header(lang)
