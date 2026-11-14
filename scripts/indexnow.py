@@ -4,7 +4,7 @@ The key is public by design: IndexNow checks that https://bonet.care/<key>.txt h
 import json, re, sys, urllib.request
 SITE = "https://bonet.care"
 KEY = "916f53e9ae6a5b150b9390b8296fa2d4"
-xml = urllib.request.urlopen(f"{SITE}/sitemap.xml", timeout=30).read().decode()
+xml = urllib.request.urlopen(urllib.request.Request(f"{SITE}/sitemap.xml", headers={"User-Agent": "Mozilla/5.0 (bonet-indexnow)"}), timeout=30).read().decode()
 urls = sorted(set(re.findall(r"<loc>(.*?)</loc>", xml)))
 body = json.dumps({"host": "bonet.care", "key": KEY, "keyLocation": f"{SITE}/{KEY}.txt", "urlList": urls}).encode()
 req = urllib.request.Request("https://api.indexnow.org/indexnow", data=body, headers={"Content-Type": "application/json; charset=utf-8"})
