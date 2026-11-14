@@ -370,7 +370,7 @@ def home(lang):
            ("fire", T("Made to come back to", "想日日返嚟"), T("A daily path, a streak, a weekly league and a corgi to dress up.", "每日路徑、連續練習、每週聯賽，仲有隻可以換衫嘅柯基。")),
            ("ear", T("Feedback made for you", "為你而設嘅回饋"), T("Specific to each session: how high, how steady, which words.", "每次練習都不同：幾高、幾穩、邊啲詞語。")),
            ("chart", T("A report your therapist can read", "治療師睇得明嘅報告"), T("Tracked over time, so you can see the change.", "長期記錄，睇得到變化。"))]
-    whyh = "".join(f'<div class="why-i rv" style="--rd:{n * .08:.2f}s">{icon(i)}<h3>{a}</h3><p>{b}</p></div>' for n, (i, a, b) in enumerate(why))
+    whyh = "".join(f'<div class="why-i rv" style="--rd:{n * .08:.2f}s">{icon(i)}<h2>{a}</h2><p>{b}</p></div>' for n, (i, a, b) in enumerate(why))
     who = [("sun", T("Older adults keeping active every day", "每日保持活動嘅長者"), "/exercise-app-for-seniors"),
            ("footprints", T("Practising at home after a stroke or injury", "中風或受傷後喺屋企練習"), "/stroke-home-practice"),
            ("calendar", T("Between physio or speech therapy visits", "物理治療或言語治療覆診之間"), "/speech-practice-at-home"),
@@ -482,7 +482,7 @@ def home(lang):
 </div>
 <div class="hero-art" data-ss-fill>
 <span class="fl" style="left:4%;top:8%;width:2.6rem;--k:18" data-par><img src="/img/icons/star.webp" width="128" height="128" alt=""></span>
-<div class="corgi" data-corgi role="img" aria-label="{T('Bonet the corgi', '朱古力')}"><button type="button" class="pupbtn" data-hover="wiggle" tabindex="-1" aria-hidden="true"><span class="sprite" data-clip="wave" data-then="idle" data-loops="2" data-rest="idle"></span></button></div>
+<div class="corgi" data-corgi role="img" aria-label="{T('Bonet the corgi', '朱古力')}"><span class="pupbtn" data-hover="wiggle" aria-hidden="true"><span class="sprite" data-clip="wave" data-then="idle" data-loops="2" data-rest="idle"></span></span></div>
 {demo('hero', T('Animated preview: tap Start on the Today path, the camera counts three arm raises, Great set, and the step is ticked.', '動畫預覽：喺「今日」路徑撳開始，鏡頭數三下舉手，完成一組，然後打咗剔。'))}
 </div></div></section>
 
@@ -541,7 +541,7 @@ def home(lang):
 <section class="final" data-final><div class="wrap">
 <span class="fi fi1"><img src="/img/icons/star.webp" width="128" height="128" alt=""></span><span class="fi fi2"><img src="/img/icons/heart.webp" width="128" height="128" alt=""></span><span class="fi fi3"><img src="/img/icons/bone.webp" width="128" height="128" alt=""></span>
 <div class="final-stage">
-<div class="fpup" role="img" aria-label="{T('Bonet the corgi', '朱古力')}"><button type="button" class="pupbtn" data-hover="cheer" tabindex="-1" aria-hidden="true"><span class="sprite" data-seq="tilt,wiggle,wave,idle" data-rest="idle"></span></button><i class="gshadow"></i></div>
+<div class="fpup" role="img" aria-label="{T('Bonet the corgi', '朱古力')}"><span class="pupbtn" data-hover="cheer" aria-hidden="true"><span class="sprite" data-seq="tilt,wiggle,wave,idle" data-rest="idle"></span></span><i class="gshadow"></i></div>
 <div class="final-say">
 <h2 class="rv">{T("Ready when you are.", '你準備好就開始。')}</h2>
 <p class="bubble rv">{T("Just a few minutes. I'll count.", '幾分鐘就夠，我幫你數。')}</p>

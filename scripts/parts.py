@@ -214,7 +214,7 @@ def lang_menu(cur, urls=None, inplace=None):
             items += f'<li><button type="button" data-setlang="{c}" lang="{d["html"]}"{cur_attr}>{d["name"]}</button></li>'
         else:
             items += f'<li><a href="{href}" hreflang="{d["tag"]}" lang="{d["html"]}"{cur_attr}>{d["name"]}</a></li>'
-    return (f'<details class="langmenu"><summary aria-label="{u("language", cur if cur in LANGS else "en")}"><img src="/img/icons/globe.webp" width="128" height="128" alt="">'
+    return (f'<details class="langmenu"><summary><span class="sr">{u("language", cur if cur in LANGS else "en")}: </span><img src="/img/icons/globe.webp" width="128" height="128" alt="">'
             f'<span>{LANGS[cur]["name"]}</span></summary><ul>{items}</ul></details>')
 
 
@@ -226,10 +226,10 @@ def header(lang, urls=None, inplace=None):
     return f"""<body>
 <a class="skip" href="#main">{t('skip')}</a>
 <header class="hdr"><div class="wrap">
-<a class="brand" href="{pre}" aria-label="Bonet"><img src="/img/mascot/head.webp" width="512" height="512" alt="">Bonet{'<small>哥基健動</small>' if lang in ('zh-hant', 'yue', 'zh-hans') else ''}</a>
+<a class="brand" href="{pre}"><img src="/img/mascot/head.webp" width="512" height="512" alt="">Bonet{'<small>哥基健動</small>' if lang in ('zh-hant', 'yue', 'zh-hans') else ''}</a>
 <nav class="nav" aria-label="Main">{links}</nav>
 {lang_menu(lang, urls, inplace)}
-<button type="button" class="tsize" data-textsize aria-pressed="false" title="{t('bigger')}" aria-label="{t('bigger')}">A+</button>
+<button type="button" class="tsize" data-textsize aria-pressed="false" title="{t('bigger')}" >A+<span class="sr"> {t('bigger')}</span></button>
 <a class="signin" href="{APP}/">{t('signin')}</a>
 <a class="btn btn--sm" href="{APP}/">{t('start')}</a>
 </div></header>
@@ -248,7 +248,7 @@ def footer(lang, urls=None, inplace=None, demos=False):
     more = "".join(f'<a href="{h}">{t(k)}</a>' for h, k in [(pre + "/science.html", "f_how"), (pre + "/therapist.html", "f_ther"), (pre + "/practice", "f_library")] + [(f"{pre}/{p}", NEED_UI[p]) for p in NEED_PAGES + INFO_PAGES] + [(blog, "f_blog")])
     plain = "".join(f'<a href="{(urls or {}).get(c, d["path"])}" hreflang="{d["tag"]}" lang="{d["html"]}">{d["name"]}</a>' for c, d in LANGS.items())
     return f"""<footer class="ftr"><div class="wrap">
-<div class="ftr-top"><a class="brand" href="{pre or '/'}" aria-label="Bonet"><img src="/img/mascot/head.webp" width="512" height="512" alt="">Bonet</a><p>{t('f_line')}</p></div>
+<div class="ftr-top"><a class="brand" href="{pre or '/'}"><img src="/img/mascot/head.webp" width="512" height="512" alt="">Bonet</a><p>{t('f_line')}</p></div>
 <div class="ftr-cols"><nav aria-label="Footer">{nav}</nav>
 <nav class="ftr-more" aria-label="Bonet">{more}</nav>
 <nav class="ftr-langs" aria-label="{t('language')}">{plain}</nav></div>
