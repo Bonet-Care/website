@@ -1,14 +1,13 @@
 <article class="legal">
 <h1 id="bonet-cookie-and-device-storage-policy">Bonet Cookie 与设备存储政策</h1>
-<p>最后更新：2026年11月13日</p>
+<p>最后更新：2026年11月15日</p>
 <h2 id="the-short-version">重点摘要</h2>
 <ul>
 <li>Bonet 会在你的设备上保存一些小的信息。大部分是为了保持你的登录状态，以及记住你的设置。</li>
 <li>我们使用两种可选的工具：bonet.care 网站上的网站统计（Google Analytics），以及应用中的产品分析（PostHog）。</li>
-<li>在网站上，如果你在欧洲经济区、英国或瑞士，在你点击“接受”之前，Google Analytics 保持<strong>关闭</strong>。</li>
-<li>在网站上，如果你在其他地方，Google Analytics 是开启的，你可以随时用页脚的“Cookie 设置”把它关掉。如果你的浏览器发送全球隐私控制（Global Privacy Control）或“请勿追踪”（Do Not Track）信号，我们会遵守，不加载 Google Analytics。</li>
+<li>在网站上，每个国家都一样，Google Analytics 会保持<strong>关闭</strong>，直到你点击“接受”。你可以随时用页脚的“Cookie 设置”更改你的选择。如果你的浏览器发送全球隐私控制或“请勿追踪”，我们视之为“不同意”，并且不加载 Google Analytics。</li>
 <li>我们不使用广告 cookie。我们不使用 Google 信号或广告个性化。我们不出售你的数据。</li>
-<li>在应用中，分析是开启的，除非你在“设置”&gt;“隐私”中把它关掉。</li>
+<li>在应用中，分析会保持<strong>关闭</strong>，直到你同意。你可以随时在“设置”&gt;“隐私”中更改你的选择。</li>
 </ul>
 <h2 id="what-this-policy-covers">本政策涵盖什么</h2>
 <p>我们说的“cookie”，既指 cookie，也指在你的设备上存储或读取信息的类似工具，例如本地存储。Bonet 使用两个地方：</p>
@@ -113,11 +112,10 @@
 </table>
 <p>我们不会在 bonet.care 上设置任何其他 cookie。</p>
 <p><strong>Google Analytics</strong>（测量 ID G-WMQD9MWHJN）会收到页面地址、浏览器和设备类型、根据 IP 地址得出的大概位置，以及 cookie 标识符。我们不会把你的姓名或邮箱发给它。我们不开启 Google 信号或广告个性化。</p>
-<p><strong>网站如何判断。</strong>当你打开一个页面时，我们托管服务上的一个小功能（Cloudflare Pages，位于 <code>/geo</code>）会读取 Cloudflare 附在你的请求上的国家，并告诉你的浏览器适用哪条规则。它不记录任何内容，也不存储任何内容。然后：</p>
+<p><strong>网站如何判断。</strong>每个国家都适用同一条规则：</p>
 <ul>
-<li><strong>欧洲经济区（欧盟国家、冰岛、列支敦士登、挪威）、英国和瑞士：</strong>除非你在 cookie 通知中点击<strong>接受</strong>，否则 Google Analytics 不会加载。你不用做选择，也可以使用整个网站。</li>
-<li><strong>其他地方：</strong>Google Analytics 默认加载。你可以随时用每个页面页脚的 <strong>Cookie 设置</strong>把它关掉。</li>
-<li><strong>全球隐私控制和“请勿追踪”：</strong>如果你的浏览器发送其中任何一个信号，我们会把它当作“不加载 Google Analytics”。</li>
+<li><strong>除非你在 cookie 通知中点击“接受”，否则 Google Analytics 不会加载。</strong>“拒绝”就在旁边，大小相同。你不用做选择，也可以使用整个网站。</li>
+<li><strong>全球隐私控制和“请勿追踪”：</strong>如果你的浏览器发送其中任何一个信号，我们会把它当作“不加载 Google Analytics”，也不显示通知。你仍然可以在 Cookie 设置中开启统计。</li>
 <li><strong>你的选择</strong>连同版本和时间，保存在你设备上的 <code>bonet_consent</code> 中。它不会发给我们。你可以随时在 Cookie 设置中更改。如果你在 Google Analytics 开启之后把它关掉，我们会停止加载它，你也可以在浏览器中清除上面的 cookie。</li>
 </ul>
 <h2 id="appbonetcare-and-the-apps">app.bonet.care 和应用</h2>
@@ -169,8 +167,43 @@
 <td>严格必需</td>
 </tr>
 <tr>
-<td><code>bonet_analytics_choice</code></td>
-<td>你的分析选择（开启或关闭）</td>
+<td><code>sync_analytics_consent</code></td>
+<td>你的分析选择，连同版本和时间。它也保存在你的账户中，所以会跟着你到其他设备</td>
+<td>直到你更改或删除账户</td>
+<td>Coglix Labs Inc.</td>
+<td>严格必需（它记录你的选择）</td>
+</tr>
+<tr>
+<td><code>sync_practice_consent</code></td>
+<td>你是否同意 Bonet 保存你的练习信息。也保存在你的账户中</td>
+<td>直到你更改或删除账户</td>
+<td>Coglix Labs Inc.</td>
+<td>严格必需（它记录你的选择）</td>
+</tr>
+<tr>
+<td><code>sync_terms_accepted</code></td>
+<td>你已接受当前的服务条款，连同版本和时间。也保存在你的账户中</td>
+<td>直到你删除账户</td>
+<td>Coglix Labs Inc.</td>
+<td>严格必需（它记录你的选择）</td>
+</tr>
+<tr>
+<td><code>sync_camera_notice</code></td>
+<td>你在第一次摄像头运动练习之前已阅读摄像头须知，连同版本和时间。也保存在你的账户中</td>
+<td>直到你删除账户</td>
+<td>Coglix Labs Inc.</td>
+<td>严格必需（它记录你的选择）</td>
+</tr>
+<tr>
+<td><code>sync_speech_consent</code></td>
+<td>你同意在这台设备上进行说话练习</td>
+<td>直到你退出登录</td>
+<td>Coglix Labs Inc.</td>
+<td>严格必需（它记录你的选择）</td>
+</tr>
+<tr>
+<td><code>sync_renewal_consent</code></td>
+<td>在网页版：你同意订阅按钮旁显示的试用和每月续订条款，连同时间。会随付款请求一起发送</td>
 <td>直到你清除它</td>
 <td>Coglix Labs Inc.</td>
 <td>严格必需（它记录你的选择）</td>
@@ -191,8 +224,8 @@
 <p>当你在网页上订阅时，你会离开 bonet.care，Stripe 的结账页面会在 <code>checkout.stripe.com</code> 打开。Stripe 会在那里设置它自己的 cookie，用来处理付款和防止欺诈。我们无法控制它们；请看 Stripe 自己的 cookie 信息。在 App Store 中，由 Apple 按它自己的条款处理付款。</p>
 <h2 id="our-choices-in-the-app">应用中的选择</h2>
 <ul>
-<li>分析默认开启。你可以随时在“设置”&gt;“隐私”中把它关掉。关掉之后，应用就不再发送事件。</li>
-<li>如果没有保存的选择，而你的浏览器发送全球隐私控制或“请勿追踪”信号，分析会保持关闭。你在“设置”中自己的选择优先于这个信号。</li>
+<li>分析在你同意之前是关闭的。你可以随时在“设置”&gt;“隐私”中更改你的选择。关掉之后，应用就不再发送事件。</li>
+<li>如果你的浏览器或设备发送全球隐私控制或“请勿追踪”，分析会保持关闭。</li>
 </ul>
 <h2 id="how-to-block-cookies-yourself">如何自己阻止 cookie</h2>
 <p>所有浏览器都可以让你阻止或删除 cookie 和网站数据。如果你阻止标有“严格必需”的项目，你会被退出登录，有些功能也无法使用。在共用的电脑上，用完请退出登录。</p>
@@ -202,5 +235,5 @@
 <p>如果我们对本政策做出重要的更改（例如新增一个工具），我们会更改顶部的日期。</p>
 <h2 id="contact">联系方式</h2>
 <p>Coglix Labs Inc.<br />
-电子邮件：<a href="mailto:privacy@coglixlabs.com">privacy@coglixlabs.com</a></p>
+电子邮件：<a href="mailto:infos@coglixlabs.com">infos@coglixlabs.com</a></p>
 </article>

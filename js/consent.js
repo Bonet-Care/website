@@ -1,9 +1,10 @@
 /* Consent gate for bonet.care. Google Analytics is requested only from here, never from a page.
-   Strict (EEA, UK, Switzerland, unknown): off until the visitor accepts. Open (elsewhere): on, with an opt-out, and
-   Global Privacy Control or Do Not Track switch it off. The choice is kept in localStorage key bonet_consent. */
+   Since 2026-11-15 analytics is opt-in in every country: off until the visitor presses Accept, with Reject beside it
+   at the same size. The choice is kept in localStorage key bonet_consent. Older 'open region' records (analytics on
+   by default) are dropped by the POLICY bump, so everyone is asked again. */
 (function () {
   'use strict';
-  var GA_ID = 'G-WMQD9MWHJN', POLICY = '2026-11-13', KEY = 'bonet_consent', YEAR = 365 * 864e5;
+  var GA_ID = 'G-WMQD9MWHJN', POLICY = '2026-11-15', KEY = 'bonet_consent', YEAR = 365 * 864e5;
   var STRICT = 'AT BE BG HR CY CZ DK EE FI FR DE GR HU IE IT LV LT LU MT NL PL PT RO SK SI ES SE IS LI NO GB CH JE GG IM XX T1'.split(' ');
   var OPT_IN_REGIONS = ['CA-QC'];
   var T = {
@@ -269,19 +270,10 @@
     if (old !== null && !rec) { rec = { v: 1, policy: POLICY, analytics: old === 'on' || old === 'true' || old === '1', mode: 'open', source: 'settings', ts: new Date().toISOString(), lang: lang.split('-')[0] }; store(KEY, JSON.stringify(rec)); store('bonet_analytics_choice', null); }
     var fresh = rec && rec.policy === POLICY && (rec.mode !== 'strict' || Date.now() - Date.parse(rec.ts) < YEAR);
     if (fresh) { apply(); return; }
-    var cached = sess('bonet_mode');
-    if (cached) return decide(cached);
-    var done = false, timer = setTimeout(function () { finish('strict'); }, 1500);
-    function finish(m) { if (done) return; done = true; clearTimeout(timer); sess('bonet_mode', m); decide(m); }
-    try {
-      fetch('/geo', { cache: 'no-store', credentials: 'omit' }).then(function (r) { return r.json(); }).then(function (g) {
-        var strict = STRICT.indexOf(g.country) > -1 || OPT_IN_REGIONS.indexOf(g.country + '-' + g.region) > -1;
-        finish(strict ? 'strict' : 'open');
-      }).catch(function () { finish('strict'); });
-    } catch (e) { finish('strict'); }
+    decide('strict');  // opt-in everywhere: no location lookup, no default-on region
   }
   function decide(mode) {
-    if (mode === 'strict') { stopGA(); if (!sess('bonet_cb_seen')) showBanner('strict'); return; }
+    if (mode === 'strict') { stopGA(); if (signal()) { save(false, mode, 'signal'); return; } if (!sess('bonet_cb_seen')) showBanner('strict'); return; }  // GPC / DNT: a 'no' without asking; Cookie settings can still turn it on
     var gpc = signal();
     if (gpc) { stopGA(); }
     showBanner('open', gpc);

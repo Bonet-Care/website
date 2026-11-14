@@ -379,3 +379,86 @@ PAGES["licenses"] = {
         ]),
     ],
 }
+
+# Public account deletion page (Google Play requirement). Facts from app/web/design/data-retention.md and Settings.tsx (15 Nov 2026).
+PAGES["delete-account"] = {
+    "legal": True,
+    "title": ("Delete your Bonet account | Bonet", "刪除你嘅哥基健動帳戶 | 哥基健動"),
+    "desc": ("How to delete your Bonet account (Coglix Labs Inc.) in the app or by email, what is deleted, what is kept, and what happens to a subscription.",
+             "點樣喺 app 入面或者用電郵刪除你嘅哥基健動帳戶（Coglix Labs Inc.）、會刪除乜、會保留乜，同埋訂閱會點。"),
+    "h1": ("Delete your Bonet account", "刪除你嘅哥基健動帳戶"),
+    "answer": ("You can delete your Bonet account at any time. Bonet is made by Coglix Labs Inc. Deleting removes your account and your practice history straight away. It cannot be undone, and we cannot get anything back.",
+               "你隨時可以刪除你嘅哥基健動帳戶。哥基健動由 Coglix Labs Inc. 開發。刪除之後，你嘅帳戶同練習記錄會即刻刪除，唔可以復原，我哋都攞唔返。"),
+    "demo": None,
+    "sections": [
+        (("How do I delete my account in the app?", "點樣喺 app 入面刪除帳戶？"), [
+            ("ol", [
+                ("Open Bonet and sign in.", "打開哥基健動，登入。"),
+                ("Go to <strong>Me</strong>, then <strong>Settings</strong>.", "去<strong>我</strong>，再揀<strong>設定</strong>。"),
+                ("Choose <strong>Delete my account</strong>.", "揀<strong>刪除我嘅帳戶</strong>。"),
+                ("To confirm, type your account email or the word shown, then choose <strong>Yes, delete everything for good</strong>.", "要確認，輸入你嘅帳戶電郵或者畫面上嘅字，再揀<strong>係，永久刪除全部</strong>。"),
+            ]),
+            ("p", "If you want a copy first, choose <strong>Download my data</strong> in Settings before you delete.", "如果想先留一份，刪除之前喺設定揀<strong>下載我嘅資料</strong>。"),
+        ]),
+        (("Can I ask by email instead?", "可唔可以用電郵要求刪除？"), [
+            ("p", "Yes, for example if you cannot open the app. Email <a href=\"mailto:infos@coglixlabs.com\">infos@coglixlabs.com</a> from the email address of your Bonet account and write \"Delete my account\". We will delete it and reply to you.",
+             "可以，例如你打唔開 app。請用你哥基健動帳戶嘅電郵地址寄信去 <a href=\"mailto:infos@coglixlabs.com\">infos@coglixlabs.com</a>，寫「刪除我嘅帳戶」。我哋會刪除，然後回覆你。"),
+        ]),
+        (("What is deleted?", "會刪除乜？"), [
+            ("ul", [
+                ("Your account, your name on the report and your settings.", "你嘅帳戶、報告上面嘅名同你嘅設定。"),
+                ("Your practice history: sessions, scores, speaking and movement measures, streaks, points and league results.", "你嘅練習記錄：每次練習、分數、說話同運動數據、連續練習、積分同聯賽結果。"),
+                ("Your saved plans, goals and reports.", "你儲存嘅計劃、目標同報告。"),
+                ("The copy of your practice data on the device you delete from. Other devices signed in to the same account lose access straight away and clear their copy when they sign out.", "你用嚟刪除嗰部機上面嘅練習資料。其他登入咗同一個帳戶嘅機會即刻用唔到，登出時會清除機上嘅資料。"),
+            ]),
+        ]),
+        (("What is kept?", "會保留乜？"), [
+            ("ul", [
+                ("Payment records stay with Stripe, Apple or Google under their own rules.", "付款記錄會按 Stripe、Apple 或者 Google 自己嘅規定留喺佢哋嗰度。"),
+                ("Our hosting provider's backups of the database roll off on their own schedule. If a backup is ever restored, we delete your account again.", "我哋寄存服務商嘅資料庫備份，會按佢哋嘅時間表自動刪除。如果日後還原備份，我哋會再刪除你嘅帳戶。"),
+                ("Usage statistics, if you turned them on, are tied to a random number, not to your name or email. You can ask us to delete them too.", "如果你開咗使用統計，嗰啲統計只連住一個隨機號碼，唔連你個名或者電郵。你都可以要求我哋刪除。"),
+                ("One anonymous record that an account was deleted, with counts only and no name, email or account number.", "一條匿名記錄，只寫低刪除咗一個帳戶同數量，冇名、電郵或者帳戶號碼。"),
+            ]),
+        ]),
+        (("What happens to my subscription?", "我嘅訂閱會點？"), [
+            ("ul", [
+                ("A web subscription (paid by card) is cancelled when your account is deleted.", "網頁訂閱（用信用卡付款）會喺刪除帳戶時一併取消。"),
+                ("Deleting your account does <strong>not</strong> cancel an App Store or Google Play subscription. Cancel it yourself in the store first.", "刪除帳戶<strong>唔會</strong>取消 App Store 或者 Google Play 嘅訂閱。請先自己喺商店取消。"),
+            ]),
+            ("p", "See the <a href=\"/subscriptions\">subscriptions page</a> and the <a href=\"/privacy\">privacy policy</a> for more.", "詳情請睇<a href=\"/subscriptions\">訂閱頁</a>同<a href=\"/privacy\">私隱政策</a>。"),
+        ]),
+    ],
+}
+
+# Company details / Impressum (German DDG section 5, EU and UK trader information). Founder-given facts, 15 Nov 2026. No VAT number exists yet: none is shown.
+_ADDR = "Coglix Labs, Inc.<br>131 Continental Dr, Suite 305<br>Newark, DE 19713<br>United States of America"
+PAGES["company"] = {
+    "legal": True,
+    "title": ("Company details (Impressum) | Bonet", "公司資料 | 哥基健動"),
+    "desc": ("Who runs Bonet and bonet.care: Coglix Labs, Inc., its address, how to contact it and who represents it.",
+             "邊個營運哥基健動同 bonet.care：Coglix Labs, Inc.，地址、聯絡方法同代表人。"),
+    "h1": ("Company details", "公司資料"),
+    "answer": ("Bonet and this website are run by Coglix Labs, Inc., a Delaware corporation in the United States.",
+               "哥基健動同呢個網站由 Coglix Labs, Inc. 營運，係一間美國特拉華州註冊嘅公司。"),
+    "demo": None,
+    "sections": [
+        (("Company", "公司"), [
+            ("raw", f"<p>{_ADDR}</p>"),
+            ("p", "Legal form: corporation registered in the State of Delaware, USA.", "法律形式：喺美國特拉華州註冊嘅公司（corporation）。"),
+        ]),
+        (("Contact", "聯絡"), [
+            ("p", "Email: <a href=\"mailto:infos@coglixlabs.com\">infos@coglixlabs.com</a>. Email is the fastest way to reach us.",
+             "電郵：<a href=\"mailto:infos@coglixlabs.com\">infos@coglixlabs.com</a>。電郵係最快聯絡我哋嘅方法。"),
+        ]),
+        (("Represented by", "代表人"), [
+            ("p", "Hailey Cheng, founder.", "Hailey Cheng（鄭曦琳），創辦人。"),
+        ]),
+        (("Responsible for the content of this website", "負責呢個網站內容嘅人"), [
+            ("p", "Hailey Cheng, at the address above.", "Hailey Cheng，地址同上。"),
+        ]),
+        (("More", "更多"), [
+            ("p", "See the <a href=\"/privacy\">privacy policy</a>, the <a href=\"/terms\">terms</a> and the <a href=\"/subscriptions\">subscriptions page</a>.",
+             "請睇<a href=\"/privacy\">私隱政策</a>、<a href=\"/terms\">條款</a>同<a href=\"/subscriptions\">訂閱頁</a>。"),
+        ]),
+    ],
+}

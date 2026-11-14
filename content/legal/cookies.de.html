@@ -1,14 +1,13 @@
 <article class="legal">
 <h1 id="bonet-cookie-and-device-storage-policy">Bonet: Richtlinie zu Cookies und zum Speicher auf deinem Gerät</h1>
-<p>Zuletzt aktualisiert: 13. November 2026</p>
+<p>Zuletzt aktualisiert: 15. November 2026</p>
 <h2 id="the-short-version">Das Wichtigste in Kürze</h2>
 <ul>
 <li>Bonet speichert einige kleine Informationen auf deinem Gerät. Die meisten werden gebraucht, damit du angemeldet bleibst und sich die App deine Einstellungen merkt.</li>
 <li>Wir nutzen zwei Arten optionaler Werkzeuge: Statistiken zur Website bonet.care (Google Analytics) und Produktanalysen in der App (PostHog).</li>
-<li>Auf der Website bleibt Google Analytics im Europäischen Wirtschaftsraum, im Vereinigten Königreich und in der Schweiz <strong>aus</strong>, bis du auf „Akzeptieren“ klickst.</li>
-<li>Auf der Website ist Google Analytics anderswo an, und du kannst es jederzeit mit „Cookie-Einstellungen“ in der Fußzeile ausschalten. Wenn dein Browser Global Privacy Control oder Do Not Track sendet, beachten wir das und laden Google Analytics nicht.</li>
+<li>Auf der Website bleibt Google Analytics in jedem Land <strong>aus</strong>, bis du auf „Akzeptieren“ klickst. Du kannst deine Wahl jederzeit mit den „Cookie-Einstellungen“ in der Fußzeile ändern. Wenn dein Browser Global Privacy Control oder Do Not Track sendet, behandeln wir das als „Nein“ und laden Google Analytics nicht.</li>
 <li>Wir nutzen keine Werbe-Cookies. Wir nutzen weder Google Signals noch personalisierte Werbung. Wir verkaufen deine Daten nicht.</li>
-<li>In der App sind die Analysen an, wenn du sie nicht unter Einstellungen &gt; Datenschutz ausschaltest.</li>
+<li>In der App bleiben die Analysen <strong>aus</strong>, bis du ihnen zustimmst. Du kannst deine Wahl jederzeit unter Einstellungen &gt; Datenschutz ändern.</li>
 </ul>
 <h2 id="what-this-policy-covers">Was diese Richtlinie abdeckt</h2>
 <p>Wir sagen „Cookies“ für Cookies und für ähnliche Werkzeuge, die Informationen auf deinem Gerät speichern oder lesen, zum Beispiel den lokalen Speicher (local storage). Bonet nutzt zwei Orte:</p>
@@ -113,11 +112,10 @@
 </table>
 <p>Wir setzen auf bonet.care keine anderen Cookies.</p>
 <p><strong>Google Analytics</strong> (Mess-ID G-WMQD9MWHJN) erhält die Seitenadresse, den Browser- und Gerätetyp, einen ungefähren Standort aus der IP-Adresse und die Kennungen der Cookies. Wir senden ihm weder deinen Namen noch deine E-Mail-Adresse. Wir schalten weder Google Signals noch personalisierte Werbung ein.</p>
-<p><strong>Wie die Website entscheidet.</strong> Wenn du eine Seite öffnest, liest eine kleine Funktion bei unserem Hosting (Cloudflare Pages, unter <code>/geo</code>) das Land, das Cloudflare deiner Anfrage zuordnet, und sagt deinem Browser, welche Regel gilt. Sie protokolliert nichts und speichert nichts. Dann gilt:</p>
+<p><strong>Wie die Website entscheidet.</strong> In jedem Land gilt dieselbe Regel:</p>
 <ul>
-<li><strong>EWR (die EU-Länder, Island, Liechtenstein, Norwegen), das Vereinigte Königreich und die Schweiz:</strong> Google Analytics wird nur geladen, wenn du im Cookie-Hinweis auf <strong>Akzeptieren</strong> klickst. Du kannst die ganze Website nutzen, ohne zu wählen.</li>
-<li><strong>Anderswo:</strong> Google Analytics wird standardmäßig geladen. Du kannst es jederzeit mit den <strong>Cookie-Einstellungen</strong> in der Fußzeile jeder Seite ausschalten.</li>
-<li><strong>Global Privacy Control und Do Not Track:</strong> Wenn dein Browser eines der beiden Signale sendet, behandeln wir es als „Google Analytics nicht laden“.</li>
+<li><strong>Google Analytics wird nur geladen, wenn du im Cookie-Hinweis auf Akzeptieren klickst.</strong> „Ablehnen“ steht daneben und ist gleich groß. Du kannst die ganze Website nutzen, ohne zu wählen.</li>
+<li><strong>Global Privacy Control und Do Not Track:</strong> Wenn dein Browser eines der beiden Signale sendet, behandeln wir es als „Google Analytics nicht laden“ und zeigen den Hinweis nicht an. Du kannst die Statistiken in den Cookie-Einstellungen trotzdem einschalten.</li>
 <li><strong>Deine Wahl</strong> wird auf deinem Gerät in <code>bonet_consent</code> gespeichert, mit der Version und dem Zeitpunkt. Sie wird nicht an uns gesendet. Du kannst sie jederzeit in den Cookie-Einstellungen ändern. Wenn du Google Analytics ausschaltest, nachdem es an war, laden wir es nicht mehr, und du kannst die oben genannten Cookies in deinem Browser löschen.</li>
 </ul>
 <h2 id="appbonetcare-and-the-apps">app.bonet.care und die Apps</h2>
@@ -169,8 +167,43 @@
 <td>Unbedingt erforderlich</td>
 </tr>
 <tr>
-<td><code>bonet_analytics_choice</code></td>
-<td>Deine Wahl zu den Analysen (an oder aus)</td>
+<td><code>sync_analytics_consent</code></td>
+<td>Deine Wahl zu den Analysen, mit Version und Uhrzeit. Sie wird auch bei deinem Konto gespeichert und folgt dir so auf deine anderen Geräte</td>
+<td>Bis du sie änderst oder dein Konto löschst</td>
+<td>Coglix Labs Inc.</td>
+<td>Unbedingt erforderlich (er hält deine Wahl fest)</td>
+</tr>
+<tr>
+<td><code>sync_practice_consent</code></td>
+<td>Ob du zugestimmt hast, dass Bonet deine Übungsdaten speichert. Wird auch bei deinem Konto gespeichert</td>
+<td>Bis du sie änderst oder dein Konto löschst</td>
+<td>Coglix Labs Inc.</td>
+<td>Unbedingt erforderlich (er hält deine Wahl fest)</td>
+</tr>
+<tr>
+<td><code>sync_terms_accepted</code></td>
+<td>Dass du die aktuellen Nutzungsbedingungen akzeptiert hast, mit Version und Uhrzeit. Wird auch bei deinem Konto gespeichert</td>
+<td>Bis du dein Konto löschst</td>
+<td>Coglix Labs Inc.</td>
+<td>Unbedingt erforderlich (er hält deine Wahl fest)</td>
+</tr>
+<tr>
+<td><code>sync_camera_notice</code></td>
+<td>Dass du den Kamerahinweis vor der ersten Kameraübung gelesen hast, mit Version und Uhrzeit. Wird auch bei deinem Konto gespeichert</td>
+<td>Bis du dein Konto löschst</td>
+<td>Coglix Labs Inc.</td>
+<td>Unbedingt erforderlich (er hält deine Wahl fest)</td>
+</tr>
+<tr>
+<td><code>sync_speech_consent</code></td>
+<td>Dass du der Sprechübung auf diesem Gerät zugestimmt hast</td>
+<td>Bis du dich abmeldest</td>
+<td>Coglix Labs Inc.</td>
+<td>Unbedingt erforderlich (er hält deine Wahl fest)</td>
+</tr>
+<tr>
+<td><code>sync_renewal_consent</code></td>
+<td>Im Web: dass du den Bedingungen für die Probezeit und die monatliche Verlängerung zugestimmt hast, die neben der Schaltfläche zum Abonnieren stehen, mit Uhrzeit. Wird mit der Zahlungsanfrage gesendet</td>
 <td>Bis du ihn löschst</td>
 <td>Coglix Labs Inc.</td>
 <td>Unbedingt erforderlich (er hält deine Wahl fest)</td>
@@ -191,8 +224,8 @@
 <p>Wenn du im Web ein Abo abschließt, verlässt du bonet.care, und die Zahlungsseite von Stripe öffnet sich unter <code>checkout.stripe.com</code>. Stripe setzt dort eigene Cookies, um die Zahlung abzuwickeln und Betrug zu verhindern. Wir kontrollieren sie nicht; siehe die eigenen Cookie-Informationen von Stripe. Im App Store wickelt Apple die Zahlung nach seinen eigenen Bedingungen ab.</p>
 <h2 id="our-choices-in-the-app">Deine Wahlmöglichkeiten in der App</h2>
 <ul>
-<li>Die Analyse ist standardmäßig an. Du kannst sie jederzeit unter Einstellungen &gt; Datenschutz ausschalten. Dann sendet die App keine Ereignisse mehr.</li>
-<li>Wenn keine Wahl gespeichert ist und dein Browser Global Privacy Control oder Do Not Track sendet, bleibt die Analyse aus. Deine eigene Wahl in den Einstellungen hat Vorrang vor dem Signal.</li>
+<li>Die Analyse ist aus, bis du ihr zustimmst. Du kannst deine Wahl jederzeit unter Einstellungen &gt; Datenschutz ändern. Wenn du sie ausschaltest, sendet die App keine Ereignisse mehr.</li>
+<li>Wenn dein Browser oder Gerät Global Privacy Control oder Do Not Track sendet, bleibt die Analyse aus.</li>
 </ul>
 <h2 id="how-to-block-cookies-yourself">So blockierst du Cookies selbst</h2>
 <p>Alle Browser erlauben es, Cookies und Website-Daten zu blockieren oder zu löschen. Wenn du die als „unbedingt erforderlich“ markierten Einträge blockierst, wirst du abgemeldet, und einige Funktionen gehen nicht. Melde dich auf einem gemeinsam genutzten Computer ab, wenn du fertig bist.</p>
@@ -202,5 +235,5 @@
 <p>Wenn wir diese Richtlinie auf eine Weise ändern, die wichtig ist (zum Beispiel durch ein neues Werkzeug), ändern wir das Datum am Anfang.</p>
 <h2 id="contact">Kontakt</h2>
 <p>Coglix Labs Inc.<br />
-E-Mail: <a href="mailto:privacy@coglixlabs.com">privacy@coglixlabs.com</a></p>
+E-Mail: <a href="mailto:infos@coglixlabs.com">infos@coglixlabs.com</a></p>
 </article>

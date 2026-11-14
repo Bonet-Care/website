@@ -1,14 +1,13 @@
 <article class="legal">
 <h1 id="bonet-cookie-and-device-storage-policy">Bonet Cookie 同裝置儲存政策</h1>
-<p>最後更新：2026年11月13日</p>
+<p>最後更新：2026年11月15日</p>
 <h2 id="the-short-version">重點</h2>
 <ul>
 <li>Bonet 會喺你部機度儲存少量細小嘅資料。大部分係用嚟保持你登入，同記住你嘅設定。</li>
 <li>我哋用兩種可選嘅工具：bonet.care 網站嘅網站統計（Google Analytics），同程式入面嘅產品分析（PostHog）。</li>
-<li>喺網站上，歐洲經濟區、英國同瑞士，喺你撳「接受」之前，Google Analytics 會保持<strong>關閉</strong>。</li>
-<li>喺網站上其他地方，Google Analytics 係開啟嘅，你可以隨時用頁尾嘅「Cookie 設定」關閉佢。如果你嘅瀏覽器發出 Global Privacy Control 或者 Do Not Track，我哋會尊重，唔會載入 Google Analytics。</li>
+<li>喺網站上，每個國家都一樣，Google Analytics 會保持<strong>關閉</strong>，直至你撳「接受」。你可以隨時用頁尾嘅「Cookie 設定」更改你嘅選擇。如果你嘅瀏覽器發出 Global Privacy Control 或者 Do Not Track，我哋當佢係「唔同意」，並且唔載入 Google Analytics。</li>
 <li>我哋唔用廣告 cookie。我哋唔用 Google signals 或者廣告個人化。我哋唔賣你嘅資料。</li>
-<li>喺程式入面，分析係開啟嘅，除非你喺「設定」&gt;「私隱」關閉佢。</li>
+<li>喺程式入面，分析會保持<strong>關閉</strong>，直至你同意。你可以隨時喺「設定」&gt;「私隱」更改你嘅選擇。</li>
 </ul>
 <h2 id="what-this-policy-covers">呢份政策涵蓋啲乜</h2>
 <p>我哋講「cookie」，係指 cookie，同埋其他喺你部機度儲存或者讀取資料嘅類似工具，例如本機儲存空間。Bonet 用兩個地方：</p>
@@ -113,11 +112,10 @@
 </table>
 <p>我哋唔會喺 bonet.care 設定任何其他 cookie。</p>
 <p><strong>Google Analytics</strong>（測量 ID G-WMQD9MWHJN）會收到頁面地址、瀏覽器同裝置類型、由 IP 地址推斷嘅大約位置，同 cookie 識別碼。我哋唔會傳送你嘅姓名或者電郵畀佢。我哋唔開啟 Google signals 或者廣告個人化。</p>
-<p><strong>網站點樣決定。</strong>當你打開一個頁面，我哋主機（Cloudflare Pages，喺 <code>/geo</code>）上面一個細小嘅功能，會讀取 Cloudflare 附加喺你請求上嘅國家，並話畀你嘅瀏覽器知邊條規則適用。佢唔會記錄任何嘢，亦唔會儲存任何嘢。之後：</p>
+<p><strong>網站點樣決定。</strong>每個國家都適用同一條規則：</p>
 <ul>
-<li><strong>歐洲經濟區（歐盟國家、冰島、列支敦士登、挪威）、英國同瑞士：</strong>除非你喺 cookie 通知度撳<strong>接受</strong>，否則 Google Analytics 唔會載入。你唔使揀都可以用成個網站。</li>
-<li><strong>其他地方：</strong>Google Analytics 預設會載入。你可以隨時用每一頁頁尾嘅 <strong>Cookie 設定</strong>關閉佢。</li>
-<li><strong>Global Privacy Control 同 Do Not Track：</strong>如果你嘅瀏覽器發出其中一個訊號，我哋會當作「唔好載入 Google Analytics」。</li>
+<li><strong>除非你喺 cookie 通知度撳「接受」，否則 Google Analytics 唔會載入。</strong>「拒絕」就喺隔籬，大細一樣。你唔使揀都可以用成個網站。</li>
+<li><strong>Global Privacy Control 同 Do Not Track：</strong>如果你嘅瀏覽器發出其中一個訊號，我哋會當作「唔好載入 Google Analytics」，亦唔會顯示通知。你仍然可以喺 Cookie 設定度開啟統計。</li>
 <li><strong>你嘅選擇</strong>會連同版本同時間，儲存喺你部機嘅 <code>bonet_consent</code>。佢唔會傳送畀我哋。你可以隨時喺「Cookie 設定」更改。如果你喺 Google Analytics 開啟之後先至關閉佢，我哋會停止載入，而你可以喺瀏覽器清除上面嘅 cookie。</li>
 </ul>
 <h2 id="appbonetcare-and-the-apps">app.bonet.care 同程式</h2>
@@ -169,8 +167,43 @@
 <td>絕對必要</td>
 </tr>
 <tr>
-<td><code>bonet_analytics_choice</code></td>
-<td>你嘅分析選擇（開或者關）</td>
+<td><code>sync_analytics_consent</code></td>
+<td>你嘅分析選擇，連同版本同時間。佢亦會儲存喺你嘅帳戶，所以會跟你去其他裝置</td>
+<td>直至你更改或者刪除帳戶</td>
+<td>Coglix Labs Inc.</td>
+<td>絕對必要（佢記錄你嘅選擇）</td>
+</tr>
+<tr>
+<td><code>sync_practice_consent</code></td>
+<td>你有冇同意 Bonet 儲存你嘅練習資料。亦儲存喺你嘅帳戶</td>
+<td>直至你更改或者刪除帳戶</td>
+<td>Coglix Labs Inc.</td>
+<td>絕對必要（佢記錄你嘅選擇）</td>
+</tr>
+<tr>
+<td><code>sync_terms_accepted</code></td>
+<td>你已接受目前嘅服務條款，連同版本同時間。亦儲存喺你嘅帳戶</td>
+<td>直至你刪除帳戶</td>
+<td>Coglix Labs Inc.</td>
+<td>絕對必要（佢記錄你嘅選擇）</td>
+</tr>
+<tr>
+<td><code>sync_camera_notice</code></td>
+<td>你喺第一次鏡頭運動之前已睇過鏡頭通知，連同版本同時間。亦儲存喺你嘅帳戶</td>
+<td>直至你刪除帳戶</td>
+<td>Coglix Labs Inc.</td>
+<td>絕對必要（佢記錄你嘅選擇）</td>
+</tr>
+<tr>
+<td><code>sync_speech_consent</code></td>
+<td>你同意喺呢部裝置做講嘢練習</td>
+<td>直至你登出</td>
+<td>Coglix Labs Inc.</td>
+<td>絕對必要（佢記錄你嘅選擇）</td>
+</tr>
+<tr>
+<td><code>sync_renewal_consent</code></td>
+<td>喺網頁版：你同意訂閱按鈕旁邊顯示嘅試用同每月續訂條款，連同時間。會隨付款請求一齊送出</td>
 <td>直至你清除</td>
 <td>Coglix Labs Inc.</td>
 <td>絕對必要（佢記錄你嘅選擇）</td>
@@ -191,8 +224,8 @@
 <p>當你喺網頁訂閱，你會離開 bonet.care，而 Stripe 嘅結帳頁面會喺 <code>checkout.stripe.com</code> 打開。Stripe 會喺嗰度設定佢自己嘅 cookie，用嚟處理付款同防止欺詐。我哋控制唔到佢哋；請睇 Stripe 自己嘅 cookie 資料。喺 App Store，Apple 按佢自己嘅條款處理付款。</p>
 <h2 id="our-choices-in-the-app">你喺程式入面嘅選擇</h2>
 <ul>
-<li>分析預設係開啟嘅。你可以隨時喺「設定」&gt;「私隱」關閉佢。關閉之後，個程式會停止傳送事件。</li>
-<li>如果冇已儲存嘅選擇，而你嘅瀏覽器發出 Global Privacy Control 或者 Do Not Track，分析會保持關閉。你喺「設定」入面自己嘅選擇，優先於訊號。</li>
+<li>分析喺你同意之前係關閉嘅。你可以隨時喺「設定」&gt;「私隱」更改你嘅選擇。關閉之後，個程式會停止傳送事件。</li>
+<li>如果你嘅瀏覽器或者裝置發出 Global Privacy Control 或者 Do Not Track，分析會保持關閉。</li>
 </ul>
 <h2 id="how-to-block-cookies-yourself">點樣自己封鎖 cookie</h2>
 <p>所有瀏覽器都容許你封鎖或者刪除 cookie 同網站資料。如果你封鎖標示為「絕對必要」嘅項目，你會被登出，而且有啲功能會用唔到。喺共用嘅電腦，用完請登出。</p>
@@ -202,5 +235,5 @@
 <p>如果我哋對呢份政策作出重要嘅改變（例如新增一個工具），我哋會更改頂部嘅日期。</p>
 <h2 id="contact">聯絡我哋</h2>
 <p>Coglix Labs Inc.<br />
-電郵：<a href="mailto:privacy@coglixlabs.com">privacy@coglixlabs.com</a></p>
+電郵：<a href="mailto:infos@coglixlabs.com">infos@coglixlabs.com</a></p>
 </article>
