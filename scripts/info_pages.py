@@ -346,3 +346,36 @@ PAGES["accessibility"] = {
         ]),
     ],
 }
+
+# Open-source licences for what the website itself ships. The app keeps its own list. No "powered by" wording: the authors do not endorse Bonet.
+from licence_texts import HTML as _LICENCE_HTML  # noqa: E402
+PAGES["licenses"] = {
+    "legal": True,
+    "title": ("Open-source licences for the Bonet website | Bonet", "哥基健動網站嘅開源授權 | 哥基健動"),
+    "desc": ("The open-source software, fonts and icons used on bonet.care, and their licence notices.",
+             "bonet.care 用到嘅開源軟件、字型同圖示，同埋佢哋嘅授權聲明。"),
+    "h1": ("Open-source licences", "開源授權"),
+    "answer": ("This website uses some open-source software, a font and icons made by others. Each one stays under its own licence. Their authors do not endorse or sponsor Bonet. The Bonet app lists what it uses separately.",
+               "呢個網站用咗其他人整嘅開源軟件、一款字型同一啲圖示。每一樣都跟返佢自己嘅授權。佢哋嘅作者冇為哥基健動背書或者贊助。哥基健動 app 會另外列出 app 用到嘅嘢。"),
+    "demo": None,
+    "sections": [
+        (("What does this website use?", "呢個網站用咗乜？"), [
+            ("ul", [
+                ("Stageshow kit, for the animated demos: MIT License.", "Stageshow kit，用嚟做動畫示範：MIT 授權。"),
+                ("React, React DOM and Scheduler, in the demo script: MIT License.", "React、React DOM 同 Scheduler，喺示範程式入面：MIT 授權。"),
+                ("Lucide icons (lucide-react), in the demos: ISC License. Some come from Feather: MIT License.", "Lucide 圖示（lucide-react），喺示範入面：ISC 授權。部分來自 Feather：MIT 授權。"),
+                ("Fluent Emoji 3D icons by Microsoft: MIT License.", "Microsoft 嘅 Fluent Emoji 立體圖示：MIT 授權。"),
+                ("Nunito font: SIL Open Font License 1.1.", "Nunito 字型：SIL Open Font License 1.1。"),
+            ]),
+            ("p", "Everything else on this site, including the text, the layout, the corgi mascot and the app screens, belongs to Coglix Labs Inc.",
+             "網站上其他嘢，包括文字、版面、柯基吉祥物同 app 畫面，都屬於 Coglix Labs Inc.。"),
+        ]),
+        (("Licence texts", "授權原文"), [
+            ("p", "The notices below are shown in English, the language they were written in.", "以下授權聲明用返英文原文。"),
+            ("raw", _LICENCE_HTML),
+        ]),
+        (("Questions", "有問題？"), [
+            ("p", "Email <a href=\"mailto:infos@coglixlabs.com\">infos@coglixlabs.com</a>.", "請電郵 <a href=\"mailto:infos@coglixlabs.com\">infos@coglixlabs.com</a>。"),
+        ]),
+    ],
+}

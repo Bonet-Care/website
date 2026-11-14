@@ -1016,5 +1016,20 @@
  "What have we checked?": "Qu'avons-nous vérifié ?",
  "What have we not tested yet?": "Que n'avons-nous pas encore testé ?",
  "What helps in the app?": "Qu'est-ce qui aide dans l'application ?",
- "What helps on this website?": "Qu'est-ce qui aide sur ce site web ?"
+ "What helps on this website?": "Qu'est-ce qui aide sur ce site web ?",
+ "Email <a href=\"mailto:infos@coglixlabs.com\">infos@coglixlabs.com</a>.": "Écrivez-nous à <a href=\"mailto:infos@coglixlabs.com\">infos@coglixlabs.com</a>.",
+ "Everything else on this site, including the text, the layout, the corgi mascot and the app screens, belongs to Coglix Labs Inc.": "Tout le reste de ce site, y compris les textes, la mise en page, la mascotte corgi et les écrans de l'application, appartient à Coglix Labs Inc.",
+ "Fluent Emoji 3D icons by Microsoft: MIT License.": "Icônes 3D Fluent Emoji de Microsoft : licence MIT.",
+ "Licence texts": "Textes des licences",
+ "Lucide icons (lucide-react), in the demos: ISC License. Some come from Feather: MIT License.": "Icônes Lucide (lucide-react), dans les démonstrations : licence ISC. Certaines viennent de Feather : licence MIT.",
+ "Nunito font: SIL Open Font License 1.1.": "Police Nunito : SIL Open Font License 1.1.",
+ "Open-source licences": "Licences open source",
+ "Open-source licences for the Bonet website | Bonet": "Licences open source du site Bonet | Bonet",
+ "Questions": "Questions",
+ "React, React DOM and Scheduler, in the demo script: MIT License.": "React, React DOM et Scheduler, dans le script des démonstrations : licence MIT.",
+ "Stageshow kit, for the animated demos: MIT License.": "Stageshow kit, pour les démonstrations animées : licence MIT.",
+ "The notices below are shown in English, the language they were written in.": "Les mentions ci-dessous sont affichées en anglais, la langue dans laquelle elles ont été rédigées.",
+ "The open-source software, fonts and icons used on bonet.care, and their licence notices.": "Les logiciels open source, polices et icônes utilisés sur bonet.care, et leurs mentions de licence.",
+ "This website uses some open-source software, a font and icons made by others. Each one stays under its own licence. Their authors do not endorse or sponsor Bonet. The Bonet app lists what it uses separately.": "Ce site utilise des logiciels open source, une police et des icônes créés par d'autres. Chacun reste soumis à sa propre licence. Leurs auteurs ne cautionnent ni ne parrainent Bonet. L'application Bonet indique séparément ce qu'elle utilise.",
+ "What does this website use?": "Qu'utilise ce site ?"
 }

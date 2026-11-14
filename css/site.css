@@ -850,3 +850,4 @@ main { overflow-x: clip; }
 .soon-badge b { display: block; font-size: 1.05rem; font-weight: 900; }
 /* small phones: keep the brand name whole; long "Start free" labels (fr, de, es) wrap onto two lines instead of pushing the brand */
 @media (max-width: 30rem) { .hdr .brand { flex-shrink: 0; } .hdr .btn--sm { flex-shrink: 1; min-width: 0; white-space: normal; line-height: 1.1; max-width: 8.5rem; padding-block: .25rem; } }
+.lic { white-space: pre-wrap; overflow-wrap: anywhere; font-size: .85rem; line-height: 1.45; background: var(--blue-wash); border: 2px solid var(--line); border-radius: 12px; padding: 1rem; margin: .5rem 0 1.5rem; }

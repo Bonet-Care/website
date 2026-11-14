@@ -14,10 +14,10 @@ Rules for this copy: Bonet is a practice tool. Never say it treats, restores or 
 import json
 import re
 import parts
-from parts import APP, FACTS, INFO_PAGES, LANG_COUNT, LANGS, MAIL, NEED_PAGES, NEED_UI, NUM_WORD, NUM_YUE, PRICES, SITE, VS_PAGES, mk, page_urls, pre, price_text, u, vs_slug
+from parts import APP, FACTS, INFO_PAGES, LEGAL_EXTRA, LANG_COUNT, LANGS, MAIL, NEED_PAGES, NEED_UI, NUM_WORD, NUM_YUE, PRICES, SITE, VS_PAGES, mk, page_urls, pre, price_text, u, vs_slug
 import home
 
-LOCAL_SITEMAP = [(s, "0.8") for s in NEED_PAGES + INFO_PAGES] + [(vs_slug(s), "0.5") for s in VS_PAGES]
+LOCAL_SITEMAP = [(s, "0.3") for s in LEGAL_EXTRA] + [(s, "0.8") for s in NEED_PAGES + INFO_PAGES] + [(vs_slug(s), "0.5") for s in VS_PAGES]
 
 # Search titles and descriptions for pages whose body is a fragment: slug -> ((title en, yue), (description en, yue)).
 # build-site.py uses these instead of content/pages/meta.<lang>.json and content/legal/meta.<lang>.json for these four pages.
@@ -407,6 +407,8 @@ PAGES.update({k: dict(v, sections=[(q, [COST if b == "COST" else b for b in bloc
 
 
 def _block(b, T, lang):
+    if b[0] == "raw":  # untranslated HTML, e.g. licence texts that must stay in their original English
+        return b[1]
     if b[0] == "p":
         return f"<p>{_fill(T(b[1], b[2]), lang)}</p>"
     return f"<{b[0]}>" + "".join(f"<li>{_fill(T(en, yue), lang)}</li>" for en, yue in b[1]) + f"</{b[0]}>"
@@ -435,7 +437,7 @@ def need_page(ctx, slug, lang):
     T = mk(lang)
     p = PAGES[slug]
     tx = lambda k: _fill(T(*p[k]), lang)
-    start = f'<p><a class="btn btn--lg" href="{APP}/">{u("start", lang)}</a></p>'
+    start = "" if p.get("legal") else f'<p><a class="btn btn--lg" href="{APP}/">{u("start", lang)}</a></p>'
     demo_name, demo_after = p["demo"] or (None, -1)
     fig = "" if not demo_name else (f'<figure><div class="card-demo" data-ss-fill><div class="demo" data-demo="{demo_name}"{" data-pq=" + chr(34) + "1" + chr(34) if demo_name == "hero" and "practice_quality" not in parts.FLAGS_OFF else ""}'
            f' role="img" aria-label="{parts.esc(T(*DEMO_ALT[demo_name]))}"></div></div></figure>')
@@ -449,7 +451,7 @@ def need_page(ctx, slug, lang):
             body += fig + "\n"
         faq.append({"@type": "Question", "name": q, "acceptedAnswer": {"@type": "Answer", "text": _plain(inner)}})
     body += f'{start}\n{_more(T, lang, slug)}\n<p class="note">{T(*DISCLAIMER)}</p>'
-    ld = [{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": faq},
+    ld = ([] if p.get("legal") else [{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": faq}]) + [
           _crumbs(lang, [("Bonet", "/"), (u(NEED_UI[slug], lang), f"/{slug}")])]
     _write(ctx, lang, slug, tx("title"), tx("desc"), body, ld, demos=bool(demo_name))
 
@@ -628,7 +630,7 @@ Every page above exists in each language under its prefix: {", ".join(d["path"] 
 
 def build(ctx):
     for lang in LANGS:
-        for slug in NEED_PAGES + INFO_PAGES:
+        for slug in NEED_PAGES + INFO_PAGES + LEGAL_EXTRA:
             need_page(ctx, slug, lang)
         for slug in VS_PAGES:
             vs_page(ctx, slug, lang)

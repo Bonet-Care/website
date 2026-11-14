@@ -1460,6 +1460,126 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://bonet.care/licenses</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://bonet.care/licenses"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://bonet.care/zh-hant/licenses"/>
+    <xhtml:link rel="alternate" hreflang="yue-Hant-HK" href="https://bonet.care/yue/licenses"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://bonet.care/zh-hans/licenses"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://bonet.care/ja/licenses"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://bonet.care/es/licenses"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://bonet.care/de/licenses"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://bonet.care/fr/licenses"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://bonet.care/licenses"/>
+    <lastmod>2026-11-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://bonet.care/zh-hant/licenses</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://bonet.care/licenses"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://bonet.care/zh-hant/licenses"/>
+    <xhtml:link rel="alternate" hreflang="yue-Hant-HK" href="https://bonet.care/yue/licenses"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://bonet.care/zh-hans/licenses"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://bonet.care/ja/licenses"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://bonet.care/es/licenses"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://bonet.care/de/licenses"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://bonet.care/fr/licenses"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://bonet.care/licenses"/>
+    <lastmod>2026-11-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://bonet.care/yue/licenses</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://bonet.care/licenses"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://bonet.care/zh-hant/licenses"/>
+    <xhtml:link rel="alternate" hreflang="yue-Hant-HK" href="https://bonet.care/yue/licenses"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://bonet.care/zh-hans/licenses"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://bonet.care/ja/licenses"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://bonet.care/es/licenses"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://bonet.care/de/licenses"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://bonet.care/fr/licenses"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://bonet.care/licenses"/>
+    <lastmod>2026-11-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://bonet.care/zh-hans/licenses</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://bonet.care/licenses"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://bonet.care/zh-hant/licenses"/>
+    <xhtml:link rel="alternate" hreflang="yue-Hant-HK" href="https://bonet.care/yue/licenses"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://bonet.care/zh-hans/licenses"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://bonet.care/ja/licenses"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://bonet.care/es/licenses"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://bonet.care/de/licenses"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://bonet.care/fr/licenses"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://bonet.care/licenses"/>
+    <lastmod>2026-11-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://bonet.care/ja/licenses</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://bonet.care/licenses"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://bonet.care/zh-hant/licenses"/>
+    <xhtml:link rel="alternate" hreflang="yue-Hant-HK" href="https://bonet.care/yue/licenses"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://bonet.care/zh-hans/licenses"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://bonet.care/ja/licenses"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://bonet.care/es/licenses"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://bonet.care/de/licenses"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://bonet.care/fr/licenses"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://bonet.care/licenses"/>
+    <lastmod>2026-11-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://bonet.care/es/licenses</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://bonet.care/licenses"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://bonet.care/zh-hant/licenses"/>
+    <xhtml:link rel="alternate" hreflang="yue-Hant-HK" href="https://bonet.care/yue/licenses"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://bonet.care/zh-hans/licenses"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://bonet.care/ja/licenses"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://bonet.care/es/licenses"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://bonet.care/de/licenses"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://bonet.care/fr/licenses"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://bonet.care/licenses"/>
+    <lastmod>2026-11-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://bonet.care/de/licenses</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://bonet.care/licenses"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://bonet.care/zh-hant/licenses"/>
+    <xhtml:link rel="alternate" hreflang="yue-Hant-HK" href="https://bonet.care/yue/licenses"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://bonet.care/zh-hans/licenses"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://bonet.care/ja/licenses"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://bonet.care/es/licenses"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://bonet.care/de/licenses"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://bonet.care/fr/licenses"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://bonet.care/licenses"/>
+    <lastmod>2026-11-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://bonet.care/fr/licenses</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://bonet.care/licenses"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://bonet.care/zh-hant/licenses"/>
+    <xhtml:link rel="alternate" hreflang="yue-Hant-HK" href="https://bonet.care/yue/licenses"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://bonet.care/zh-hans/licenses"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://bonet.care/ja/licenses"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://bonet.care/es/licenses"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://bonet.care/de/licenses"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://bonet.care/fr/licenses"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://bonet.care/licenses"/>
+    <lastmod>2026-11-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
     <loc>https://bonet.care/stroke-home-practice</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://bonet.care/stroke-home-practice"/>
     <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://bonet.care/zh-hant/stroke-home-practice"/>

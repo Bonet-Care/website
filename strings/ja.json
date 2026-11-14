@@ -1076,5 +1076,20 @@
  "What have we checked?": "何を確認しましたか。",
  "What have we not tested yet?": "まだ何を試していませんか。",
  "What helps in the app?": "アプリではどんな助けがありますか。",
- "What helps on this website?": "このウェブサイトではどんな助けがありますか。"
+ "What helps on this website?": "このウェブサイトではどんな助けがありますか。",
+ "Email <a href=\"mailto:infos@coglixlabs.com\">infos@coglixlabs.com</a>.": "<a href=\"mailto:infos@coglixlabs.com\">infos@coglixlabs.com</a> までメールでご連絡ください。",
+ "Everything else on this site, including the text, the layout, the corgi mascot and the app screens, belongs to Coglix Labs Inc.": "文章、レイアウト、コーギーのマスコット、アプリ画面など、このサイトのそれ以外のものはすべて Coglix Labs Inc. に帰属します。",
+ "Fluent Emoji 3D icons by Microsoft: MIT License.": "Microsoft の Fluent Emoji 3D アイコン：MIT License。",
+ "Licence texts": "ライセンス本文",
+ "Lucide icons (lucide-react), in the demos: ISC License. Some come from Feather: MIT License.": "Lucide アイコン（lucide-react）、デモで使用：ISC License。一部は Feather 由来：MIT License。",
+ "Nunito font: SIL Open Font License 1.1.": "Nunito フォント：SIL Open Font License 1.1。",
+ "Open-source licences": "オープンソースライセンス",
+ "Open-source licences for the Bonet website | Bonet": "Bonet ウェブサイトのオープンソースライセンス | Bonet",
+ "Questions": "お問い合わせ",
+ "React, React DOM and Scheduler, in the demo script: MIT License.": "React、React DOM、Scheduler、デモのスクリプトで使用：MIT License。",
+ "Stageshow kit, for the animated demos: MIT License.": "Stageshow kit、アニメーションのデモで使用：MIT License。",
+ "The notices below are shown in English, the language they were written in.": "以下のライセンス表示は、原文の英語のまま掲載しています。",
+ "The open-source software, fonts and icons used on bonet.care, and their licence notices.": "bonet.care で使っているオープンソースのソフトウェア、フォント、アイコンと、そのライセンス表示。",
+ "This website uses some open-source software, a font and icons made by others. Each one stays under its own licence. Their authors do not endorse or sponsor Bonet. The Bonet app lists what it uses separately.": "このサイトでは、ほかの人が作ったオープンソースのソフトウェア、フォント、アイコンを使っています。それぞれ独自のライセンスに従います。作者が Bonet を推薦または後援しているわけではありません。Bonet アプリで使っているものは別に掲載します。",
+ "What does this website use?": "このサイトで使っているもの"
 }

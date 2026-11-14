@@ -1076,5 +1076,20 @@
  "What have we checked?": "我們檢查了什麼？",
  "What have we not tested yet?": "我們還沒測試什麼？",
  "What helps in the app?": "應用程式裡有哪些協助？",
- "What helps on this website?": "本網站有哪些協助？"
+ "What helps on this website?": "本網站有哪些協助？",
+ "Email <a href=\"mailto:infos@coglixlabs.com\">infos@coglixlabs.com</a>.": "請電郵 <a href=\"mailto:infos@coglixlabs.com\">infos@coglixlabs.com</a>。",
+ "Everything else on this site, including the text, the layout, the corgi mascot and the app screens, belongs to Coglix Labs Inc.": "網站上其他內容，包括文字、版面、柯基吉祥物和 app 畫面，都屬於 Coglix Labs Inc.。",
+ "Fluent Emoji 3D icons by Microsoft: MIT License.": "Microsoft 的 Fluent Emoji 立體圖示：MIT 授權。",
+ "Licence texts": "授權原文",
+ "Lucide icons (lucide-react), in the demos: ISC License. Some come from Feather: MIT License.": "Lucide 圖示（lucide-react），用於示範：ISC 授權。部分來自 Feather：MIT 授權。",
+ "Nunito font: SIL Open Font License 1.1.": "Nunito 字型：SIL Open Font License 1.1。",
+ "Open-source licences": "開源授權",
+ "Open-source licences for the Bonet website | Bonet": "哥基健動網站的開源授權 | 哥基健動",
+ "Questions": "有問題？",
+ "React, React DOM and Scheduler, in the demo script: MIT License.": "React、React DOM 和 Scheduler，用於示範程式：MIT 授權。",
+ "Stageshow kit, for the animated demos: MIT License.": "Stageshow kit，用於動畫示範：MIT 授權。",
+ "The notices below are shown in English, the language they were written in.": "以下授權聲明以英文原文顯示。",
+ "The open-source software, fonts and icons used on bonet.care, and their licence notices.": "bonet.care 使用的開源軟體、字型和圖示，以及它們的授權聲明。",
+ "This website uses some open-source software, a font and icons made by others. Each one stays under its own licence. Their authors do not endorse or sponsor Bonet. The Bonet app lists what it uses separately.": "本網站使用了他人製作的開源軟體、一款字型和一些圖示。每一項都遵循其各自的授權。它們的作者並未為哥基健動背書或贊助。哥基健動 app 會另外列出 app 使用的項目。",
+ "What does this website use?": "本網站使用了什麼？"
 }

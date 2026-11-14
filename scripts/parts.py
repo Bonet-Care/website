@@ -47,6 +47,8 @@ LOCAL_PAGES += NEED_PAGES + tuple(vs_slug(s) for s in VS_PAGES)
 # Fact pages (scripts/info_pages.py, built by seo_pages.py like the need pages): plain facts AI answers and search engines can quote.
 INFO_PAGES = ("about", "camera-rep-counting", "pricing", "home-exercise-tracking", "movement-speech-brain-games", "alzheimers-and-dementia", "accessibility")
 LOCAL_PAGES += INFO_PAGES
+LEGAL_EXTRA = ("licenses",)  # built like a fact page, linked from the legal footer row only
+LOCAL_PAGES += LEGAL_EXTRA
 # The practice library (scripts/practice_pages.py): the hub, one page per body area, exercise, kind of speaking practice and brain game.
 _P = json.loads((ROOT / "content" / "practice.json").read_text())
 PRACTICE_PAGES = (("practice",) + tuple(f"practice/area/{a['slug']}" for a in _P["areas"]) + tuple(f"practice/move/{e['slug']}" for e in _P["exercises"])
@@ -152,6 +154,7 @@ UI = {
     "f_brain": {"en": "Brain games for seniors", "zh-hant": "長者腦力遊戲", "yue": "長者腦力遊戲", "zh-hans": "长者脑力游戏", "ja": "シニア向け脳トレゲーム", "es": "Juegos mentales para mayores", "de": "Denkspiele für Senioren", "fr": "Jeux de réflexion pour seniors"},
     "f_library": {"en": "Practice library", "zh-hant": "練習資料庫", "yue": "練習庫", "zh-hans": "练习库", "ja": "練習ライブラリ", "es": "Biblioteca de práctica", "de": "Übungsbibliothek", "fr": "Bibliothèque de pratique"},
     "hello": {"en": "Bonet says hello", "zh-hant": "柯基向你打招呼", "yue": "朱古力同你打招呼", "zh-hans": "柯基向你打招呼", "ja": "コーギーがあいさつします", "es": "Bonet te saluda", "de": "Bonet sagt Hallo", "fr": "Bonet vous dit bonjour"},
+    "f_licenses": {"en": "Open-source licences", "zh-hant": "開源授權", "yue": "開源授權", "zh-hans": "开源许可", "ja": "オープンソースライセンス", "es": "Licencias de código abierto", "de": "Open-Source-Lizenzen", "fr": "Licences open source"},
     "f_access": {"en": "Accessibility", "zh-hant": "無障礙聲明", "yue": "無障礙聲明", "zh-hans": "无障碍声明", "ja": "アクセシビリティ", "es": "Accesibilidad", "de": "Barrierefreiheit", "fr": "Accessibilité"},
     "f_about": {"en": "About Bonet", "zh-hant": "關於哥基健動", "yue": "關於哥基健動", "zh-hans": "关于哥基健动", "ja": "Bonetについて", "es": "Acerca de Bonet", "de": "Über Bonet", "fr": "À propos de Bonet"},
     "f_camera": {"en": "Camera rep counting", "zh-hant": "鏡頭計算次數", "yue": "鏡頭數次數", "zh-hans": "镜头计算次数", "ja": "カメラで回数を数える", "es": "Conteo de repeticiones con la cámara", "de": "Wiederholungen zählen mit der Kamera", "fr": "Comptage des répétitions par la caméra"},
@@ -162,7 +165,8 @@ UI = {
 }
 u = lambda k, lang: UI[k][lang]
 NEED_UI = dict(zip(NEED_PAGES, ("f_stroke", "f_seniors", "f_speech", "f_family", "f_rehab", "f_hep", "f_brain")))  # link label of each need page
-NEED_UI.update(zip(INFO_PAGES, ("f_about", "f_camera", "f_pricing", "f_tracking", "f_combined", "f_dementia", "f_access")))  # and of each fact page
+NEED_UI.update(zip(INFO_PAGES, ("f_about", "f_camera", "f_pricing", "f_tracking", "f_combined", "f_dementia", "f_access")))
+NEED_UI["licenses"] = "f_licenses"  # and of each fact page
 
 
 def head(lang, title, desc, canon, og, extra="", alt=None, app_css=True):
@@ -241,7 +245,7 @@ def footer(lang, urls=None, inplace=None, demos=False):
     pre = globals()["pre"](lang)
     # every page in the footer exists under each language path; the blog is English plus written Chinese
     legal = [("/privacy", "f_privacy"), ("/terms", "f_terms"), ("/subscriptions", "f_subs"), ("/cookies", "f_cookies"),
-             ("/consumer-health-data", "f_chd"), ("/safety", "f_safety"), ("/ai-and-automatic-measures", "f_ai"), ("/faq", "f_faq")]
+             ("/consumer-health-data", "f_chd"), ("/safety", "f_safety"), ("/ai-and-automatic-measures", "f_ai"), ("/licenses", "f_licenses"), ("/faq", "f_faq")]
     nav = "".join(f'<a href="{pre}{h}">{t(k)}</a>' for h, k in legal)
     nav += f'<a href="mailto:{MAIL}">{t("f_contact")}</a><button type="button" class="linkbtn" data-consent-open>{t("f_cset")}</button>'
     blog = "/zh-hant/blog/" if lang == "zh-hant" else "/blog/"
