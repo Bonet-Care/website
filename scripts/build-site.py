@@ -42,7 +42,11 @@ _flags = json.loads((ROOT / "content" / "flags.json").read_text())
 homemod.VIDEO_ON = bool(_flags.get("new_demo_video", False)) or ("--with" in sys.argv and "new_demo_video" in sys.argv[sys.argv.index("--with") + 1].split(","))
 
 LASTMOD = "2026-11-13"
-write = lambda rel, text: ((ROOT / rel).parent.mkdir(parents=True, exist_ok=True), (ROOT / rel).write_text(text))
+# Cloudflare Pages serves /science.html as a 308 to /science, so links, canonicals, hreflang and the
+# sitemap use the extensionless address that Google lands on.
+_HTML_URL = re.compile(r'((?:https://bonet\.care)?/(?!demos/|content/)(?:[a-z0-9-]+/)*(?!index\.|404\.)[a-z0-9-]+)\.html(?=["#?<\s)\]])')
+clean_urls = lambda text: _HTML_URL.sub(r"\1", text)
+write = lambda rel, text: ((ROOT / rel).parent.mkdir(parents=True, exist_ok=True), (ROOT / rel).write_text(clean_urls(text) if str(rel).endswith((".html", ".xml", ".txt")) else text))
 out_path = lambda lang, page: f"{pre(lang).strip('/')}/{page}".lstrip("/")  # "privacy.html" -> "ja/privacy.html"
 
 # ---------------------------------------------------------------- inner pages: content/<slug>.html, translated in content/<slug>.<lang>.html
