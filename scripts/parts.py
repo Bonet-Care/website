@@ -45,7 +45,7 @@ VS_PAGES = {"constant-therapy": "Constant Therapy", "tactus-therapy": "Tactus Th
 vs_slug = lambda s: f"compare/bonet-vs-{s}"
 LOCAL_PAGES += NEED_PAGES + tuple(vs_slug(s) for s in VS_PAGES)
 # Fact pages (scripts/info_pages.py, built by seo_pages.py like the need pages): plain facts AI answers and search engines can quote.
-INFO_PAGES = ("about", "camera-rep-counting", "pricing", "home-exercise-tracking", "movement-speech-brain-games")
+INFO_PAGES = ("about", "camera-rep-counting", "pricing", "home-exercise-tracking", "movement-speech-brain-games", "alzheimers-and-dementia")
 LOCAL_PAGES += INFO_PAGES
 # The practice library (scripts/practice_pages.py): the hub, one page per body area, exercise, kind of speaking practice and brain game.
 _P = json.loads((ROOT / "content" / "practice.json").read_text())
@@ -157,10 +157,11 @@ UI = {
     "f_pricing": {"en": "Pricing", "zh-hant": "價格", "yue": "價錢", "zh-hans": "价格", "ja": "料金", "es": "Precios", "de": "Preise", "fr": "Tarifs"},
     "f_tracking": {"en": "Home exercise tracking", "zh-hant": "居家練習紀錄", "yue": "居家練習紀錄", "zh-hans": "居家练习记录", "ja": "自宅練習の記録", "es": "Registro de la práctica en casa", "de": "Übungen zu Hause erfassen", "fr": "Suivi de la pratique à domicile"},
     "f_combined": {"en": "Movement, speech and brain games", "zh-hant": "運動、說話與腦力遊戲", "yue": "運動、說話同腦力遊戲", "zh-hans": "运动、说话与脑力游戏", "ja": "運動・発話・脳トレ", "es": "Movimiento, habla y juegos mentales", "de": "Bewegung, Sprechen und Denkspiele", "fr": "Mouvement, parole et jeux de réflexion"},
+    "f_dementia": {"en": "Alzheimer's and dementia: for carers", "zh-hant": "阿茲海默症與失智症：給照顧者", "yue": "腦退化症：俾照顧者", "zh-hans": "阿尔茨海默病与认知症：给照顾者", "ja": "アルツハイマー病・認知症：介護する方へ", "es": "Alzhéimer y demencia: para cuidadores", "de": "Alzheimer und Demenz: für Angehörige", "fr": "Alzheimer et démence : pour les aidants"},
 }
 u = lambda k, lang: UI[k][lang]
 NEED_UI = dict(zip(NEED_PAGES, ("f_stroke", "f_seniors", "f_speech", "f_family", "f_rehab", "f_hep", "f_brain")))  # link label of each need page
-NEED_UI.update(zip(INFO_PAGES, ("f_about", "f_camera", "f_pricing", "f_tracking", "f_combined")))  # and of each fact page
+NEED_UI.update(zip(INFO_PAGES, ("f_about", "f_camera", "f_pricing", "f_tracking", "f_combined", "f_dementia")))  # and of each fact page
 
 
 def head(lang, title, desc, canon, og, extra="", alt=None, app_css=True):

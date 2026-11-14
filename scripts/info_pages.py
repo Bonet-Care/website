@@ -250,6 +250,45 @@ PAGES["movement-speech-brain-games"] = {
     ],
 }
 
+# Carers searching for an Alzheimer's or dementia app. Bonet is not one in the medical sense: say so first, then only what is true.
+PAGES["alzheimers-and-dementia"] = {
+    "title": ("Alzheimer's and dementia apps: what Bonet is and is not, for carers | Bonet", "腦退化症 app：俾照顧者睇，哥基健動係乜、唔係乜 | 哥基健動"),
+    "desc": ("For carers looking for an Alzheimer's or dementia app: Bonet does not test memory or treat dementia. It is a simple daily practice routine you can do together. Not a medical device.",
+             "俾搵腦退化症 app 嘅照顧者：哥基健動唔會測試記憶，亦唔會治療腦退化症。佢係一個可以一齊做嘅簡單每日練習。唔係醫療器材。"),
+    "h1": ("Looking for an Alzheimer's or dementia app? What Bonet is and is not", "搵緊腦退化症 app？哥基健動係乜、唔係乜"),
+    "answer": ("Bonet is not an Alzheimer's or dementia app in the medical sense. It does not test memory, and it does not diagnose, slow, delay or treat Alzheimer's disease or any other dementia. A family member or carer can set it up as a simple daily routine to do together: gentle movement exercises, speaking practice and short brain games, with a calm Simple mode. Ask the person's doctor before starting.",
+               "哥基健動唔係醫療上嘅腦退化症 app。佢唔會測試記憶，亦唔會診斷、減慢、延遲或者治療阿茲海默症或者任何腦退化症。家人或者照顧者可以將佢設定成一個一齊做嘅簡單每日練習：溫和嘅運動、說話練習同簡短腦力遊戲，仲有一個清靜嘅簡單模式。開始之前，請先問對方嘅醫生。"),
+    "demo": None,
+    "sections": [
+        (("Can Bonet help with Alzheimer's or dementia?", "哥基健動對阿茲海默症或者腦退化症有冇幫助？"), [
+            ("p", "No. Bonet does not diagnose, slow, delay, treat or prevent Alzheimer's disease or any other dementia, and it is not a memory test. No study has looked at Bonet in people with dementia. If you are worried about changes in memory, talk to a doctor.",
+             "冇。哥基健動唔會診斷、減慢、延遲、治療或者預防阿茲海默症或者任何腦退化症，亦唔係記憶測試。未有任何研究喺腦退化症患者身上試過哥基健動。如果你擔心記憶有變化，請同醫生傾。"),
+        ]),
+        (("What could a carer use Bonet for?", "照顧者可以用哥基健動做啲乜？"), [
+            ("ul", [
+                ("A short daily routine of gentle movement, speaking and brain games that you do together.", "一個簡短嘅每日練習，有溫和嘅運動、說話同腦力遊戲，你哋一齊做。"),
+                ("Simple mode: one big Start button instead of a busy screen.", "簡單模式：一個大大嘅開始掣，取代密密麻麻嘅畫面。"),
+                ("Brain games on Easy", "腦力遊戲簡單級"),
+                ("Eight languages, so practice can be in the language the person knows best.", "八種語言，可以用對方最熟悉嘅語言練習。"),
+            ]),
+            ("p", "Keep sessions short and stop if the person is tired, upset or confused. You know the person best.", "每次練習時間要短，如果對方攰、唔開心或者混亂，就停。你最了解對方。"),
+        ]),
+        _START,
+        (("What should I watch for as a carer?", "作為照顧者，我要留意啲乜？"), [
+            ("p", "You know the person best. Stop the session if they seem unwell, in pain or dizzy, and call your local emergency number for sudden face drooping, weakness or trouble speaking. Bonet does not watch over anyone and cannot call for help.",
+             "你最了解對方。如果佢睇落唔舒服、痛或者頭暈，就停止練習；如果突然面部下垂、無力或者講嘢有困難，請打當地緊急電話。哥基健動唔會睇住任何人，亦唔可以幫手求救。"),
+        ]),
+        (("What is shared, and with whom?", "會分享啲乜，同邊個分享？"), [
+            ("ul", [
+                ("The report is shared only when the person prints it or shares it. Bonet does not send it to family or therapists.", "報告只會喺用戶自己列印或者分享嘅時候先俾人睇到。哥基健動唔會將佢傳俾家人或者治療師。"),
+                ("Camera video is analysed on the device and never recorded or uploaded. Voice recordings are not kept.", "鏡頭影像只喺部機分析，唔會錄低或者上載。亦唔會保留錄音。"),
+            ]),
+        ]),
+        (("What is Bonet not?", "哥基健動唔係乜？"), _ABOUT[2][1]),
+        (("What does it cost?", "要幾多錢？"), ["COST"]),
+    ],
+}
+
 THERAPIST_STEPS = (("Getting someone started", "幫人開始用"), [
     ("Open <a href=\"https://app.bonet.care/\">app.bonet.care</a> together, on the phone, tablet or computer the person will use.", "一齊喺佢會用嘅手機、平板或者電腦打開 <a href=\"https://app.bonet.care/\">app.bonet.care</a>。"),
     ("When the app asks who will use it, choose that you are setting it up for someone else.", "App 問邊個用嘅時候，揀你係幫其他人設定。"),

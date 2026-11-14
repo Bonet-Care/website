@@ -79,10 +79,10 @@ DEMO_ALT = {
 # A section is (question, [blocks]); a block is ("p", en, yue), ("ul", [(en, yue)]) or ("ol", [(en, yue)]).
 PAGES = {
     "stroke-home-practice": {
-        "title": ("Home practice after a stroke: a daily practice app | Bonet", "中風後喺屋企練習：每日練習 app | 哥基健動"),
+        "title": ("Stroke app for daily home practice: exercises, speaking and brain games | Bonet", "中風後練習 app：每日喺屋企做運動、說話同腦力遊戲 | 哥基健動"),
         "desc": ("A daily practice app for people practising at home after a stroke: camera-counted exercises, speaking practice with hints and brain games. Not a medical device.",
                  "每日練習 app，啱中風後喺屋企練習嘅人用：鏡頭數次數嘅運動、有提示嘅說話練習同腦力遊戲。唔係醫療器材。"),
-        "h1": ("Daily home practice after a stroke", "中風後喺屋企每日練習"),
+        "h1": ("A stroke app for daily home practice", "中風後喺屋企每日練習嘅 app"),
         "answer": ("Bonet is an app for daily practice at home, used by older adults and by people practising after a stroke. It puts movement exercises counted by your camera, speaking practice with hints and short brain games into one daily plan. It is a practice tool, not a medical device, and it does not replace your therapist.",
                    "哥基健動係一個喺屋企每日練習用嘅 app，長者同中風後練習嘅人都用得。佢將鏡頭幫你數次數嘅運動、有提示嘅說話練習同簡短腦力遊戲，放埋喺一個每日計劃入面。佢係練習工具，唔係醫療器材，亦唔會取代你嘅治療師。"),
         "demo": ("hero", 0),
@@ -596,6 +596,7 @@ Generated from the app's own data: names, instructions and levels are the app's 
 {L("/pricing", "Pricing", "The free plan and Premium, what each includes, and the free trial.")}
 {L("/home-exercise-tracking", "Home exercise tracking", "What Bonet records during home practice, how a therapist or family member sees it, and that there is no therapist account or per-patient fee.")}
 {L("/movement-speech-brain-games", "Movement, speech and brain games", "The three kinds of practice in one daily plan, equipment needed, and languages.")}
+{L("/alzheimers-and-dementia", "Alzheimer's and dementia: for carers", "Bonet does not test memory or treat dementia; what a carer can use it for, setup and safety.")}
 {L("/science", "How Bonet works", "How the camera, speaking and brain practice work, what is measured, and what is not claimed.")}
 {L("/what-bonet-tracks", "What Bonet tracks", "Every number recorded, how it is measured, where, and what is never kept.")}
 {L("/example-report", "Example report", "A sample one-page practice report with invented data.")}
