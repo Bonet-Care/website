@@ -322,11 +322,11 @@ PAGES.update({
     },
     "home-exercise-program-app": {
         "title": ("Home exercise program app: practise at home between sessions | Bonet", "居家運動計劃 app：喺兩次治療之間喺屋企練習 | 哥基健動"),
-        "desc": ("Given a home exercise program by your physical therapist? Bonet is a daily practice app with reminders and camera counting. It does not import or replace your therapist's program.",
-                 "物理治療師俾咗你居家運動計劃？哥基健動係每日練習 app，有提醒同鏡頭數次數。佢唔會匯入或者取代治療師嘅計劃。"),
+        "desc": ("Given a home exercise program by your physical therapist? Bonet is a daily practice app with a daily plan and camera counting. It does not import or replace your therapist's program.",
+                 "物理治療師俾咗你居家運動計劃？哥基健動係每日練習 app，有每日計劃同鏡頭數次數。佢唔會匯入或者取代治療師嘅計劃。"),
         "h1": ("A home exercise program app: keep up your practice at home", "居家運動計劃 app：喺屋企持續練習"),
-        "answer": ("If a physical therapist gave you a home exercise program, you may want help doing it regularly. Bonet is a daily home practice app with a short daily plan, a reminder, camera counting of repetitions and a record of the days you practised. It does not import or replace your therapist's program, and it is not a medical device. Check any exercise with your therapist before you do it.",
-                   "如果物理治療師俾咗你居家運動計劃，你可能想有啲幫助，令你可以定時做。哥基健動係每日居家練習 app，有簡短嘅每日計劃、提醒、鏡頭數次數，同埋記錄你練習嘅日子。佢唔會匯入或者取代治療師嘅計劃，亦唔係醫療器材。做任何運動之前，都請同你嘅治療師確認。"),
+        "answer": ("If a physical therapist gave you a home exercise program, you may want help doing it regularly. Bonet is a daily home practice app with a short daily plan, camera counting of repetitions and a record of the days you practised. It does not import or replace your therapist's program, and it is not a medical device. Check any exercise with your therapist before you do it.",
+                   "如果物理治療師俾咗你居家運動計劃，你可能想有啲幫助，令你可以定時做。哥基健動係每日居家練習 app，有簡短嘅每日計劃、鏡頭數次數，同埋記錄你練習嘅日子。佢唔會匯入或者取代治療師嘅計劃，亦唔係醫療器材。做任何運動之前，都請同你嘅治療師確認。"),
         "demo": ("hero", 1),
         "sections": [
             (("Does Bonet import or replace my therapist's home exercise program?", "哥基健動會唔會匯入或者取代治療師嘅居家運動計劃？"), [
@@ -340,8 +340,8 @@ PAGES.update({
                 ("ul", [
                     ("A short daily plan, so you do not have to decide what to do each day. Each step is ticked when it is done, and you can skip, shorten or repeat any exercise.",
                      "一個簡短嘅每日計劃，唔使日日諗做啲乜。做完一步就打一個剔，任何運動你都可以跳過、縮短或者重複。"),
-                    ("A reminder: in the iPhone and iPad app you can turn on a daily practice reminder at a time you choose. It is off until you turn it on.",
-                     "提醒：喺 iPhone 同 iPad 嘅 app，你可以開啟每日練習提醒，時間由你揀。喺你開啟之前，提醒係關住嘅。"),
+                    ("Coming with the iPhone and iPad app: a daily practice reminder at a time you choose, off until you turn it on.",
+                     "iPhone 同 iPad app 推出之後：每日練習提醒，時間由你揀，你開啟之前係關住嘅。"),
                     ("A record of the days and minutes you practised, and a streak, so you can see how regular you have been.",
                      "記低你練習咗邊幾日、幾多分鐘，仲有連續練習日數，等你睇到自己有幾定時。"),
                 ]),
