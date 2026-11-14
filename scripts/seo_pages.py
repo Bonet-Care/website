@@ -79,10 +79,10 @@ DEMO_ALT = {
 # A section is (question, [blocks]); a block is ("p", en, yue), ("ul", [(en, yue)]) or ("ol", [(en, yue)]).
 PAGES = {
     "stroke-home-practice": {
-        "title": ("Stroke app for daily home practice: exercises, speaking and brain games | Bonet", "中風後練習 app：每日喺屋企做運動、說話同腦力遊戲 | 哥基健動"),
+        "title": ("Daily home practice app, including after a stroke: exercises, speaking and brain games | Bonet", "每日喺屋企練習嘅 app，包括中風後：運動、說話同腦力遊戲 | 哥基健動"),
         "desc": ("A daily practice app for people practising at home after a stroke: camera-counted exercises, speaking practice with hints and brain games. Not a medical device.",
                  "每日練習 app，啱中風後喺屋企練習嘅人用：鏡頭數次數嘅運動、有提示嘅說話練習同腦力遊戲。唔係醫療器材。"),
-        "h1": ("A stroke app for daily home practice", "中風後喺屋企每日練習嘅 app"),
+        "h1": ("A daily home practice app, including after a stroke", "每日喺屋企練習嘅 app，包括中風後"),
         "answer": ("Bonet is an app for daily practice at home, used by older adults and by people practising after a stroke. It puts movement exercises counted by your camera, speaking practice with hints and short brain games into one daily plan. It is a practice tool, not a medical device, and it does not replace your therapist.",
                    "哥基健動係一個喺屋企每日練習用嘅 app，長者同中風後練習嘅人都用得。佢將鏡頭幫你數次數嘅運動、有提示嘅說話練習同簡短腦力遊戲，放埋喺一個每日計劃入面。佢係練習工具，唔係醫療器材，亦唔會取代你嘅治療師。"),
         "demo": ("hero", 0),

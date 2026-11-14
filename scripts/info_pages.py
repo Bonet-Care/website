@@ -252,10 +252,10 @@ PAGES["movement-speech-brain-games"] = {
 
 # Carers searching for an Alzheimer's or dementia app. Bonet is not one in the medical sense: say so first, then only what is true.
 PAGES["alzheimers-and-dementia"] = {
-    "title": ("Alzheimer's and dementia apps: what Bonet is and is not, for carers | Bonet", "腦退化症 app：俾照顧者睇，哥基健動係乜、唔係乜 | 哥基健動"),
+    "title": ("For carers of someone with Alzheimer's or dementia: a simple daily routine | Bonet", "俾照顧腦退化症家人嘅人：簡單嘅每日練習 | 哥基健動"),
     "desc": ("For carers looking for an Alzheimer's or dementia app: Bonet does not test memory or treat dementia. It is a simple daily practice routine you can do together. Not a medical device.",
              "俾搵腦退化症 app 嘅照顧者：哥基健動唔會測試記憶，亦唔會治療腦退化症。佢係一個可以一齊做嘅簡單每日練習。唔係醫療器材。"),
-    "h1": ("Looking for an Alzheimer's or dementia app? What Bonet is and is not", "搵緊腦退化症 app？哥基健動係乜、唔係乜"),
+    "h1": ("Caring for someone with Alzheimer's or dementia? What Bonet is and is not", "照顧緊腦退化症嘅家人？哥基健動係乜、唔係乜"),
     "answer": ("Bonet is not an Alzheimer's or dementia app in the medical sense. It does not test memory, and it does not diagnose, slow, delay or treat Alzheimer's disease or any other dementia. A family member or carer can set it up as a simple daily routine to do together: gentle movement exercises, speaking practice and short brain games, with a calm Simple mode. Ask the person's doctor before starting.",
                "哥基健動唔係醫療上嘅腦退化症 app。佢唔會測試記憶，亦唔會診斷、減慢、延遲或者治療阿茲海默症或者任何腦退化症。家人或者照顧者可以將佢設定成一個一齊做嘅簡單每日練習：溫和嘅運動、說話練習同簡短腦力遊戲，仲有一個清靜嘅簡單模式。開始之前，請先問對方嘅醫生。"),
     "demo": None,
