@@ -848,3 +848,5 @@ main { overflow-x: clip; }
 .soon-badge svg + svg { margin-left: -.55rem; }
 .soon-badge small { display: block; font-size: .72rem; font-weight: 700; letter-spacing: .04em; text-transform: uppercase; opacity: .8; }
 .soon-badge b { display: block; font-size: 1.05rem; font-weight: 900; }
+/* small phones: keep the brand name whole; long "Start free" labels (fr, de, es) wrap onto two lines instead of pushing the brand */
+@media (max-width: 30rem) { .hdr .brand { flex-shrink: 0; } .hdr .btn--sm { flex-shrink: 1; min-width: 0; white-space: normal; line-height: 1.1; max-width: 8.5rem; padding-block: .25rem; } }
