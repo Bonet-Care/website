@@ -217,6 +217,17 @@ def video_section(T, lang, vid):
 """
 
 
+def soon_badges(T):
+    """Store-style "coming soon" badges for the apps. Not links, and no Apple or Google logos: those badges may only be used once an app is live."""
+    phone = '<svg viewBox="0 0 24 24" width="28" height="28" aria-hidden="true"><rect x="6" y="2" width="12" height="20" rx="3" fill="none" stroke="currentColor" stroke-width="2"/><path d="M10.5 18.5h3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>'
+    tablet = '<svg viewBox="0 0 24 24" width="28" height="28" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="3" fill="none" stroke="currentColor" stroke-width="2"/><path d="M10.5 17.5h3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>'
+    soon = T('Coming soon', '即將推出')
+    def badge(icon, name):
+        return f'<span class="soon-badge">{icon}<span><small>{soon}</small><b>{name}</b></span></span>'
+    return (f'<div class="soon-row" role="note" aria-label="{T("Apps for phones and tablets are coming soon. Until then, Bonet works in the web browser.", "手機同平板電腦嘅 App 即將推出。喺推出之前，可以用網頁瀏覽器用哥基健動。")}">'
+            f'{badge(phone + tablet, T("iPhone and iPad", "iPhone 同 iPad"))}{badge(phone, T("Android", "Android"))}</div>')
+
+
 def video_for(lang):
     """Per-language demo video, decided at build time from the files present (no 404s); falls back to English."""
     d = ROOT / "media" / "demo"
@@ -465,6 +476,7 @@ def home(lang):
 <p class="sub">{T('Bonet is a daily home practice app for older adults, including people practising after a stroke.', '哥基健動係為長者而設嘅每日居家練習 app，中風後練習嘅人都用得。')} {T('Every session tracked, with feedback made for you.', '每次練習都有紀錄，仲有為你而設嘅回饋。')}</p>
 <div class="cta-row"><a class="btn btn--lg" href="{APP}/">{T('Start free', '免費開始')}</a><a class="btn btn--2 btn--lg" href="#practice">{T('See how it works', '睇下點用')}</a></div>
 <p class="priceline">{T('Free to start. Premium {price} a month, about {day} a day.', '免費開始。完整版每月 {price}，約 {day} 一日。').replace('{price}', price).replace('{day}', day)}</p>
+{soon_badges(T)}
 </div>
 <div class="hero-art" data-ss-fill>
 <span class="fl" style="left:4%;top:8%;width:2.6rem;--k:18" data-par><img src="/img/icons/star.webp" width="128" height="128" alt=""></span>
@@ -533,6 +545,7 @@ def home(lang):
 <p class="bubble rv">{T("Just a few minutes. I'll count.", '幾分鐘就夠，我幫你數。')}</p>
 <a class="btn btn--lg" href="{APP}/">{T('Start free', '免費開始')}</a>
 <p class="priceline">{final_price}</p>
+{soon_badges(T)}
 </div></div>
 </div></section>
 

@@ -837,3 +837,12 @@ body:has(.cnb) { padding-bottom: 14rem; }
 main { overflow-x: clip; }
 /* search landing pages (scripts/seo_pages.py): the Start button and the demo inside a text page */
 .doc--legal a.btn { color: #fff; text-decoration: none; } .doc--legal figure .card-demo { margin-inline: auto; } .doc--legal .vs tbody th { white-space: normal; min-width: 9rem; } .doc--legal .vs td { min-width: 11rem; }
+
+/* "Coming soon" app badges (not links, no store logos until the apps are live) */
+.soon-row { display: flex; flex-wrap: wrap; gap: .7rem; margin-top: 1.1rem; }
+.final-say .soon-row { justify-content: center; }
+.soon-badge { display: inline-flex; align-items: center; gap: .55rem; min-height: 3.2rem; padding: .4rem 1rem .4rem .75rem; border-radius: .9rem; background: #111827; color: #fff; line-height: 1.1; }
+.soon-badge svg { flex: none; }
+.soon-badge svg + svg { margin-left: -.55rem; }
+.soon-badge small { display: block; font-size: .72rem; font-weight: 700; letter-spacing: .04em; text-transform: uppercase; opacity: .8; }
+.soon-badge b { display: block; font-size: 1.05rem; font-weight: 900; }

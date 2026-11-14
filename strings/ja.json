@@ -956,5 +956,9 @@
  "Agree together which exercises, speaking practice and games suit the person, and for how long. The daily plan is only a suggestion; your advice comes first. Premium lets you set your own plans.": "どの運動、話す練習、ゲームがご本人に合うか、どのくらいの時間にするかを、いっしょに決めます。毎日の計画はあくまで提案で、あなたのアドバイスが第一です。Premiumでは、自分で計画を決められます。",
  "Show where to put the device so the camera can see them, in a clear space with a stable chair.": "カメラにご本人が映るように、端末を置く場所を見せます。まわりに物がなく、安定したいすのある場所にします。",
  "At the next visit, ask them to print or share their practice report. See an <a href=\"/example-report\">example report</a>.": "次の通院のときに、練習レポートを印刷するか、見せてもらうようお願いしてください。<a href=\"/example-report\">レポートの例</a>をご覧ください。",
- "Each exercise in the <a href=\"/practice\">practice library</a> says what the camera counts for that move and how to set up.": "<a href=\"/practice\">練習ライブラリ</a>の各運動のページに、カメラが何を数えるかと、置き方がのっています。"
+ "Each exercise in the <a href=\"/practice\">practice library</a> says what the camera counts for that move and how to set up.": "<a href=\"/practice\">練習ライブラリ</a>の各運動のページに、カメラが何を数えるかと、置き方がのっています。",
+ "Coming soon": "近日公開",
+ "iPhone and iPad": "iPhone・iPad",
+ "Android": "Android",
+ "Apps for phones and tablets are coming soon. Until then, Bonet works in the web browser.": "スマホとタブレットのアプリは近日公開です。それまではウェブブラウザでBonetを使えます。"
 }
