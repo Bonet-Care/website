@@ -248,7 +248,9 @@ def home(lang):
     usd = re.match(r"[^\d]*([\d.]+)", PRICES["usd"]).group(1)
     FXL = lambda x: x.replace("{levels}", str(FACTS["speaking_levels"])).replace("{exercises}", str(FACTS["exercises"]))
     ld = [
-        {"@context": "https://schema.org", "@type": "Organization", "@id": SITE + "/#organization", "name": "Coglix Labs Inc.", "url": SITE + "/", "logo": SITE + "/icon-512.png", "email": MAIL},
+        {"@context": "https://schema.org", "@type": "Organization", "@id": SITE + "/#organization", "name": "Coglix Labs Inc.", "url": "https://coglixlabs.com/", "logo": SITE + "/icon-512.png", "email": MAIL, "sameAs": ["https://coglixlabs.com/"],
+         "founder": {"@type": "Person", "name": "Hailey Cheng", "alternateName": "鄭曦琳", "url": "https://haileycheng.com/", "sameAs": ["https://haileycheng.com/", "https://www.linkedin.com/in/heilcheng/", "https://github.com/heilcheng"],
+                     "affiliation": {"@type": "CollegeOrUniversity", "name": "Columbia University"}}},
         {"@context": "https://schema.org", "@type": "SoftwareApplication", "@id": SITE + "/#software", "name": "Bonet", "alternateName": "哥基健動", "url": SITE + "/",
          "image": SITE + "/img/" + ("og-en.png" if lang == "en" else "og-zh.png"), "applicationCategory": "LifestyleApplication", "operatingSystem": "Web browser",
          "inLanguage": [x["tag"] for x in LANGS.values()], "description": desc, "publisher": {"@id": SITE + "/#organization"},

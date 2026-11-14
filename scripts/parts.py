@@ -40,7 +40,7 @@ for code in LANGS:
 LOCAL_PAGES = ("privacy", "terms", "subscriptions", "cookies", "consumer-health-data", "ai-and-automatic-measures", "safety", "faq",
                "what-bonet-tracks", "example-report", "compare", "science", "therapist")
 # Search landing pages (scripts/seo_pages.py): one per need, and one comparison page per product in scripts/competitors.json.
-NEED_PAGES = ("stroke-home-practice", "exercise-app-for-seniors", "speech-practice-at-home", "for-family-and-carers")
+NEED_PAGES = ("stroke-home-practice", "exercise-app-for-seniors", "speech-practice-at-home", "for-family-and-carers", "rehab-practice-app", "home-exercise-program-app", "brain-games-for-seniors")
 VS_PAGES = {"constant-therapy": "Constant Therapy", "tactus-therapy": "Tactus Therapy", "lingraphica-talkpath": "Lingraphica TalkPath", "flint-rehab": "Flint Rehab"}
 vs_slug = lambda s: f"compare/bonet-vs-{s}"
 LOCAL_PAGES += NEED_PAGES + tuple(vs_slug(s) for s in VS_PAGES)
@@ -147,6 +147,9 @@ UI = {
     "f_seniors": {"en": "Exercise app for seniors", "zh-hant": "長者運動 App", "yue": "長者運動 app", "zh-hans": "长者运动 App", "ja": "シニア向け運動アプリ", "es": "App de ejercicios para mayores", "de": "Übungs-App für Senioren", "fr": "Appli d’exercices pour seniors"},
     "f_speech": {"en": "Speech practice at home", "zh-hant": "在家練習說話", "yue": "喺屋企練習說話", "zh-hans": "在家练习说话", "ja": "自宅で話す練習", "es": "Practicar el habla en casa", "de": "Sprechen üben zu Hause", "fr": "S’exercer à parler à la maison"},
     "f_family": {"en": "For family and carers", "zh-hant": "給家人與照顧者", "yue": "俾家人同照顧者", "zh-hans": "给家人和照顾者", "ja": "ご家族・介助者の方へ", "es": "Para familiares y cuidadores", "de": "Für Angehörige und Pflegende", "fr": "Pour la famille et les aidants"},
+    "f_rehab": {"en": "Looking for a rehab app?", "zh-hant": "在找復健 App？", "yue": "搵復康 app？", "zh-hans": "在找康复 App？", "ja": "リハビリ用アプリをお探しですか", "es": "¿Busca una app de rehabilitación?", "de": "Suchen Sie eine Reha-App?", "fr": "Vous cherchez une appli de rééducation ?"},
+    "f_hep": {"en": "Home exercise program app", "zh-hant": "居家運動計畫 App", "yue": "居家運動計劃 app", "zh-hans": "居家运动计划 App", "ja": "自宅運動プログラム用アプリ", "es": "App para el programa de ejercicios en casa", "de": "App für das Heimübungsprogramm", "fr": "Appli pour programme d’exercices à domicile"},
+    "f_brain": {"en": "Brain games for seniors", "zh-hant": "長者腦力遊戲", "yue": "長者腦力遊戲", "zh-hans": "长者脑力游戏", "ja": "シニア向け脳トレゲーム", "es": "Juegos mentales para mayores", "de": "Denkspiele für Senioren", "fr": "Jeux de réflexion pour seniors"},
     "f_library": {"en": "Practice library", "zh-hant": "練習資料庫", "yue": "練習庫", "zh-hans": "练习库", "ja": "練習ライブラリ", "es": "Biblioteca de práctica", "de": "Übungsbibliothek", "fr": "Bibliothèque de pratique"},
     "hello": {"en": "Bonet says hello", "zh-hant": "柯基向你打招呼", "yue": "朱古力同你打招呼", "zh-hans": "柯基向你打招呼", "ja": "コーギーがあいさつします", "es": "Bonet te saluda", "de": "Bonet sagt Hallo", "fr": "Bonet vous dit bonjour"},
     "f_about": {"en": "About Bonet", "zh-hant": "關於哥基健動", "yue": "關於哥基健動", "zh-hans": "关于哥基健动", "ja": "Bonetについて", "es": "Acerca de Bonet", "de": "Über Bonet", "fr": "À propos de Bonet"},
@@ -156,7 +159,7 @@ UI = {
     "f_combined": {"en": "Movement, speech and brain games", "zh-hant": "運動、說話與腦力遊戲", "yue": "運動、說話同腦力遊戲", "zh-hans": "运动、说话与脑力游戏", "ja": "運動・発話・脳トレ", "es": "Movimiento, habla y juegos mentales", "de": "Bewegung, Sprechen und Denkspiele", "fr": "Mouvement, parole et jeux de réflexion"},
 }
 u = lambda k, lang: UI[k][lang]
-NEED_UI = dict(zip(NEED_PAGES, ("f_stroke", "f_seniors", "f_speech", "f_family")))  # link label of each need page
+NEED_UI = dict(zip(NEED_PAGES, ("f_stroke", "f_seniors", "f_speech", "f_family", "f_rehab", "f_hep", "f_brain")))  # link label of each need page
 NEED_UI.update(zip(INFO_PAGES, ("f_about", "f_camera", "f_pricing", "f_tracking", "f_combined")))  # and of each fact page
 
 
@@ -248,7 +251,7 @@ def footer(lang, urls=None, inplace=None, demos=False):
 <div class="ftr-cols"><nav aria-label="Footer">{nav}</nav>
 <nav class="ftr-more" aria-label="Bonet">{more}</nav>
 <nav class="ftr-langs" aria-label="{t('language')}">{plain}</nav></div>
-<p class="ftr-c">&copy; 2026 Coglix Labs Inc.</p>
+<p class="ftr-c">&copy; 2026 <a href="https://coglixlabs.com/">Coglix Labs Inc.</a></p>
 </div></footer>
 <script defer src="/js/site.js"></script>
 {'<script defer src="/js/demos.js"></script>' if demos else ''}

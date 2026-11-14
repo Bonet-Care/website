@@ -78,6 +78,8 @@ PAGES = {
             ]),
             (("Who makes Bonet, and how do I contact you?", "邊個整哥基健動？點樣聯絡你哋？"), [
                 ("p", "Bonet is made by Coglix Labs Inc. Email <a href=\"mailto:hello@coglixlabs.com\">hello@coglixlabs.com</a>.", "哥基健動由 Coglix Labs Inc. 開發。請電郵 <a href=\"mailto:hello@coglixlabs.com\">hello@coglixlabs.com</a>。"),
+                ("p", "<a href=\"https://coglixlabs.com/\">Coglix Labs</a> was co-founded by <a href=\"https://haileycheng.com/\">Hailey Cheng</a>, a student at Columbia University.",
+                 "<a href=\"https://coglixlabs.com/\">Coglix Labs</a> 嘅聯合創辦人係 <a href=\"https://haileycheng.com/\">Hailey Cheng（鄭曦琳）</a>，佢喺哥倫比亞大學讀書。"),
             ]),
         ],
     },

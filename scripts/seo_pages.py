@@ -1,6 +1,7 @@
 """Pages written for people who search by need, built by build-site.py in every language:
 
-  /stroke-home-practice, /exercise-app-for-seniors, /speech-practice-at-home, /for-family-and-carers   (parts.NEED_PAGES)
+  /stroke-home-practice, /exercise-app-for-seniors, /speech-practice-at-home, /for-family-and-carers,
+  /rehab-practice-app, /home-exercise-program-app, /brain-games-for-seniors   (parts.NEED_PAGES)
   /compare/bonet-vs-<slug>, one per product in scripts/competitors.json                                 (parts.VS_PAGES)
   /llms.txt, a plain-text summary of the site for AI assistants (English)
 
@@ -280,6 +281,127 @@ PAGES = {
 }
 
 
+# ---- three pages for the words people search with: "rehab app", "home exercise program app", "brain games for seniors".
+# Rules: Bonet is home practice to use ALONGSIDE rehab or therapy, between sessions. "Rehab", "physical therapy" and "home exercise
+# program" are the reader's words; never say Bonet treats, rehabilitates, restores, improves or speeds recovery, or that a therapist
+# can prescribe or assign exercises in it (CLAIMS-AUDIT rows 12-14).
+ASK = ("Ask your therapist which exercises suit you; stop if anything hurts.", "邊啲運動啱你，請問你嘅治療師；如果有任何地方痛，就要停。")
+_CAMERA = (("How does the camera count my exercises?", "鏡頭點樣幫我數運動次數？"), PAGES["exercise-app-for-seniors"]["sections"][1][1])
+_THREE = PAGES["stroke-home-practice"]["sections"][0][1]  # "One daily plan covers three kinds of practice" and its list
+_SAFE_P = PAGES["exercise-app-for-seniors"]["sections"][-1][1][0]
+_BRAIN = [(f'<a href="/practice/think/{g["slug"]}">{g["name"]["en"]}</a>: {g["body"]["en"]}', f'<a href="/practice/think/{g["slug"]}">{g["name"]["yue"]}</a>：{g["body"]["yue"]}')
+          for grp in json.load(open(parts.ROOT / "content" / "practice.json"))["brain"]["groups"] for g in grp["games"]]
+
+PAGES.update({
+    "rehab-practice-app": {
+        "title": ("Looking for a rehab app? Home practice to use alongside your rehab | Bonet", "搵復康 app？同復康一齊用嘅居家練習 | 哥基健動"),
+        "desc": ("Bonet is a home practice app to use alongside your rehab or therapy, between sessions: camera-counted exercises, speaking practice and brain games. Not a medical device.",
+                 "哥基健動係居家練習 app，可以喺復康或者治療嘅空檔一齊用：鏡頭數次數嘅運動、說話練習同腦力遊戲。唔係醫療器材。"),
+        "h1": ("Looking for a rehab app? Home practice to use alongside your rehab", "搵復康 app？同復康一齊用嘅居家練習"),
+        "answer": ("Bonet is a home practice app. People use it alongside their rehab or therapy, between sessions, to keep up a daily routine of movement exercises counted by the camera, speaking practice with hints and short brain games. It is not a medical device, it does not treat anything, and it does not replace your therapist.",
+                   "哥基健動係居家練習 app。有人會喺復康或者治療嘅空檔一齊用，每日做鏡頭數次數嘅運動、有提示嘅說話練習同簡短腦力遊戲。佢唔係醫療器材，唔會治療任何嘢，亦唔會取代你嘅治療師。"),
+        "demo": ("hero", 1),
+        "sections": [
+            (("Is Bonet a rehab app?", "哥基健動係唔係復康 app？"), [
+                ("p", "Not in the medical sense. Bonet is a home practice app that you use alongside rehab. It is not a medical device and not a treatment. It does not diagnose, treat, cure or prevent any condition, it has not been tested in a clinical trial, and no regulator has reviewed or cleared it.",
+                 "唔係醫療上嘅意思。哥基健動係居家練習 app，可以同復康一齊用。佢唔係醫療器材，亦唔係治療。佢唔會診斷、治療、治癒或者預防任何病況，未經臨床試驗，亦冇任何監管機構審查或者批准過。"),
+                ("p", "What you need to do for your rehab is for your rehab team to decide. Bonet gives you one simple place to practise at home between sessions.",
+                 "復康方面你需要做啲乜，由你嘅復康團隊決定。哥基健動俾你一個簡單嘅地方，喺兩次治療之間喺屋企練習。"),
+            ]),
+            (("What can I practise at home between therapy sessions?", "喺兩次治療之間，我可以喺屋企練習啲乜？"), _THREE + [("p",) + ASK]),
+            _CAMERA,
+            (("Can my therapist see what I practised?", "我嘅治療師睇唔睇到我練習咗啲乜？"), [
+                ("p", "Bonet makes a one-page report of the days, minutes and exercises you practised. You choose whether to print it or share it yourself; Bonet does not send it to anyone, and there is no therapist account. It is a summary of home practice, not a medical record or a clinical assessment. See an <a href=\"/example-report\">example report</a>, or <a href=\"/therapist\">for therapists and carers</a>.",
+                 "哥基健動會將你練習嘅日數、分鐘同運動整成一頁報告。要唔要列印或者分享，由你決定；哥基健動唔會幫你傳俾任何人，亦冇治療師帳戶。佢係居家練習嘅摘要，唔係醫療紀錄，亦唔係臨床評估。可以睇<a href=\"/example-report\">示範報告</a>，或者<a href=\"/therapist\">俾治療師同照顧者</a>。"),
+            ]),
+            (("What does it cost?", "要幾多錢？"), [COST]),
+            (("Is it safe?", "安唔安全？"), [("p",) + ASK, _SAFE_P,
+                ("p", "If you notice sudden face drooping, weakness or trouble speaking, call your local emergency number right away. Bonet cannot call for help.",
+                 "如果突然面部下垂、無力或者講嘢有困難，請即刻打當地緊急電話。哥基健動唔可以幫你求救。")]),
+        ],
+    },
+    "home-exercise-program-app": {
+        "title": ("Home exercise program app: practise at home between sessions | Bonet", "居家運動計劃 app：喺兩次治療之間喺屋企練習 | 哥基健動"),
+        "desc": ("Given a home exercise program by your physical therapist? Bonet is a daily practice app with reminders and camera counting. It does not import or replace your therapist's program.",
+                 "物理治療師俾咗你居家運動計劃？哥基健動係每日練習 app，有提醒同鏡頭數次數。佢唔會匯入或者取代治療師嘅計劃。"),
+        "h1": ("A home exercise program app: keep up your practice at home", "居家運動計劃 app：喺屋企持續練習"),
+        "answer": ("If a physical therapist gave you a home exercise program, you may want help doing it regularly. Bonet is a daily home practice app with a short daily plan, a reminder, camera counting of repetitions and a record of the days you practised. It does not import or replace your therapist's program, and it is not a medical device. Check any exercise with your therapist before you do it.",
+                   "如果物理治療師俾咗你居家運動計劃，你可能想有啲幫助，令你可以定時做。哥基健動係每日居家練習 app，有簡短嘅每日計劃、提醒、鏡頭數次數，同埋記錄你練習嘅日子。佢唔會匯入或者取代治療師嘅計劃，亦唔係醫療器材。做任何運動之前，都請同你嘅治療師確認。"),
+        "demo": ("hero", 1),
+        "sections": [
+            (("Does Bonet import or replace my therapist's home exercise program?", "哥基健動會唔會匯入或者取代治療師嘅居家運動計劃？"), [
+                ("p", "No. Bonet cannot import your program, and a therapist cannot prescribe or assign exercises in it. Your therapist's program stays the plan to follow.",
+                 "唔會。哥基健動匯入唔到你嘅計劃，治療師亦唔可以喺入面開處方或者指派運動。你要跟嘅，仲係治療師嘅計劃。"),
+                ("p", "Bonet has its own library of {exercises} movement exercises, for shoulders and arms, hands, sit-to-stand, legs and balance. You choose which ones to practise. If one looks like an exercise in your program, ask your therapist whether it suits you and how often to do it.",
+                 "哥基健動有自己嘅 {exercises} 個運動，包括肩膀同手臂、手部、坐到站、雙腿同平衡，由你揀做邊啲。如果其中一個似你計劃入面嘅運動，請問你嘅治療師啱唔啱你，同埋幾耐做一次。"),
+                ("p",) + ASK,
+            ]),
+            (("How can Bonet help me practise regularly?", "哥基健動點樣幫我定時練習？"), [
+                ("ul", [
+                    ("A short daily plan, so you do not have to decide what to do each day. Each step is ticked when it is done, and you can skip, shorten or repeat any exercise.",
+                     "一個簡短嘅每日計劃，唔使日日諗做啲乜。做完一步就打一個剔，任何運動你都可以跳過、縮短或者重複。"),
+                    ("A reminder: in the iPhone and iPad app you can turn on a daily practice reminder at a time you choose. It is off until you turn it on.",
+                     "提醒：喺 iPhone 同 iPad 嘅 app，你可以開啟每日練習提醒，時間由你揀。喺你開啟之前，提醒係關住嘅。"),
+                    ("A record of the days and minutes you practised, and a streak, so you can see how regular you have been.",
+                     "記低你練習咗邊幾日、幾多分鐘，仲有連續練習日數，等你睇到自己有幾定時。"),
+                ]),
+            ]),
+            _CAMERA,
+            (("Can I show my therapist what I practised?", "我可唔可以俾治療師睇我練習咗啲乜？"), [
+                ("p", "Yes, if you choose. Bonet makes a one-page report of the days, minutes and exercises you practised. You print it or share it yourself; Bonet does not send it to anyone. It is a summary of home practice, not a medical record or a clinical assessment, and it does not show whether you did your therapist's program. See an <a href=\"/example-report\">example report</a>.",
+                 "可以，由你決定。哥基健動會將你練習嘅日數、分鐘同運動整成一頁報告。報告由你自己列印或者分享，哥基健動唔會幫你傳俾任何人。佢係居家練習嘅摘要，唔係醫療紀錄，亦唔係臨床評估，而且睇唔出你有冇做治療師嘅計劃。可以睇下<a href=\"/example-report\">示範報告</a>。"),
+            ]),
+            (("What should I check with my therapist?", "我應該同治療師確認啲乜？"), [
+                ("ul", [
+                    ("Which exercises suit you, how many to do and how often.", "邊啲運動啱你、做幾多下，同埋幾耐做一次。"),
+                    PAGES["stroke-home-practice"]["sections"][3][1][0][1][0],
+                    PAGES["stroke-home-practice"]["sections"][3][1][0][1][1],
+                ]),
+                ("p",) + ASK,
+            ]),
+            (("What does it cost?", "要幾多錢？"), [COST]),
+        ],
+    },
+    "brain-games-for-seniors": {
+        "title": ("Brain games for seniors: six short games at home | Bonet", "長者腦力遊戲：喺屋企玩六款簡短遊戲 | 哥基健動"),
+        "desc": ("Six short brain games for seniors in one app: remember the order, find the pairs, dim sum pick, fruit pick, tap in order and math pick. Easy, Medium or Hard. Free to start.",
+                 "長者腦力遊戲：一個 app 有六款簡短遊戲，包括記住次序、搵一對、夾點心、摘生果、照次序㩒同數學選擇。簡單、中等或者困難。免費開始。"),
+        "h1": ("Brain games for seniors: six short games at home", "長者腦力遊戲：喺屋企玩六款簡短遊戲"),
+        "answer": ("Bonet has six short brain games for memory, attention and quick thinking, made with older adults in mind. You choose Easy, Medium or Hard. They sit beside movement and speaking practice in one daily plan. They are games to enjoy, not a test and not a treatment.",
+                   "哥基健動有六款簡短腦力遊戲，練習記憶、專注同反應，為長者而設。你可以揀簡單、中等或者困難。佢哋同運動、說話練習一齊放喺一個每日計劃入面。呢啲係用嚟享受嘅遊戲，唔係測驗，亦唔係治療。"),
+        "demo": None,
+        "sections": [
+            (("Which brain games are in Bonet?", "哥基健動有邊啲腦力遊戲？"), [
+                ("p", "There are two games for memory, two for attention and two for thinking.", "一共有六款：兩款練記憶、兩款練專注、兩款練思考。"),
+                ("ul", _BRAIN),
+            ]),
+            (("Can I choose how hard the games are?", "我可以揀遊戲難度嗎？"), [
+                ("p", "Yes. Each game has Easy, Medium and Hard levels, and you can choose any level you like. After you have played a game a few times, Bonet may suggest a level for today, a little easier or a little harder. You can ignore the suggestion. The free plan includes Easy; Premium opens every level.",
+                 "可以。每款遊戲都有簡單、中等同困難，你想揀邊級都得。玩過幾次之後，哥基健動可能會建議今日玩邊一級，難少少或者易少少，你可以唔理。免費版包括簡單級，完整版開放所有級別。"),
+            ]),
+            (("Is there a time limit?", "有冇時間限制？"), [
+                ("p", "Some games have a clock. In Find the pairs there is a time limit, and the clock stops while a wrong pair is face up, so a slow look costs no time. In Math pick, each question has a limited time. You can leave a game at any time.",
+                 "有啲遊戲有計時。「搵一對」有時間限制，而且揭錯一對嘅時候，時鐘會停低，所以慢慢睇都唔會蝕時間。「數學選擇」每條題目有限定時間。你隨時可以離開遊戲。"),
+            ]),
+            (("Do brain games improve memory or prevent decline?", "腦力遊戲可以改善記憶或者預防衰退嗎？"), [
+                ("p", "Bonet makes no such claim. The games are for enjoyment and practice, a few minutes at a time. They are not a test and do not screen for any condition, and a score shows how a game went, not how your brain is doing. If you are worried about your memory, talk to your doctor.",
+                 "哥基健動冇呢啲聲稱。呢啲遊戲係用嚟享受同練習，每次玩幾分鐘。佢哋唔係測驗，亦唔會篩查任何病況；分數只顯示遊戲嗰次玩得點，唔代表你個腦點。如果你擔心記憶，請同你嘅醫生傾下。"),
+            ]),
+            (("How do I start?", "我點樣開始？"), [
+                ("ol", [
+                    ("Open <a href=\"https://app.bonet.care/\">app.bonet.care</a> in a browser on a phone, tablet or computer.", "用手機、平板或者電腦，喺瀏覽器打開 <a href=\"https://app.bonet.care/\">app.bonet.care</a>。"),
+                    ("Choose a brain game and a level. Start with Easy if you are not sure.", "揀一款腦力遊戲同一個級別。如果唔肯定，可以由簡單開始。"),
+                    ("Play for a few minutes, then stop whenever you like.", "玩幾分鐘，想停就停。"),
+                ]),
+                ("p", "The brain games sit beside {exercises} movement exercises and speaking practice in one daily plan. See <a href=\"/movement-speech-brain-games\">movement, speech and brain games</a>.",
+                 "腦力遊戲同 {exercises} 個運動同說話練習一齊放喺一個每日計劃入面。請睇<a href=\"/movement-speech-brain-games\">運動、說話同腦力遊戲</a>。"),
+            ]),
+            (("What does it cost?", "要幾多錢？"), [COST]),
+        ],
+    },
+})
+
+
 import info_pages  # noqa: E402  the fact pages: /about, /camera-rep-counting, /pricing
 PAGES.update({k: dict(v, sections=[(q, [COST if b == "COST" else b for b in blocks]) for q, blocks in v["sections"]]) for k, v in info_pages.PAGES.items()})
 
@@ -429,7 +551,10 @@ def llms(ctx):
     import practice_pages  # here, not at the top: practice_pages imports this module
     f, usd, trial = FACTS, PRICES["usd"], PRICES.get("trial_days", 7)
     names = ", ".join(f"{d['name']} ({SITE}{d['path']})" for d in LANGS.values())
-    need = {"stroke-home-practice": "Daily practice at home after a stroke: what Bonet does and does not do, how to start, when to ask the therapist.",
+    need = {"rehab-practice-app": "Looking for a rehab app? Bonet is home practice to use alongside rehab or therapy between sessions: what it is and is not, what you can practise, the one-page report.",
+            "home-exercise-program-app": "For people given a home exercise program by a physical therapist: how Bonet helps with regular practice, and that it does not import or replace the therapist's program.",
+            "brain-games-for-seniors": "The six short brain games, Easy, Medium and Hard levels, which games have a time limit, and what Bonet does not claim.",
+            "stroke-home-practice": "Daily practice at home after a stroke: what Bonet does and does not do, how to start, when to ask the therapist.",
             "exercise-app-for-seniors": "Gentle camera-counted exercises for older adults, seated options, big text and Simple mode.",
             "speech-practice-at-home": f"Speaking practice with hints, {f['speaking_levels']} levels per practice type, and what is measured.",
             "for-family-and-carers": "How a family member or carer sets Bonet up, the one-page report, and what is shared."}
@@ -438,7 +563,7 @@ def llms(ctx):
 
 > Bonet is a daily home practice app for older adults, including people practising at home after a stroke. One daily plan combines movement exercises counted by the device camera, speaking practice with hints, and short brain games. Bonet is a practice tool, not a medical device.
 
-Bonet (Chinese name: 哥基健動) is made by Coglix Labs Inc. The web app is at {APP}/ and this site, {SITE}/, describes it. The mascot and coach is a corgi named Bonet.
+Bonet (Chinese name: 哥基健動) is made by Coglix Labs Inc. (https://coglixlabs.com/), co-founded by Hailey Cheng (https://haileycheng.com/), a student at Columbia University. The web app is at {APP}/ and this site, {SITE}/, describes it. The mascot and coach is a corgi named Bonet.
 
 ## Facts
 

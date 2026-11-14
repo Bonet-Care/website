@@ -2,7 +2,7 @@
 
 > Bonet is a daily home practice app for older adults, including people practising at home after a stroke. One daily plan combines movement exercises counted by the device camera, speaking practice with hints, and short brain games. Bonet is a practice tool, not a medical device.
 
-Bonet (Chinese name: 哥基健動) is made by Coglix Labs Inc. The web app is at https://app.bonet.care/ and this site, https://bonet.care/, describes it. The mascot and coach is a corgi named Bonet.
+Bonet (Chinese name: 哥基健動) is made by Coglix Labs Inc. (https://coglixlabs.com/), co-founded by Hailey Cheng (https://haileycheng.com/), a student at Columbia University. The web app is at https://app.bonet.care/ and this site, https://bonet.care/, describes it. The mascot and coach is a corgi named Bonet.
 
 ## Facts
 
@@ -23,6 +23,9 @@ Bonet (Chinese name: 哥基健動) is made by Coglix Labs Inc. The web app is at
 - [Exercise app for seniors](https://bonet.care/exercise-app-for-seniors): Gentle camera-counted exercises for older adults, seated options, big text and Simple mode.
 - [Speech practice at home](https://bonet.care/speech-practice-at-home): Speaking practice with hints, 100 levels per practice type, and what is measured.
 - [For family and carers](https://bonet.care/for-family-and-carers): How a family member or carer sets Bonet up, the one-page report, and what is shared.
+- [Looking for a rehab app?](https://bonet.care/rehab-practice-app): Looking for a rehab app? Bonet is home practice to use alongside rehab or therapy between sessions: what it is and is not, what you can practise, the one-page report.
+- [Home exercise program app](https://bonet.care/home-exercise-program-app): For people given a home exercise program by a physical therapist: how Bonet helps with regular practice, and that it does not import or replace the therapist's program.
+- [Brain games for seniors](https://bonet.care/brain-games-for-seniors): The six short brain games, Easy, Medium and Hard levels, which games have a time limit, and what Bonet does not claim.
 
 ## Practice library
 
