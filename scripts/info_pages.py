@@ -1,6 +1,8 @@
 """Fact pages built by seo_pages.py in every language, with the same schema as seo_pages.PAGES:
   /about                plain facts about Bonet (also the place that says Bonet is not the app Bold)
   /camera-rep-counting  how the camera counts repetitions, kept consistent with the practice library wording
+  /home-exercise-tracking       how home practice is recorded and shared with a therapist or family
+  /movement-speech-brain-games  the three kinds of practice in one daily plan
   /pricing              the two plans, read from content/prices.json and content/facts.json through placeholders
 Copy is (English, Cantonese); the other languages come from strings/<lang>.json. "COST" stands for seo_pages.COST.
 Rules: Bonet is a practice tool. Never say it treats, restores or improves anything. No em dashes or arrows."""
@@ -160,6 +162,92 @@ PAGES = {
 }
 
 # ---------------------------------------------------------------- A6: new section for content/therapist.html (and the 7 translated fragments)
+# Two more fact pages, from the questions Jam tracks (therapists and family asking how to know home exercises were done;
+# people asking for one app with movement, speech and brain games). Strings shared with /about, /camera-rep-counting and
+# /for-family-and-carers are repeated word for word so they keep their translations.
+_ABOUT = PAGES["about"]["sections"]
+_REP_RULE = ("A repetition is counted when you reach the position, hold it for about one second, and then come back to the start. The next repetition begins after you have returned.",
+             "你去到個姿勢，保持大約一秒，再返回起點，就算一下。你返回之後，先會開始下一下。")
+_NOT = ("ul", [_ABOUT[2][1][0][1][0], _ABOUT[2][1][0][1][1], _ABOUT[2][1][0][1][3]])
+_START = (("How do I get someone started?", "點樣幫人開始用？"), [
+    ("ol", [
+        ("Make sure the person agrees to use Bonet and has checked with their doctor or therapist.", "確保對方同意用哥基健動，並且已經問過佢嘅醫生或者治療師。"),
+        ("Open <a href=\"https://app.bonet.care/\">app.bonet.care</a> on their phone, tablet or computer. When the app asks who will use it, say you are setting it up for someone else.", "喺佢部手機、平板或者電腦打開 <a href=\"https://app.bonet.care/\">app.bonet.care</a>。App 問邊個會用嘅時候，揀你係幫人設定。"),
+        ("Answer the setup questions together. Turn on Simple mode and large text if a calmer screen helps.", "一齊答設定問題。如果簡潔啲嘅畫面有幫助，可以開簡單模式同大字。"),
+        ("Clear a safe space with good light and a stable chair, and stay near for balance exercises.", "預備一個光線充足、冇雜物嘅安全空間同一張穩陣嘅凳；做平衡運動嘅時候留喺附近。"),
+    ]),
+])
+
+PAGES["home-exercise-tracking"] = {
+    "title": ("Tracking home exercise between therapy visits | Bonet", "喺覆診之間記錄居家練習 | 哥基健動"),
+    "desc": ("How Bonet counts home exercise repetitions with the device camera and keeps a one-page report the person can share with a therapist or family. No therapist account needed. Not a medical device.",
+             "哥基健動點樣用部機嘅鏡頭數居家運動次數，同埋整一頁報告，俾用戶自己同治療師或者家人分享。治療師唔使開帳戶。唔係醫療器材。"),
+    "h1": ("How to know if home exercises were done", "點樣知道屋企嘅練習有冇做"),
+    "answer": ("Bonet counts each repetition with the camera on the person's own device and records the days, minutes and exercises practised. The person can print or share a one-page report, for example at the next therapy visit. The counts are estimates, and Bonet is a practice tool, not a medical device.",
+               "哥基健動用用戶自己部機嘅鏡頭數每一下，並記錄練習咗邊幾日、幾多分鐘同做咗咩運動。用戶可以列印或者分享一頁報告，例如喺下次覆診嘅時候。次數只係估算，哥基健動係練習工具，唔係醫療器材。"),
+    "demo": ("move", 0),
+    "sections": [
+        (("What does Bonet record during home practice?", "喺屋企練習嘅時候，哥基健動會記錄啲乜？"), [
+            ("ul", [
+                ("The days practised, the minutes and the current streak.", "練習日數、分鐘同目前連續練習嘅日數。"),
+                ("The exercises done, with sessions and repetitions.", "做過嘅運動，連節數同次數。"),
+                ("Speaking: tries, words recognised, pace and pauses.", "說話：嘗試次數、認到嘅詞語、速度同停頓。"),
+                ("Brain games played and items right.", "玩過嘅腦力遊戲同答啱嘅題數。"),
+            ]),
+            ("p", "Camera video is analysed on the device and never recorded or uploaded. Voice recordings are not kept.", "鏡頭影像只喺部機分析，唔會錄低或者上載。亦唔會保留錄音。"),
+        ]),
+        (("How does the camera count a repetition?", "鏡頭點樣數一下？"), [
+            ("p",) + _REP_RULE,
+            ("p", "The count is an estimate. Light, camera angle and loose clothing can make it wrong. See <a href=\"/camera-rep-counting\">how camera rep counting works</a>.",
+             "次數只係估算。光線、鏡頭角度同鬆身衫都可能令佢唔準。詳情可以睇<a href=\"/camera-rep-counting\">鏡頭數次數點運作</a>。"),
+        ]),
+        (("How does a therapist or family member see the results?", "治療師或者家人點樣睇到結果？"), [
+            ("ul", [
+                ("The person prints the one-page report or shares it, for example at the next visit.", "用戶自己列印或者分享一頁報告，例如喺下次覆診嘅時候。"),
+                ("The report is shared only when the person prints it or shares it. Bonet does not send it to family or therapists.", "報告只會喺用戶自己列印或者分享嘅時候先俾人睇到。哥基健動唔會將佢傳俾家人或者治療師。"),
+                ("There are no dashboards, remote monitoring or alerts in the app today.", "App 而家冇儀表板、遠程監測或者警示。"),
+            ]),
+            ("p", "The report shows what was practised. It is not a medical record or a clinical assessment. See an <a href=\"/example-report\">example report</a>.",
+             "報告顯示練習咗啲乜，唔係醫療紀錄，亦唔係臨床評估。可以睇下<a href=\"/example-report\">示範報告</a>。"),
+        ]),
+        (("Does a therapist need an account or pay per patient?", "治療師使唔使開帳戶，或者按病人數目俾錢？"), [
+            ("p", "No. There is no therapist account and no fee per patient. Each person uses their own Bonet account, on the free plan or on Premium. A therapist only looks at the report the person chooses to share.",
+             "唔使。冇治療師帳戶，亦唔會按病人數目收費。每個用戶用自己嘅哥基健動帳戶，用免費版或者完整版都得。治療師只係睇用戶自己揀分享嘅報告。"),
+        ]),
+        _START,
+        (("What does Bonet not do?", "哥基健動唔會做啲乜？"), [_NOT]),
+        (("What does it cost?", "要幾多錢？"), ["COST"]),
+    ],
+}
+
+PAGES["movement-speech-brain-games"] = {
+    "title": ("Movement, speaking and brain games in one home practice app | Bonet", "運動、說話同腦力遊戲，一個居家練習 app 做晒 | 哥基健動"),
+    "desc": ("Bonet puts camera-counted movement exercises, speaking practice with hints and short brain games into one short daily plan for older adults at home. Not a medical device.",
+             "哥基健動將鏡頭數次數嘅運動、有提示嘅說話練習同簡短腦力遊戲，放入一個簡短嘅每日計劃，俾長者喺屋企用。唔係醫療器材。"),
+    "h1": ("Movement, speaking and brain games in one app", "一個 app 做運動、說話同腦力遊戲"),
+    "answer": ("Bonet combines three kinds of home practice in one daily plan: {exercises} movement exercises counted by the device camera, speaking practice with hints at {levels} levels per practice type, and six short brain games. It is for older adults, including people practising after a stroke. It is a practice tool, not a medical device.",
+               "哥基健動將三種居家練習放入同一個每日計劃：{exercises} 個由鏡頭數次數嘅運動、每種練習有 {levels} 級又有提示嘅說話練習，同埋六款簡短腦力遊戲。佢係為長者而設，中風後練習嘅人都用得。佢係練習工具，唔係醫療器材。"),
+    "demo": ("hero", 0),
+    "sections": [
+        (("What is in each part?", "每個部分有啲乜？"), [("ul", _ABOUT[0][1][0][1][:3])]),
+        (("How does the daily plan work?", "每日計劃點運作？"), [
+            ("p", "Bonet suggests a short daily plan that mixes movement, speaking and brain games. Each step is ticked when it is done. You can skip, shorten or repeat any exercise.",
+             "哥基健動會建議一個簡短嘅每日計劃，混合運動、說話同腦力遊戲。每完成一步就會打剔。任何運動都可以跳過、縮短或者重做。"),
+        ]),
+        (("Do I need special equipment?", "使唔使特別器材？"), [
+            ("p", "No. Bonet runs in a web browser on a phone, tablet or computer with a camera and a microphone. For the movement exercises you need a stable chair and a clear space with good light.",
+             "唔使。哥基健動喺有鏡頭同咪高峰嘅手機、平板或者電腦嘅瀏覽器度就用得。做運動嘅時候，你需要一張穩陣嘅凳同一個光線充足、冇雜物嘅地方。"),
+        ]),
+        (("Who is it for?", "啱邊個用？"), _ABOUT[1][1]),
+        (("Which languages is Bonet in?", "哥基健動有邊幾種語言？"), [
+            ("p", "Eight: English, Cantonese, Traditional Chinese, Simplified Chinese, Japanese, Spanish, German and French. The app, the speaking practice and this site are in all eight. Some speech recognition needs an internet connection.",
+             "八種：英文、廣東話、繁體中文、簡體中文、日文、西班牙文、德文同法文。App、說話練習同呢個網站都有齊八種語言。有啲語音辨識需要連網。"),
+        ]),
+        (("What is Bonet not?", "哥基健動唔係乜？"), _ABOUT[2][1]),
+        (("What does it cost?", "要幾多錢？"), ["COST"]),
+    ],
+}
+
 THERAPIST_STEPS = (("Getting someone started", "幫人開始用"), [
     ("Open <a href=\"https://app.bonet.care/\">app.bonet.care</a> together, on the phone, tablet or computer the person will use.", "一齊喺佢會用嘅手機、平板或者電腦打開 <a href=\"https://app.bonet.care/\">app.bonet.care</a>。"),
     ("When the app asks who will use it, choose that you are setting it up for someone else.", "App 問邊個用嘅時候，揀你係幫其他人設定。"),

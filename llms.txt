@@ -41,6 +41,8 @@ Generated from the app's own data: names, instructions and levels are the app's 
 - [About Bonet](https://bonet.care/about): Plain facts: what Bonet is and is not, who makes it, price, languages, privacy. Bonet is not the app Bold.
 - [Camera rep counting](https://bonet.care/camera-rep-counting): How the device camera counts repetitions, what is kept, and how accurate it is.
 - [Pricing](https://bonet.care/pricing): The free plan and Premium, what each includes, and the free trial.
+- [Home exercise tracking](https://bonet.care/home-exercise-tracking): What Bonet records during home practice, how a therapist or family member sees it, and that there is no therapist account or per-patient fee.
+- [Movement, speech and brain games](https://bonet.care/movement-speech-brain-games): The three kinds of practice in one daily plan, equipment needed, and languages.
 - [How Bonet works](https://bonet.care/science): How the camera, speaking and brain practice work, what is measured, and what is not claimed.
 - [What Bonet tracks](https://bonet.care/what-bonet-tracks): Every number recorded, how it is measured, where, and what is never kept.
 - [Example report](https://bonet.care/example-report): A sample one-page practice report with invented data.

@@ -469,6 +469,8 @@ Generated from the app's own data: names, instructions and levels are the app's 
 {L("/about", "About Bonet", "Plain facts: what Bonet is and is not, who makes it, price, languages, privacy. Bonet is not the app Bold.")}
 {L("/camera-rep-counting", "Camera rep counting", "How the device camera counts repetitions, what is kept, and how accurate it is.")}
 {L("/pricing", "Pricing", "The free plan and Premium, what each includes, and the free trial.")}
+{L("/home-exercise-tracking", "Home exercise tracking", "What Bonet records during home practice, how a therapist or family member sees it, and that there is no therapist account or per-patient fee.")}
+{L("/movement-speech-brain-games", "Movement, speech and brain games", "The three kinds of practice in one daily plan, equipment needed, and languages.")}
 {L("/science", "How Bonet works", "How the camera, speaking and brain practice work, what is measured, and what is not claimed.")}
 {L("/what-bonet-tracks", "What Bonet tracks", "Every number recorded, how it is measured, where, and what is never kept.")}
 {L("/example-report", "Example report", "A sample one-page practice report with invented data.")}
