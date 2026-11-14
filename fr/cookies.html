@@ -36,7 +36,7 @@
 <link rel="preload" href="/fonts/nunito-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="/css/site.css?v=e0ef554ac4">
 
-<script defer src="/js/consent.js?v=c4e261229d"></script>
+<script defer src="/js/consent.js?v=879c02fed9"></script>
 </head>
 <body>
 <header class="hdr"><a class="skip" href="#main">Aller au contenu</a><div class="wrap">
@@ -51,15 +51,14 @@
 <p class="tr-note">Cette page est une traduction fournie pour votre confort. En cas de différence, la <a href="/cookies" hreflang="en" lang="en">version anglaise</a> s’applique.</p>
 <article class="legal">
 <h1 id="bonet-cookie-and-device-storage-policy">Politique de Bonet sur les cookies et le stockage sur l'appareil</h1>
-<p>Dernière mise à jour : 13 novembre 2026</p>
+<p>Dernière mise à jour : 15 novembre 2026</p>
 <h2 id="the-short-version">L'essentiel</h2>
 <ul>
 <li>Bonet enregistre quelques petites informations sur votre appareil. La plupart servent à vous garder connecté(e) et à retenir vos réglages.</li>
 <li>Nous utilisons deux sortes d'outils facultatifs : des statistiques du site web sur bonet.care (Google Analytics) et des analyses de produit dans l'application (PostHog).</li>
-<li>Sur le site web, dans l'Espace économique européen, au Royaume-Uni et en Suisse, Google Analytics reste <strong>désactivé</strong> tant que vous ne cliquez pas sur Accepter.</li>
-<li>Sur le site web, ailleurs, Google Analytics est activé, et vous pouvez le désactiver à tout moment avec « Paramètres des cookies » en bas de page. Si votre navigateur envoie Global Privacy Control ou Do Not Track, nous le respectons et ne chargeons pas Google Analytics.</li>
+<li>Sur le site web, dans tous les pays, Google Analytics reste <strong>désactivé</strong> tant que vous ne cliquez pas sur Accepter. Vous pouvez changer votre choix à tout moment avec « Paramètres des cookies » en pied de page. Si votre navigateur envoie Global Privacy Control ou Do Not Track, nous le traitons comme un « non » et ne chargeons pas Google Analytics.</li>
 <li>Nous n'utilisons pas de cookies publicitaires. Nous n'utilisons ni les signaux Google ni la personnalisation des annonces. Nous ne vendons pas vos données.</li>
-<li>Dans l'application, l'analyse est activée, sauf si vous la désactivez dans Réglages &gt; Confidentialité.</li>
+<li>Dans l'application, l'analyse reste <strong>désactivée</strong> tant que vous ne l'acceptez pas. Vous pouvez changer votre choix à tout moment dans Réglages &gt; Confidentialité.</li>
 </ul>
 <h2 id="what-this-policy-covers">Ce que couvre cette politique</h2>
 <p>Nous disons « cookies » pour les cookies et pour les outils semblables qui enregistrent ou lisent des informations sur votre appareil, comme le stockage local. Bonet utilise deux endroits :</p>
@@ -90,7 +89,7 @@
 <tr>
 <td>Analyse</td>
 <td>Compter comment Bonet et le site web sont utilisés pour corriger les problèmes et nous améliorer</td>
-<td>Sur le site web, oui dans l'EEE, au Royaume-Uni et en Suisse. Ailleurs, nous les activons, et vous pouvez refuser</td>
+<td>Oui, dans tous les pays, sur le site web et dans l'application</td>
 </tr>
 <tr>
 <td>Publicité</td>
@@ -164,11 +163,10 @@
 </table>
 <p>Nous ne déposons aucun autre cookie sur bonet.care.</p>
 <p><strong>Google Analytics</strong> (identifiant de mesure G-WMQD9MWHJN) reçoit l'adresse de la page, le type de navigateur et d'appareil, une localisation approximative déduite de l'adresse IP et les identifiants des cookies. Nous ne lui envoyons ni votre nom ni votre e-mail. Nous n'activons ni les signaux Google ni la personnalisation des annonces.</p>
-<p><strong>Comment le site web décide.</strong> Quand vous ouvrez une page, une petite fonction de notre hébergement (Cloudflare Pages, à l'adresse <code>/geo</code>) lit le pays que Cloudflare associe à votre requête et indique à votre navigateur quelle règle s'applique. Elle n'enregistre rien et ne stocke rien. Ensuite :</p>
+<p><strong>Comment le site web décide.</strong> La même règle s'applique dans tous les pays :</p>
 <ul>
-<li><strong>EEE (les pays de l'UE, l'Islande, le Liechtenstein, la Norvège), Royaume-Uni et Suisse :</strong> Google Analytics ne se charge que si vous cliquez sur <strong>Accepter</strong> dans l'avis sur les cookies. Vous pouvez utiliser tout le site sans choisir.</li>
-<li><strong>Ailleurs :</strong> Google Analytics se charge par défaut. Vous pouvez le désactiver à tout moment avec <strong>Paramètres des cookies</strong> en bas de chaque page.</li>
-<li><strong>Global Privacy Control et Do Not Track :</strong> si votre navigateur envoie l'un de ces signaux, nous le traitons comme « ne pas charger Google Analytics ».</li>
+<li><strong>Google Analytics ne se charge que si vous cliquez sur Accepter</strong> dans l'avis sur les cookies. « Refuser » se trouve à côté et a la même taille. Vous pouvez utiliser tout le site sans choisir.</li>
+<li><strong>Global Privacy Control et Do Not Track :</strong> si votre navigateur envoie l'un de ces signaux, nous le traitons comme « ne pas charger Google Analytics » et n'affichons pas l'avis. Vous pouvez quand même activer les statistiques dans les Paramètres des cookies.</li>
 <li><strong>Votre choix</strong> est enregistré sur votre appareil dans <code>bonet_consent</code>, avec la version et l'heure. Il ne nous est pas envoyé. Vous pouvez le changer à tout moment dans Paramètres des cookies. Si vous désactivez Google Analytics après l'avoir activé, nous cessons de le charger et vous pouvez effacer les cookies ci-dessus dans votre navigateur.</li>
 </ul>
 <h2 id="appbonetcare-and-the-apps">app.bonet.care et les applications</h2>
@@ -220,8 +218,43 @@
 <td>Strictement nécessaire</td>
 </tr>
 <tr>
-<td><code>bonet_analytics_choice</code></td>
-<td>Votre choix sur l'analyse (activée ou désactivée)</td>
+<td><code>sync_analytics_consent</code></td>
+<td>Votre choix sur l'analyse, avec sa version et l'heure. Il est aussi enregistré avec votre compte, donc il vous suit sur vos autres appareils</td>
+<td>Jusqu'à ce que vous le changiez ou supprimiez votre compte</td>
+<td>Coglix Labs Inc.</td>
+<td>Strictement nécessaire (il enregistre votre choix)</td>
+</tr>
+<tr>
+<td><code>sync_practice_consent</code></td>
+<td>Si vous avez accepté que Bonet enregistre vos informations de pratique. Aussi enregistré avec votre compte</td>
+<td>Jusqu'à ce que vous le changiez ou supprimiez votre compte</td>
+<td>Coglix Labs Inc.</td>
+<td>Strictement nécessaire (il enregistre votre choix)</td>
+</tr>
+<tr>
+<td><code>sync_terms_accepted</code></td>
+<td>Que vous avez accepté les conditions d'utilisation en vigueur, avec la version et l'heure. Aussi enregistré avec votre compte</td>
+<td>Jusqu'à ce que vous supprimiez votre compte</td>
+<td>Coglix Labs Inc.</td>
+<td>Strictement nécessaire (il enregistre votre choix)</td>
+</tr>
+<tr>
+<td><code>sync_camera_notice</code></td>
+<td>Que vous avez lu l'avis sur la caméra avant le premier exercice avec la caméra, avec la version et l'heure. Aussi enregistré avec votre compte</td>
+<td>Jusqu'à ce que vous supprimiez votre compte</td>
+<td>Coglix Labs Inc.</td>
+<td>Strictement nécessaire (il enregistre votre choix)</td>
+</tr>
+<tr>
+<td><code>sync_speech_consent</code></td>
+<td>Que vous avez accepté l'exercice de parole sur cet appareil</td>
+<td>Jusqu'à ce que vous vous déconnectiez</td>
+<td>Coglix Labs Inc.</td>
+<td>Strictement nécessaire (il enregistre votre choix)</td>
+</tr>
+<tr>
+<td><code>sync_renewal_consent</code></td>
+<td>Sur le web : que vous avez accepté les conditions de l'essai et du renouvellement mensuel affichées à côté du bouton d'abonnement, avec l'heure. Envoyé avec la demande de paiement</td>
 <td>Jusqu'à ce que vous l'effaciez</td>
 <td>Coglix Labs Inc.</td>
 <td>Strictement nécessaire (il enregistre votre choix)</td>
@@ -242,8 +275,8 @@
 <p>Lorsque vous vous abonnez sur le web, vous quittez bonet.care et la page de paiement de Stripe s'ouvre à l'adresse <code>checkout.stripe.com</code>. Stripe y dépose ses propres cookies pour traiter le paiement et prévenir la fraude. Nous ne les contrôlons pas ; voir les informations de Stripe sur les cookies. Dans l'App Store, Apple gère le paiement selon ses propres conditions.</p>
 <h2 id="our-choices-in-the-app">Vos choix dans l'application</h2>
 <ul>
-<li>L'analyse est activée par défaut. Vous pouvez la désactiver à tout moment dans Réglages &gt; Confidentialité. Lorsque vous le faites, l'application cesse d'envoyer des événements.</li>
-<li>S'il n'y a aucun choix enregistré et que votre navigateur envoie Global Privacy Control ou Do Not Track, l'analyse reste désactivée. Votre propre choix dans les Réglages l'emporte sur le signal.</li>
+<li>L'analyse reste désactivée tant que vous ne l'acceptez pas. Vous pouvez changer votre choix à tout moment dans Réglages &gt; Confidentialité. Lorsque vous la désactivez, l'application cesse d'envoyer des événements.</li>
+<li>Si votre navigateur ou votre appareil envoie Global Privacy Control ou Do Not Track, l'analyse reste désactivée.</li>
 </ul>
 <h2 id="how-to-block-cookies-yourself">Comment bloquer vous-même les cookies</h2>
 <p>Tous les navigateurs permettent de bloquer ou de supprimer les cookies et les données de site. Si vous bloquez les éléments marqués « strictement nécessaire », vous serez déconnecté(e) et certaines fonctions ne marcheront pas. Sur un ordinateur partagé, déconnectez-vous quand vous avez fini.</p>
@@ -253,13 +286,13 @@
 <p>Si nous modifions cette politique d'une manière qui compte (par exemple un nouvel outil), nous changeons la date en haut de la page.</p>
 <h2 id="contact">Contact</h2>
 <p>Coglix Labs Inc.<br />
-E-mail : <a href="mailto:privacy@coglixlabs.com">privacy@coglixlabs.com</a></p>
+E-mail : <a href="mailto:infos@coglixlabs.com">infos@coglixlabs.com</a></p>
 </article>
 
 </div></div></main>
 <footer class="ftr"><div class="wrap">
 <div class="ftr-top"><a class="brand" href="/fr"><img src="/img/mascot/head.webp" width="512" height="512" alt="">Bonet</a><p>Une pratique quotidienne à la maison : mouvement, parole et jeux de cerveau.</p></div>
-<div class="ftr-cols"><nav aria-label="Footer"><a href="/fr/privacy">Confidentialité</a><a href="/fr/terms">Conditions d’utilisation</a><a href="/fr/subscriptions">Abonnements et remboursements</a><a href="/fr/cookies">Cookies</a><a href="/fr/consumer-health-data">Données de santé</a><a href="/fr/safety">Confidentialité et sécurité</a><a href="/fr/ai-and-automatic-measures">Comment Bonet mesure</a><a href="/fr/licenses">Licences open source</a><a href="/fr/faq">Questions</a><a href="mailto:infos@coglixlabs.com">Contact</a><button type="button" class="linkbtn" data-consent-open>Réglages des cookies</button></nav>
+<div class="ftr-cols"><nav aria-label="Footer"><a href="/fr/privacy">Confidentialité</a><a href="/fr/terms">Conditions d’utilisation</a><a href="/fr/subscriptions">Abonnements et remboursements</a><a href="/fr/cookies">Cookies</a><a href="/fr/consumer-health-data">Données de santé</a><a href="/fr/safety">Confidentialité et sécurité</a><a href="/fr/ai-and-automatic-measures">Comment Bonet mesure</a><a href="/fr/company">Mentions légales</a><a href="/fr/delete-account">Supprimer votre compte</a><a href="/fr/licenses">Licences open source</a><a href="/fr/faq">Questions</a><a href="mailto:infos@coglixlabs.com">Contact</a><button type="button" class="linkbtn" data-consent-open>Réglages des cookies</button></nav>
 <nav class="ftr-more" aria-label="Bonet"><a href="/fr/science">Comment ça marche</a><a href="/fr/therapist">Pour les thérapeutes</a><a href="/fr/practice">Bibliothèque de pratique</a><a href="/fr/stroke-home-practice">S’exercer à la maison après un AVC</a><a href="/fr/exercise-app-for-seniors">Appli d’exercices pour seniors</a><a href="/fr/speech-practice-at-home">S’exercer à parler à la maison</a><a href="/fr/for-family-and-carers">Pour la famille et les aidants</a><a href="/fr/rehab-practice-app">Vous cherchez une appli de rééducation ?</a><a href="/fr/home-exercise-program-app">Appli pour programme d’exercices à domicile</a><a href="/fr/brain-games-for-seniors">Jeux de réflexion pour seniors</a><a href="/fr/about">À propos de Bonet</a><a href="/fr/camera-rep-counting">Comptage des répétitions par la caméra</a><a href="/fr/pricing">Tarifs</a><a href="/fr/home-exercise-tracking">Suivi de la pratique à domicile</a><a href="/fr/movement-speech-brain-games">Mouvement, parole et jeux de réflexion</a><a href="/fr/alzheimers-and-dementia">Alzheimer et démence : pour les aidants</a><a href="/fr/accessibility">Accessibilité</a><a href="/blog/">Blog</a></nav>
 <nav class="ftr-langs" aria-label="Langue"><a href="/cookies" hreflang="en" lang="en">English</a><a href="/zh-hant/cookies" hreflang="zh-Hant" lang="zh-Hant">繁體中文</a><a href="/yue/cookies" hreflang="yue-Hant-HK" lang="yue-Hant-HK">廣東話</a><a href="/zh-hans/cookies" hreflang="zh-Hans" lang="zh-Hans">简体中文</a><a href="/ja/cookies" hreflang="ja" lang="ja">日本語</a><a href="/es/cookies" hreflang="es" lang="es">Español</a><a href="/de/cookies" hreflang="de" lang="de">Deutsch</a><a href="/fr/cookies" hreflang="fr" lang="fr">Français</a></nav></div>
 <p class="ftr-c">&copy; 2026 <a href="https://coglixlabs.com/">Coglix Labs Inc.</a></p>
