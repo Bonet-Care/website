@@ -224,8 +224,7 @@ def header(lang, urls=None, inplace=None):
     nav = [(pre + "#practice", t("n_practice")), (pre + "#feedback", t("n_feedback")), (pre + "#plans", t("n_plans")), (pre + "#compare", t("n_compare")), (pre + "#faq", t("n_faq"))]
     links = "".join(f'<a href="{h}">{x}</a>' for h, x in nav)
     return f"""<body>
-<a class="skip" href="#main">{t('skip')}</a>
-<header class="hdr"><div class="wrap">
+<header class="hdr"><a class="skip" href="#main">{t('skip')}</a><div class="wrap">
 <a class="brand" href="{pre}"><img src="/img/mascot/head.webp" width="512" height="512" alt="">Bonet{'<small>哥基健動</small>' if lang in ('zh-hant', 'yue', 'zh-hans') else ''}</a>
 <nav class="nav" aria-label="Main">{links}</nav>
 {lang_menu(lang, urls, inplace)}
