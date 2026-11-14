@@ -219,8 +219,8 @@
     row.appendChild(set);
     banner = el('section', { 'class': 'cnb', role: 'region', 'aria-labelledby': 'cnb-title' }, [el('div', { 'class': 'cnb-in' }, [head, body, row])]);
     banner.addEventListener('keydown', function (e) { if (e.key === 'Escape' && strict) { save(false, mode, 'escape'); close(); } });
-    var skip = document.querySelector('.skip');
-    document.body.insertBefore(banner, skip ? skip.nextSibling : document.body.firstChild);
+    var hdr = document.querySelector('body > .hdr');  // the skip link lives inside the header, so put the notice right before the header
+    document.body.insertBefore(banner, hdr || document.body.firstChild);
     sess('bonet_cb_seen', '1');
     if (!strict && !gpc && !rec) { /* open region default: analytics on, recorded when OK is pressed or the person leaves the notice */ rec = { v: 1, policy: POLICY, analytics: true, mode: mode, source: 'default', ts: new Date().toISOString(), lang: lang.split('-')[0] }; store(KEY, JSON.stringify(rec)); apply(); }
     if (!strict && gpc && !rec) { save(false, mode, 'signal'); }
