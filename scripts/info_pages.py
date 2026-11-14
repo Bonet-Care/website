@@ -462,3 +462,47 @@ PAGES["company"] = {
         ]),
     ],
 }
+
+# Camera, body position and hand position policy (biometric information policy, Illinois BIPA 740 ILCS 14/15(a)). From legal-review/drafts/biometric-policy.md,
+# checked against the app on 15 Nov 2026: pose summaries hold counts and tracking-quality numbers only (app/web/src/lib/sessions.ts poseSummary).
+PAGES["biometric-policy"] = {
+    "legal": True,
+    "title": ("Camera, body position and hand position policy | Bonet", "鏡頭、身體位置同手部位置政策 | 哥基健動"),
+    "desc": ("What Bonet's camera does with the picture of you: body and hand positions are found on your device to count movements, and nothing is saved or sent.",
+             "哥基健動個鏡頭點樣處理你嘅影像：喺你部機上面搵出身體同手嘅位置嚟數動作，乜都唔會儲存或者傳送。"),
+    "h1": ("Camera, body position and hand position policy", "鏡頭、身體位置同手部位置政策"),
+    "answer": ("Last updated: 16 November 2026. Coglix Labs, Inc. makes Bonet. This page explains, in plain words, what Bonet's camera does with the picture of you. It is also our written policy for the purposes of laws about biometric information, including the Illinois Biometric Information Privacy Act.",
+               "最後更新：2026 年 11 月 16 日。哥基健動由 Coglix Labs, Inc. 開發。呢頁用淺白嘅說話解釋哥基健動個鏡頭點樣處理你嘅影像。呢頁亦係我哋為生物特徵資料法例（包括美國伊利諾州《生物特徵資料私隱法》）而寫嘅書面政策。"),
+    "demo": None,
+    "sections": [
+        (("What does the camera do?", "鏡頭做啲乜？"), [
+            ("p", "For exercises that count your movements, and for brain games you can play by holding your hand over an answer, Bonet uses your device's camera. A model that runs on your own device finds the position of points on your body and hands in each picture (for example, where your wrist and shoulder are) so that Bonet can count repetitions and see that you are moving.",
+             "做會數動作嘅運動，同埋玩可以用手指住答案嘅腦力遊戲嗰陣，哥基健動會用你部機嘅鏡頭。一個喺你部機上面運行嘅模型，會喺每個畫面搵出你身體同手上啲點嘅位置（例如手腕同膊頭喺邊），等哥基健動可以數次數，同睇到你喺度郁。"),
+        ]),
+        (("What do we not do?", "我哋唔會做乜？"), [
+            ("ul", [
+                ("We do not save the picture, the video, the points, or any body or hand shape. They exist only in your device's memory for a moment and are discarded straight away.", "我哋唔會儲存影像、片、嗰啲點，或者任何身體或者手部形狀。佢哋只會喺你部機嘅記憶體短暫存在，用完即刻棄掉。"),
+                ("We do not send them to our servers or to anyone else. The only things Bonet saves are numbers about your practice, such as how many repetitions you did, how long you held a position, a range-of-motion estimate, and how well the camera could follow the movement.", "我哋唔會將佢哋傳送去我哋嘅伺服器或者任何人。哥基健動只會儲存關於你練習嘅數字，例如做咗幾多下、保持咗一個姿勢幾耐、活動幅度估算，同埋鏡頭追蹤動作追得幾好。"),
+                ("We do not use them to identify you or anyone else, and we do not compare them to any other picture or person.", "我哋唔會用佢哋嚟認出你或者其他人，亦唔會同其他影像或者人比較。"),
+                ("We do not use face recognition or face measurements.", "我哋唔會用人臉辨識或者量度面部。"),
+                ("We do not sell, rent, trade or share them, and we do not use them for advertising or to train AI models.", "我哋唔會出售、出租、交換或者分享佢哋，亦唔會用嚟賣廣告或者訓練 AI 模型。"),
+            ]),
+        ]),
+        (("How long do we keep it?", "我哋保留幾耐？"), [
+            ("p", "We keep none of it. Camera pictures and the body and hand points are destroyed immediately after they are used, and in any case as soon as you leave the exercise, close the app or turn the camera off. There is nothing for us to keep, so there is nothing to delete later. The practice numbers described above are kept in your account until you delete it (see the <a href=\"/privacy\">privacy policy</a>).",
+             "我哋乜都唔保留。鏡頭影像同身體、手部嘅點用完即刻銷毀，無論點都會喺你離開運動、關 app 或者關鏡頭嗰陣銷毀。我哋冇嘢要保留，所以之後亦冇嘢要刪除。上面講嘅練習數字會留喺你嘅帳戶，直至你刪除帳戶（請睇<a href=\"/privacy\">私隱政策</a>）。"),
+        ]),
+        (("What is my choice?", "我可以點揀？"), [
+            ("p", "The camera is used only after you tap \"I agree, start the camera\" the first time, and again if this policy changes in a way that matters. If you choose \"No camera\", Bonet counts your exercises by hand (you tap +1) and the games work by tapping the screen. You can also turn the camera permission off at any time in your device's settings. You can use Bonet this way without losing access to anything.",
+             "第一次要你撳「我同意，開鏡頭」之後先會用鏡頭；如果呢個政策有重要改變，會再問你。如果你揀「唔用鏡頭」，哥基健動會改為由你手動數（撳 +1），遊戲就改為撳畫面。你亦可以隨時喺部機嘅設定關閉鏡頭權限。咁用哥基健動唔會少咗任何功能。"),
+        ]),
+        (("Security and who can see it", "安全同邊個睇到"), [
+            ("p", "Because nothing is stored or sent, there is nothing for anyone to take from us. Your device protects the camera with its own permission system. Nobody can see your camera: not us, and not the people who run our servers.",
+             "因為乜都冇儲存或者傳送，冇嘢可以喺我哋度被人攞走。你部機會用自己嘅權限系統保護鏡頭。冇人睇到你個鏡頭：我哋睇唔到，幫我哋管理伺服器嘅人都睇唔到。"),
+        ]),
+        (("Changes and questions", "更改同查詢"), [
+            ("p", "If we ever change what the camera data is used for, we will update this page and ask for your agreement again before we use the camera. Questions: <a href=\"mailto:infos@coglixlabs.com\">infos@coglixlabs.com</a>. Coglix Labs, Inc., 131 Continental Dr, Suite 305, Newark, DE 19713, USA.",
+             "如果我哋改變鏡頭資料嘅用途，會先更新呢頁，並喺用鏡頭之前再問你同唔同意。查詢：<a href=\"mailto:infos@coglixlabs.com\">infos@coglixlabs.com</a>。Coglix Labs, Inc., 131 Continental Dr, Suite 305, Newark, DE 19713, USA。"),
+        ]),
+    ],
+}
