@@ -296,3 +296,53 @@ THERAPIST_STEPS = (("Getting someone started", "幫人開始用"), [
     ("Show where to put the device so the camera can see them, in a clear space with a stable chair.", "示範部機要放喺邊，等鏡頭影到佢；揀個冇雜物嘅地方，加一張穩陣嘅凳。"),
     ("At the next visit, ask them to print or share their practice report. See an <a href=\"/example-report\">example report</a>.", "下次覆診時，請佢列印或者分享練習報告。可以睇下<a href=\"/example-report\">示範報告</a>。"),
 ])
+
+# Accessibility statement. Only what was actually checked (axe-core scan, 14 Nov 2026) and what the site and app actually have. No conformance claim.
+PAGES["accessibility"] = {
+    "title": ("Accessibility statement | Bonet", "無障礙聲明 | 哥基健動"),
+    "desc": ("How accessible the Bonet website and app are today: what we checked, what we fixed, what we have not tested yet, and how to tell us about a problem.",
+             "哥基健動網站同 app 而家嘅無障礙情況：我哋檢查過乜、改咗乜、未測試乜，同埋點樣話俾我哋知有問題。"),
+    "h1": ("Accessibility statement", "無障礙聲明"),
+    "answer": ("Bonet is made for older adults, so it should be easy to see, read and use. We aim to meet the Web Content Accessibility Guidelines (WCAG) 2.2 at level AA. We do not claim that the website or the app fully meets them yet. This page says what we have checked and what we have not.",
+               "哥基健動係為長者而設，所以應該易睇、易讀、易用。我哋嘅目標係達到網頁內容無障礙指引（WCAG）2.2 AA 級。我哋唔會話網站或者 app 已經完全做到。呢頁講清楚我哋檢查過乜、未檢查乜。"),
+    "demo": None,
+    "sections": [
+        (("What have we checked?", "我哋檢查過乜？"), [
+            ("p", "On 14 November 2026 we ran an automated accessibility check (axe-core) on the home page and the pricing page of this website, in several of its languages, at computer and phone screen sizes.",
+             "2026 年 11 月 14 日，我哋用自動檢查工具（axe-core）檢查咗呢個網站嘅首頁同價錢頁，包括幾種語言，同埋電腦同手機嘅畫面大小。"),
+            ("p", "We fixed what it found: buttons with too little colour contrast, headings out of order, buttons whose spoken name did not match their visible text, and links too small to tap easily. After the fixes, the tool reported no problems on those pages.",
+             "我哋已經改好佢搵到嘅問題：有啲掣顏色對比唔夠、標題次序唔啱、有啲掣讀出嚟嘅名同畫面上嘅字唔同，同埋有啲連結細到唔易撳。改完之後，個工具喺嗰幾頁冇再報告問題。"),
+            ("p", "Automated tools find only some kinds of problems. A clean result does not mean a page is fully accessible.",
+             "自動工具只可以搵到部分問題。檢查結果冇問題，唔代表嗰頁完全無障礙。"),
+        ]),
+        (("What helps on this website?", "呢個網站有乜幫到你？"), [
+            ("ul", [
+                ("An A+ button at the top of every page makes the text bigger.", "每頁頂部有個 A+ 掣，可以放大文字。"),
+                ("A skip link lets keyboard users jump straight to the main content.", "用鍵盤嘅人可以用「跳至內容」連結，直接去主要內容。"),
+                ("If your device is set to reduce motion, most animations stop.", "如果你部機設定咗減少動態效果，大部分動畫會停。"),
+                ("Animated previews have a written description for screen readers.", "動畫預覽有文字描述，俾屏幕閱讀器讀。"),
+                ("Every page is in eight languages.", "每一頁都有八種語言。"),
+            ]),
+        ]),
+        (("What helps in the app?", "App 入面有乜幫到你？"), [
+            ("ul", [
+                ("Simple mode: one big Start button instead of a busy screen.", "簡單模式：一個大大嘅開始掣，取代密密麻麻嘅畫面。"),
+                ("A large text setting.", "大字設定。"),
+                ("Eight languages, for the app and the speaking practice.", "八種語言，app 同說話練習都有。"),
+            ]),
+        ]),
+        (("What have we not tested yet?", "我哋仲未測試乜？"), [
+            ("ul", [
+                ("The other pages of this website.", "呢個網站其他頁面。"),
+                ("The app at app.bonet.care.", "app.bonet.care 嘅 app。"),
+                ("Use with screen readers, switch access or voice control by the people who rely on them.", "由真正用開屏幕閱讀器、開關控制或者聲控嘅人親自試用。"),
+            ]),
+            ("p", "Some parts of practice depend on the device. Exercise counting needs the camera to see you, and some speech recognition needs an internet connection. Counts and speech results are estimates and can be wrong.",
+             "有啲練習要靠部機。數運動次數要鏡頭影到你，有啲語音辨識要連網。次數同說話結果都係估算，有可能唔準。"),
+        ]),
+        (("How do I tell you about a problem?", "點樣話俾你哋知有問題？"), [
+            ("p", "Email <a href=\"mailto:hello@coglixlabs.com\">hello@coglixlabs.com</a>. Tell us the page or screen, your device and browser, and any assistive technology you use. We will use what you tell us to decide what to fix next.",
+             "請電郵 <a href=\"mailto:hello@coglixlabs.com\">hello@coglixlabs.com</a>。話俾我哋知係邊一頁或者邊個畫面、你用咩機同瀏覽器，同埋你有冇用輔助工具。我哋會根據你嘅意見決定下一步改乜。"),
+        ]),
+    ],
+}
